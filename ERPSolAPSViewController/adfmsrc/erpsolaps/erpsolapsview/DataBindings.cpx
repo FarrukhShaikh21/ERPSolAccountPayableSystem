@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="erpsolaps.erpsolapsview" ClientType="Generic">
+  <pageMap>
+    <page path="/PY_0017.jsf" usageId="erpsolaps_erpsolapsview_PY_0017PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="erpsolaps_erpsolapsview_PY_0017PageDef" path="erpsolaps.erpsolapsview.pageDefs.PY_0017PageDef"/>
+  </pageDefinitionUsages>
+</Application>

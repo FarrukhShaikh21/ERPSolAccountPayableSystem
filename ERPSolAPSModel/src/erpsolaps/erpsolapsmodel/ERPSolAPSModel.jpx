@@ -6,9 +6,32 @@
   Name="ERPSolAPSModel"
   Version="12.1.3.10.47"
   SeparateXMLFiles="true"
-  PackageName="erpsolaps.erpsolapsmodel"
-  ExportIntfPackage="">
+  PackageName="erpsolaps.erpsolapsmodel">
   <DesignTime>
     <Attr Name="_jprName" Value="../../../ERPSolAPSModel.jpr"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_NamedConnection" Value="ERPSolAPSConn"/>
   </DesignTime>
+  <Containee
+    Name="erpsolapsam"
+    PackageName="erpsolaps.erpsolapsmodel.erpsolapsam"
+    ObjectType="JboPackage"/>
+  <Containee
+    Name="erpsolapseo"
+    PackageName="erpsolaps.erpsolapsmodel.erpsolapseo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="erpsolapsvo"
+    PackageName="erpsolaps.erpsolapsmodel.erpsolapsvo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
 </JboProject>

@@ -11,11 +11,16 @@
     <Attr Name="_jprName" Value="../../../ERPSolAPSModel.jpr"/>
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_NamedConnection" Value="ERPSolAPSConn"/>
+    <Attr Name="_appModuleNames0" Value="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule"/>
   </DesignTime>
   <Containee
     Name="erpsolapsam"
     PackageName="erpsolaps.erpsolapsmodel.erpsolapsam"
-    ObjectType="JboPackage"/>
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
   <Containee
     Name="erpsolapseo"
     PackageName="erpsolaps.erpsolapsmodel.erpsolapseo"

@@ -8,18 +8,9 @@
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
   <ViewUsage
-    Name="AllLocationsView1"
+    Name="AllLocationsAutoSuggestRO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllLocationsView"/>
   <ViewUsage
-    Name="PuSuppliersView1"
+    Name="PuSuppliersAutoSuggestRO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView"/>
-  <ViewUsage
-    Name="AllLocationsView2"
-    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllLocationsView"/>
-  <ViewLinkUsage
-    Name="R264Link1"
-    ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.R264Link"
-    SrcViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.AllLocationsView1"
-    DstViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.AllLocationsView2"
-    Reversed="false"/>
 </AppModule>

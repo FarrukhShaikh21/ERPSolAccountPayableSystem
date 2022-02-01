@@ -309,9 +309,9 @@
       <property
          name="activityId">*</property>
       <property
-         name="y">409.29883</property>
+         name="y">421.44824</property>
       <property
-         name="x">1331.0</property>
+         name="x">1330.0</property>
    </WildcardControlFlowRule>
    <ControlFlowCase
       islink="true"
@@ -321,6 +321,6 @@
       <property
          name="fromOutcome">ERP-ACT-EXIT-FORM-APS</property>
       <property
-         name="sdm:polyPoints">L50,1295.0,409.44824,1193.0195,421.18945,R50</property>
+         name="sdm:polyPoints">L50,1294.0,421.44824,1193.0195,421.18945,R50</property>
    </ControlFlowCase>
 </SDM>

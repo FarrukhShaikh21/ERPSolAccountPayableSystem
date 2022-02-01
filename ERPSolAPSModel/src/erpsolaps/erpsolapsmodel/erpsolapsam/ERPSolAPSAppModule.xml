@@ -13,4 +13,16 @@
   <ViewUsage
     Name="PuSuppliersAutoSuggestRO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView"/>
+  <ViewUsage
+    Name="OtherBillsCRUD"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OtherBillsView"/>
+  <ViewUsage
+    Name="OtherBillDetDetCRUD"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OtherBillDetView"/>
+  <ViewLinkUsage
+    Name="OthbilldetBilidFkLink1"
+    ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"
+    SrcViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.OtherBillsCRUD"
+    DstViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.OtherBillDetDetCRUD"
+    Reversed="false"/>
 </AppModule>

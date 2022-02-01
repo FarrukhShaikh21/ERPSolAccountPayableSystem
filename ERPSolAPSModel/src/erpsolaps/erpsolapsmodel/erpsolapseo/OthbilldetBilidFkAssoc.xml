@@ -17,12 +17,11 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="OtherBills"/>
-      <Attr Name="_foreignKey" Value="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBills.PkOtherBills"/>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_minCardinality" Value="1"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBills.Billid"/>
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBills.Billidseq"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
@@ -32,11 +31,10 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="OtherBillDet"/>
-      <Attr Name="_foreignKey" Value="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBillDet.OthbilldetBilidFk"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBillDet.Billid"/>
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBillDet.Billidseq"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

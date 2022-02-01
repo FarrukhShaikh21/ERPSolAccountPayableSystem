@@ -48,5 +48,13 @@
         <Item Value="Locationid"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="OtherBillsCRUDIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="OtherBillsCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="OtherBillsCRUDIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="OtherBillsCRUDIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolAPSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolAPSAppModuleDataControl"/>
   </bindings>
 </pageDefinition>

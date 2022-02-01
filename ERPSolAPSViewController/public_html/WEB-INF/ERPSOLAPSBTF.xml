@@ -101,6 +101,9 @@
         <name>ACT-ERP-APS-RETURN</name>
       </outcome>
     </task-flow-return>
+    <view id="PY_0017_SEARCH">
+      <page>/PY_0017_SEARCH.jsf</page>
+    </view>
     <control-flow-rule id="__3">
       <from-activity-id>doERPSolAPSSessionGlobals</from-activity-id>
       <control-flow-case id="__4">
@@ -162,6 +165,27 @@
       <control-flow-case id="__20">
         <from-outcome>ERP-ACT-PY-0017</from-outcome>
         <to-activity-id>PY_0017</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__25">
+      <from-activity-id>PY_0017</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome>ERP-ACT-PY_0017-SEARCH</from-outcome>
+        <to-activity-id>PY_0017_SEARCH</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__27">
+      <from-activity-id>PY_0017_SEARCH</from-activity-id>
+      <control-flow-case id="__28">
+        <from-outcome>ERP-ACT-PY_0017-SEARCH-BACK</from-outcome>
+        <to-activity-id>PY_0017</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__29">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__30">
+        <from-outcome>ERP-ACT-EXIT-FORM-APS</from-outcome>
+        <to-activity-id>ERPSolAPSMain</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

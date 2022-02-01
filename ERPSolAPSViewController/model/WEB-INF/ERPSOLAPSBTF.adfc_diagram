@@ -269,4 +269,58 @@
       <property
          name="x">751.0</property>
    </TaskFlowReturn>
+   <View
+      id="View24">
+      <property
+         name="activityId">PY_0017_SEARCH</property>
+      <property
+         name="page">/PY_0017_SEARCH.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PY_0017_SEARCH&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">599.99414</property>
+      <property
+         name="x">-57.969727</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase25"
+      from="View21"
+      to="View24">
+      <property
+         name="fromOutcome">ERP-ACT-PY_0017-SEARCH</property>
+      <property
+         name="sdm:polyPoints">L46,266.5,596.2471,-16.968449,596.14355,R46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase26"
+      from="View24"
+      to="View21">
+      <property
+         name="fromOutcome">ERP-ACT-PY_0017-SEARCH-BACK</property>
+      <property
+         name="sdm:polyPoints">R54,-16.969727,603.14355,266.49872,603.2471,L54</property>
+   </ControlFlowCase>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule28">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">409.29883</property>
+      <property
+         name="x">1331.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase29"
+      from="WildcardControlFlowRule28"
+      to="View3">
+      <property
+         name="fromOutcome">ERP-ACT-EXIT-FORM-APS</property>
+      <property
+         name="sdm:polyPoints">L50,1295.0,409.44824,1193.0195,421.18945,R50</property>
+   </ControlFlowCase>
 </SDM>

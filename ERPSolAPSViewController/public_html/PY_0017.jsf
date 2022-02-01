@@ -170,37 +170,35 @@
                     <af:panelGridLayout id="pgl5">
                       <af:gridRow height="30px" id="gr4">
                         <af:gridCell marginStart="5px" width="15%" id="gc2" valign="middle">
-                          <af:outputLabel value="#{bindings.Stnno.hints.label}" id="ol5"/>
+                          <af:outputLabel value="#{bindings.Billid.hints.label}" id="ol5"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc3" valign="middle">
-                          <af:inputText value="#{bindings.Stnno.inputValue}" label="#{bindings.Stnno.hints.label}"
-                                        required="#{bindings.Stnno.hints.mandatory}"
-                                        columns="#{bindings.Stnno.hints.displayWidth}"
-                                        maximumLength="#{bindings.Stnno.hints.precision}"
-                                        shortDesc="#{bindings.Stnno.hints.tooltip}" id="it2" simple="true"
+                          <af:inputText value="#{bindings.Billid.inputValue}" label="#{bindings.Billid.hints.label}"
+                                        required="#{bindings.Billid.hints.mandatory}"
+                                        columns="#{bindings.Billid.hints.displayWidth}"
+                                        maximumLength="#{bindings.Billid.hints.precision}"
+                                        shortDesc="#{bindings.Billid.hints.tooltip}" id="it2" simple="true"
                                         readOnly="true">
-                            <f:validator binding="#{bindings.Stnno.validator}"/>
+                            <f:validator binding="#{bindings.Billid.validator}"/>
                           </af:inputText>
                           <af:inputText value="#{bindings.Posted.inputValue}" label="#{bindings.Posted.hints.label}"
                                         required="#{bindings.Posted.hints.mandatory}"
                                         columns="#{bindings.Posted.hints.displayWidth}"
                                         maximumLength="#{bindings.Posted.hints.precision}"
-                                        shortDesc="#{bindings.Posted.hints.tooltip}" id="it21" rendered="false">
+                                        shortDesc="#{bindings.Posted.hints.tooltip}" id="it10" rendered="false">
                             <f:validator binding="#{bindings.Posted.validator}"/>
                           </af:inputText>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="15%" id="gc6" valign="middle">
-                          <af:outputLabel value="#{bindings.DateOfTransfer.hints.label}" id="ol10"/>
+                          <af:outputLabel value="#{bindings.BillDate.hints.label}" id="ol10"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc7" valign="middle">
-                          <af:inputDate value="#{bindings.DateOfTransfer.inputValue}"
-                                        label="#{bindings.DateOfTransfer.hints.label}"
-                                        required="#{bindings.DateOfTransfer.hints.mandatory}"
-                                        columns="#{bindings.DateOfTransfer.hints.displayWidth}"
-                                        shortDesc="#{bindings.DateOfTransfer.hints.tooltip}" id="id1" simple="true"
-                                        readOnly="#{bindings.Stnno.inputValue!=null}" inlineStyle="speak-as:normal;">
-                            <f:validator binding="#{bindings.DateOfTransfer.validator}"/>
-                            <af:convertDateTime pattern="#{bindings.DateOfTransfer.format}"/>
+                          <af:inputDate value="#{bindings.BillDate.inputValue}" label="#{bindings.BillDate.hints.label}"
+                                        required="#{bindings.BillDate.hints.mandatory}"
+                                        columns="#{bindings.BillDate.hints.displayWidth}"
+                                        shortDesc="#{bindings.BillDate.hints.tooltip}" id="id1" simple="true">
+                            <f:validator binding="#{bindings.BillDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.BillDate.format}"/>
                           </af:inputDate>
                         </af:gridCell>
                       </af:gridRow>
@@ -232,60 +230,49 @@
                           </af:inputText>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="15%" id="gc10" valign="middle">
-                          <af:outputLabel value="#{bindings.txtStoreName.hints.label}" id="ol11"/>
+                          <af:outputLabel value="#{bindings.txtSupplierName.hints.label}" id="ol8"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc11"
                                      valign="middle" halign="stretch">
-                          <af:inputComboboxListOfValues id="iclov1"
-                                                        popupTitle="Search and Select: #{bindings.txtStoreName.hints.label}"
-                                                        value="#{bindings.txtStoreName.inputValue}"
-                                                        label="#{bindings.txtStoreName.hints.label}"
-                                                        model="#{bindings.txtStoreName.listOfValuesModel}"
-                                                        required="#{bindings.txtStoreName.hints.mandatory}"
-                                                        columns="#{bindings.txtStoreName.hints.displayWidth}"
-                                                        shortDesc="#{bindings.txtStoreName.hints.tooltip}"
-                                                        simple="true"
-                                                        disabled="#{bindings.InItemTransferNoteLinesDetCRUDIterator.estimatedRowCount>0}"
-                                                        partialTriggers="pc1:b7 pc1:b8">
-                            <f:validator binding="#{bindings.txtStoreName.validator}"/>
-                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedStoreValues}"/>
+                          <af:inputComboboxListOfValues id="txtSupplierNameId"
+                                                        popupTitle="Search and Select: #{bindings.txtSupplierName.hints.label}"
+                                                        value="#{bindings.txtSupplierName.inputValue}"
+                                                        label="#{bindings.txtSupplierName.hints.label}"
+                                                        model="#{bindings.txtSupplierName.listOfValuesModel}"
+                                                        required="#{bindings.txtSupplierName.hints.mandatory}"
+                                                        columns="#{bindings.txtSupplierName.hints.displayWidth}"
+                                                        shortDesc="#{bindings.txtSupplierName.hints.tooltip}"
+                                                        simple="true" autoSubmit="true">
+                            <f:validator binding="#{bindings.txtSupplierName.validator}"/>
                           </af:inputComboboxListOfValues>
-                          <af:spacer width="10" height="10" id="s3"/>
-                          <af:outputText value="#{bindings.Sendingstoreid.inputValue}" id="ot3" noWrap="true"
-                                         partialTriggers="iclov1"/>
                         </af:gridCell>
                       </af:gridRow>
                       <af:gridRow height="30px" id="gr6">
                         <af:gridCell marginStart="5px" width="15%" id="gc12" valign="middle">
-                          <af:outputLabel value="#{bindings.txtReceivingSroreName.hints.label}" id="ol1"/>
+                          <af:outputLabel value="#{bindings.Supref.hints.label}" id="ol1"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc13" halign="stretch" valign="middle">
-                          <af:inputComboboxListOfValues id="txtReceivingSroreNameId"
-                                                        popupTitle="Search and Select: #{bindings.txtReceivingSroreName.hints.label}"
-                                                        value="#{bindings.txtReceivingSroreName.inputValue}"
-                                                        label="#{bindings.txtReceivingSroreName.hints.label}"
-                                                        model="#{bindings.txtReceivingSroreName.listOfValuesModel}"
-                                                        required="#{bindings.txtReceivingSroreName.hints.mandatory}"
-                                                        columns="#{bindings.txtReceivingSroreName.hints.displayWidth}"
-                                                        shortDesc="#{bindings.txtReceivingSroreName.hints.tooltip}"
-                                                        simple="true" autoSubmit="true">
-                            <f:validator binding="#{bindings.txtReceivingSroreName.validator}"/>
-                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedReceiveStoreValues}"/>
-                          </af:inputComboboxListOfValues>
+                          <af:inputText value="#{bindings.Supref.inputValue}" label="#{bindings.Supref.hints.label}"
+                                        required="#{bindings.Supref.hints.mandatory}"
+                                        columns="#{bindings.Supref.hints.displayWidth}"
+                                        maximumLength="#{bindings.Supref.hints.precision}"
+                                        shortDesc="#{bindings.Supref.hints.tooltip}" id="it15" simple="true">
+                            <f:validator binding="#{bindings.Supref.validator}"/>
+                          </af:inputText>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="15%" id="gc14" valign="middle">
-                          <af:outputLabel value="#{bindings.Gatepassrefno.hints.label}" id="ol3"/>
+                          <af:outputLabel value="#{bindings.SuprefDate.hints.label}" id="ol3"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc15" valign="middle"
                                      halign="stretch">
-                          <af:inputText value="#{bindings.Gatepassrefno.inputValue}"
-                                        label="#{bindings.Gatepassrefno.hints.label}"
-                                        required="#{bindings.Gatepassrefno.hints.mandatory}"
-                                        columns="#{bindings.Gatepassrefno.hints.displayWidth}"
-                                        maximumLength="#{bindings.Gatepassrefno.hints.precision}"
-                                        shortDesc="#{bindings.Gatepassrefno.hints.tooltip}" id="it1" simple="true">
-                            <f:validator binding="#{bindings.Gatepassrefno.validator}"/>
-                          </af:inputText>
+                          <af:inputDate value="#{bindings.SuprefDate.inputValue}"
+                                        label="#{bindings.SuprefDate.hints.label}"
+                                        required="#{bindings.SuprefDate.hints.mandatory}"
+                                        columns="#{bindings.SuprefDate.hints.displayWidth}"
+                                        shortDesc="#{bindings.SuprefDate.hints.tooltip}" id="id2" simple="true">
+                            <f:validator binding="#{bindings.SuprefDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.SuprefDate.format}"/>
+                          </af:inputDate>
                         </af:gridCell>
                       </af:gridRow>
                       <af:gridRow id="gr7">

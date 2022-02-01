@@ -5,6 +5,38 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="OtherBillsCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
+              id="OtherBillsCRUDIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <attributeValues IterBinding="OtherBillsCRUDIterator" id="Posted">
+      <AttrNames>
+        <Item Value="Posted"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OtherBillsCRUDIterator" id="Billid">
+      <AttrNames>
+        <Item Value="Billid"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="OtherBillsCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
+                  id="txtLocationName"/>
+    <attributeValues IterBinding="OtherBillsCRUDIterator" id="BillDate">
+      <AttrNames>
+        <Item Value="BillDate"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="OtherBillsCRUDIterator" StaticList="false" Uses="LovtxtSupplierName"
+                  id="txtSupplierName"/>
+    <attributeValues IterBinding="OtherBillsCRUDIterator" id="Supref">
+      <AttrNames>
+        <Item Value="Supref"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OtherBillsCRUDIterator" id="SuprefDate">
+      <AttrNames>
+        <Item Value="SuprefDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
 </pageDefinition>

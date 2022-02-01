@@ -140,7 +140,7 @@
     Precision="15"
     ColumnName="SUPREF_DATE"
     SQLType="VARCHAR"
-    Type="java.lang.String"
+    Type="oracle.jbo.domain.Date"
     ColumnType="VARCHAR2"
     TableName="OTHER_BILLS">
     <DesignTime>
@@ -608,7 +608,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="OTHER_BILLS"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression

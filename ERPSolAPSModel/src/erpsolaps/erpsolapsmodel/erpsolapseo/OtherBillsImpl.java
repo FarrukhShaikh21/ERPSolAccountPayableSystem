@@ -112,7 +112,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillsImpl obj, Object value) {
-                obj.setSuprefDate((String) value);
+                obj.setSuprefDate((Date) value);
             }
         }
         ,
@@ -806,15 +806,15 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for SuprefDate, using the alias name SuprefDate.
      * @return the value of SuprefDate
      */
-    public String getSuprefDate() {
-        return (String) getAttributeInternal(SUPREFDATE);
+    public Date getSuprefDate() {
+        return (Date) getAttributeInternal(SUPREFDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for SuprefDate.
      * @param value value to set the SuprefDate
      */
-    public void setSuprefDate(String value) {
+    public void setSuprefDate(Date value) {
         setAttributeInternal(SUPREFDATE, value);
     }
 

@@ -22,12 +22,28 @@
     </DesignTime>
   </Containee>
   <Containee
+    Name="erpsolapsassoc"
+    PackageName="erpsolaps.erpsolapsmodel.erpsolapsassoc"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="erpsolapseo"
     PackageName="erpsolaps.erpsolapsmodel.erpsolapseo"
     ObjectType="JboPackage">
     <DesignTime>
       <Attr Name="_EO" Value="true"/>
       <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="erpsolapslink"
+    PackageName="erpsolaps.erpsolapsmodel.erpsolapslink"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
     </DesignTime>
   </Containee>
   <Containee

@@ -331,4 +331,10 @@
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllLocationsView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.AllLocationsOtherBillsLocationIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

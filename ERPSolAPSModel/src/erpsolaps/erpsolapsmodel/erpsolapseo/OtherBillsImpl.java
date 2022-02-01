@@ -545,6 +545,16 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
                 obj.setAllLocations((EntityImpl) value);
             }
         }
+        ,
+        PuSuppliers {
+            public Object get(OtherBillsImpl obj) {
+                return obj.getPuSuppliers();
+            }
+
+            public void put(OtherBillsImpl obj, Object value) {
+                obj.setPuSuppliers((EntityImpl) value);
+            }
+        }
         ;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -626,6 +636,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
     public static final int BILLIDSEQ = AttributesEnum.Billidseq.index();
     public static final int OTHERBILLDET = AttributesEnum.OtherBillDet.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
+    public static final int PUSUPPLIERS = AttributesEnum.PuSuppliers.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1492,6 +1503,21 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setAllLocations(EntityImpl value) {
         setAttributeInternal(ALLLOCATIONS, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getPuSuppliers() {
+        return (EntityImpl) getAttributeInternal(PUSUPPLIERS);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setPuSuppliers(EntityImpl value) {
+        setAttributeInternal(PUSUPPLIERS, value);
     }
 
 

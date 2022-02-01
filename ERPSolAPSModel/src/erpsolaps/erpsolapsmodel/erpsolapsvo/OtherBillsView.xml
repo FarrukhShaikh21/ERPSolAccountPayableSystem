@@ -337,4 +337,10 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PuSuppliersView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.PuSuppliersOthreBillsSupplierIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -515,6 +515,13 @@
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
   </Attribute>
+  <AccessorAttribute
+    Name="OtherBills"
+    Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersOthreBillsSupplierIdAssoc"
+    AssociationEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersOthreBillsSupplierIdAssoc.OtherBills"
+    AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersOthreBillsSupplierIdAssoc.PuSuppliers"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpkpuSuppliers"
     PrimaryKey="true">

@@ -172,12 +172,6 @@
     EntityUsage="OtherBillDet"
     AliasName="PO_AMOUNT"/>
   <ViewAttribute
-    Name="Billiddetseq"
-    PrecisionRule="true"
-    EntityAttrName="Billiddetseq"
-    EntityUsage="OtherBillDet"
-    AliasName="BILLIDDETSEQ"/>
-  <ViewAttribute
     Name="Billidseq"
     PrecisionRule="true"
     EntityAttrName="Billidseq"

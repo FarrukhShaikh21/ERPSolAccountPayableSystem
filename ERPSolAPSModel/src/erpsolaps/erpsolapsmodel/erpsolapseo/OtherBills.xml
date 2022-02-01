@@ -18,14 +18,12 @@
   </DesignTime>
   <Attribute
     Name="Billid"
-    IsNotNull="true"
-    Precision="15"
+    Precision="18"
     ColumnName="BILLID"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="OTHER_BILLS"
-    PrimaryKey="true">
+    TableName="OTHER_BILLS">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -35,7 +33,7 @@
     IsNotNull="true"
     ColumnName="BILL_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="OTHER_BILLS"/>
   <Attribute
@@ -213,7 +211,7 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="OTHER_BILLS"/>
   <Attribute
@@ -232,7 +230,7 @@
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="OTHER_BILLS"/>
   <Attribute
@@ -299,7 +297,7 @@
     Name="MigratedDate"
     ColumnName="MIGRATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="OTHER_BILLS"/>
   <Attribute
@@ -375,7 +373,7 @@
     Name="LcCompleteDate"
     ColumnName="LC_COMPLETE_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="OTHER_BILLS"/>
   <Attribute
@@ -479,7 +477,7 @@
     Name="PoSuppRefDate"
     ColumnName="PO_SUPP_REF_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="OTHER_BILLS"/>
   <Attribute
@@ -522,7 +520,7 @@
     Name="AuditorCheckDate"
     ColumnName="AUDITOR_CHECK_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="OTHER_BILLS"/>
   <Attribute
@@ -553,9 +551,10 @@
     Name="Billidseq"
     ColumnName="BILLIDSEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="OTHER_BILLS"/>
+    TableName="OTHER_BILLS"
+    PrimaryKey="true"/>
   <AccessorAttribute
     Name="OtherBillDet"
     Association="erpsolaps.erpsolapsmodel.erpsolapseo.OthbilldetBilidFkAssoc"
@@ -570,7 +569,7 @@
       <Attr Name="_DBObjectName" Value="PK_OTHER_BILLS"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBills.Billid"/>
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBills.Billidseq"/>
     </AttrArray>
   </Key>
   <Key

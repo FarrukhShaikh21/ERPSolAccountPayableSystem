@@ -1,5 +1,6 @@
 package erpsolaps.erpsolapsmodel.erpsolapseo;
 
+import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel;
 import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import java.math.BigDecimal;
@@ -9,6 +10,7 @@ import java.sql.Timestamp;
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
+import oracle.jbo.domain.Date;
 import oracle.jbo.server.AttributeDefImpl;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -39,7 +41,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillsImpl obj, Object value) {
-                obj.setBillDate((Timestamp) value);
+                obj.setBillDate((Date) value);
             }
         }
         ,
@@ -189,7 +191,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillsImpl obj, Object value) {
-                obj.setCreatedDate((Timestamp) value);
+                obj.setCreatedDate((Date) value);
             }
         }
         ,
@@ -209,7 +211,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillsImpl obj, Object value) {
-                obj.setModifiedDate((Timestamp) value);
+                obj.setModifiedDate((Date) value);
             }
         }
         ,
@@ -269,7 +271,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillsImpl obj, Object value) {
-                obj.setMigratedDate((Timestamp) value);
+                obj.setMigratedDate((Date) value);
             }
         }
         ,
@@ -349,7 +351,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillsImpl obj, Object value) {
-                obj.setLcCompleteDate((Timestamp) value);
+                obj.setLcCompleteDate((Date) value);
             }
         }
         ,
@@ -449,7 +451,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillsImpl obj, Object value) {
-                obj.setPoSuppRefDate((Timestamp) value);
+                obj.setPoSuppRefDate((Date) value);
             }
         }
         ,
@@ -489,7 +491,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillsImpl obj, Object value) {
-                obj.setAuditorCheckDate((Timestamp) value);
+                obj.setAuditorCheckDate((Date) value);
             }
         }
         ,
@@ -519,7 +521,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillsImpl obj, Object value) {
-                obj.setBillidseq((BigDecimal) value);
+                obj.setBillidseq((Integer) value);
             }
         }
         ,
@@ -559,6 +561,8 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             return vals;
         }
     }
+
+
     public static final int BILLID = AttributesEnum.Billid.index();
     public static final int BILLDATE = AttributesEnum.BillDate.index();
     public static final int COMPANYID = AttributesEnum.Companyid.index();
@@ -618,6 +622,14 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpsolaps.erpsolapsmodel.erpsolapseo.OtherBills");
+    }
+
+
+    /**
      * Gets the attribute value for Billid, using the alias name Billid.
      * @return the value of Billid
      */
@@ -637,15 +649,15 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for BillDate, using the alias name BillDate.
      * @return the value of BillDate
      */
-    public Timestamp getBillDate() {
-        return (Timestamp) getAttributeInternal(BILLDATE);
+    public Date getBillDate() {
+        return (Date) getAttributeInternal(BILLDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for BillDate.
      * @param value value to set the BillDate
      */
-    public void setBillDate(Timestamp value) {
+    public void setBillDate(Date value) {
         setAttributeInternal(BILLDATE, value);
     }
 
@@ -877,15 +889,15 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for CreatedDate, using the alias name CreatedDate.
      * @return the value of CreatedDate
      */
-    public Timestamp getCreatedDate() {
-        return (Timestamp) getAttributeInternal(CREATEDDATE);
+    public Date getCreatedDate() {
+        return (Date) getAttributeInternal(CREATEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedDate.
      * @param value value to set the CreatedDate
      */
-    public void setCreatedDate(Timestamp value) {
+    public void setCreatedDate(Date value) {
         setAttributeInternal(CREATEDDATE, value);
     }
 
@@ -909,15 +921,15 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for ModifiedDate, using the alias name ModifiedDate.
      * @return the value of ModifiedDate
      */
-    public Timestamp getModifiedDate() {
-        return (Timestamp) getAttributeInternal(MODIFIEDDATE);
+    public Date getModifiedDate() {
+        return (Date) getAttributeInternal(MODIFIEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ModifiedDate.
      * @param value value to set the ModifiedDate
      */
-    public void setModifiedDate(Timestamp value) {
+    public void setModifiedDate(Date value) {
         setAttributeInternal(MODIFIEDDATE, value);
     }
 
@@ -1005,15 +1017,15 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for MigratedDate, using the alias name MigratedDate.
      * @return the value of MigratedDate
      */
-    public Timestamp getMigratedDate() {
-        return (Timestamp) getAttributeInternal(MIGRATEDDATE);
+    public Date getMigratedDate() {
+        return (Date) getAttributeInternal(MIGRATEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MigratedDate.
      * @param value value to set the MigratedDate
      */
-    public void setMigratedDate(Timestamp value) {
+    public void setMigratedDate(Date value) {
         setAttributeInternal(MIGRATEDDATE, value);
     }
 
@@ -1133,15 +1145,15 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for LcCompleteDate, using the alias name LcCompleteDate.
      * @return the value of LcCompleteDate
      */
-    public Timestamp getLcCompleteDate() {
-        return (Timestamp) getAttributeInternal(LCCOMPLETEDATE);
+    public Date getLcCompleteDate() {
+        return (Date) getAttributeInternal(LCCOMPLETEDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LcCompleteDate.
      * @param value value to set the LcCompleteDate
      */
-    public void setLcCompleteDate(Timestamp value) {
+    public void setLcCompleteDate(Date value) {
         setAttributeInternal(LCCOMPLETEDATE, value);
     }
 
@@ -1293,15 +1305,15 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for PoSuppRefDate, using the alias name PoSuppRefDate.
      * @return the value of PoSuppRefDate
      */
-    public Timestamp getPoSuppRefDate() {
-        return (Timestamp) getAttributeInternal(POSUPPREFDATE);
+    public Date getPoSuppRefDate() {
+        return (Date) getAttributeInternal(POSUPPREFDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for PoSuppRefDate.
      * @param value value to set the PoSuppRefDate
      */
-    public void setPoSuppRefDate(Timestamp value) {
+    public void setPoSuppRefDate(Date value) {
         setAttributeInternal(POSUPPREFDATE, value);
     }
 
@@ -1357,15 +1369,15 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for AuditorCheckDate, using the alias name AuditorCheckDate.
      * @return the value of AuditorCheckDate
      */
-    public Timestamp getAuditorCheckDate() {
-        return (Timestamp) getAttributeInternal(AUDITORCHECKDATE);
+    public Date getAuditorCheckDate() {
+        return (Date) getAttributeInternal(AUDITORCHECKDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for AuditorCheckDate.
      * @param value value to set the AuditorCheckDate
      */
-    public void setAuditorCheckDate(Timestamp value) {
+    public void setAuditorCheckDate(Date value) {
         setAttributeInternal(AUDITORCHECKDATE, value);
     }
 
@@ -1405,15 +1417,15 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for Billidseq, using the alias name Billidseq.
      * @return the value of Billidseq
      */
-    public BigDecimal getBillidseq() {
-        return (BigDecimal) getAttributeInternal(BILLIDSEQ);
+    public Integer getBillidseq() {
+        return (Integer) getAttributeInternal(BILLIDSEQ);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Billidseq.
      * @param value value to set the Billidseq
      */
-    public void setBillidseq(BigDecimal value) {
+    public void setBillidseq(Integer value) {
         setAttributeInternal(BILLIDSEQ, value);
     }
 
@@ -1455,20 +1467,14 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
         return (RowIterator) getAttributeInternal(OTHERBILLDET);
     }
 
+
     /**
-     * @param billid key constituent
+     * @param billidseq key constituent
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(String billid) {
-        return new Key(new Object[] { billid });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpsolaps.erpsolapsmodel.erpsolapseo.OtherBills");
+    public static Key createPrimaryKey(Integer billidseq) {
+        return new Key(new Object[] { billidseq });
     }
 
     /**
@@ -1476,6 +1482,10 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
+        setERPSolPKColumnName("Billidseq");
+        setERPSolPKSeqName("OTHER_BILLS_SEQ");
+        setCompanyid(ERPSolGlobClassModel.doGetUserCompanyCode());
+        setLocationid(ERPSolGlobClassModel.doGetUserLocationCode());
         super.create(attributeList);
     }
 

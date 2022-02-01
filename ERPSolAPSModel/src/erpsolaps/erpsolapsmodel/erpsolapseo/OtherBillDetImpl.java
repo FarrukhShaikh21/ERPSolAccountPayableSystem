@@ -1,5 +1,6 @@
 package erpsolaps.erpsolapsmodel.erpsolapseo;
 
+import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel;
 import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import java.math.BigDecimal;
@@ -8,6 +9,7 @@ import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.domain.Date;
 import oracle.jbo.server.AttributeDefImpl;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -88,7 +90,7 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillDetImpl obj, Object value) {
-                obj.setCreatedDate((Timestamp) value);
+                obj.setCreatedDate((Date) value);
             }
         }
         ,
@@ -108,7 +110,7 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillDetImpl obj, Object value) {
-                obj.setModifiedDate((Timestamp) value);
+                obj.setModifiedDate((Date) value);
             }
         }
         ,
@@ -118,7 +120,7 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillDetImpl obj, Object value) {
-                obj.setSeqid((BigDecimal) value);
+                obj.setSeqid((Integer) value);
             }
         }
         ,
@@ -272,23 +274,13 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ,
-        Billiddetseq {
-            public Object get(OtherBillDetImpl obj) {
-                return obj.getBilliddetseq();
-            }
-
-            public void put(OtherBillDetImpl obj, Object value) {
-                obj.setBilliddetseq((BigDecimal) value);
-            }
-        }
-        ,
         Billidseq {
             public Object get(OtherBillDetImpl obj) {
                 return obj.getBillidseq();
             }
 
             public void put(OtherBillDetImpl obj, Object value) {
-                obj.setBillidseq((BigDecimal) value);
+                obj.setBillidseq((Integer) value);
             }
         }
         ,
@@ -328,6 +320,8 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
             return vals;
         }
     }
+
+
     public static final int BILLID = AttributesEnum.Billid.index();
     public static final int GLCODE = AttributesEnum.Glcode.index();
     public static final int COSTCENTER = AttributesEnum.Costcenter.index();
@@ -353,7 +347,6 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
     public static final int MEMOBILLID = AttributesEnum.MemoBillid.index();
     public static final int EXCHANGERATE = AttributesEnum.ExchangeRate.index();
     public static final int POAMOUNT = AttributesEnum.PoAmount.index();
-    public static final int BILLIDDETSEQ = AttributesEnum.Billiddetseq.index();
     public static final int BILLIDSEQ = AttributesEnum.Billidseq.index();
     public static final int OTHERBILLS = AttributesEnum.OtherBills.index();
 
@@ -362,6 +355,14 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
      */
     public OtherBillDetImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpsolaps.erpsolapsmodel.erpsolapseo.OtherBillDet");
+    }
+
 
     /**
      * Gets the attribute value for Billid, using the alias name Billid.
@@ -463,15 +464,15 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for CreatedDate, using the alias name CreatedDate.
      * @return the value of CreatedDate
      */
-    public Timestamp getCreatedDate() {
-        return (Timestamp) getAttributeInternal(CREATEDDATE);
+    public Date getCreatedDate() {
+        return (Date) getAttributeInternal(CREATEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedDate.
      * @param value value to set the CreatedDate
      */
-    public void setCreatedDate(Timestamp value) {
+    public void setCreatedDate(Date value) {
         setAttributeInternal(CREATEDDATE, value);
     }
 
@@ -495,15 +496,15 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for ModifiedDate, using the alias name ModifiedDate.
      * @return the value of ModifiedDate
      */
-    public Timestamp getModifiedDate() {
-        return (Timestamp) getAttributeInternal(MODIFIEDDATE);
+    public Date getModifiedDate() {
+        return (Date) getAttributeInternal(MODIFIEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ModifiedDate.
      * @param value value to set the ModifiedDate
      */
-    public void setModifiedDate(Timestamp value) {
+    public void setModifiedDate(Date value) {
         setAttributeInternal(MODIFIEDDATE, value);
     }
 
@@ -511,15 +512,15 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for Seqid, using the alias name Seqid.
      * @return the value of Seqid
      */
-    public BigDecimal getSeqid() {
-        return (BigDecimal) getAttributeInternal(SEQID);
+    public Integer getSeqid() {
+        return (Integer) getAttributeInternal(SEQID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Seqid.
      * @param value value to set the Seqid
      */
-    public void setSeqid(BigDecimal value) {
+    public void setSeqid(Integer value) {
         setAttributeInternal(SEQID, value);
     }
 
@@ -763,35 +764,20 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
         setAttributeInternal(POAMOUNT, value);
     }
 
-    /**
-     * Gets the attribute value for Billiddetseq, using the alias name Billiddetseq.
-     * @return the value of Billiddetseq
-     */
-    public BigDecimal getBilliddetseq() {
-        return (BigDecimal) getAttributeInternal(BILLIDDETSEQ);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for Billiddetseq.
-     * @param value value to set the Billiddetseq
-     */
-    public void setBilliddetseq(BigDecimal value) {
-        setAttributeInternal(BILLIDDETSEQ, value);
-    }
 
     /**
      * Gets the attribute value for Billidseq, using the alias name Billidseq.
      * @return the value of Billidseq
      */
-    public BigDecimal getBillidseq() {
-        return (BigDecimal) getAttributeInternal(BILLIDSEQ);
+    public Integer getBillidseq() {
+        return (Integer) getAttributeInternal(BILLIDSEQ);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Billidseq.
      * @param value value to set the Billidseq
      */
-    public void setBillidseq(BigDecimal value) {
+    public void setBillidseq(Integer value) {
         setAttributeInternal(BILLIDSEQ, value);
     }
 
@@ -840,20 +826,14 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
         setAttributeInternal(OTHERBILLS, value);
     }
 
+
     /**
      * @param seqid key constituent
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal seqid) {
+    public static Key createPrimaryKey(Integer seqid) {
         return new Key(new Object[] { seqid });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpsolaps.erpsolapsmodel.erpsolapseo.OtherBillDet");
     }
 
     /**
@@ -861,6 +841,8 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
+        setERPSolPKColumnName("Seqid");
+        setERPSolPKSeqName("OTHER_BILL_DET_SEQ");
         super.create(attributeList);
     }
 

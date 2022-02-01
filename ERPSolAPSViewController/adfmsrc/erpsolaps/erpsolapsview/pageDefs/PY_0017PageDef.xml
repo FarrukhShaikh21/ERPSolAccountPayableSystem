@@ -38,5 +38,15 @@
         <Item Value="SuprefDate"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="OtherBillsCRUDIterator" id="Remarks">
+      <AttrNames>
+        <Item Value="Remarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OtherBillsCRUDIterator" id="Locationid">
+      <AttrNames>
+        <Item Value="Locationid"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

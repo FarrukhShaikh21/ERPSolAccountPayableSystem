@@ -244,6 +244,8 @@
                                                         shortDesc="#{bindings.txtSupplierName.hints.tooltip}"
                                                         simple="true" autoSubmit="true">
                             <f:validator binding="#{bindings.txtSupplierName.validator}"/>
+                            <af:autoSuggestBehavior/>
+                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedSupplierValues}"/>
                           </af:inputComboboxListOfValues>
                         </af:gridCell>
                       </af:gridRow>
@@ -273,32 +275,6 @@
                             <f:validator binding="#{bindings.SuprefDate.validator}"/>
                             <af:convertDateTime pattern="#{bindings.SuprefDate.format}"/>
                           </af:inputDate>
-                        </af:gridCell>
-                      </af:gridRow>
-                      <af:gridRow id="gr7">
-                        <af:gridCell id="gc16" width="15%" valign="middle">
-                          <af:outputLabel value="#{bindings.BiltyNo.hints.label}" id="ol7"/>
-                        </af:gridCell>
-                        <af:gridCell id="gc17" width="35%">
-                          <af:inputText value="#{bindings.BiltyNo.inputValue}" label="#{bindings.BiltyNo.hints.label}"
-                                        required="#{bindings.BiltyNo.hints.mandatory}"
-                                        columns="#{bindings.BiltyNo.hints.displayWidth}"
-                                        maximumLength="#{bindings.BiltyNo.hints.precision}"
-                                        shortDesc="#{bindings.BiltyNo.hints.tooltip}" id="it6" simple="true">
-                            <f:validator binding="#{bindings.BiltyNo.validator}"/>
-                          </af:inputText>
-                        </af:gridCell>
-                        <af:gridCell id="gc18" width="15%" valign="middle">
-                          <af:outputLabel value="#{bindings.Supplierid.label}" id="ol6"/>
-                        </af:gridCell>
-                        <af:gridCell id="gc19" width="35%">
-                          <af:selectOneChoice value="#{bindings.Supplierid.inputValue}"
-                                              label="#{bindings.Supplierid.label}"
-                                              required="#{bindings.Supplierid.hints.mandatory}"
-                                              shortDesc="#{bindings.Supplierid.hints.tooltip}" id="soc2" simple="true">
-                            <f:selectItems value="#{bindings.Supplierid.items}" id="si3"/>
-                            <f:validator binding="#{bindings.Supplierid.validator}"/>
-                          </af:selectOneChoice>
                         </af:gridCell>
                       </af:gridRow>
                       <af:gridRow height="30px" marginBottom="5px" id="gr9">

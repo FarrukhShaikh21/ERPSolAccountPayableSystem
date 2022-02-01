@@ -9,15 +9,15 @@
       <property
          name="page">/ERPSolAPSException.jsf</property>
       <property
-         name="start">true</property>
+         name="start">false</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>ERPSolAPSException&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>ERPSolAPSException&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">true</property>
       <property
-         name="y">295.44824</property>
+         name="y">91.0459</property>
       <property
-         name="x">179.36426</property>
+         name="x">-13.635742</property>
    </View>
    <View
       id="View3">
@@ -30,8 +30,243 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">265.44824</property>
+         name="y">421.54004</property>
       <property
-         name="x">467.01953</property>
+         name="x">1152.0195</property>
    </View>
+   <MethodCall
+      id="MethodCall4">
+      <property
+         name="activityId">doERPGotoAPSActivity</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doERPGotoAPSActivity&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">448.79297</property>
+      <property
+         name="x">307.0</property>
+   </MethodCall>
+   <MethodCall
+      id="MethodCall5">
+      <property
+         name="activityId">doERPSolAPSSessionGlobals</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doERPSolAPSSessionGlobals&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">274.49414</property>
+      <property
+         name="x">124.0</property>
+   </MethodCall>
+   <MethodCall
+      id="MethodCall6">
+      <property
+         name="activityId">ExeParaSetupFormsAPS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeParaSetupFormsAPS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">274.0459</property>
+      <property
+         name="x">327.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="MethodCall5"
+      to="MethodCall6">
+      <property
+         name="fromOutcome">ERP-GOTO-APS-MAIN</property>
+      <property
+         name="sdm:polyPoints">R50,165.0,274.14355,286.35156,273.6953,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall8">
+      <property
+         name="activityId">ExeParaTransactionFormsAPS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeParaTransactionFormsAPS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">271.64355</property>
+      <property
+         name="x">570.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="MethodCall6"
+      to="MethodCall8">
+      <property
+         name="fromOutcome">ERP-GOTO-APS-MAIN</property>
+      <property
+         name="sdm:polyPoints">R50,368.35156,273.6953,529.35156,271.29297,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall10">
+      <property
+         name="activityId">ExeParaReverseFormsAPS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeParaReverseFormsAPS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">269.74707</property>
+      <property
+         name="x">752.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase11"
+      from="MethodCall8"
+      to="MethodCall10">
+      <property
+         name="fromOutcome">ERP-GOTO-APS-MAIN</property>
+      <property
+         name="sdm:polyPoints">R50,611.35156,271.29297,711.35156,269.39648,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall12">
+      <property
+         name="activityId">ExeParaReverseReportsAPS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeParaReverseReportsAPS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">270.74707</property>
+      <property
+         name="x">950.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase13"
+      from="MethodCall10"
+      to="MethodCall12">
+      <property
+         name="fromOutcome">ERP-GOTO-APS-MAIN</property>
+      <property
+         name="sdm:polyPoints">R50,793.35156,269.39648,909.35156,270.39648,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall14">
+      <property
+         name="activityId">ExeParaReverseReportsDetailAPS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeParaReverseReportsDetailAPS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">270.74707</property>
+      <property
+         name="x">1152.3516</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase15"
+      from="MethodCall12"
+      to="MethodCall14">
+      <property
+         name="fromOutcome">ERP-GOTO-APS-MAIN</property>
+      <property
+         name="sdm:polyPoints">R50,991.35156,270.39648,1111.3516,270.39648,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase16"
+      from="MethodCall14"
+      to="View3">
+      <property
+         name="fromOutcome">ERP-GOTO-APS-MAIN</property>
+      <property
+         name="sdm:polyPoints">B50,1152.3516,324.39648,1152.0195,367.18945,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall17">
+      <property
+         name="activityId">RollbackBeforeActivityAPS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>RollbackBeforeActivityAPS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">448.34473</property>
+      <property
+         name="x">84.5</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase18"
+      from="MethodCall17"
+      to="MethodCall4">
+      <property
+         name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
+      <property
+         name="sdm:polyPoints">R50,125.5,447.99414,266.0,448.44238,L50</property>
+   </ControlFlowCase>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule19">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">447.59766</property>
+      <property
+         name="x">-144.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase20"
+      from="WildcardControlFlowRule19"
+      to="MethodCall17">
+      <property
+         name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
+      <property
+         name="sdm:polyPoints">R50,-108.0,447.74707,43.5,447.99414,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View21">
+      <property
+         name="activityId">PY_0017</property>
+      <property
+         name="page">/PY_0017.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PY_0017&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">600.09766</property>
+      <property
+         name="x">307.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase22"
+      from="MethodCall4"
+      to="View21">
+      <property
+         name="fromOutcome">ERP-ACT-PY-0017</property>
+      <property
+         name="sdm:polyPoints">B50,307.0,502.44238,307.5,545.7471,T50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn23">
+      <property
+         name="activityId">ACT-ERP-APS-RETURN</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ACT-ERP-APS-RETURN&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ACT-ERP-APS-RETURN&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">78.59766</property>
+      <property
+         name="x">751.0</property>
+   </TaskFlowReturn>
 </SDM>

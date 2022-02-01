@@ -1,10 +1,43 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="ERPSOLAPSBTF">
-    <default-activity>ERPSolAPSException</default-activity>
+    <default-activity>doERPSolAPSSessionGlobals</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <task-flow-reentry>
+      <reentry-not-allowed/>
+    </task-flow-reentry>
+    <input-parameter-definition id="__21">
+      <name>P_ADF_USERCODE</name>
+      <value>#{pageFlowScope.ERPSolAPSPageFlowBean.ERPSolStrUserCode}</value>
+      <class>erpsolaps.erpsolapsview.erpsolapsclass.ERPSolAPSBean</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__22">
+      <name>P_ADF_USER_LOCATIONCODE</name>
+      <value>#{pageFlowScope.ERPSolAPSPageFlowBean.ERPSolStrUserLocationCode}</value>
+      <class>erpsolaps.erpsolapsview.erpsolapsclass.ERPSolAPSBean</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__23">
+      <name>P_ADF_USER_STORECODE</name>
+      <value>#{pageFlowScope.ERPSolAPSPageFlowBean.ERPSolStrUserStoreCode}</value>
+      <class>erpsolaps.erpsolapsview.erpsolapsclass.ERPSolAPSBean</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__24">
+      <name>P_ADF_USER_REGIONCODE</name>
+      <value>#{pageFlowScope.ERPSolAPSPageFlowBean.ERPSolStrUserRegionCode}</value>
+      <class>erpsolaps.erpsolapsview.erpsolapsclass.ERPSolAPSBean</class>
+    </input-parameter-definition>
+    <managed-bean id="__1">
+      <managed-bean-name>ERPSolTempBean</managed-bean-name>
+      <managed-bean-class>erpsoltemp.erpsoltempview.erptempclass.ERPSolutionTemplateBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__2">
+      <managed-bean-name>ERPSolAPSPageFlowBean</managed-bean-name>
+      <managed-bean-class>erpsolaps.erpsolapsview.erpsolapsclass.ERPSolAPSBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <exception-handler>ERPSolAPSException</exception-handler>
     <view id="ERPSolAPSException">
       <page>/ERPSolAPSException.jsf</page>
@@ -12,5 +45,127 @@
     <view id="ERPSolAPSMain">
       <page>/ERPSolAPSMain.jsf</page>
     </view>
+    <method-call id="doERPGotoAPSActivity">
+      <method>#{pageFlowScope.ERPSolTempBean.doGotoERPSolActivity}</method>
+      <outcome>
+        <to-string/>
+      </outcome>
+    </method-call>
+    <method-call id="doERPSolAPSSessionGlobals">
+      <method>#{pageFlowScope.ERPSolAPSPageFlowBean.doSetERPSolAPSSessionGlobals}</method>
+      <outcome>
+        <fixed-outcome>ERP-GOTO-APS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeParaSetupFormsAPS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-GOTO-APS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeParaTransactionFormsAPS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-GOTO-APS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeParaReverseFormsAPS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-GOTO-APS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeParaReverseReportsAPS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-GOTO-APS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeParaReverseReportsDetailAPS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-GOTO-APS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="RollbackBeforeActivityAPS">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>ACTStartERPSolutionTaskFlow</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="PY_0017">
+      <page>/PY_0017.jsf</page>
+    </view>
+    <task-flow-return id="ACT-ERP-APS-RETURN">
+      <outcome>
+        <name>ACT-ERP-APS-RETURN</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__3">
+      <from-activity-id>doERPSolAPSSessionGlobals</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>ERP-GOTO-APS-MAIN</from-outcome>
+        <to-activity-id>ExeParaSetupFormsAPS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>ExeParaSetupFormsAPS</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>ERP-GOTO-APS-MAIN</from-outcome>
+        <to-activity-id>ExeParaTransactionFormsAPS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>ExeParaTransactionFormsAPS</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>ERP-GOTO-APS-MAIN</from-outcome>
+        <to-activity-id>ExeParaReverseFormsAPS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id>ExeParaReverseFormsAPS</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>ERP-GOTO-APS-MAIN</from-outcome>
+        <to-activity-id>ExeParaReverseReportsAPS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id>ExeParaReverseReportsAPS</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome>ERP-GOTO-APS-MAIN</from-outcome>
+        <to-activity-id>ExeParaReverseReportsDetailAPS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__13">
+      <from-activity-id>ExeParaReverseReportsDetailAPS</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome>ERP-GOTO-APS-MAIN</from-outcome>
+        <to-activity-id>ERPSolAPSMain</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id>RollbackBeforeActivityAPS</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome>ACTStartERPSolutionTaskFlow</from-outcome>
+        <to-activity-id>doERPGotoAPSActivity</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__17">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__18">
+        <from-outcome>ACTStartERPSolutionTaskFlow</from-outcome>
+        <to-activity-id>RollbackBeforeActivityAPS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__19">
+      <from-activity-id>doERPGotoAPSActivity</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome>ERP-ACT-PY-0017</from-outcome>
+        <to-activity-id>PY_0017</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <visibility>
+      <url-invoke-allowed/>
+    </visibility>
   </task-flow-definition>
 </adfc-config>

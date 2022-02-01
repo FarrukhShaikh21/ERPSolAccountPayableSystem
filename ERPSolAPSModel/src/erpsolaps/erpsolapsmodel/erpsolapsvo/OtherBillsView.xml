@@ -326,6 +326,22 @@
     EntityAttrName="Billidseq"
     EntityUsage="OtherBills"
     AliasName="BILLIDSEQ"/>
+  <ViewAttribute
+    Name="txtLocationName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtLocationName"
+    EntityUsage="OtherBills"
+    AliasName="TXT_LOCATION_NAME"/>
+  <ViewAttribute
+    Name="txtSupplierName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtSupplierName"
+    EntityUsage="OtherBills"
+    AliasName="TXT_SUPPLIER_NAME"/>
   <ViewLinkAccessor
     Name="OtherBillDetView"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"

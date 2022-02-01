@@ -526,6 +526,26 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ,
+        txtLocationName {
+            public Object get(OtherBillsImpl obj) {
+                return obj.gettxtLocationName();
+            }
+
+            public void put(OtherBillsImpl obj, Object value) {
+                obj.settxtLocationName((String) value);
+            }
+        }
+        ,
+        txtSupplierName {
+            public Object get(OtherBillsImpl obj) {
+                return obj.gettxtSupplierName();
+            }
+
+            public void put(OtherBillsImpl obj, Object value) {
+                obj.settxtSupplierName((String) value);
+            }
+        }
+        ,
         OtherBillDet {
             public Object get(OtherBillsImpl obj) {
                 return obj.getOtherBillDet();
@@ -634,6 +654,8 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
     public static final int AUDITORCHECKREMARKS = AttributesEnum.AuditorCheckRemarks.index();
     public static final int LCNO = AttributesEnum.Lcno.index();
     public static final int BILLIDSEQ = AttributesEnum.Billidseq.index();
+    public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
+    public static final int TXTSUPPLIERNAME = AttributesEnum.txtSupplierName.index();
     public static final int OTHERBILLDET = AttributesEnum.OtherBillDet.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
     public static final int PUSUPPLIERS = AttributesEnum.PuSuppliers.index();
@@ -1450,6 +1472,38 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setBillidseq(Integer value) {
         setAttributeInternal(BILLIDSEQ, value);
+    }
+
+    /**
+     * Gets the attribute value for txtLocationName, using the alias name txtLocationName.
+     * @return the value of txtLocationName
+     */
+    public String gettxtLocationName() {
+        return (String) getAttributeInternal(TXTLOCATIONNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtLocationName.
+     * @param value value to set the txtLocationName
+     */
+    public void settxtLocationName(String value) {
+        setAttributeInternal(TXTLOCATIONNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for txtSupplierName, using the alias name txtSupplierName.
+     * @return the value of txtSupplierName
+     */
+    public String gettxtSupplierName() {
+        return (String) getAttributeInternal(TXTSUPPLIERNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtSupplierName.
+     * @param value value to set the txtSupplierName
+     */
+    public void settxtSupplierName(String value) {
+        setAttributeInternal(TXTSUPPLIERNAME, value);
     }
 
     /**

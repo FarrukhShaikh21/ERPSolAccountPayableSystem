@@ -14,7 +14,6 @@
     Cardinality="1"
     Source="true"
     Owner="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers"
-    DeleteContainee="true"
     LockLevel="NONE">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
@@ -30,8 +29,7 @@
   <AssociationEnd
     Name="OtherBills"
     Cardinality="-1"
-    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBills"
-    HasOwner="true">
+    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBills">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="OtherBills"/>

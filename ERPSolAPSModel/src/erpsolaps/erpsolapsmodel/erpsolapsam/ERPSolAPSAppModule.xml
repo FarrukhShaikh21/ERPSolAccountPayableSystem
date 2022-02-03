@@ -19,6 +19,12 @@
   <ViewUsage
     Name="OtherBillDetDetCRUD"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OtherBillDetView"/>
+  <ViewUsage
+    Name="VWChartOfAccountAutoSuggestRO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWChartOfAccountQVO"/>
+  <ViewUsage
+    Name="VWCostCenterAutoSuggestRO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWCostCenterQVO"/>
   <ViewLinkUsage
     Name="OthbilldetBilidFkLink1"
     ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"

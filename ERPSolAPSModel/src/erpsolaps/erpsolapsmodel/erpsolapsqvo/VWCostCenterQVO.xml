@@ -111,6 +111,11 @@
   <AttrArray Name="KeyAttributes">
     <Item Value="Costcenterid"/>
   </AttrArray>
+  <ViewLinkAccessor
+    Name="OtherBillDetView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.VwGLCostCenterOtherBillDetCostCenterIdVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolaps.erpsolapsmodel.ERPSolAPSModelBundle"/>

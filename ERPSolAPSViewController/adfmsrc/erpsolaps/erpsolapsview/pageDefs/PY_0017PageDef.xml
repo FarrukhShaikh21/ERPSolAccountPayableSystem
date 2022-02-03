@@ -70,5 +70,14 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="OtherBillDetDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="OtherBillDetDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <attributeValues IterBinding="OtherBillDetDetCRUDIterator" id="txtSumAmount">
+      <AttrNames>
+        <Item Value="txtSumAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

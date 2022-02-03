@@ -229,11 +229,15 @@
                     <f:facet name="statusbar"/>
                     <f:facet name="secondaryToolbar">
                       <af:toolbar id="t5">
-                        <af:outputText value="Total Transfer Quantity : #{bindings.txtSumTransferQuantity.inputValue}"
-                                       shortDesc="#{bindings.txtSumTransferQuantity.hints.tooltip}" id="ot2"
-                                       inlineStyle="font-weight:bold">
-                          <af:convertNumber groupingUsed="false" pattern="#{bindings.txtSumTransferQuantity.format}"/>
-                        </af:outputText>
+                        <af:inputText value="#{bindings.txtSumAmount.inputValue}"
+                                      label="#{bindings.txtSumAmount.hints.label}"
+                                      required="#{bindings.txtSumAmount.hints.mandatory}"
+                                      columns="#{bindings.txtSumAmount.hints.displayWidth}"
+                                      maximumLength="#{bindings.txtSumAmount.hints.precision}"
+                                      shortDesc="#{bindings.txtSumAmount.hints.tooltip}" id="it7">
+                          <f:validator binding="#{bindings.txtSumAmount.validator}"/>
+                          <af:convertNumber groupingUsed="false" pattern="#{bindings.txtSumAmount.format}"/>
+                        </af:inputText>
                       </af:toolbar>
                     </f:facet>
                     <af:table value="#{bindings.OtherBillDetDetCRUD.collectionModel}" var="row"
@@ -252,6 +256,7 @@
                                                       columns="#{bindings.OtherBillDetDetCRUD.hints.Glcode.displayWidth}"
                                                       shortDesc="#{bindings.OtherBillDetDetCRUD.hints.Glcode.tooltip}">
                           <f:validator binding="#{row.bindings.Glcode.validator}"/>
+                          <af:autoSuggestBehavior/>
                         </af:inputComboboxListOfValues>
                       </af:column>
                       <af:column headerText="#{bindings.OtherBillDetDetCRUD.hints.txtGLDescription.label}" id="c3"

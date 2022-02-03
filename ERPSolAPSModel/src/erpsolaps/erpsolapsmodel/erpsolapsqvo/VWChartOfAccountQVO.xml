@@ -134,6 +134,11 @@ A.glnature_of_a_c , A.glbroad_category , A.glcontrol_a_c ,
   <AttrArray Name="KeyAttributes">
     <Item Value="Glcode"/>
   </AttrArray>
+  <ViewLinkAccessor
+    Name="OtherBillDetView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.VwChartOfAccountOtherBillsGLCodeLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolaps.erpsolapsmodel.ERPSolAPSModelBundle"/>

@@ -177,4 +177,10 @@
     EntityAttrName="Billidseq"
     EntityUsage="OtherBillDet"
     AliasName="BILLIDSEQ"/>
+  <ViewLinkAccessor
+    Name="VWChartOfAccountQVO"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.VwChartOfAccountOtherBillsGLCodeLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

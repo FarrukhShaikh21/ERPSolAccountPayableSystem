@@ -320,9 +320,9 @@
     AliasName="VIEW_ATTR"
     SQLType="NUMERIC">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[getRowSet().sum("FcurrAmount")]]></TransientExpression>
+      trustMode="trusted"><![CDATA[getRowSet().sum("FcurrAmount")]]></TransientExpression>
     <RecalcCondition
-      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+      trustMode="trusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL

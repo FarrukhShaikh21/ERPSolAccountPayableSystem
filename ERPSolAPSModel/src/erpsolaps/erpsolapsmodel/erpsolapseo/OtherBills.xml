@@ -168,7 +168,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OTHER_BILLS"/>
+    TableName="OTHER_BILLS"
+    DefaultValue="0"/>
   <Attribute
     Name="Remarks"
     Precision="200"

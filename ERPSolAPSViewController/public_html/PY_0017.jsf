@@ -254,9 +254,10 @@
                                                       model="#{row.bindings.Glcode.listOfValuesModel}"
                                                       required="#{bindings.OtherBillDetDetCRUD.hints.Glcode.mandatory}"
                                                       columns="#{bindings.OtherBillDetDetCRUD.hints.Glcode.displayWidth}"
-                                                      shortDesc="#{bindings.OtherBillDetDetCRUD.hints.Glcode.tooltip}">
+                                                      shortDesc="#{bindings.OtherBillDetDetCRUD.hints.Glcode.tooltip}"
+                                                      autoSubmit="true">
                           <f:validator binding="#{row.bindings.Glcode.validator}"/>
-                          <af:autoSuggestBehavior/>
+                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedCOAValues}"/>
                         </af:inputComboboxListOfValues>
                       </af:column>
                       <af:column headerText="#{bindings.OtherBillDetDetCRUD.hints.txtGLDescription.label}" id="c3"
@@ -279,7 +280,8 @@
                                                       model="#{row.bindings.Costcenter.listOfValuesModel}"
                                                       required="#{bindings.OtherBillDetDetCRUD.hints.Costcenter.mandatory}"
                                                       columns="#{bindings.OtherBillDetDetCRUD.hints.Costcenter.displayWidth}"
-                                                      shortDesc="#{bindings.OtherBillDetDetCRUD.hints.Costcenter.tooltip}">
+                                                      shortDesc="#{bindings.OtherBillDetDetCRUD.hints.Costcenter.tooltip}"
+                                                      autoSubmit="true">
                           <f:validator binding="#{row.bindings.Costcenter.validator}"/>
                         </af:inputComboboxListOfValues>
                       </af:column>
@@ -290,7 +292,7 @@
                                       columns="#{bindings.OtherBillDetDetCRUD.hints.txtCostCenterName.displayWidth}"
                                       maximumLength="#{bindings.OtherBillDetDetCRUD.hints.txtCostCenterName.precision}"
                                       shortDesc="#{bindings.OtherBillDetDetCRUD.hints.txtCostCenterName.tooltip}"
-                                      id="it3">
+                                      id="it3" partialTriggers="costcenterId">
                           <f:validator binding="#{row.bindings.txtCostCenterName.validator}"/>
                         </af:inputText>
                       </af:column>

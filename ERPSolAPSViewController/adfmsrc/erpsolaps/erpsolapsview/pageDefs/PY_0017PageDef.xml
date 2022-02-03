@@ -7,6 +7,8 @@
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
     <iterator Binds="OtherBillsCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
               id="OtherBillsCRUDIterator"/>
+    <iterator Binds="OtherBillDetDetCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
+              id="OtherBillDetDetCRUDIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="OtherBillsCRUDIterator" id="Posted">
@@ -56,5 +58,17 @@
             DataControl="ERPSolAPSAppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
             DataControl="ERPSolAPSAppModuleDataControl"/>
+    <tree IterBinding="OtherBillDetDetCRUDIterator" id="OtherBillDetDetCRUD">
+      <nodeDefinition DefName="erpsolaps.erpsolapsmodel.erpsolapsvo.OtherBillDetView" Name="OtherBillDetDetCRUD0">
+        <AttrNames>
+          <Item Value="Glcode"/>
+          <Item Value="Costcenter"/>
+          <Item Value="txtGLDescription"/>
+          <Item Value="txtCostCenterName"/>
+          <Item Value="FcurrAmount"/>
+          <Item Value="FcurrStAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

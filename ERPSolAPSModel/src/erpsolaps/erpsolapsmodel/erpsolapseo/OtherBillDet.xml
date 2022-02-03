@@ -188,7 +188,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OTHER_BILL_DET"/>
+    TableName="OTHER_BILL_DET"
+    DefaultValue="0"/>
   <Attribute
     Name="ExtraQty"
     Precision="16"
@@ -197,7 +198,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OTHER_BILL_DET"/>
+    TableName="OTHER_BILL_DET"
+    DefaultValue="0"/>
   <Attribute
     Name="FcurRate"
     Precision="16"
@@ -206,7 +208,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OTHER_BILL_DET"/>
+    TableName="OTHER_BILL_DET"
+    DefaultValue="0"/>
   <Attribute
     Name="BcurRate"
     Precision="16"
@@ -215,7 +218,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OTHER_BILL_DET"/>
+    TableName="OTHER_BILL_DET"
+    DefaultValue="0"/>
   <Attribute
     Name="FcurrTotal"
     Precision="16"
@@ -224,7 +228,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OTHER_BILL_DET"/>
+    TableName="OTHER_BILL_DET"
+    DefaultValue="0"/>
   <Attribute
     Name="BcurrTotal"
     Precision="16"
@@ -233,7 +238,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OTHER_BILL_DET"/>
+    TableName="OTHER_BILL_DET"
+    DefaultValue="0"/>
   <Attribute
     Name="MemoBillid"
     Precision="15"
@@ -254,7 +260,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OTHER_BILL_DET"/>
+    TableName="OTHER_BILL_DET"
+    DefaultValue="1"/>
   <Attribute
     Name="PoAmount"
     Precision="16"
@@ -263,7 +270,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="OTHER_BILL_DET"/>
+    TableName="OTHER_BILL_DET"
+    DefaultValue="0"/>
   <Attribute
     Name="Billidseq"
     ColumnName="BILLIDSEQ"

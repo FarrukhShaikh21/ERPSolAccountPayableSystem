@@ -236,6 +236,84 @@
                         </af:outputText>
                       </af:toolbar>
                     </f:facet>
+                    <af:table value="#{bindings.OtherBillDetDetCRUD.collectionModel}" var="row"
+                              rows="#{bindings.OtherBillDetDetCRUD.rangeSize}"
+                              emptyText="#{bindings.OtherBillDetDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.OtherBillDetDetCRUD.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.OtherBillDetDetCRUD.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.OtherBillDetDetCRUD.rangeSize}" id="t2">
+                      <af:column headerText="#{bindings.OtherBillDetDetCRUD.hints.Glcode.label}" id="c1" width="200">
+                        <af:inputComboboxListOfValues id="glcodeId"
+                                                      popupTitle="Search and Select: #{bindings.OtherBillDetDetCRUD.hints.Glcode.label}"
+                                                      value="#{row.bindings.Glcode.inputValue}"
+                                                      model="#{row.bindings.Glcode.listOfValuesModel}"
+                                                      required="#{bindings.OtherBillDetDetCRUD.hints.Glcode.mandatory}"
+                                                      columns="#{bindings.OtherBillDetDetCRUD.hints.Glcode.displayWidth}"
+                                                      shortDesc="#{bindings.OtherBillDetDetCRUD.hints.Glcode.tooltip}">
+                          <f:validator binding="#{row.bindings.Glcode.validator}"/>
+                        </af:inputComboboxListOfValues>
+                      </af:column>
+                      <af:column headerText="#{bindings.OtherBillDetDetCRUD.hints.txtGLDescription.label}" id="c3"
+                                 width="150" displayIndex="-1">
+                        <af:inputText value="#{row.bindings.txtGLDescription.inputValue}"
+                                      label="#{bindings.OtherBillDetDetCRUD.hints.txtGLDescription.label}"
+                                      required="#{bindings.OtherBillDetDetCRUD.hints.txtGLDescription.mandatory}"
+                                      columns="#{bindings.OtherBillDetDetCRUD.hints.txtGLDescription.displayWidth}"
+                                      maximumLength="#{bindings.OtherBillDetDetCRUD.hints.txtGLDescription.precision}"
+                                      shortDesc="#{bindings.OtherBillDetDetCRUD.hints.txtGLDescription.tooltip}"
+                                      id="it1" partialTriggers="glcodeId">
+                          <f:validator binding="#{row.bindings.txtGLDescription.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.OtherBillDetDetCRUD.hints.Costcenter.label}" id="c2"
+                                 width="200" displayIndex="-1">
+                        <af:inputComboboxListOfValues id="costcenterId"
+                                                      popupTitle="Search and Select: #{bindings.OtherBillDetDetCRUD.hints.Costcenter.label}"
+                                                      value="#{row.bindings.Costcenter.inputValue}"
+                                                      model="#{row.bindings.Costcenter.listOfValuesModel}"
+                                                      required="#{bindings.OtherBillDetDetCRUD.hints.Costcenter.mandatory}"
+                                                      columns="#{bindings.OtherBillDetDetCRUD.hints.Costcenter.displayWidth}"
+                                                      shortDesc="#{bindings.OtherBillDetDetCRUD.hints.Costcenter.tooltip}">
+                          <f:validator binding="#{row.bindings.Costcenter.validator}"/>
+                        </af:inputComboboxListOfValues>
+                      </af:column>
+                      <af:column headerText="#{bindings.OtherBillDetDetCRUD.hints.txtCostCenterName.label}" id="c4">
+                        <af:inputText value="#{row.bindings.txtCostCenterName.inputValue}"
+                                      label="#{bindings.OtherBillDetDetCRUD.hints.txtCostCenterName.label}"
+                                      required="#{bindings.OtherBillDetDetCRUD.hints.txtCostCenterName.mandatory}"
+                                      columns="#{bindings.OtherBillDetDetCRUD.hints.txtCostCenterName.displayWidth}"
+                                      maximumLength="#{bindings.OtherBillDetDetCRUD.hints.txtCostCenterName.precision}"
+                                      shortDesc="#{bindings.OtherBillDetDetCRUD.hints.txtCostCenterName.tooltip}"
+                                      id="it3">
+                          <f:validator binding="#{row.bindings.txtCostCenterName.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.OtherBillDetDetCRUD.hints.FcurrAmount.label}" id="c5">
+                        <af:inputText value="#{row.bindings.FcurrAmount.inputValue}"
+                                      label="#{bindings.OtherBillDetDetCRUD.hints.FcurrAmount.label}"
+                                      required="#{bindings.OtherBillDetDetCRUD.hints.FcurrAmount.mandatory}"
+                                      columns="#{bindings.OtherBillDetDetCRUD.hints.FcurrAmount.displayWidth}"
+                                      maximumLength="#{bindings.OtherBillDetDetCRUD.hints.FcurrAmount.precision}"
+                                      shortDesc="#{bindings.OtherBillDetDetCRUD.hints.FcurrAmount.tooltip}" id="it5">
+                          <f:validator binding="#{row.bindings.FcurrAmount.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.OtherBillDetDetCRUD.hints.FcurrAmount.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.OtherBillDetDetCRUD.hints.FcurrStAmount.label}" id="c6">
+                        <af:inputText value="#{row.bindings.FcurrStAmount.inputValue}"
+                                      label="#{bindings.OtherBillDetDetCRUD.hints.FcurrStAmount.label}"
+                                      required="#{bindings.OtherBillDetDetCRUD.hints.FcurrStAmount.mandatory}"
+                                      columns="#{bindings.OtherBillDetDetCRUD.hints.FcurrStAmount.displayWidth}"
+                                      maximumLength="#{bindings.OtherBillDetDetCRUD.hints.FcurrStAmount.precision}"
+                                      shortDesc="#{bindings.OtherBillDetDetCRUD.hints.FcurrStAmount.tooltip}" id="it6">
+                          <f:validator binding="#{row.bindings.FcurrStAmount.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.OtherBillDetDetCRUD.hints.FcurrStAmount.format}"/>
+                        </af:inputText>
+                      </af:column>
+                    </af:table>
                   </af:panelCollection>
                 </af:gridCell>
               </af:gridRow>

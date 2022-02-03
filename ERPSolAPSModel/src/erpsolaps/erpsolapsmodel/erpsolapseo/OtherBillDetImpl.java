@@ -866,6 +866,13 @@ public class OtherBillDetImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation==DML_INSERT) {
+            populateAttributeAsChanged(BILLID, getOtherBills().getAttribute("Billid"));
+       }
+        if (operation!=DML_DELETE) {
+           populateAttributeAsChanged(AMOUNT, getFcurrAmount());
+           populateAttributeAsChanged(STAMOUNT, getFcurrStAmount());
+       }
         super.doDML(operation, e);
     }
 }

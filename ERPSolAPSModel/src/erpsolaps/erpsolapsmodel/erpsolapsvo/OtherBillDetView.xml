@@ -13,6 +13,62 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccVWChartOfAccountQVO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWChartOfAccountQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWCostCenterQVO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWCostCenterQVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovGlcode"
+    ListVOName="AccVWChartOfAccountQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="txtGLDescription"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Glcode"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Glcode"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovCostcenter"
+    ListVOName="AccVWCostCenterQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Costcenter"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="txtCostCenterName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Costcenterid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Costcenterid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="OtherBillDet"
     Entity="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBillDet"/>
@@ -29,14 +85,34 @@
     PrecisionRule="true"
     EntityAttrName="Glcode"
     EntityUsage="OtherBillDet"
-    AliasName="GLCODE"/>
+    AliasName="GLCODE"
+    LOVName="LovGlcode">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsvo.OtherBillDetView.Glcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Costcenter"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Costcenter"
     EntityUsage="OtherBillDet"
-    AliasName="COSTCENTER"/>
+    AliasName="COSTCENTER"
+    LOVName="LovCostcenter">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Amount"
     IsNotNull="true"
@@ -188,6 +264,10 @@
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR"
     IsUpdateable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[VWChartOfAccountQVO?.Description]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -196,6 +276,10 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="Glcode"/>
+    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="txtCostCenterName"
@@ -208,6 +292,10 @@
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[VWCostCenterQVO?.Description]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -216,6 +304,10 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="Costcenter"/>
+    </Dependencies>
   </ViewAttribute>
   <ViewLinkAccessor
     Name="VWChartOfAccountQVO"

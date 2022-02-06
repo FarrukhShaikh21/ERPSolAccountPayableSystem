@@ -25,10 +25,22 @@
   <ViewUsage
     Name="VWCostCenterAutoSuggestRO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWCostCenterQVO"/>
+  <ViewUsage
+    Name="PaymentMasterCRUD"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentMasterView"/>
+  <ViewUsage
+    Name="PaymentDetailCRUD"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentDetailView"/>
   <ViewLinkUsage
     Name="OthbilldetBilidFkLink1"
     ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"
     SrcViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.OtherBillsCRUD"
     DstViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.OtherBillDetDetCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="SysC0016800Link1"
+    ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.SysC0016800Link"
+    SrcViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.PaymentMasterCRUD"
+    DstViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.PaymentDetailCRUD"
     Reversed="false"/>
 </AppModule>

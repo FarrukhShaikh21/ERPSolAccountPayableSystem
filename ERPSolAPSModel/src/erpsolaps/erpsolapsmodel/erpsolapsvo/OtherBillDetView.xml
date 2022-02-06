@@ -12,7 +12,12 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  RowClass="erpsolaps.erpsolapsmodel.erpsolapsvo.OtherBillDetViewRowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <ViewAccessor
     Name="AccVWChartOfAccountQVO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWChartOfAccountQVO"
@@ -319,10 +324,8 @@
     ColumnType="NUMBER"
     AliasName="VIEW_ATTR"
     SQLType="NUMERIC">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[getRowSet().sum("FcurrAmount")]]></TransientExpression>
-    <RecalcCondition
-      trustMode="trusted"><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[getRowSet().sum("FcurrAmount")]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -345,6 +348,12 @@
   <ViewLinkAccessor
     Name="VWCostCenterQVO"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.VwGLCostCenterOtherBillDetCostCenterIdVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="OtherBillsView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

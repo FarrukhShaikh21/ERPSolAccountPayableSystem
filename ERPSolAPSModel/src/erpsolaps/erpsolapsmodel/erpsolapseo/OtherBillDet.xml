@@ -18,7 +18,6 @@
   </DesignTime>
   <Attribute
     Name="Billid"
-    IsNotNull="true"
     Precision="18"
     ColumnName="BILLID"
     SQLType="VARCHAR"
@@ -57,7 +56,6 @@
   </Attribute>
   <Attribute
     Name="Amount"
-    IsNotNull="true"
     Precision="20"
     Scale="2"
     ColumnName="AMOUNT"

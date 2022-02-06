@@ -79,5 +79,10 @@
         <Item Value="txtSumAmount"/>
       </AttrNames>
     </attributeValues>
+    <methodAction id="doSuperviseOtherBills" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSuperviseOtherBills" IsViewObjectMethod="true"
+                  DataControl="ERPSolAPSAppModuleDataControl"
+                  InstanceName="data.ERPSolAPSAppModuleDataControl.OtherBillsCRUD"
+                  ReturnName="data.ERPSolAPSAppModuleDataControl.methodResults.doSuperviseOtherBills_ERPSolAPSAppModuleDataControl_OtherBillsCRUD_doSuperviseOtherBills_result"/>
   </bindings>
 </pageDefinition>

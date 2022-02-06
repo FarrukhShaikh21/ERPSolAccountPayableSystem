@@ -39,7 +39,7 @@ public class OtherBillsViewImpl extends ViewObjectImpl implements OtherBillsView
                 throw new JboException("Unable to supervise due to "+cs.getString(1));
                
            }
-            this.getCurrentRow().setAttribute("Submit", "Y");
+            this.getCurrentRow().setAttribute("Posted", "Y");
             this.getDBTransaction().commit();
         } catch (SQLException e) {
     //            this.getCurrentRow().setAttribute("Submit", "N");

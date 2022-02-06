@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysC0016800Link"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  EntityAssociation="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0016800Assoc">
+  <ViewLinkDefEnd
+    Name="PaymentMasterView"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentMasterView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="PaymentMasterView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentMasterView.PaymentCode"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="PaymentDetailView"
+    Cardinality="-1"
+    Owner="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentDetailView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="PaymentDetailView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentDetailView.PaymentCode"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

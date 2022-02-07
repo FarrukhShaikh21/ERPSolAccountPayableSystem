@@ -107,11 +107,11 @@
                           </af:inputDate>
                         </af:gridCell>
                       </af:gridRow>
-                      <af:gridRow id="gr13">
+                      <af:gridRow id="gr13" height="30px">
                         <af:gridCell id="gc31" width="15%" valign="middle">
                           <af:outputLabel value="#{bindings.PermanetId.hints.label}" id="ol13"/>
                         </af:gridCell>
-                        <af:gridCell id="gc32">
+                        <af:gridCell id="gc32" valign="middle" width="35%">
                           <af:inputText value="#{bindings.PermanetId.inputValue}"
                                         label="#{bindings.PermanetId.hints.label}"
                                         required="#{bindings.PermanetId.hints.mandatory}"
@@ -125,7 +125,7 @@
                         <af:gridCell id="gc33" width="15%" valign="middle">
                           <af:outputLabel value="#{bindings.SubmitDate.hints.label}" id="ol14"/>
                         </af:gridCell>
-                        <af:gridCell id="gc34">
+                        <af:gridCell id="gc34" valign="middle" width="35%">
                           <af:inputDate value="#{bindings.SubmitDate.inputValue}"
                                         label="#{bindings.SubmitDate.hints.label}"
                                         required="#{bindings.SubmitDate.hints.mandatory}"

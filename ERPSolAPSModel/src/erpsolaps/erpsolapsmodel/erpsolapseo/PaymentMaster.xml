@@ -772,6 +772,26 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtBranchName"
+    Precision="80"
+    ColumnName="TXT_BRANCH_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AllBankBranches?.BranchName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.txtBranchName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="PaymentDetail"
     Association="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0016800Assoc"
@@ -791,6 +811,13 @@
     Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersPaymentMasterSupplieridAssoc"
     AssociationEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersPaymentMasterSupplieridAssoc.PuSuppliers"
     AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersPaymentMasterSupplieridAssoc.PaymentMaster"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="AllBankBranches"
+    Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllBankBranchPaymentMAsterBranchIdAssoc"
+    AssociationEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllBankBranchPaymentMAsterBranchIdAssoc.AllBankBranches"
+    AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllBankBranchPaymentMAsterBranchIdAssoc.PaymentMaster"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key

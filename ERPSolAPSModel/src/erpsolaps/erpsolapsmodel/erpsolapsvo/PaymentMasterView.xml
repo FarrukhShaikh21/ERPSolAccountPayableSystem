@@ -31,6 +31,10 @@
     Name="AccAllLocationsView"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllLocationsView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllBankBranchesView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllBankBranchesView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtSupplierName"
     ListVOName="AccPuSuppliersView"
@@ -76,6 +80,32 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="LocationDescription"/>
       <Item Value="Locationid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtBranchName"
+    ListVOName="AccAllBankBranchesView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtBranchName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Branchid"/>
+      <Item Value="Bankid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="BranchName"/>
+      <Item Value="Branchid"/>
+      <Item Value="Bankid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="BranchName"/>
+      <Item Value="AccountNo"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -456,6 +486,22 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtBranchName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtBranchName"
+    EntityUsage="PaymentMaster"
+    AliasName="TXT_BRANCH_NAME"
+    LOVName="LovtxtBranchName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="PaymentDetailView"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapsvo.SysC0016800Link"
@@ -470,6 +516,12 @@
   <ViewLinkAccessor
     Name="PuSuppliersView"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.PuSuppliersPaymentMasterSupplieridLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllBankBranchesView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.AllBankBranchPaymentMAsterBranchIdLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

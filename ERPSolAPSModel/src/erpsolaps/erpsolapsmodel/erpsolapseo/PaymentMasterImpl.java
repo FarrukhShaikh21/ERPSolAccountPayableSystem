@@ -604,6 +604,16 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ,
+        txtBranchName {
+            public Object get(PaymentMasterImpl obj) {
+                return obj.gettxtBranchName();
+            }
+
+            public void put(PaymentMasterImpl obj, Object value) {
+                obj.settxtBranchName((String) value);
+            }
+        }
+        ,
         PaymentDetail {
             public Object get(PaymentMasterImpl obj) {
                 return obj.getPaymentDetail();
@@ -631,6 +641,16 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
 
             public void put(PaymentMasterImpl obj, Object value) {
                 obj.setPuSuppliers((EntityImpl) value);
+            }
+        }
+        ,
+        AllBankBranches {
+            public Object get(PaymentMasterImpl obj) {
+                return obj.getAllBankBranches();
+            }
+
+            public void put(PaymentMasterImpl obj, Object value) {
+                obj.setAllBankBranches((EntityImpl) value);
             }
         }
         ;
@@ -720,9 +740,11 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
     public static final int PAYMENTSEQ = AttributesEnum.Paymentseq.index();
     public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
     public static final int TXTSUPPLIERNAME = AttributesEnum.txtSupplierName.index();
+    public static final int TXTBRANCHNAME = AttributesEnum.txtBranchName.index();
     public static final int PAYMENTDETAIL = AttributesEnum.PaymentDetail.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
     public static final int PUSUPPLIERS = AttributesEnum.PuSuppliers.index();
+    public static final int ALLBANKBRANCHES = AttributesEnum.AllBankBranches.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1667,6 +1689,22 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtBranchName, using the alias name txtBranchName.
+     * @return the value of txtBranchName
+     */
+    public String gettxtBranchName() {
+        return (String) getAttributeInternal(TXTBRANCHNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtBranchName.
+     * @param value value to set the txtBranchName
+     */
+    public void settxtBranchName(String value) {
+        setAttributeInternal(TXTBRANCHNAME, value);
+    }
+
+    /**
      * getAttrInvokeAccessor: generated method. Do not modify.
      * @param index the index identifying the attribute
      * @param attrDef the attribute
@@ -1732,6 +1770,21 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setPuSuppliers(EntityImpl value) {
         setAttributeInternal(PUSUPPLIERS, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getAllBankBranches() {
+        return (EntityImpl) getAttributeInternal(ALLBANKBRANCHES);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setAllBankBranches(EntityImpl value) {
+        setAttributeInternal(ALLBANKBRANCHES, value);
     }
 
 

@@ -1749,8 +1749,8 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
-        setERPSolPKColumnName("Billidseq");
-        setERPSolPKSeqName("OTHER_BILLS_SEQ");
+        setERPSolPKColumnName("Paymentseq");
+        setERPSolPKSeqName("PAYMENT_MASTER_SEQ");
         setCompanyid(ERPSolGlobClassModel.doGetUserCompanyCode());
         setLocationid(ERPSolGlobClassModel.doGetUserLocationCode());
         

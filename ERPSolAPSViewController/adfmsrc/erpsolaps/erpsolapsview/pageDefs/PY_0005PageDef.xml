@@ -7,6 +7,8 @@
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
     <iterator Binds="PaymentMasterCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
               id="PaymentMasterCRUDIterator"/>
+    <iterator Binds="PaymentDetailCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
+              id="PaymentDetailCRUDIterator"/>
   </executables>
   <bindings>
     <action IterBinding="PaymentMasterCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
@@ -45,6 +47,49 @@
     <attributeValues IterBinding="PaymentMasterCRUDIterator" id="FcurrPayAmount">
       <AttrNames>
         <Item Value="FcurrPayAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="ChequeNo">
+      <AttrNames>
+        <Item Value="ChequeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="ChequeDate">
+      <AttrNames>
+        <Item Value="ChequeDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="PermanetId">
+      <AttrNames>
+        <Item Value="PermanetId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="SubmitDate">
+      <AttrNames>
+        <Item Value="SubmitDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="PaymentDetailCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="PaymentDetailCRUDIterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="PaymentCode">
+      <AttrNames>
+        <Item Value="PaymentCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="Submit">
+      <AttrNames>
+        <Item Value="Submit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="Locationid">
+      <AttrNames>
+        <Item Value="Locationid"/>
       </AttrNames>
     </attributeValues>
   </bindings>

@@ -5,6 +5,18 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="PaymentMasterCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
+              id="PaymentMasterCRUDIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <action IterBinding="PaymentMasterCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="PaymentMasterCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="PaymentMasterCRUDIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="PaymentMasterCRUDIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolAPSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolAPSAppModuleDataControl"/>
+  </bindings>
 </pageDefinition>

@@ -872,6 +872,13 @@
     AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsOtherBillsLocationIdAssoc.AllLocations"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PaymentMaster"
+    Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPaymentMasterLocationidAssoc"
+    AssociationEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPaymentMasterLocationidAssoc.PaymentMaster"
+    AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPaymentMasterLocationidAssoc.AllLocations"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpkallLocations"
     PrimaryKey="true">

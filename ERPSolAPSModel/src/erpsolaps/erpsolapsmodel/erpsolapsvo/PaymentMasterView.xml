@@ -13,6 +13,62 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccPuSuppliersView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllLocationsView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllLocationsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtSupplierName"
+    ListVOName="AccPuSuppliersView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtSupplierName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Supplierid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SuppName"/>
+      <Item Value="Supplierid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SuppName"/>
+      <Item Value="Supplierid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtLocationName"
+    ListVOName="AccAllLocationsView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtLocationName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LocationDescription"/>
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LocationDescription"/>
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="PaymentMaster"
     Entity="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster"/>
@@ -358,9 +414,53 @@
     EntityAttrName="Paymentseq"
     EntityUsage="PaymentMaster"
     AliasName="PAYMENTSEQ"/>
+  <ViewAttribute
+    Name="txtLocationName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtLocationName"
+    EntityUsage="PaymentMaster"
+    AliasName="TXT_LOCATION_NAME"
+    LOVName="LovtxtLocationName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtSupplierName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtSupplierName"
+    EntityUsage="PaymentMaster"
+    AliasName="TXT_SUPPLIER_NAME"
+    LOVName="LovtxtSupplierName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="PaymentDetailView"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapsvo.SysC0016800Link"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllLocationsView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.AllLocationsPaymentMasterLocationidLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PuSuppliersView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.PuSuppliersPaymentMasterSupplieridLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
     IsUpdateable="false"/>
 </ViewObject>

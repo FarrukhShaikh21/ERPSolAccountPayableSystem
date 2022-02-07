@@ -331,4 +331,9 @@
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.PuSuppliersOthreBillsSupplierIdLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PaymentMasterView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.PuSuppliersPaymentMasterSupplieridLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

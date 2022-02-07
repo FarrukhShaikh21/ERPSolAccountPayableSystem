@@ -620,6 +620,46 @@
     ColumnType="NUMBER"
     TableName="PAYMENT_MASTER"
     PrimaryKey="true"/>
+  <Attribute
+    Name="txtLocationName"
+    Precision="80"
+    ColumnName="TXT_LOCATION_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AllLocations?.LocationDescription]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.txtLocationName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="txtSupplierName"
+    Precision="80"
+    ColumnName="TXT_SUPPLIER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[PuSuppliers?.SuppName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.txtSupplierName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="PaymentDetail"
     Association="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0016800Assoc"
@@ -627,6 +667,20 @@
     AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0016800Assoc.PaymentMaster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AllLocations"
+    Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPaymentMasterLocationidAssoc"
+    AssociationEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPaymentMasterLocationidAssoc.AllLocations"
+    AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPaymentMasterLocationidAssoc.PaymentMaster"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PuSuppliers"
+    Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersPaymentMasterSupplieridAssoc"
+    AssociationEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersPaymentMasterSupplieridAssoc.PuSuppliers"
+    AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersPaymentMasterSupplieridAssoc.PaymentMaster"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="UnqPaymentMaster">
     <DesignTime>
@@ -658,4 +712,30 @@
       <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.DocTypeId"/>
     </AttrArray>
   </Key>
+  <Key
+    Name="fk_PaymentMaster">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKALL_LOCATIONS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_PAYMENT_MASTER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.Locationid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_PaymentMaster1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKPU_SUPPLIERS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_PAYMENT_MASTER1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.Supplierid"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolaps.erpsolapsmodel.ERPSolAPSModelBundle"/>
+  </ResourceBundle>
 </Entity>

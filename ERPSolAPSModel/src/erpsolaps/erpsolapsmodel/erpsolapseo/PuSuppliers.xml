@@ -522,6 +522,13 @@
     AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersOthreBillsSupplierIdAssoc.PuSuppliers"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PaymentMaster"
+    Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersPaymentMasterSupplieridAssoc"
+    AssociationEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersPaymentMasterSupplieridAssoc.PaymentMaster"
+    AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersPaymentMasterSupplieridAssoc.PuSuppliers"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpkpuSuppliers"
     PrimaryKey="true">

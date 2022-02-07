@@ -1670,6 +1670,17 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation==DML_INSERT) {
+            ;
+           String pkValue =
+                " fun_payment_id('" + ERPSolGlobClassModel.doGetUserCompanyCode() + "','" +
+                ERPSolGlobClassModel.doGetUserLocationCode() + "','B',TO_DATE('" + getPaymentDate() + "','YYYY-MM-DD'))";
+            System.out.println(pkValue + "pk value");
+            String result =
+                ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
+            populateAttributeAsChanged(PAYMENTCODE, result);            
+
+        }
         super.doDML(operation, e);
     }
 }

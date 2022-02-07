@@ -18,5 +18,34 @@
             DataControl="ERPSolAPSAppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
             DataControl="ERPSolAPSAppModuleDataControl"/>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="PaymentDate">
+      <AttrNames>
+        <Item Value="PaymentDate"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="PaymentMasterCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
+                  id="txtLocationName"/>
+    <listOfValues IterBinding="PaymentMasterCRUDIterator" StaticList="false" Uses="LovtxtSupplierName"
+                  id="txtSupplierName"/>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="PaymentType">
+      <AttrNames>
+        <Item Value="PaymentType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="PaymentMode">
+      <AttrNames>
+        <Item Value="PaymentMode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="RefVoucherNo">
+      <AttrNames>
+        <Item Value="RefVoucherNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="FcurrPayAmount">
+      <AttrNames>
+        <Item Value="FcurrPayAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

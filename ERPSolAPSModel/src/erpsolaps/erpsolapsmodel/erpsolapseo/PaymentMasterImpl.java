@@ -1788,6 +1788,9 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
             populateAttributeAsChanged(PAYMENTCODE, result);            
 
         }
+        if (operation!=DML_DELETE) {
+            populateAttributeAsChanged(DOCTYPEID, getPaymentMode().toString().equals("CHQ")?"PYMT":"CPMT");
+       }
         super.doDML(operation, e);
     }
 }

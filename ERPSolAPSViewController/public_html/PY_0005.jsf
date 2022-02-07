@@ -92,16 +92,16 @@
                           </af:inputText>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="15%" id="gc6" valign="middle">
-                          <af:outputLabel value="#{bindings.BillDate.hints.label}" id="ol10"/>
+                          <af:outputLabel value="#{bindings.PaymentDate.hints.label}" id="ol10"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc7" valign="middle">
-                          <af:inputDate value="#{bindings.BillDate.inputValue}" label="#{bindings.BillDate.hints.label}"
-                                        required="#{bindings.BillDate.hints.mandatory}"
-                                        columns="#{bindings.BillDate.hints.displayWidth}"
-                                        shortDesc="#{bindings.BillDate.hints.tooltip}" id="id1" simple="true"
-                                        readOnly="#{bindings.Billid.inputValue!=null}">
-                            <f:validator binding="#{bindings.BillDate.validator}"/>
-                            <af:convertDateTime pattern="#{bindings.BillDate.format}"/>
+                          <af:inputDate value="#{bindings.PaymentDate.inputValue}"
+                                        label="#{bindings.PaymentDate.hints.label}"
+                                        required="#{bindings.PaymentDate.hints.mandatory}"
+                                        columns="#{bindings.PaymentDate.hints.displayWidth}"
+                                        shortDesc="#{bindings.PaymentDate.hints.tooltip}" id="id1" simple="true">
+                            <f:validator binding="#{bindings.PaymentDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.PaymentDate.format}"/>
                           </af:inputDate>
                         </af:gridCell>
                       </af:gridRow>
@@ -110,6 +110,17 @@
                           <af:outputLabel value="#{bindings.txtLocationName.hints.label}" id="ol4"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc9" halign="stretch" valign="middle">
+                          <af:inputComboboxListOfValues id="iclov1"
+                                                        popupTitle="Search and Select: #{bindings.txtLocationName.hints.label}"
+                                                        value="#{bindings.txtLocationName.inputValue}"
+                                                        label="#{bindings.txtLocationName.hints.label}"
+                                                        model="#{bindings.txtLocationName.listOfValuesModel}"
+                                                        required="#{bindings.txtLocationName.hints.mandatory}"
+                                                        columns="#{bindings.txtLocationName.hints.displayWidth}"
+                                                        shortDesc="#{bindings.txtLocationName.hints.tooltip}"
+                                                        simple="true">
+                            <f:validator binding="#{bindings.txtLocationName.validator}"/>
+                          </af:inputComboboxListOfValues>
                           <af:inputComboboxListOfValues id="txtLocationNameId"
                                                         popupTitle="Search and Select: #{bindings.txtLocationName.hints.label}"
                                                         value="#{bindings.txtLocationName.inputValue}"
@@ -152,17 +163,50 @@
                           </af:inputComboboxListOfValues>
                         </af:gridCell>
                       </af:gridRow>
+                      <af:gridRow id="gr7" height="30px">
+                        <af:gridCell id="gc16" width="15%" marginStart="5px" valign="middle">
+                          <af:outputLabel value="#{bindings.PaymentType.hints.label}" id="ol6"/>
+                        </af:gridCell>
+                        <af:gridCell id="gc17" width="35%" valign="middle">
+                          <af:selectOneChoice label="Label 1" value="#{bindings.PaymentType.inputValue}" id="soc1"
+                                              simple="true">
+                            <af:selectItem label="Advance" value="AD" id="si1"/>
+                            <af:selectItem label="Against Liability" value="NM" id="si2"/>
+                            <af:selectItem label="Other Liability" value="OLIB" id="si3"/>
+                            <af:selectItem label="L/C Bank Charges" value="PYLC" id="si4"/>
+                            <af:selectItem label="L/C Margin" value="LCMR" id="si5"/>
+                            <af:selectItem label="Bank Advice (Uance L/C)" value="UADV" id="si6"/>
+                            <af:selectItem label="Bank Advice (Sight L/C)" value="ASP" id="si7"/>
+                            <af:selectItem label="After For Bond" value="B4B" id="si8"/>
+                            <af:selectItem label="After From Bond" value="BFB" id="si9"/>
+                            <af:selectItem label="After Consumption" value="BCON" id="si10"/>
+                            <af:selectItem label="Against Estimation" value="EST" id="si11"/>
+                            <af:selectItem label="Payment Against (BOE Adjustment)" value="BADJ" id="si12"/>
+                          </af:selectOneChoice>
+                        </af:gridCell>
+                        <af:gridCell id="gc18" width="15%" valign="middle">
+                          <af:outputLabel value="#{bindings.PaymentMode.hints.label}" id="ol7"/>
+                        </af:gridCell>
+                        <af:gridCell id="gc19" width="35%" valign="middle">
+                          <af:selectOneRadio label="Label 1" value="#{bindings.PaymentMode.inputValue}" id="sor1"
+                                             layout="horizontal" simple="true">
+                            <af:selectItem label="Cheque" value="CHQ" id="si13"/>
+                            <af:selectItem label="Cash" value="CSH" id="si14"/>
+                          </af:selectOneRadio>
+                        </af:gridCell>
+                      </af:gridRow>
                       <af:gridRow height="30px" id="gr6">
                         <af:gridCell marginStart="5px" width="15%" id="gc12" valign="middle">
-                          <af:outputLabel value="#{bindings.Supref.hints.label}" id="ol1"/>
+                          <af:outputLabel value="#{bindings.RefVoucherNo.hints.label}" id="ol1"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc13" halign="stretch" valign="middle">
-                          <af:inputText value="#{bindings.Supref.inputValue}" label="#{bindings.Supref.hints.label}"
-                                        required="#{bindings.Supref.hints.mandatory}"
-                                        columns="#{bindings.Supref.hints.displayWidth}"
-                                        maximumLength="#{bindings.Supref.hints.precision}"
-                                        shortDesc="#{bindings.Supref.hints.tooltip}" id="it15" simple="true">
-                            <f:validator binding="#{bindings.Supref.validator}"/>
+                          <af:inputText value="#{bindings.RefVoucherNo.inputValue}"
+                                        label="#{bindings.RefVoucherNo.hints.label}"
+                                        required="#{bindings.RefVoucherNo.hints.mandatory}"
+                                        columns="#{bindings.RefVoucherNo.hints.displayWidth}"
+                                        maximumLength="#{bindings.RefVoucherNo.hints.precision}"
+                                        shortDesc="#{bindings.RefVoucherNo.hints.tooltip}" id="it9" simple="true">
+                            <f:validator binding="#{bindings.RefVoucherNo.validator}"/>
                           </af:inputText>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="15%" id="gc14" valign="middle">
@@ -179,6 +223,24 @@
                             <af:convertDateTime pattern="#{bindings.SuprefDate.format}"/>
                           </af:inputDate>
                         </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow id="gr8" height="30px">
+                        <af:gridCell id="gc20" valign="middle">
+                          <af:outputLabel value="#{bindings.FcurrPayAmount.hints.label}" id="ol9"/>
+                        </af:gridCell>
+                        <af:gridCell id="gc21" valign="middle">
+                          <af:inputText value="#{bindings.FcurrPayAmount.inputValue}"
+                                        label="#{bindings.FcurrPayAmount.hints.label}"
+                                        required="#{bindings.FcurrPayAmount.hints.mandatory}"
+                                        columns="#{bindings.FcurrPayAmount.hints.displayWidth}"
+                                        maximumLength="#{bindings.FcurrPayAmount.hints.precision}"
+                                        shortDesc="#{bindings.FcurrPayAmount.hints.tooltip}" id="it11" simple="true">
+                            <f:validator binding="#{bindings.FcurrPayAmount.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.FcurrPayAmount.format}"/>
+                          </af:inputText>
+                        </af:gridCell>
+                        <af:gridCell id="gc22"/>
+                        <af:gridCell id="gc23"/>
                       </af:gridRow>
                       <af:gridRow height="30px" marginBottom="5px" id="gr9">
                         <af:gridCell marginStart="5px" width="15%" id="gc24" valign="middle">

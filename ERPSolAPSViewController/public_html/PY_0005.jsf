@@ -37,6 +37,8 @@
                                inlineStyle="border-color:#b8d6f3; outline-width:thin; border-width:thin thin thin thin;">
                     <f:facet name="toolbar">
                       <af:toolbar id="t1">
+                        <af:button actionListener="#{bindings.doSupervisePayments.execute}" text="doSupervisePayments"
+                                   disabled="#{!bindings.doSupervisePayments.enabled}" id="b10" rendered="false"/>
                         <af:button text="Search" id="b12" action="ERP-ACT-PY-0005-SEARCH"
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
                         <af:button text="Exit" id="b13" action="ERP-ACT-EXIT-FORM-APS" iconPosition="top"
@@ -217,9 +219,27 @@
                       </af:gridRow>
                       <af:gridRow height="30px" id="gr6">
                         <af:gridCell marginStart="5px" width="15%" id="gc12" valign="middle">
-                          <af:outputLabel value="#{bindings.RefVoucherNo.hints.label}" id="ol1"/>
+                          <af:outputLabel value="#{bindings.txtBranchName.hints.label}" id="ol15"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc13" halign="stretch" valign="middle">
+                          <af:inputComboboxListOfValues id="txtBranchNameId"
+                                                        popupTitle="Search and Select: #{bindings.txtBranchName.hints.label}"
+                                                        value="#{bindings.txtBranchName.inputValue}"
+                                                        label="#{bindings.txtBranchName.hints.label}"
+                                                        model="#{bindings.txtBranchName.listOfValuesModel}"
+                                                        required="#{bindings.txtBranchName.hints.mandatory}"
+                                                        columns="#{bindings.txtBranchName.hints.displayWidth}"
+                                                        shortDesc="#{bindings.txtBranchName.hints.tooltip}"
+                                                        simple="true">
+                            <f:validator binding="#{bindings.txtBranchName.validator}"/>
+                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedBranchValues}"/>
+                          </af:inputComboboxListOfValues>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="15%" id="gc14" valign="middle">
+                          <af:outputLabel value="#{bindings.RefVoucherNo.hints.label}" id="ol1"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc15" valign="middle"
+                                     halign="stretch">
                           <af:inputText value="#{bindings.RefVoucherNo.inputValue}"
                                         label="#{bindings.RefVoucherNo.hints.label}"
                                         required="#{bindings.RefVoucherNo.hints.mandatory}"
@@ -229,9 +249,6 @@
                             <f:validator binding="#{bindings.RefVoucherNo.validator}"/>
                           </af:inputText>
                         </af:gridCell>
-                        <af:gridCell marginStart="5px" width="15%" id="gc14" valign="middle"/>
-                        <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc15" valign="middle"
-                                     halign="stretch"/>
                       </af:gridRow>
                       <af:gridRow height="30px" id="gr9">
                         <af:gridCell marginStart="5px" width="15%" id="gc24" valign="middle">

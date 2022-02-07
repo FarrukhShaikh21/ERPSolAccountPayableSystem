@@ -126,7 +126,17 @@ public class ERPSolAPSBean {
         return ResultList;
         
     }
-    
+  
+    public List<SelectItem> doERPSolGetAutoSuggestedBranchValues(String pStringValues) {
+        List<SelectItem> ResultList=new ArrayList<SelectItem>();
+        
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllBankBranchesAutoSuggestRO",
+                                                            " UPPER(CONCAT(Branch_Name,Branchid))", "BranchName", "Branchid", 10,"ERPSolAPSAppModuleDataControl");
+        return ResultList;
+        
+    }
+
+  
     public List<SelectItem> doERPSolGetAutoSuggestedReceiveStoreValues(String pStringValues) {
         List<SelectItem> ResultList=new ArrayList<SelectItem>();
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();

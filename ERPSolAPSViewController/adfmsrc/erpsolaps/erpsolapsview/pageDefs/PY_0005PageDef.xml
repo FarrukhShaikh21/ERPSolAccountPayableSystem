@@ -92,5 +92,11 @@
         <Item Value="Locationid"/>
       </AttrNames>
     </attributeValues>
+    <listOfValues IterBinding="PaymentMasterCRUDIterator" StaticList="false" Uses="LovtxtBranchName"
+                  id="txtBranchName"/>
+    <methodAction id="doSupervisePayments" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSupervisePayments" IsViewObjectMethod="true" DataControl="ERPSolAPSAppModuleDataControl"
+                  InstanceName="data.ERPSolAPSAppModuleDataControl.PaymentMasterCRUD"
+                  ReturnName="data.ERPSolAPSAppModuleDataControl.methodResults.doSupervisePayments_ERPSolAPSAppModuleDataControl_PaymentMasterCRUD_doSupervisePayments_result"/>
   </bindings>
 </pageDefinition>

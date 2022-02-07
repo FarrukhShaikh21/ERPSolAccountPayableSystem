@@ -12,7 +12,13 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  ComponentClass="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentMasterViewImpl"
+  ComponentInterface="erpsolaps.erpsolapsmodel.erpsolapsvo.common.PaymentMasterView"
+  ClientProxyName="erpsolaps.erpsolapsmodel.erpsolapsvo.client.PaymentMasterViewClient">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+  </DesignTime>
   <ViewAccessor
     Name="AccPuSuppliersView"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView"
@@ -525,4 +531,14 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="doSupervisePayments"
+      MethodName="doSupervisePayments">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+  </ClientInterface>
 </ViewObject>

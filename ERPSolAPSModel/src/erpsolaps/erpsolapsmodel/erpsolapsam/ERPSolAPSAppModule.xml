@@ -31,6 +31,9 @@
   <ViewUsage
     Name="PaymentDetailCRUD"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentDetailView"/>
+  <ViewUsage
+    Name="AllBankBranchesAutoSuggestRO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllBankBranchesView"/>
   <ViewLinkUsage
     Name="OthbilldetBilidFkLink1"
     ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"

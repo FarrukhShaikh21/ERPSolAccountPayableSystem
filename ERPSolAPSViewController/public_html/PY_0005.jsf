@@ -342,6 +342,73 @@
                     <f:facet name="secondaryToolbar">
                       <af:toolbar id="t5"/>
                     </f:facet>
+                    <af:table value="#{bindings.PaymentDetailCRUD.collectionModel}" var="row"
+                              rows="#{bindings.PaymentDetailCRUD.rangeSize}"
+                              emptyText="#{bindings.PaymentDetailCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.PaymentDetailCRUD.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.PaymentDetailCRUD.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.PaymentDetailCRUD.rangeSize}" id="t2"
+                              partialTriggers="::b7 ::b8">
+                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.InvoiceCode.label}" id="c1" width="200">
+                        <af:inputComboboxListOfValues id="invoiceCodeId"
+                                                      popupTitle="Search and Select: #{bindings.PaymentDetailCRUD.hints.InvoiceCode.label}"
+                                                      value="#{row.bindings.InvoiceCode.inputValue}"
+                                                      model="#{row.bindings.InvoiceCode.listOfValuesModel}"
+                                                      required="#{bindings.PaymentDetailCRUD.hints.InvoiceCode.mandatory}"
+                                                      columns="#{bindings.PaymentDetailCRUD.hints.InvoiceCode.displayWidth}"
+                                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.InvoiceCode.tooltip}">
+                          <f:validator binding="#{row.bindings.InvoiceCode.validator}"/>
+                        </af:inputComboboxListOfValues>
+                      </af:column>
+                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.InvoiceType.label}" id="c2" width="200">
+                        <af:inputText value="#{row.bindings.InvoiceType.inputValue}"
+                                      label="#{bindings.PaymentDetailCRUD.hints.InvoiceType.label}"
+                                      required="#{bindings.PaymentDetailCRUD.hints.InvoiceType.mandatory}"
+                                      columns="#{bindings.PaymentDetailCRUD.hints.InvoiceType.displayWidth}"
+                                      maximumLength="#{bindings.PaymentDetailCRUD.hints.InvoiceType.precision}"
+                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.InvoiceType.tooltip}" id="it3">
+                          <f:validator binding="#{row.bindings.InvoiceType.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.label}" id="c3">
+                        <af:inputText value="#{row.bindings.FcurrPmtAmount.inputValue}"
+                                      label="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.label}"
+                                      required="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.mandatory}"
+                                      columns="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.displayWidth}"
+                                      maximumLength="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.precision}"
+                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.tooltip}" id="it5">
+                          <f:validator binding="#{row.bindings.FcurrPmtAmount.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.label}" id="c4">
+                        <af:inputText value="#{row.bindings.FcurrStaxAmt.inputValue}"
+                                      label="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.label}"
+                                      required="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.mandatory}"
+                                      columns="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.displayWidth}"
+                                      maximumLength="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.precision}"
+                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.tooltip}" id="it6">
+                          <f:validator binding="#{row.bindings.FcurrStaxAmt.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.txtBalanceAmount.label}" id="c5">
+                        <af:inputText value="#{row.bindings.txtBalanceAmount.inputValue}"
+                                      label="#{bindings.PaymentDetailCRUD.hints.txtBalanceAmount.label}"
+                                      required="#{bindings.PaymentDetailCRUD.hints.txtBalanceAmount.mandatory}"
+                                      columns="#{bindings.PaymentDetailCRUD.hints.txtBalanceAmount.displayWidth}"
+                                      maximumLength="#{bindings.PaymentDetailCRUD.hints.txtBalanceAmount.precision}"
+                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.txtBalanceAmount.tooltip}" id="it7"
+                                      readOnly="true">
+                          <f:validator binding="#{row.bindings.txtBalanceAmount.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.PaymentDetailCRUD.hints.txtBalanceAmount.format}"/>
+                        </af:inputText>
+                      </af:column>
+                    </af:table>
                   </af:panelCollection>
                 </af:gridCell>
               </af:gridRow>

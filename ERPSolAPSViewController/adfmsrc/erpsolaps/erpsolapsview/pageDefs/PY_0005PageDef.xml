@@ -98,5 +98,17 @@
                   MethodName="doSupervisePayments" IsViewObjectMethod="true" DataControl="ERPSolAPSAppModuleDataControl"
                   InstanceName="data.ERPSolAPSAppModuleDataControl.PaymentMasterCRUD"
                   ReturnName="data.ERPSolAPSAppModuleDataControl.methodResults.doSupervisePayments_ERPSolAPSAppModuleDataControl_PaymentMasterCRUD_doSupervisePayments_result"/>
+    <tree IterBinding="PaymentDetailCRUDIterator" id="PaymentDetailCRUD">
+      <nodeDefinition DefName="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentDetailView" Name="PaymentDetailCRUD0">
+        <AttrNames>
+          <Item Value="InvoiceCode"/>
+          <Item Value="InvoiceType"/>
+          <Item Value="FcurrPmtAmount"/>
+          <Item Value="FcurrStaxAmt"/>
+          <Item Value="FcurrBalance"/>
+          <Item Value="txtBalanceAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

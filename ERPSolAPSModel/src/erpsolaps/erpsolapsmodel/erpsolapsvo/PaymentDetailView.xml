@@ -13,6 +13,35 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccVWBilllBalanceAmountForPayQVO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovInvoiceCode"
+    ListVOName="AccVWBilllBalanceAmountForPayQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="InvoiceCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="InvoiceType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Billid"/>
+      <Item Value="BillType"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Billid"/>
+      <Item Value="BillDate"/>
+      <Item Value="BalanceAmount"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="PaymentDetail"
     Entity="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentDetail"/>
@@ -64,7 +93,15 @@
     PrecisionRule="true"
     EntityAttrName="InvoiceCode"
     EntityUsage="PaymentDetail"
-    AliasName="INVOICE_CODE"/>
+    AliasName="INVOICE_CODE"
+    LOVName="LovInvoiceCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ModifiedDate"
     PrecisionRule="true"
@@ -137,4 +174,12 @@
     EntityAttrName="Paymentseq"
     EntityUsage="PaymentDetail"
     AliasName="PAYMENTSEQ"/>
+  <ViewAttribute
+    Name="txtBalanceAmount"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtBalanceAmount"
+    EntityUsage="PaymentDetail"
+    AliasName="TXT_BALANCE_AMOUNT"/>
 </ViewObject>

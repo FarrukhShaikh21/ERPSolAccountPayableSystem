@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.domain.Date;
 import oracle.jbo.server.AttributeDefImpl;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -88,7 +89,7 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(PaymentDetailImpl obj, Object value) {
-                obj.setCreatedDate((Timestamp) value);
+                obj.setCreatedDate((Date) value);
             }
         }
         ,
@@ -108,7 +109,7 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(PaymentDetailImpl obj, Object value) {
-                obj.setModifiedDate((Timestamp) value);
+                obj.setModifiedDate((Date) value);
             }
         }
         ,
@@ -222,6 +223,16 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ,
+        txtBalanceAmount {
+            public Object get(PaymentDetailImpl obj) {
+                return obj.gettxtBalanceAmount();
+            }
+
+            public void put(PaymentDetailImpl obj, Object value) {
+                obj.settxtBalanceAmount((BigDecimal) value);
+            }
+        }
+        ,
         PaymentMaster {
             public Object get(PaymentDetailImpl obj) {
                 return obj.getPaymentMaster();
@@ -259,6 +270,7 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
         }
     }
 
+
     public static final int SEQNO = AttributesEnum.SeqNo.index();
     public static final int PAYMENTCODE = AttributesEnum.PaymentCode.index();
     public static final int PMTAMOUNT = AttributesEnum.PmtAmount.index();
@@ -279,6 +291,7 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
     public static final int STAXAMT = AttributesEnum.StaxAmt.index();
     public static final int SALESTAXCODE = AttributesEnum.SalesTaxCode.index();
     public static final int PAYMENTSEQ = AttributesEnum.Paymentseq.index();
+    public static final int TXTBALANCEAMOUNT = AttributesEnum.txtBalanceAmount.index();
     public static final int PAYMENTMASTER = AttributesEnum.PaymentMaster.index();
 
     /**
@@ -293,6 +306,7 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("erpsolaps.erpsolapsmodel.erpsolapseo.PaymentDetail");
     }
+
 
     /**
      * Gets the attribute value for SeqNo, using the alias name SeqNo.
@@ -394,15 +408,15 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for CreatedDate, using the alias name CreatedDate.
      * @return the value of CreatedDate
      */
-    public Timestamp getCreatedDate() {
-        return (Timestamp) getAttributeInternal(CREATEDDATE);
+    public Date getCreatedDate() {
+        return (Date) getAttributeInternal(CREATEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedDate.
      * @param value value to set the CreatedDate
      */
-    public void setCreatedDate(Timestamp value) {
+    public void setCreatedDate(Date value) {
         setAttributeInternal(CREATEDDATE, value);
     }
 
@@ -426,15 +440,15 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for ModifiedDate, using the alias name ModifiedDate.
      * @return the value of ModifiedDate
      */
-    public Timestamp getModifiedDate() {
-        return (Timestamp) getAttributeInternal(MODIFIEDDATE);
+    public Date getModifiedDate() {
+        return (Date) getAttributeInternal(MODIFIEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ModifiedDate.
      * @param value value to set the ModifiedDate
      */
-    public void setModifiedDate(Timestamp value) {
+    public void setModifiedDate(Date value) {
         setAttributeInternal(MODIFIEDDATE, value);
     }
 
@@ -615,6 +629,22 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtBalanceAmount, using the alias name txtBalanceAmount.
+     * @return the value of txtBalanceAmount
+     */
+    public BigDecimal gettxtBalanceAmount() {
+        return (BigDecimal) getAttributeInternal(TXTBALANCEAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtBalanceAmount.
+     * @param value value to set the txtBalanceAmount
+     */
+    public void settxtBalanceAmount(BigDecimal value) {
+        setAttributeInternal(TXTBALANCEAMOUNT, value);
+    }
+
+    /**
      * getAttrInvokeAccessor: generated method. Do not modify.
      * @param index the index identifying the attribute
      * @param attrDef the attribute
@@ -674,6 +704,8 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
+        setERPSolPKColumnName("SeqNo");
+        setERPSolPKSeqName("PAYMENT_DETAIL_SEQ");
         super.create(attributeList);
     }
 

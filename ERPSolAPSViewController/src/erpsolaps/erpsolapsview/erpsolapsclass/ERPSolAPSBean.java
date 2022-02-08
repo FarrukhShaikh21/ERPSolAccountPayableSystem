@@ -245,9 +245,9 @@ public class ERPSolAPSBean {
         return ResultList;
         
     }   
-    public void doERPSolGRNDialogConfirm(DialogEvent erpsolde) {
+    public void doERPSolPaymentsDialogConfirm(DialogEvent erpsolde) {
         if (erpsolde.getOutcome()==DialogEvent.Outcome.yes) {
-            OperationBinding binding = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("doSuperviseGRN");
+            OperationBinding binding = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("doSupervisePayments");
             binding.execute();
         }
     }

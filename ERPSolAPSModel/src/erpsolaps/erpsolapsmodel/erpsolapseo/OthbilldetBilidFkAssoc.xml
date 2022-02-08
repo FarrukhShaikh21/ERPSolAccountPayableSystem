@@ -13,7 +13,9 @@
     Name="OtherBills"
     Cardinality="1"
     Source="true"
-    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBills">
+    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBills"
+    LockLevel="NONE"
+    DeleteContainee="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="OtherBills"/>
@@ -27,7 +29,8 @@
   <AssociationEnd
     Name="OtherBillDet"
     Cardinality="-1"
-    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBillDet">
+    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.OtherBillDet"
+    HasOwner="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="OtherBillDet"/>

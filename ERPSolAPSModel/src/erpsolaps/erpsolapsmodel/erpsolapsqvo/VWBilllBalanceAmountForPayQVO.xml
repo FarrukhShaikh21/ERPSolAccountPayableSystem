@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VWBilllBalanceAmountForPayQVO"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="P_ADF_SUPPLIERID"
+    Kind="where"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_ADF_BILL_TYPE"
+    Kind="where"
+    Type="java.lang.String"/>
+  <SQLQuery><![CDATA[select billid, bill_date, balance_amount, supplierid, bill_type from vw_bill_balance_amount_for_pay 
+where bill_type=:P_ADF_BILL_TYPE AND SUPPLIERID=:P_ADF_SUPPLIERID]]></SQLQuery>
+  <ViewAttribute
+    Name="Billid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BILLID"
+    Expression="BILLID"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="18"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BillDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="BILL_DATE"
+    Expression="BILL_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="BalanceAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="BALANCE_AMOUNT"
+    Expression="BALANCE_AMOUNT"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Supplierid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="15"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="SUPPLIERID"
+    Expression="SUPPLIERID"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BillType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="5"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="BILL_TYPE"
+    Expression="BILL_TYPE"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Billid"/>
+    <Item Value="BillType"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolaps.erpsolapsmodel.ERPSolAPSModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

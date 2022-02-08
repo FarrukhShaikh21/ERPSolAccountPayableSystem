@@ -155,7 +155,14 @@
     PrecisionRule="true"
     EntityAttrName="Supplierid"
     EntityUsage="PaymentMaster"
-    AliasName="SUPPLIERID"/>
+    AliasName="SUPPLIERID">
+    <Dependencies>
+      <Item
+        Value="Locationid"/>
+      <Item
+        Value="txtLocationName"/>
+    </Dependencies>
+  </ViewAttribute>
   <ViewAttribute
     Name="PaymentAmount"
     PrecisionRule="true"
@@ -491,6 +498,14 @@
           Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="Locationid"/>
+      <Item
+        Value="Supplierid"/>
+      <Item
+        Value="txtLocationName"/>
+    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="txtBranchName"
@@ -533,6 +548,13 @@
     IsUpdateable="false"/>
   <ClientInterface
     Name="__clientInterface">
+    <Method
+      Name="doSupervisePayments"
+      MethodName="doSupervisePayments">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
     <Method
       Name="doSupervisePayments"
       MethodName="doSupervisePayments">

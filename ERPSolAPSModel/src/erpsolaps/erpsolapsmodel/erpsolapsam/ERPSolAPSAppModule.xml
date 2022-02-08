@@ -34,6 +34,9 @@
   <ViewUsage
     Name="AllBankBranchesAutoSuggestRO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllBankBranchesView"/>
+  <ViewUsage
+    Name="VWBilllBalanceAmountForPayAutoSuggestRO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO"/>
   <ViewLinkUsage
     Name="OthbilldetBilidFkLink1"
     ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"

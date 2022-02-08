@@ -151,7 +151,8 @@
                                                         required="#{bindings.txtLocationName.hints.mandatory}"
                                                         columns="#{bindings.txtLocationName.hints.displayWidth}"
                                                         shortDesc="#{bindings.txtLocationName.hints.tooltip}"
-                                                        simple="true" autoSubmit="true">
+                                                        simple="true" autoSubmit="true"
+                                                        readOnly="#{bindings.PaymentCode.inputValue!=null}">
                             <f:validator binding="#{bindings.txtLocationName.validator}"/>
                             <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedLocationValues}"/>
                           </af:inputComboboxListOfValues>
@@ -178,7 +179,8 @@
                                                         required="#{bindings.txtSupplierName.hints.mandatory}"
                                                         columns="#{bindings.txtSupplierName.hints.displayWidth}"
                                                         shortDesc="#{bindings.txtSupplierName.hints.tooltip}"
-                                                        simple="true" autoSubmit="true">
+                                                        simple="true" autoSubmit="true"
+                                                        partialTriggers="txtLocationNameId">
                             <f:validator binding="#{bindings.txtSupplierName.validator}"/>
                             <af:autoSuggestBehavior/>
                             <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedSupplierValues}"/>
@@ -359,6 +361,7 @@
                                                       columns="#{bindings.PaymentDetailCRUD.hints.InvoiceCode.displayWidth}"
                                                       shortDesc="#{bindings.PaymentDetailCRUD.hints.InvoiceCode.tooltip}">
                           <f:validator binding="#{row.bindings.InvoiceCode.validator}"/>
+                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedPaymentDocument}"/>
                         </af:inputComboboxListOfValues>
                       </af:column>
                       <af:column headerText="#{bindings.PaymentDetailCRUD.hints.InvoiceType.label}" id="c2" width="200">

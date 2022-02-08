@@ -162,6 +162,22 @@ public class ERPSolAPSBean {
         return ResultList;
         
     }
+
+    public List<SelectItem> doERPSolGetAutoSuggestedPaymentDocument(String pStringValues) {
+        List<SelectItem> ResultList=new ArrayList<SelectItem>();
+        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        DCIteratorBinding ERPSolIB=(DCIteratorBinding)ERPSolbc.get("PaymentMasterCRUDIterator");
+        ApplicationModule ERPSolAM=ERPSolIB.getViewObject().getApplicationModule();
+        ViewObject vo=ERPSolAM.findViewObject("VWBilllBalanceAmountForPayAutoSuggestRO");
+        AttributeBinding ERPSupplierid         =(AttributeBinding)ERPSolbc.getControlBinding("Supplierid");
+        vo.setNamedWhereClauseParam("P_ADF_BILL_TYPE", "OBILL");
+        vo.setNamedWhereClauseParam("P_ADF_SUPPLIERID", ERPSupplierid.getInputValue());
+        vo.executeQuery();
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VWBilllBalanceAmountForPayAutoSuggestRO",
+                                                            " UPPER(CONCAT(Billid,Supplier_Name))", "Billid", "SupplierName", 10,"ERPSolAPSAppModuleDataControl");
+        return ResultList;
+        
+    }
     
    
     public List<SelectItem> doERPSolGetAutoSuggestedCOAValues(String pStringValues) {

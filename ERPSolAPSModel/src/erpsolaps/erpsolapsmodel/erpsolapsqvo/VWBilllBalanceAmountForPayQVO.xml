@@ -26,7 +26,7 @@
     Name="P_ADF_BILL_TYPE"
     Kind="where"
     Type="java.lang.String"/>
-  <SQLQuery><![CDATA[select billid, bill_date, balance_amount, supplierid, bill_type from vw_bill_balance_amount_for_pay 
+  <SQLQuery><![CDATA[select billid, bill_date, balance_amount, supplierid, bill_type,supplier_name from vw_bill_balance_amount_for_pay   
 where bill_type=:P_ADF_BILL_TYPE AND SUPPLIERID=:P_ADF_SUPPLIERID]]></SQLQuery>
   <ViewAttribute
     Name="Billid"
@@ -56,7 +56,7 @@ where bill_type=:P_ADF_BILL_TYPE AND SUPPLIERID=:P_ADF_SUPPLIERID]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     AliasName="BILL_DATE"
     Expression="BILL_DATE"
@@ -122,7 +122,7 @@ where bill_type=:P_ADF_BILL_TYPE AND SUPPLIERID=:P_ADF_SUPPLIERID]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="BILL_TYPE"
     Expression="BILL_TYPE"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="5"/>
     </DesignTime>
@@ -132,6 +132,29 @@ where bill_type=:P_ADF_BILL_TYPE AND SUPPLIERID=:P_ADF_SUPPLIERID]]></SQLQuery>
           ResId="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO.BillType_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SupplierName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="4000"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="SUPPLIER_NAME"
+    Expression="SUPPLIER_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO.SupplierName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

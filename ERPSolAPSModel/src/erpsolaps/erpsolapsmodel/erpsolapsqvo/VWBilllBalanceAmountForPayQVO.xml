@@ -42,6 +42,14 @@ where bill_type=:P_ADF_BILL_TYPE AND SUPPLIERID=:P_ADF_SUPPLIERID]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="18"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO.Billid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="BillDate"
@@ -52,7 +60,16 @@ where bill_type=:P_ADF_BILL_TYPE AND SUPPLIERID=:P_ADF_SUPPLIERID]]></SQLQuery>
     ColumnType="DATE"
     AliasName="BILL_DATE"
     Expression="BILL_DATE"
-    SQLType="DATE"/>
+    SQLType="DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO.BillDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="BalanceAmount"
     IsUpdateable="false"
@@ -62,7 +79,16 @@ where bill_type=:P_ADF_BILL_TYPE AND SUPPLIERID=:P_ADF_SUPPLIERID]]></SQLQuery>
     ColumnType="NUMBER"
     AliasName="BALANCE_AMOUNT"
     Expression="BALANCE_AMOUNT"
-    SQLType="NUMERIC"/>
+    SQLType="NUMERIC">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO.BalanceAmount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Supplierid"
     IsUpdateable="false"
@@ -77,6 +103,14 @@ where bill_type=:P_ADF_BILL_TYPE AND SUPPLIERID=:P_ADF_SUPPLIERID]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO.Supplierid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="BillType"
@@ -92,6 +126,14 @@ where bill_type=:P_ADF_BILL_TYPE AND SUPPLIERID=:P_ADF_SUPPLIERID]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="5"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO.BillType_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Billid"/>

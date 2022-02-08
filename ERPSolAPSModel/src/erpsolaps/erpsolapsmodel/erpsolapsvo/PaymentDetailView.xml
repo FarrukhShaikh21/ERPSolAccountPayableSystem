@@ -16,7 +16,18 @@
   <ViewAccessor
     Name="AccVWBilllBalanceAmountForPayQVO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="P_ADF_BILL_TYPE">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA["OBILL"]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_SUPPLIERID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[PaymentMasterView?.Supplierid==null?"0":PaymentMasterView?.Supplierid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovInvoiceCode"
     ListVOName="AccVWBilllBalanceAmountForPayQVO"
@@ -182,4 +193,10 @@
     EntityAttrName="txtBalanceAmount"
     EntityUsage="PaymentDetail"
     AliasName="TXT_BALANCE_AMOUNT"/>
+  <ViewLinkAccessor
+    Name="PaymentMasterView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapsvo.SysC0016800Link"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -540,5 +540,12 @@
         Name="_return_type_"
         Type="void"/>
     </Method>
+    <Method
+      Name="doSupervisePayments"
+      MethodName="doSupervisePayments">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
   </ClientInterface>
 </ViewObject>

@@ -108,7 +108,7 @@
     TableName="PAYMENT_DETAIL"/>
   <Attribute
     Name="InvoiceCode"
-    Precision="15"
+    Precision="18"
     ColumnName="INVOICE_CODE"
     SQLType="VARCHAR"
     Type="java.lang.String"
@@ -303,7 +303,6 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="PAYMENT_DETAIL"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression

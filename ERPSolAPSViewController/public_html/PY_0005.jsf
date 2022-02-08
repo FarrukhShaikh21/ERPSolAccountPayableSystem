@@ -367,7 +367,8 @@
                                       required="#{bindings.PaymentDetailCRUD.hints.InvoiceType.mandatory}"
                                       columns="#{bindings.PaymentDetailCRUD.hints.InvoiceType.displayWidth}"
                                       maximumLength="#{bindings.PaymentDetailCRUD.hints.InvoiceType.precision}"
-                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.InvoiceType.tooltip}" id="it3">
+                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.InvoiceType.tooltip}" id="it3"
+                                      readOnly="true">
                           <f:validator binding="#{row.bindings.InvoiceType.validator}"/>
                         </af:inputText>
                       </af:column>

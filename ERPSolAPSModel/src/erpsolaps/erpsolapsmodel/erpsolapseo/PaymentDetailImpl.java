@@ -729,6 +729,15 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation==DML_INSERT) {
+            populateAttributeAsChanged(PAYMENTCODE, getPaymentMaster().getAttribute("PaymentCode"));
+       }
+        if (operation!=DML_DELETE) {
+           populateAttributeAsChanged(PMTAMOUNT, getFcurrPmtAmount());
+           populateAttributeAsChanged(BALANCE, gettxtBalanceAmount());
+           populateAttributeAsChanged(FCURRBALANCE, gettxtBalanceAmount());
+           populateAttributeAsChanged(STAXAMT, getFcurrStaxAmt());
+       }
         super.doDML(operation, e);
     }
 }

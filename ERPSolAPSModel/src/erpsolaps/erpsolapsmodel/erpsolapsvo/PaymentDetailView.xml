@@ -12,7 +12,12 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  RowClass="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentDetailViewRowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <ViewAccessor
     Name="AccVWBilllBalanceAmountForPayQVO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO"

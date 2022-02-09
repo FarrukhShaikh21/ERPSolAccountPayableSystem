@@ -15,9 +15,11 @@
   PageIterMode="Full"
   ComponentClass="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentMasterViewImpl"
   ComponentInterface="erpsolaps.erpsolapsmodel.erpsolapsvo.common.PaymentMasterView"
-  ClientProxyName="erpsolaps.erpsolapsmodel.erpsolapsvo.client.PaymentMasterViewClient">
+  ClientProxyName="erpsolaps.erpsolapsmodel.erpsolapsvo.client.PaymentMasterViewClient"
+  RowClass="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentMasterViewRowImpl">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewAccessor
     Name="AccPuSuppliersView"

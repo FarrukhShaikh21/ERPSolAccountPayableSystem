@@ -39,7 +39,7 @@ public class PaymentMasterViewImpl extends ViewObjectImpl implements PaymentMast
                 throw new JboException("Unable to supervise due to "+cs.getString(1));
                
            }
-            this.getCurrentRow().setAttribute("Posted", "Y");
+            this.getCurrentRow().setAttribute("Submit", "Y");
             this.getDBTransaction().commit();
         } catch (SQLException e) {
     //            this.getCurrentRow().setAttribute("Submit", "N");

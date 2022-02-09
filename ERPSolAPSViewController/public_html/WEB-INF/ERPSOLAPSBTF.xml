@@ -96,9 +96,9 @@
     <view id="PY_0017">
       <page>/PY_0017.jsf</page>
     </view>
-    <task-flow-return id="ACT-ERP-APS-RETURN">
+    <task-flow-return id="ERPSOL-RETURN-FROM-APS">
       <outcome>
-        <name>ACT-ERP-APS-RETURN</name>
+        <name>ERPSOL-RETURN-FROM-APS</name>
       </outcome>
     </task-flow-return>
     <view id="PY_0017_SEARCH">
@@ -110,6 +110,17 @@
     <view id="PY_0005_SEARCH">
       <page>/PY_0005_SEARCH.jsf</page>
     </view>
+    <method-call id="RollbackBeforeLogoutAPS">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>ACT-ERP-SOL-LOGOUT</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-return id="ACT-ERP-SOL-LOGOUT">
+      <outcome>
+        <name>ACT-ERP-SOL-LOGOUT</name>
+      </outcome>
+    </task-flow-return>
     <control-flow-rule id="__3">
       <from-activity-id>doERPSolAPSSessionGlobals</from-activity-id>
       <control-flow-case id="__4">
@@ -210,6 +221,27 @@
       <control-flow-case id="__35">
         <from-outcome>ERP-ACT-PY-0005-SEARCH-BACK</from-outcome>
         <to-activity-id>PY_0005</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__36">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__37">
+        <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
+        <to-activity-id>RollbackBeforeLogoutAPS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__38">
+      <from-activity-id>RollbackBeforeLogoutAPS</from-activity-id>
+      <control-flow-case id="__39">
+        <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
+        <to-activity-id>ACT-ERP-SOL-LOGOUT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__40">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__41">
+        <from-outcome>ACT-ERPSOL-RETURN-FROM-APS</from-outcome>
+        <to-activity-id>ERPSOL-RETURN-FROM-APS</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

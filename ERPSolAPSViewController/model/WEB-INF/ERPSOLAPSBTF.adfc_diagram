@@ -15,9 +15,9 @@
       <property
          name="exceptionHandler">true</property>
       <property
-         name="y">91.0459</property>
+         name="y">224.34473</property>
       <property
-         name="x">-13.635742</property>
+         name="x">-121.63574</property>
    </View>
    <View
       id="View3">
@@ -257,17 +257,17 @@
    <TaskFlowReturn
       id="TaskFlowReturn23">
       <property
-         name="activityId">ACT-ERP-APS-RETURN</property>
+         name="activityId">ERPSOL-RETURN-FROM-APS</property>
       <property
          name="finish">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>ACT-ERP-APS-RETURN&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ACT-ERP-APS-RETURN&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>ERPSOL-RETURN-FROM-APS&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ERPSOL-RETURN-FROM-APS&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">78.59766</property>
+         name="y">103.896484</property>
       <property
-         name="x">751.0</property>
+         name="x">831.0</property>
    </TaskFlowReturn>
    <View
       id="View24">
@@ -382,5 +382,81 @@
          name="fromOutcome">ERP-ACT-PY-0005-SEARCH-BACK</property>
       <property
          name="sdm:polyPoints">L54,587.0303,641.2471,349.5044,641.5459,R54</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall34">
+      <property
+         name="activityId">RollbackBeforeLogoutAPS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>RollbackBeforeLogoutAPS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">52.74707</property>
+      <property
+         name="x">192.5</property>
+   </MethodCall>
+   <TaskFlowReturn
+      id="TaskFlowReturn35">
+      <property
+         name="activityId">ACT-ERP-SOL-LOGOUT</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ACT-ERP-SOL-LOGOUT&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ACT-ERP-SOL-LOGOUT&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">52.5459</property>
+      <property
+         name="x">432.0</property>
+   </TaskFlowReturn>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule36">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">43.896484</property>
+      <property
+         name="x">-64.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase37"
+      from="WildcardControlFlowRule36"
+      to="MethodCall34">
+      <property
+         name="fromOutcome">ACT-ERP-SOL-LOGOUT</property>
+      <property
+         name="sdm:polyPoints">B50,-64.0,86.5459,192.5,106.396484,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase38"
+      from="MethodCall34"
+      to="TaskFlowReturn35">
+      <property
+         name="fromOutcome">ACT-ERP-SOL-LOGOUT</property>
+      <property
+         name="sdm:polyPoints">R50,233.5,52.396484,391.0,52.195312,L50</property>
+   </ControlFlowCase>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule39">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">103.59766</property>
+      <property
+         name="x">598.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase40"
+      from="WildcardControlFlowRule39"
+      to="TaskFlowReturn23">
+      <property
+         name="fromOutcome">ACT-ERPSOL-RETURN-FROM-APS</property>
+      <property
+         name="sdm:polyPoints">R50,634.0,103.74707,790.0,103.5459,L50</property>
    </ControlFlowCase>
 </SDM>

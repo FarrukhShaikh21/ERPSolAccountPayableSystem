@@ -4,7 +4,14 @@
   <af:document title="ERPSolAPSMain.jsf" id="d1">
     <af:form id="f1">
       <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
-        <f:facet name="erptempmain"/>
+        <f:facet name="erptempmain">
+          <af:panelBox text="Account Payable System" id="pb1" showDisclosure="false">
+            <f:facet name="toolbar">
+              <af:link id="l1" icon="#{resource['images:imgHome.png']}" action="ACT-ERPSOL-RETURN-FROM-APS"
+                       partialSubmit="true"/>
+            </f:facet>
+          </af:panelBox>
+        </f:facet>
         <f:facet name="erptempleft"/>
       </af:pageTemplate>
     </af:form>

@@ -41,10 +41,16 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="InvoiceType"/>
+      <Item Value="FcurrPmtAmount"/>
+      <Item Value="Balance"/>
+      <Item Value="FcurrBalance"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Billid"/>
       <Item Value="BillType"/>
+      <Item Value="BalanceAmount"/>
+      <Item Value="BalanceAmount"/>
+      <Item Value="BalanceAmount"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Billid"/>
@@ -186,13 +192,13 @@
     EntityUsage="PaymentDetail"
     AliasName="PAYMENTSEQ"/>
   <ViewAttribute
-    Name="txtBalanceAmount"
+    Name="txtNetPayment"
     IsQueriable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    EntityAttrName="txtBalanceAmount"
+    EntityAttrName="txtNetPayment"
     EntityUsage="PaymentDetail"
-    AliasName="TXT_BALANCE_AMOUNT"/>
+    AliasName="TXT_NET_PAYMENT"/>
   <ViewLinkAccessor
     Name="PaymentMasterView"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapsvo.SysC0016800Link"

@@ -223,13 +223,13 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ,
-        txtBalanceAmount {
+        txtNetPayment {
             public Object get(PaymentDetailImpl obj) {
-                return obj.gettxtBalanceAmount();
+                return obj.gettxtNetPayment();
             }
 
             public void put(PaymentDetailImpl obj, Object value) {
-                obj.settxtBalanceAmount((BigDecimal) value);
+                obj.settxtNetPayment((BigDecimal) value);
             }
         }
         ,
@@ -243,7 +243,8 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public abstract Object get(PaymentDetailImpl object);
@@ -291,7 +292,7 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
     public static final int STAXAMT = AttributesEnum.StaxAmt.index();
     public static final int SALESTAXCODE = AttributesEnum.SalesTaxCode.index();
     public static final int PAYMENTSEQ = AttributesEnum.Paymentseq.index();
-    public static final int TXTBALANCEAMOUNT = AttributesEnum.txtBalanceAmount.index();
+    public static final int TXTNETPAYMENT = AttributesEnum.txtNetPayment.index();
     public static final int PAYMENTMASTER = AttributesEnum.PaymentMaster.index();
 
     /**
@@ -628,20 +629,21 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
         setAttributeInternal(PAYMENTSEQ, value);
     }
 
+
     /**
-     * Gets the attribute value for txtBalanceAmount, using the alias name txtBalanceAmount.
-     * @return the value of txtBalanceAmount
+     * Gets the attribute value for txtNetPayment, using the alias name txtNetPayment.
+     * @return the value of txtNetPayment
      */
-    public BigDecimal gettxtBalanceAmount() {
-        return (BigDecimal) getAttributeInternal(TXTBALANCEAMOUNT);
+    public BigDecimal gettxtNetPayment() {
+        return (BigDecimal) getAttributeInternal(TXTNETPAYMENT);
     }
 
     /**
-     * Sets <code>value</code> as the attribute value for txtBalanceAmount.
-     * @param value value to set the txtBalanceAmount
+     * Sets <code>value</code> as the attribute value for txtNetPayment.
+     * @param value value to set the txtNetPayment
      */
-    public void settxtBalanceAmount(BigDecimal value) {
-        setAttributeInternal(TXTBALANCEAMOUNT, value);
+    public void settxtNetPayment(BigDecimal value) {
+        setAttributeInternal(TXTNETPAYMENT, value);
     }
 
     /**
@@ -734,8 +736,6 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
        }
         if (operation!=DML_DELETE) {
            populateAttributeAsChanged(PMTAMOUNT, getFcurrPmtAmount());
-           populateAttributeAsChanged(BALANCE, gettxtBalanceAmount());
-           populateAttributeAsChanged(FCURRBALANCE, gettxtBalanceAmount());
            populateAttributeAsChanged(STAXAMT, getFcurrStaxAmt());
        }
         super.doDML(operation, e);

@@ -106,9 +106,14 @@
           <Item Value="FcurrPmtAmount"/>
           <Item Value="FcurrStaxAmt"/>
           <Item Value="FcurrBalance"/>
-          <Item Value="txtBalanceAmount"/>
+          <Item Value="txtNetPayment"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="Supplierid">
+      <AttrNames>
+        <Item Value="Supplierid"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

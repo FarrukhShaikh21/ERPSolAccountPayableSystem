@@ -459,4 +459,29 @@
       <property
          name="sdm:polyPoints">R50,634.0,103.74707,790.0,103.5459,L50</property>
    </ControlFlowCase>
+   <View
+      id="View41">
+      <property
+         name="activityId">PY_0020</property>
+      <property
+         name="page">/PY_0020.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PY_0020&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">562.7988</property>
+      <property
+         name="x">753.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase42"
+      from="View21"
+      to="View41">
+      <property
+         name="fromOutcome">ERP-ACT-PY-0020</property>
+      <property
+         name="sdm:polyPoints">R58,569.5,455.0459,712.5,562.44824,L50</property>
+   </ControlFlowCase>
 </SDM>

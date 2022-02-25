@@ -121,6 +121,9 @@
         <name>ACT-ERP-SOL-LOGOUT</name>
       </outcome>
     </task-flow-return>
+    <view id="PY_0020">
+      <page>/PY_0020.jsf</page>
+    </view>
     <control-flow-rule id="__3">
       <from-activity-id>doERPSolAPSSessionGlobals</from-activity-id>
       <control-flow-case id="__4">
@@ -193,6 +196,10 @@
       <control-flow-case id="__26">
         <from-outcome>ERP-ACT-PY_0017-SEARCH</from-outcome>
         <to-activity-id>PY_0017_SEARCH</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__42">
+        <from-outcome>ERP-ACT-PY-0020</from-outcome>
+        <to-activity-id>PY_0020</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__27">

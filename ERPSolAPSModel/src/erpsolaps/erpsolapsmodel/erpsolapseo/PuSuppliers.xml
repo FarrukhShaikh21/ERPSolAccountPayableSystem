@@ -12,14 +12,12 @@
   BindingStyle="OracleName">
   <Attribute
     Name="Supplierid"
-    IsNotNull="true"
     Precision="15"
     ColumnName="SUPPLIERID"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS"
-    PrimaryKey="true">
+    TableName="PU_SUPPLIERS">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -515,6 +513,14 @@
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="Supplierseq"
+    ColumnName="SUPPLIERSEQ"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="PU_SUPPLIERS"
+    PrimaryKey="true"/>
   <AccessorAttribute
     Name="OtherBills"
     Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersOthreBillsSupplierIdAssoc"
@@ -536,7 +542,7 @@
       <Attr Name="_DBObjectName" Value="XPKPU_SUPPLIERS"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Supplierid"/>
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Supplierseq"/>
     </AttrArray>
   </Key>
   <Key

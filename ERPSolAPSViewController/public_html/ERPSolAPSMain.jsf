@@ -10,6 +10,7 @@
               <af:link id="l1" icon="#{resource['images:imgHome.png']}" action="ACT-ERPSOL-RETURN-FROM-APS"
                        partialSubmit="true"/>
             </f:facet>
+            <af:image id="i1" source="#{resource['images:imgAccountsPayable.png']}"/>
           </af:panelBox>
         </f:facet>
         <f:facet name="erptempleft"/>

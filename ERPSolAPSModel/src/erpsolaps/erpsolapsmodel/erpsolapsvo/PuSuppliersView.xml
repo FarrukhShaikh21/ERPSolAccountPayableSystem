@@ -290,6 +290,12 @@
     EntityAttrName="Psuppid"
     EntityUsage="PuSuppliers"
     AliasName="PSUPPID"/>
+  <ViewAttribute
+    Name="Supplierseq"
+    PrecisionRule="true"
+    EntityAttrName="Supplierseq"
+    EntityUsage="PuSuppliers"
+    AliasName="SUPPLIERSEQ"/>
   <ViewCriteria
     Name="PuSuppliersViewByLocationVC"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView"

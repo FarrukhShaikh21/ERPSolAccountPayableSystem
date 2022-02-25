@@ -37,6 +37,12 @@
   <ViewUsage
     Name="VWBilllBalanceAmountForPayAutoSuggestRO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWBilllBalanceAmountForPayQVO"/>
+  <ViewUsage
+    Name="VWPayPayableReportRO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWPayPayableReportQVO"/>
+  <ViewUsage
+    Name="PuSuppliersCRUD"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView"/>
   <ViewLinkUsage
     Name="OthbilldetBilidFkLink1"
     ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"

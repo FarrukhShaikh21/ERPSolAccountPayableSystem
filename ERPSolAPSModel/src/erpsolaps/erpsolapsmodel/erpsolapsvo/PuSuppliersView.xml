@@ -17,6 +17,245 @@
     Name="P_ADF_LOCATIONID"
     Kind="viewcriteria"
     Type="java.lang.String"/>
+  <ViewAccessor
+    Name="AccAllLocationsView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllLocationsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWYesNoQVO"
+    ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllPaymentTermsView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllPaymentTermsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllDeliveryTermsView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllDeliveryTermsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccPuSupplierSegmentsView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSupplierSegmentsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccPuSupplierCategoriesView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSupplierCategoriesView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWChartOfAccountQVO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWChartOfAccountQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWCostCenterQVO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWCostCenterQVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovLocationid"
+    ListVOName="AccAllLocationsView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AllowSms"/>
+      <Item Value="LocationDescription"/>
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovInternationalSupplier"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="InternationalSupplier"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovTaxexempt"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Taxexempt"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovPaymenttermid"
+    ListVOName="AccAllPaymentTermsView"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Paymenttermid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Paymenttermid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovDeliverytermid"
+    ListVOName="AccAllDeliveryTermsView"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Deliverytermid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Deliverytermid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSuppsegmentid"
+    ListVOName="AccPuSupplierSegmentsView"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Suppsegmentid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Suppsegmentid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSuppcategoryid"
+    ListVOName="AccPuSupplierCategoriesView"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Suppcategoryid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Suppcategoryid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovGlcode"
+    ListVOName="AccVWChartOfAccountQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovCostcenter"
+    ListVOName="AccVWCostCenterQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Costcenter"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Costcenterid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovAdvglcode"
+    ListVOName="AccVWChartOfAccountQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Advglcode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovAdvcostcenter"
+    ListVOName="AccVWCostCenterQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Advcostcenter"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Costcenterid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="PuSuppliers"
     Entity="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers"/>
@@ -40,28 +279,60 @@
     PrecisionRule="true"
     EntityAttrName="Paymenttermid"
     EntityUsage="PuSuppliers"
-    AliasName="PAYMENTTERMID"/>
+    AliasName="PAYMENTTERMID"
+    LOVName="LovPaymenttermid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Deliverytermid"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Deliverytermid"
     EntityUsage="PuSuppliers"
-    AliasName="DELIVERYTERMID"/>
+    AliasName="DELIVERYTERMID"
+    LOVName="LovDeliverytermid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Suppsegmentid"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Suppsegmentid"
     EntityUsage="PuSuppliers"
-    AliasName="SUPPSEGMENTID"/>
+    AliasName="SUPPSEGMENTID"
+    LOVName="LovSuppsegmentid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Suppcategoryid"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Suppcategoryid"
     EntityUsage="PuSuppliers"
-    AliasName="SUPPCATEGORYID"/>
+    AliasName="SUPPCATEGORYID"
+    LOVName="LovSuppcategoryid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SuppName"
     PrecisionRule="true"
@@ -97,7 +368,15 @@
     PrecisionRule="true"
     EntityAttrName="InternationalSupplier"
     EntityUsage="PuSuppliers"
-    AliasName="INTERNATIONAL_SUPPLIER"/>
+    AliasName="INTERNATIONAL_SUPPLIER"
+    LOVName="LovInternationalSupplier">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Createdby"
     PrecisionRule="true"
@@ -169,19 +448,43 @@
     PrecisionRule="true"
     EntityAttrName="Taxexempt"
     EntityUsage="PuSuppliers"
-    AliasName="TAXEXEMPT"/>
+    AliasName="TAXEXEMPT"
+    LOVName="LovTaxexempt">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Glcode"
     PrecisionRule="true"
     EntityAttrName="Glcode"
     EntityUsage="PuSuppliers"
-    AliasName="GLCODE"/>
+    AliasName="GLCODE"
+    LOVName="LovGlcode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Costcenter"
     PrecisionRule="true"
     EntityAttrName="Costcenter"
     EntityUsage="PuSuppliers"
-    AliasName="COSTCENTER"/>
+    AliasName="COSTCENTER"
+    LOVName="LovCostcenter">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Priority"
     PrecisionRule="true"
@@ -205,19 +508,43 @@
     PrecisionRule="true"
     EntityAttrName="Advglcode"
     EntityUsage="PuSuppliers"
-    AliasName="ADVGLCODE"/>
+    AliasName="ADVGLCODE"
+    LOVName="LovAdvglcode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Advcostcenter"
     PrecisionRule="true"
     EntityAttrName="Advcostcenter"
     EntityUsage="PuSuppliers"
-    AliasName="ADVCOSTCENTER"/>
+    AliasName="ADVCOSTCENTER"
+    LOVName="LovAdvcostcenter">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Locationid"
     PrecisionRule="true"
     EntityAttrName="Locationid"
     EntityUsage="PuSuppliers"
-    AliasName="LOCATIONID"/>
+    AliasName="LOCATIONID"
+    LOVName="LovLocationid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SuppType"
     PrecisionRule="true"

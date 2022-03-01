@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AllDeliveryTerms"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ALL_DELIVERY_TERMS"
+  AliasName="AllDeliveryTerms"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Deliverytermid"
+    IsNotNull="true"
+    Precision="15"
+    ColumnName="DELIVERYTERMID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ALL_DELIVERY_TERMS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="30"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ALL_DELIVERY_TERMS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Createdby"
+    Precision="20"
+    ColumnName="CREATEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ALL_DELIVERY_TERMS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="ALL_DELIVERY_TERMS"/>
+  <Attribute
+    Name="Modifiedby"
+    Precision="20"
+    ColumnName="MODIFIEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ALL_DELIVERY_TERMS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="ALL_DELIVERY_TERMS"/>
+  <Attribute
+    Name="Days"
+    Precision="3"
+    Scale="0"
+    ColumnName="DAYS"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="ALL_DELIVERY_TERMS"/>
+  <Key
+    Name="XpkallDeliveryTerms"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="XPKALL_DELIVERY_TERMS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.AllDeliveryTerms.Deliverytermid"/>
+    </AttrArray>
+  </Key>
+</Entity>

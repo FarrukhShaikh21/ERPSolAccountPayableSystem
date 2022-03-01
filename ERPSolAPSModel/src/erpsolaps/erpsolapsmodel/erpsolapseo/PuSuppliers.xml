@@ -21,6 +21,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Supplierid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Companyid"
@@ -34,6 +42,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Companyid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Paymenttermid"
@@ -47,6 +63,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Paymenttermid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Deliverytermid"
@@ -60,6 +84,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Deliverytermid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Suppsegmentid"
@@ -73,6 +105,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Suppsegmentid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Suppcategoryid"
@@ -86,6 +126,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Suppcategoryid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SuppName"
@@ -98,6 +146,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.SuppName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SuppShortName"
@@ -110,6 +166,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.SuppShortName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ContactName"
@@ -122,6 +186,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.ContactName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ContactAddress"
@@ -134,6 +206,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.ContactAddress_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Currid"
@@ -142,10 +222,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS">
+    TableName="PU_SUPPLIERS"
+    DefaultValue="PKR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Currid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="InternationalSupplier"
@@ -154,10 +243,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS">
+    TableName="PU_SUPPLIERS"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.InternationalSupplier_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Createdby"
@@ -170,6 +268,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Createdby_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CreatedDate"
@@ -177,7 +283,16 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="PU_SUPPLIERS"/>
+    TableName="PU_SUPPLIERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.CreatedDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Modifiedby"
     Precision="20"
@@ -189,6 +304,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Modifiedby_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ModifiedDate"
@@ -196,7 +319,16 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="PU_SUPPLIERS"/>
+    TableName="PU_SUPPLIERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.ModifiedDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="TelNo"
     Precision="15"
@@ -208,6 +340,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.TelNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="MobileNo"
@@ -220,6 +360,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.MobileNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Email"
@@ -232,6 +380,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Email_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="FaxNo"
@@ -244,6 +400,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.FaxNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Country"
@@ -256,6 +420,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Country_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="City"
@@ -268,6 +440,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.City_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="TaxCode"
@@ -275,7 +455,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="PU_SUPPLIERS"/>
+    TableName="PU_SUPPLIERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.TaxCode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Taxexempt"
     Precision="1"
@@ -283,10 +472,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS">
+    TableName="PU_SUPPLIERS"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Taxexempt_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Glcode"
@@ -299,6 +497,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Glcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Costcenter"
@@ -311,6 +517,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Costcenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Priority"
@@ -323,6 +537,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Priority_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Climit"
@@ -330,7 +552,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="PU_SUPPLIERS"/>
+    TableName="PU_SUPPLIERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Climit_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Ntnno"
     Precision="15"
@@ -342,6 +573,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Ntnno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Advglcode"
@@ -354,6 +593,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Advglcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Advcostcenter"
@@ -366,6 +613,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Advcostcenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Locationid"
@@ -378,6 +633,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Locationid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SuppType"
@@ -390,6 +653,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.SuppType_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="StaxNo"
@@ -402,6 +673,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.StaxNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="StaxNoTemp"
@@ -414,6 +693,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.StaxNoTemp_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CreditLimit"
@@ -421,7 +708,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="PU_SUPPLIERS"/>
+    TableName="PU_SUPPLIERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.CreditLimit_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Cglcode"
     Precision="15"
@@ -433,6 +729,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Cglcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Ccostcenter"
@@ -445,6 +749,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Ccostcenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="DebitNoteWithoutReference"
@@ -453,10 +765,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS">
+    TableName="PU_SUPPLIERS"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.DebitNoteWithoutReference_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="IsReceiptPayment"
@@ -465,10 +786,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS">
+    TableName="PU_SUPPLIERS"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.IsReceiptPayment_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="IsMigrated"
@@ -477,10 +807,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS">
+    TableName="PU_SUPPLIERS"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.IsMigrated_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="MigratedDate"
@@ -488,7 +827,16 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="PU_SUPPLIERS"/>
+    TableName="PU_SUPPLIERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.MigratedDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Child"
     Precision="1"
@@ -496,10 +844,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS">
+    TableName="PU_SUPPLIERS"
+    DefaultValue="Y">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Child_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Psuppid"
@@ -512,6 +869,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Psuppid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Supplierseq"
@@ -520,7 +885,16 @@
     Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="PU_SUPPLIERS"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Supplierseq_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="OtherBills"
     Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSuppliersOthreBillsSupplierIdAssoc"
@@ -589,4 +963,8 @@
       <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliers.Companyid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolaps.erpsolapsmodel.ERPSolAPSModelBundle"/>
+  </ResourceBundle>
 </Entity>

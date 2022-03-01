@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PuSupplierCategoriesView"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="PuSupplierCategories"
+    Entity="erpsolaps.erpsolapsmodel.erpsolapseo.PuSupplierCategories"/>
+  <ViewAttribute
+    Name="Suppcategoryid"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Suppcategoryid"
+    EntityUsage="PuSupplierCategories"
+    AliasName="SUPPCATEGORYID"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="PuSupplierCategories"
+    AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="Createdby"
+    PrecisionRule="true"
+    EntityAttrName="Createdby"
+    EntityUsage="PuSupplierCategories"
+    AliasName="CREATEDBY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="PuSupplierCategories"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="Modifiedby"
+    PrecisionRule="true"
+    EntityAttrName="Modifiedby"
+    EntityUsage="PuSupplierCategories"
+    AliasName="MODIFIEDBY"/>
+  <ViewAttribute
+    Name="ModifiedDate"
+    PrecisionRule="true"
+    EntityAttrName="ModifiedDate"
+    EntityUsage="PuSupplierCategories"
+    AliasName="MODIFIED_DATE"/>
+</ViewObject>

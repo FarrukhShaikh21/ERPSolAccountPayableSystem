@@ -5,6 +5,139 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="PuSuppliersCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
+              id="PuSuppliersCRUDIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="Supplierid">
+      <AttrNames>
+        <Item Value="Supplierid"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovPaymenttermid" id="Paymenttermid"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovDeliverytermid" id="Deliverytermid"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovSuppsegmentid" id="Suppsegmentid"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovSuppcategoryid" id="Suppcategoryid"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="SuppName">
+      <AttrNames>
+        <Item Value="SuppName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="SuppShortName">
+      <AttrNames>
+        <Item Value="SuppShortName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="ContactName">
+      <AttrNames>
+        <Item Value="ContactName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="ContactAddress">
+      <AttrNames>
+        <Item Value="ContactAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovInternationalSupplier"
+          id="InternationalSupplier" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="TelNo">
+      <AttrNames>
+        <Item Value="TelNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="MobileNo">
+      <AttrNames>
+        <Item Value="MobileNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="FaxNo">
+      <AttrNames>
+        <Item Value="FaxNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="Country">
+      <AttrNames>
+        <Item Value="Country"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="City">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovTaxCode" id="TaxCode"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovTaxexempt" id="Taxexempt"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovGlcode" id="Glcode" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovCostcenter" id="Costcenter"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="Priority">
+      <AttrNames>
+        <Item Value="Priority"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="Climit">
+      <AttrNames>
+        <Item Value="Climit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="Ntnno">
+      <AttrNames>
+        <Item Value="Ntnno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovAdvglcode" id="Advglcode"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovAdvcostcenter" id="Advcostcenter"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovLocationid" id="Locationid"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PuSuppliersCRUDIterator" StaticList="false" Uses="LovSuppType" id="SuppType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="StaxNo">
+      <AttrNames>
+        <Item Value="StaxNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="StaxNoTemp">
+      <AttrNames>
+        <Item Value="StaxNoTemp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="CreditLimit">
+      <AttrNames>
+        <Item Value="CreditLimit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="Cglcode">
+      <AttrNames>
+        <Item Value="Cglcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PuSuppliersCRUDIterator" id="Ccostcenter">
+      <AttrNames>
+        <Item Value="Ccostcenter"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="PuSuppliersCRUDIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="PuSuppliersCRUDIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolAPSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolAPSAppModuleDataControl"/>
+    <action IterBinding="PuSuppliersCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="PuSuppliersCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
 </pageDefinition>

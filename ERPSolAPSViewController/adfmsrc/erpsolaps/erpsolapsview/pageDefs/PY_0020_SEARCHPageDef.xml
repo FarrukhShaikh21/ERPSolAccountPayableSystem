@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="PY_0020_SEARCHPageDef"
+                Package="erpsolaps.erpsolapsview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PuSuppliersCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
+              id="PuSuppliersCRUDIterator"/>
+    <searchRegion Criteria="PuSuppliersFindVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="PuSuppliersCRUDIterator" id="PuSuppliersFindVCQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PuSuppliersCRUDIterator" id="PuSuppliersCRUD">
+      <nodeDefinition DefName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView" Name="PuSuppliersCRUD0">
+        <AttrNames>
+          <Item Value="Supplierid"/>
+          <Item Value="SuppName"/>
+          <Item Value="SuppShortName"/>
+          <Item Value="SuppType"/>
+          <Item Value="Locationid"/>
+          <Item Value="Companyid"/>
+          <Item Value="Paymenttermid"/>
+          <Item Value="Deliverytermid"/>
+          <Item Value="Suppsegmentid"/>
+          <Item Value="Suppcategoryid"/>
+          <Item Value="ContactName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

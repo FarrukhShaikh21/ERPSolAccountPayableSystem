@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="PY_0020_SEARCH.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelHeader text="PuSuppliers" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.PuSuppliersFindVCQuery.queryDescriptor}"
+                              model="#{bindings.PuSuppliersFindVCQuery.queryModel}"
+                              queryListener="#{bindings.PuSuppliersFindVCQuery.processQuery}"
+                              queryOperationListener="#{bindings.PuSuppliersFindVCQuery.processQueryOperation}"
+                              resultComponentId="::resId1" saveQueryMode="hidden" modeChangeVisible="false"/>
+                    <f:facet name="toolbar">
+                        <af:toolbar id="t1">
+                            <af:button text="Back To Supplier Form" id="b1"
+                                       icon="#{resource['images:imgExitForm.png']}"
+                                       action="ERP-ACT-PY-0020-SEARCH-BACK"/>
+                        </af:toolbar>
+                    </f:facet>
+                </af:panelHeader>
+                <af:table value="#{bindings.PuSuppliersCRUD.collectionModel}" var="row"
+                          rows="#{bindings.PuSuppliersCRUD.rangeSize}"
+                          emptyText="#{bindings.PuSuppliersCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.PuSuppliersCRUD.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.PuSuppliersCRUD.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.PuSuppliersCRUD.rangeSize}" id="resId1"
+                          columnStretching="column:resId1c2">
+                    <af:column headerText="#{bindings.PuSuppliersCRUD.hints.Supplierid.label}" id="resId1c1">
+                        <af:link text="#{row.Supplierid}" id="l1" partialSubmit="true"
+                                 action="ERP-ACT-PY-0020-SEARCH-BACK" rendered="false"/>
+                        <af:outputText value="#{row.Supplierid}"
+                                       shortDesc="#{bindings.PuSuppliersCRUD.hints.Supplierid.tooltip}" id="ot1"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.PuSuppliersCRUD.hints.SuppName.label}" id="resId1c2">
+                        <af:outputText value="#{row.SuppName}"
+                                       shortDesc="#{bindings.PuSuppliersCRUD.hints.SuppName.tooltip}" id="ot2"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.PuSuppliersCRUD.hints.SuppShortName.label}" id="resId1c3">
+                        <af:outputText value="#{row.SuppShortName}"
+                                       shortDesc="#{bindings.PuSuppliersCRUD.hints.SuppShortName.tooltip}" id="ot3"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.PuSuppliersCRUD.hints.SuppType.label}" id="resId1c4">
+                        <af:selectOneChoice value="#{row.bindings.SuppType.inputValue}"
+                                            label="#{row.bindings.SuppType.label}"
+                                            required="#{bindings.PuSuppliersCRUD.hints.SuppType.mandatory}"
+                                            shortDesc="#{bindings.PuSuppliersCRUD.hints.SuppType.tooltip}"
+                                            readOnly="true" id="soc1">
+                            <f:selectItems value="#{row.bindings.SuppType.items}" id="si1"/>
+                            <f:validator binding="#{row.bindings.SuppType.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.PuSuppliersCRUD.hints.Locationid.label}" id="resId1c5">
+                        <af:selectOneChoice value="#{row.bindings.Locationid.inputValue}"
+                                            label="#{row.bindings.Locationid.label}"
+                                            required="#{bindings.PuSuppliersCRUD.hints.Locationid.mandatory}"
+                                            shortDesc="#{bindings.PuSuppliersCRUD.hints.Locationid.tooltip}"
+                                            readOnly="true" id="soc2">
+                            <f:selectItems value="#{row.bindings.Locationid.items}" id="si2"/>
+                            <f:validator binding="#{row.bindings.Locationid.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.PuSuppliersCRUD.hints.Companyid.label}" id="resId1c6">
+                        <af:outputText value="#{row.Companyid}"
+                                       shortDesc="#{bindings.PuSuppliersCRUD.hints.Companyid.tooltip}" id="ot4"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.PuSuppliersCRUD.hints.Paymenttermid.label}" id="resId1c7">
+                        <af:selectOneChoice value="#{row.bindings.Paymenttermid.inputValue}"
+                                            label="#{row.bindings.Paymenttermid.label}"
+                                            required="#{bindings.PuSuppliersCRUD.hints.Paymenttermid.mandatory}"
+                                            shortDesc="#{bindings.PuSuppliersCRUD.hints.Paymenttermid.tooltip}"
+                                            readOnly="true" id="soc3">
+                            <f:selectItems value="#{row.bindings.Paymenttermid.items}" id="si3"/>
+                            <f:validator binding="#{row.bindings.Paymenttermid.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.PuSuppliersCRUD.hints.Deliverytermid.label}" id="resId1c8">
+                        <af:selectOneChoice value="#{row.bindings.Deliverytermid.inputValue}"
+                                            label="#{row.bindings.Deliverytermid.label}"
+                                            required="#{bindings.PuSuppliersCRUD.hints.Deliverytermid.mandatory}"
+                                            shortDesc="#{bindings.PuSuppliersCRUD.hints.Deliverytermid.tooltip}"
+                                            readOnly="true" id="soc4">
+                            <f:selectItems value="#{row.bindings.Deliverytermid.items}" id="si4"/>
+                            <f:validator binding="#{row.bindings.Deliverytermid.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.PuSuppliersCRUD.hints.Suppsegmentid.label}" id="resId1c9">
+                        <af:selectOneChoice value="#{row.bindings.Suppsegmentid.inputValue}"
+                                            label="#{row.bindings.Suppsegmentid.label}"
+                                            required="#{bindings.PuSuppliersCRUD.hints.Suppsegmentid.mandatory}"
+                                            shortDesc="#{bindings.PuSuppliersCRUD.hints.Suppsegmentid.tooltip}"
+                                            readOnly="true" id="soc5">
+                            <f:selectItems value="#{row.bindings.Suppsegmentid.items}" id="si5"/>
+                            <f:validator binding="#{row.bindings.Suppsegmentid.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.PuSuppliersCRUD.hints.Suppcategoryid.label}" id="resId1c10">
+                        <af:selectOneChoice value="#{row.bindings.Suppcategoryid.inputValue}"
+                                            label="#{row.bindings.Suppcategoryid.label}"
+                                            required="#{bindings.PuSuppliersCRUD.hints.Suppcategoryid.mandatory}"
+                                            shortDesc="#{bindings.PuSuppliersCRUD.hints.Suppcategoryid.tooltip}"
+                                            readOnly="true" id="soc6">
+                            <f:selectItems value="#{row.bindings.Suppcategoryid.items}" id="si6"/>
+                            <f:validator binding="#{row.bindings.Suppcategoryid.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.PuSuppliersCRUD.hints.ContactName.label}" id="resId1c11">
+                        <af:outputText value="#{row.ContactName}"
+                                       shortDesc="#{bindings.PuSuppliersCRUD.hints.ContactName.tooltip}" id="ot5"/>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

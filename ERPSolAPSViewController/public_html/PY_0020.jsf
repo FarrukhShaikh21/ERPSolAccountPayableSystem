@@ -14,7 +14,7 @@
                         <af:button actionListener="#{bindings.doSuperviseOtherBills.execute}"
                                    text="doSuperviseOtherBills" disabled="#{!bindings.doSuperviseOtherBills.enabled}"
                                    id="b10" rendered="false"/>
-                        <af:button text="Search" id="b12" action="ERP-ACT-PY_0017-SEARCH"
+                        <af:button text="Search" id="b12" action="ERP-ACT-PY-0020-SEARCH"
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
                         <af:button text="Exit" id="b13" action="ERP-ACT-EXIT-FORM-APS" iconPosition="top"
                                    icon="#{resource['images:imgExitForm.png']}"/>

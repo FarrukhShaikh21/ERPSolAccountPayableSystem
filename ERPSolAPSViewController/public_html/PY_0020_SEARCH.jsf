@@ -30,9 +30,10 @@
                           columnStretching="column:resId1c2">
                     <af:column headerText="#{bindings.PuSuppliersCRUD.hints.Supplierid.label}" id="resId1c1">
                         <af:link text="#{row.Supplierid}" id="l1" partialSubmit="true"
-                                 action="ERP-ACT-PY-0020-SEARCH-BACK" rendered="false"/>
+                                 action="ERP-ACT-PY-0020-SEARCH-BACK"/>
                         <af:outputText value="#{row.Supplierid}"
-                                       shortDesc="#{bindings.PuSuppliersCRUD.hints.Supplierid.tooltip}" id="ot1"/>
+                                       shortDesc="#{bindings.PuSuppliersCRUD.hints.Supplierid.tooltip}" id="ot1"
+                                       rendered="false"/>
                     </af:column>
                     <af:column headerText="#{bindings.PuSuppliersCRUD.hints.SuppName.label}" id="resId1c2">
                         <af:outputText value="#{row.SuppName}"

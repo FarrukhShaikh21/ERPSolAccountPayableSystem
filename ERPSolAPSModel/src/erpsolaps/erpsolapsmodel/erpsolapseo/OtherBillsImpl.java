@@ -1589,7 +1589,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
-        setERPSolPKColumnName("Billidseq");
+        setERPSolPKColumnName("Supplierseq");
         setERPSolPKSeqName("OTHER_BILLS_SEQ");
         setCompanyid(ERPSolGlobClassModel.doGetUserCompanyCode());
         setLocationid(ERPSolGlobClassModel.doGetUserLocationCode());

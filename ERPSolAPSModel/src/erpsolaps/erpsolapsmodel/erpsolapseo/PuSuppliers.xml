@@ -9,7 +9,13 @@
   DBObjectType="table"
   DBObjectName="PU_SUPPLIERS"
   AliasName="PuSuppliers"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliersImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Supplierid"
     Precision="15"
@@ -59,7 +65,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS">
+    TableName="PU_SUPPLIERS"
+    DefaultValue="002">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -80,7 +87,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS">
+    TableName="PU_SUPPLIERS"
+    DefaultValue="002">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -101,7 +109,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS">
+    TableName="PU_SUPPLIERS"
+    DefaultValue="002">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -122,7 +131,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PU_SUPPLIERS">
+    TableName="PU_SUPPLIERS"
+    DefaultValue="024">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -281,7 +291,7 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="PU_SUPPLIERS">
     <Properties>
@@ -317,7 +327,7 @@
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="PU_SUPPLIERS">
     <Properties>
@@ -453,7 +463,7 @@
     Name="TaxCode"
     ColumnName="TAX_CODE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="PU_SUPPLIERS">
     <Properties>
@@ -825,7 +835,7 @@
     Name="MigratedDate"
     ColumnName="MIGRATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="PU_SUPPLIERS">
     <Properties>

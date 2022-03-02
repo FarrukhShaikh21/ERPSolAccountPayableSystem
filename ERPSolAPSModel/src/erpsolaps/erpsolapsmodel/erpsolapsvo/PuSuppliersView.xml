@@ -49,6 +49,14 @@
     Name="AccVWCostCenterQVO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWCostCenterQVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWSupplierTypeQVO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWSupplierTypeQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccTaxView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.TaxView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovLocationid"
     ListVOName="AccAllLocationsView"
@@ -196,6 +204,7 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
+      <Item Value="Glcode"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -215,6 +224,7 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
+      <Item Value="Costcenterid"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -250,6 +260,44 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="Costcenterid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSuppType"
+    ListVOName="AccVWSupplierTypeQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SuppType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SupplierTypeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SupplierTypeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovTaxCode"
+    ListVOName="AccTaxView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TaxCode"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
@@ -442,7 +490,15 @@
     PrecisionRule="true"
     EntityAttrName="TaxCode"
     EntityUsage="PuSuppliers"
-    AliasName="TAX_CODE"/>
+    AliasName="TAX_CODE"
+    LOVName="LovTaxCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Taxexempt"
     PrecisionRule="true"
@@ -490,7 +546,8 @@
     PrecisionRule="true"
     EntityAttrName="Priority"
     EntityUsage="PuSuppliers"
-    AliasName="PRIORITY"/>
+    AliasName="PRIORITY"
+    DefaultValue="H"/>
   <ViewAttribute
     Name="Climit"
     PrecisionRule="true"
@@ -550,7 +607,15 @@
     PrecisionRule="true"
     EntityAttrName="SuppType"
     EntityUsage="PuSuppliers"
-    AliasName="SUPP_TYPE"/>
+    AliasName="SUPP_TYPE"
+    LOVName="LovSuppType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StaxNo"
     PrecisionRule="true"
@@ -656,6 +721,84 @@
         Conjunction="AND"
         Value=":P_ADF_LOCATIONID"
         IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="PuSuppliersFindVC"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="PuSuppliersViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Supplierid"
+        ViewAttribute="Supplierid"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="SuppName"
+        ViewAttribute="SuppName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="SuppShortName"
+        ViewAttribute="SuppShortName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Email"
+        ViewAttribute="Email"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Ntnno"
+        ViewAttribute="Ntnno"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Locationid"
+        ViewAttribute="Locationid"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="SuppType"
+        ViewAttribute="SuppType"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        UpperColumns="0"
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>

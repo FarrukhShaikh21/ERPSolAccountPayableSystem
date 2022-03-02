@@ -252,7 +252,7 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0017</property>
       <property
-         name="sdm:polyPoints">R50,348.0,448.44238,487.5,448.0459,L50</property>
+         name="sdm:polyPoints">R46,348.55783,444.94238,487.5,448.0459,L50</property>
    </ControlFlowCase>
    <TaskFlowReturn
       id="TaskFlowReturn23">
@@ -477,11 +477,46 @@
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase42"
-      from="View21"
+      from="MethodCall4"
       to="View41">
       <property
          name="fromOutcome">ERP-ACT-PY-0020</property>
       <property
-         name="sdm:polyPoints">R58,569.5,455.0459,712.5,562.44824,L50</property>
+         name="sdm:polyPoints">R54,348.0,451.94238,712.5,562.44824,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View43">
+      <property
+         name="activityId">PY_0020_SEARCH</property>
+      <property
+         name="page">/PY_0020_SEARCH.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PY_0020_SEARCH&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">696.7988</property>
+      <property
+         name="x">868.0303</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase44"
+      from="View41"
+      to="View43">
+      <property
+         name="fromOutcome">ERP-ACT-PY-0020-SEARCH</property>
+      <property
+         name="sdm:polyPoints">B50,753.5,616.44824,827.0303,696.44824,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase45"
+      from="View43"
+      to="View41">
+      <property
+         name="fromOutcome">ERP-ACT-PY-0020-SEARCH-BACK</property>
+      <property
+         name="sdm:polyPoints">L46,827.0303,692.94824,757.0,616.44824,B56</property>
    </ControlFlowCase>
 </SDM>

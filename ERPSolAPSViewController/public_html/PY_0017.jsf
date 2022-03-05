@@ -164,7 +164,8 @@
                                         required="#{bindings.Supref.hints.mandatory}"
                                         columns="#{bindings.Supref.hints.displayWidth}"
                                         maximumLength="#{bindings.Supref.hints.precision}"
-                                        shortDesc="#{bindings.Supref.hints.tooltip}" id="it15" simple="true">
+                                        shortDesc="#{bindings.Supref.hints.tooltip}" id="it15" simple="true"
+                                        autoSubmit="true">
                             <f:validator binding="#{bindings.Supref.validator}"/>
                           </af:inputText>
                         </af:gridCell>
@@ -177,7 +178,8 @@
                                         label="#{bindings.SuprefDate.hints.label}"
                                         required="#{bindings.SuprefDate.hints.mandatory}"
                                         columns="#{bindings.SuprefDate.hints.displayWidth}"
-                                        shortDesc="#{bindings.SuprefDate.hints.tooltip}" id="id2" simple="true">
+                                        shortDesc="#{bindings.SuprefDate.hints.tooltip}" id="id2" simple="true"
+                                        autoSubmit="true">
                             <f:validator binding="#{bindings.SuprefDate.validator}"/>
                             <af:convertDateTime pattern="#{bindings.SuprefDate.format}"/>
                           </af:inputDate>
@@ -265,7 +267,7 @@
                         </af:inputComboboxListOfValues>
                       </af:column>
                       <af:column headerText="#{bindings.OtherBillDetDetCRUD.hints.txtGLDescription.label}" id="c3"
-                                 width="150" displayIndex="-1">
+                                 width="200" displayIndex="-1">
                         <af:inputText value="#{row.bindings.txtGLDescription.inputValue}"
                                       label="#{bindings.OtherBillDetDetCRUD.hints.txtGLDescription.label}"
                                       required="#{bindings.OtherBillDetDetCRUD.hints.txtGLDescription.mandatory}"

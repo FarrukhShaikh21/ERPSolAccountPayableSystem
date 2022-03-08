@@ -255,7 +255,7 @@
                               selectedRowKeys="#{bindings.OtherBillDetDetCRUD.collectionModel.selectedRow}"
                               selectionListener="#{bindings.OtherBillDetDetCRUD.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.OtherBillDetDetCRUD.rangeSize}" id="t2"
-                              partialTriggers="::b7 ::b8">
+                              partialTriggers="::b7 ::b8" displayRow="selected" scrollPolicy="page" autoHeightRows="6">
                       <af:column headerText="#{bindings.OtherBillDetDetCRUD.hints.Glcode.label}" id="c1" width="200">
                         <af:inputComboboxListOfValues id="glcodeId"
                                                       popupTitle="Search and Select: #{bindings.OtherBillDetDetCRUD.hints.Glcode.label}"

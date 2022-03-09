@@ -43,6 +43,9 @@
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
                         <af:button text="Exit" id="b13" action="ERP-ACT-EXIT-FORM-APS" iconPosition="top"
                                    icon="#{resource['images:imgExitForm.png']}"/>
+                        <af:button text="Print Preview" id="b11" icon="#{resource['images:imgPrintPreview.png']}"
+                                   iconPosition="top"
+                                   action="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolPaymentReport}"/>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
                                    disabled="#{bindings.PaymentCode.inputValue==null || !bindings.Previous.enabled}" partialSubmit="true" id="b4"
                                    icon="#{resource['images:imgPrevious.png']}" iconPosition="top" accessKey="r"/>
@@ -77,6 +80,15 @@
                           <af:outputLabel value="#{bindings.PaymentCode.hints.label}" id="ol5"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc3" valign="middle">
+                          <af:inputText value="#{bindings.Paymentseq.inputValue}"
+                                        label="#{bindings.Paymentseq.hints.label}"
+                                        required="#{bindings.Paymentseq.hints.mandatory}"
+                                        columns="#{bindings.Paymentseq.hints.displayWidth}"
+                                        maximumLength="#{bindings.Paymentseq.hints.precision}"
+                                        shortDesc="#{bindings.Paymentseq.hints.tooltip}" id="it15" rendered="false">
+                            <f:validator binding="#{bindings.Paymentseq.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Paymentseq.format}"/>
+                          </af:inputText>
                           <af:inputText value="#{bindings.Submit.inputValue}" label="#{bindings.Submit.hints.label}"
                                         required="#{bindings.Submit.hints.mandatory}"
                                         columns="#{bindings.Submit.hints.displayWidth}"

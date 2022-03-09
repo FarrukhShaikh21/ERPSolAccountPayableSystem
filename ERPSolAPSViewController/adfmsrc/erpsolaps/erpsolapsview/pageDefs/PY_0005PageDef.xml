@@ -115,5 +115,10 @@
         <Item Value="Supplierid"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="Paymentseq">
+      <AttrNames>
+        <Item Value="Paymentseq"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

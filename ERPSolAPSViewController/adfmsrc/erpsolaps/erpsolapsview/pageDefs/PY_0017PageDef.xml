@@ -84,5 +84,10 @@
                   DataControl="ERPSolAPSAppModuleDataControl"
                   InstanceName="data.ERPSolAPSAppModuleDataControl.OtherBillsCRUD"
                   ReturnName="data.ERPSolAPSAppModuleDataControl.methodResults.doSuperviseOtherBills_ERPSolAPSAppModuleDataControl_OtherBillsCRUD_doSuperviseOtherBills_result"/>
+    <attributeValues IterBinding="OtherBillsCRUDIterator" id="Billidseq">
+      <AttrNames>
+        <Item Value="Billidseq"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -44,6 +44,9 @@
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
                         <af:button text="Exit" id="b13" action="ERP-ACT-EXIT-FORM-APS" iconPosition="top"
                                    icon="#{resource['images:imgExitForm.png']}"/>
+                        <af:button text="Print Preview" id="b11"
+                                   action="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolOtherBillReport}"
+                                   icon="#{resource['images:imgPrintPreview.png']}" iconPosition="top"/>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
                                    disabled="#{bindings.Billid.inputValue==null || !bindings.Previous.enabled}" partialSubmit="true" id="b4"
                                    icon="#{resource['images:imgPrevious.png']}" iconPosition="top" accessKey="r"/>
@@ -78,6 +81,15 @@
                           <af:outputLabel value="#{bindings.Billid.hints.label}" id="ol5"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc3" valign="middle">
+                          <af:inputText value="#{bindings.Billidseq.inputValue}"
+                                        label="#{bindings.Billidseq.hints.label}"
+                                        required="#{bindings.Billidseq.hints.mandatory}"
+                                        columns="#{bindings.Billidseq.hints.displayWidth}"
+                                        maximumLength="#{bindings.Billidseq.hints.precision}"
+                                        shortDesc="#{bindings.Billidseq.hints.tooltip}" id="it9" rendered="false">
+                            <f:validator binding="#{bindings.Billidseq.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Billidseq.format}"/>
+                          </af:inputText>
                           <af:inputText value="#{bindings.Billid.inputValue}" label="#{bindings.Billid.hints.label}"
                                         required="#{bindings.Billid.hints.mandatory}"
                                         columns="#{bindings.Billid.hints.displayWidth}"

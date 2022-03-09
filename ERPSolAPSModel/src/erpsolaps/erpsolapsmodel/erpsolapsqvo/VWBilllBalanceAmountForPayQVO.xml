@@ -21,11 +21,25 @@
   <Variable
     Name="P_ADF_SUPPLIERID"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <Variable
     Name="P_ADF_BILL_TYPE"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <SQLQuery><![CDATA[select billid, bill_date, balance_amount, supplierid, bill_type,supplier_name from vw_bill_balance_amount_for_pay   
 where bill_type=:P_ADF_BILL_TYPE AND SUPPLIERID=:P_ADF_SUPPLIERID]]></SQLQuery>
   <ViewAttribute

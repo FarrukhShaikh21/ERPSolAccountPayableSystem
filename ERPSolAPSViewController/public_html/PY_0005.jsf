@@ -206,16 +206,17 @@
                             <af:selectItem label="Advance" value="AD" id="si1"
                                            disabled="#{bindings.PaymentDetailCRUDIterator.estimatedRowCount>0}"/>
                             <af:selectItem label="Against Liability" value="NM" id="si2"/>
-                            <af:selectItem label="Other Liability" value="OLIB" id="si3"/>
-                            <af:selectItem label="L/C Bank Charges" value="PYLC" id="si4"/>
-                            <af:selectItem label="L/C Margin" value="LCMR" id="si5"/>
-                            <af:selectItem label="Bank Advice (Uance L/C)" value="UADV" id="si6"/>
-                            <af:selectItem label="Bank Advice (Sight L/C)" value="ASP" id="si7"/>
-                            <af:selectItem label="After For Bond" value="B4B" id="si8"/>
-                            <af:selectItem label="After From Bond" value="BFB" id="si9"/>
-                            <af:selectItem label="After Consumption" value="BCON" id="si10"/>
-                            <af:selectItem label="Against Estimation" value="EST" id="si11"/>
-                            <af:selectItem label="Payment Against (BOE Adjustment)" value="BADJ" id="si12"/>
+                            <af:selectItem label="Other Liability" value="OLIB" id="si3" rendered="false"/>
+                            <af:selectItem label="L/C Bank Charges" value="PYLC" id="si4" rendered="false"/>
+                            <af:selectItem label="L/C Margin" value="LCMR" id="si5" rendered="false"/>
+                            <af:selectItem label="Bank Advice (Uance L/C)" value="UADV" id="si6" rendered="false"/>
+                            <af:selectItem label="Bank Advice (Sight L/C)" value="ASP" id="si7" rendered="false"/>
+                            <af:selectItem label="After For Bond" value="B4B" id="si8" rendered="false"/>
+                            <af:selectItem label="After From Bond" value="BFB" id="si9" rendered="false"/>
+                            <af:selectItem label="After Consumption" value="BCON" id="si10" rendered="false"/>
+                            <af:selectItem label="Against Estimation" value="EST" id="si11" rendered="false"/>
+                            <af:selectItem label="Payment Against (BOE Adjustment)" value="BADJ" id="si12"
+                                           rendered="false"/>
                           </af:selectOneChoice>
                         </af:gridCell>
                         <af:gridCell id="gc18" width="15%" valign="middle">
@@ -300,7 +301,8 @@
                                         required="#{bindings.FcurrPayAmount.hints.mandatory}"
                                         columns="#{bindings.FcurrPayAmount.hints.displayWidth}"
                                         maximumLength="#{bindings.FcurrPayAmount.hints.precision}"
-                                        shortDesc="#{bindings.FcurrPayAmount.hints.tooltip}" id="it11" simple="true">
+                                        shortDesc="#{bindings.FcurrPayAmount.hints.tooltip}" id="it11" simple="true"
+                                        readOnly="#{bindings.PaymentType.inputValue!='AD'}" partialTriggers="soc1">
                             <f:validator binding="#{bindings.FcurrPayAmount.validator}"/>
                             <af:convertNumber groupingUsed="false" pattern="#{bindings.FcurrPayAmount.format}"/>
                           </af:inputText>
@@ -344,10 +346,10 @@
                     <f:facet name="menus"/>
                     <f:facet name="toolbar">
                       <af:toolbar id="t3">
-                        <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add Product Line"
+                        <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add Payment Line"
                                    disabled="#{bindings.Submit.inputValue=='Y' || bindings.PaymentType.inputValue=='AD'}" id="b7" accessKey="a"
                                    partialTriggers="::soc1"/>
-                        <af:button actionListener="#{bindings.Delete1.execute}" text="Delete Product Line"
+                        <af:button actionListener="#{bindings.Delete1.execute}" text="Delete Payment Line"
                                    disabled="#{bindings.Submit.inputValue=='Y' || bindings.PaymentType.inputValue=='AD'}" id="b8" immediate="true"
                                    partialTriggers="::soc1"/>
                       </af:toolbar>

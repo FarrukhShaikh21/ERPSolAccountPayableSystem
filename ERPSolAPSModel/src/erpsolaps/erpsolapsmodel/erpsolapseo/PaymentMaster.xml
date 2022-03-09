@@ -105,7 +105,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PAYMENT_MASTER">
+    TableName="PAYMENT_MASTER"
+    DefaultValue="NM">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
@@ -163,8 +164,7 @@
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="PAYMENT_MASTER">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <TransientExpression><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -333,6 +333,14 @@ return true;]]></validation:TransientExpression>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.Locationid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Deptid"
@@ -359,6 +367,14 @@ return true;]]></validation:TransientExpression>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.ChequeNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ChequeDate"
@@ -366,7 +382,16 @@ return true;]]></validation:TransientExpression>
     SQLType="DATE"
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="PAYMENT_MASTER"/>
+    TableName="PAYMENT_MASTER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.ChequeDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Bankid"
     Precision="15"
@@ -528,6 +553,14 @@ return true;]]></validation:TransientExpression>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="18"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.PermanetId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SubmitDate"
@@ -620,7 +653,14 @@ return true;]]></validation:TransientExpression>
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="PAYMENT_MASTER"
-    DefaultValue="1"/>
+    DefaultValue="1">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="LocCurrcode"
     Precision="3"
@@ -640,14 +680,32 @@ return true;]]></validation:TransientExpression>
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="PAYMENT_MASTER"/>
+    TableName="PAYMENT_MASTER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.FcurrPayAmount_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="FcurrTaxAmount"
     ColumnName="FCURR_TAX_AMOUNT"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="PAYMENT_MASTER"/>
+    TableName="PAYMENT_MASTER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.FcurrTaxAmount_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="NarrationRescue2"
     Precision="300"
@@ -752,7 +810,16 @@ return true;]]></validation:TransientExpression>
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="PAYMENT_MASTER"/>
+    TableName="PAYMENT_MASTER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.StaxAmount_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="AdsalesTaxCode"
     ColumnName="ADSALES_TAX_CODE"

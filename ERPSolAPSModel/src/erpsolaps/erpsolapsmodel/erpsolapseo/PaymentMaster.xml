@@ -492,7 +492,8 @@ return true;]]></validation:TransientExpression>
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PAYMENT_MASTER">
+    TableName="PAYMENT_MASTER"
+    DefaultValue="L">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>

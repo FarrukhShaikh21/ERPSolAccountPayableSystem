@@ -138,7 +138,7 @@
     Name="TaxCode"
     ColumnName="TAX_CODE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="PAYMENT_DETAIL"/>
   <Attribute

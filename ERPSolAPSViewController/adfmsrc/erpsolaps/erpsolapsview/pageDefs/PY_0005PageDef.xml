@@ -108,6 +108,7 @@
           <Item Value="FcurrBalance"/>
           <Item Value="txtNetPayment"/>
           <Item Value="FcurrTaxamt"/>
+          <Item Value="TaxCode"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -33,6 +33,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccTaxView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.TaxView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovInvoiceCode"
     ListVOName="AccVWBilllBalanceAmountForPayQVO"
@@ -61,6 +65,25 @@
       <Item Value="Billid"/>
       <Item Value="BillDate"/>
       <Item Value="BalanceAmount"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVTaxCode"
+    ListVOName="AccTaxView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TaxCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -135,7 +158,15 @@
     PrecisionRule="true"
     EntityAttrName="TaxCode"
     EntityUsage="PaymentDetail"
-    AliasName="TAX_CODE"/>
+    AliasName="TAX_CODE"
+    LOVName="LOVTaxCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="InvoiceType"
     PrecisionRule="true"

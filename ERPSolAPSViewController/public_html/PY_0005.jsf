@@ -415,6 +415,16 @@
                                             pattern="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.format}"/>
                         </af:inputText>
                       </af:column>
+                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.TaxCode.label}" id="c7">
+                        <af:selectOneChoice value="#{row.bindings.TaxCode.inputValue}"
+                                            label="#{row.bindings.TaxCode.label}"
+                                            required="#{bindings.PaymentDetailCRUD.hints.TaxCode.mandatory}"
+                                            shortDesc="#{bindings.PaymentDetailCRUD.hints.TaxCode.tooltip}" id="soc2"
+                                            autoSubmit="true">
+                          <f:selectItems value="#{row.bindings.TaxCode.items}" id="si15"/>
+                          <f:validator binding="#{row.bindings.TaxCode.validator}"/>
+                        </af:selectOneChoice>
+                      </af:column>
                       <af:column headerText="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.label}" id="c4">
                         <af:inputText value="#{row.bindings.FcurrTaxamt.inputValue}"
                                       label="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.label}"

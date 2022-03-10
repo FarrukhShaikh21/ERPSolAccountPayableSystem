@@ -16,6 +16,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class PaymentDetailViewRowImpl extends ViewRowImpl {
+
     public static final int ENTITY_PAYMENTDETAIL = 0;
 
     /**
@@ -118,7 +119,7 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
             }
 
             public void put(PaymentDetailViewRowImpl obj, Object value) {
-                obj.setTaxCode((BigDecimal) value);
+                obj.setTaxCode((Integer) value);
             }
         }
         ,
@@ -251,8 +252,19 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
                 obj.setAttributeInternal(index(), value);
             }
         }
+        ,
+        AccTaxView {
+            public Object get(PaymentDetailViewRowImpl obj) {
+                return obj.getAccTaxView();
+            }
+
+            public void put(PaymentDetailViewRowImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
         ;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public abstract Object get(PaymentDetailViewRowImpl object);
@@ -278,6 +290,7 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
     public static final int SEQNO = AttributesEnum.SeqNo.index();
     public static final int PAYMENTCODE = AttributesEnum.PaymentCode.index();
     public static final int PMTAMOUNT = AttributesEnum.PmtAmount.index();
@@ -301,6 +314,7 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
     public static final int TXTNETPAYMENT = AttributesEnum.txtNetPayment.index();
     public static final int PAYMENTMASTERVIEW = AttributesEnum.PaymentMasterView.index();
     public static final int ACCVWBILLLBALANCEAMOUNTFORPAYQVO = AttributesEnum.AccVWBilllBalanceAmountForPayQVO.index();
+    public static final int ACCTAXVIEW = AttributesEnum.AccTaxView.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -464,15 +478,15 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
      * Gets the attribute value for TAX_CODE using the alias name TaxCode.
      * @return the TAX_CODE
      */
-    public BigDecimal getTaxCode() {
-        return (BigDecimal) getAttributeInternal(TAXCODE);
+    public Integer getTaxCode() {
+        return (Integer) getAttributeInternal(TAXCODE);
     }
 
     /**
      * Sets <code>value</code> as attribute value for TAX_CODE using the alias name TaxCode.
      * @param value value to set the TAX_CODE
      */
-    public void setTaxCode(BigDecimal value) {
+    public void setTaxCode(Integer value) {
         setAttributeInternal(TAXCODE, value);
     }
 
@@ -671,6 +685,13 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccVWBilllBalanceAmountForPayQVO() {
         return (RowSet) getAttributeInternal(ACCVWBILLLBALANCEAMOUNTFORPAYQVO);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccTaxView.
+     */
+    public RowSet getAccTaxView() {
+        return (RowSet) getAttributeInternal(ACCTAXVIEW);
     }
 
     /**

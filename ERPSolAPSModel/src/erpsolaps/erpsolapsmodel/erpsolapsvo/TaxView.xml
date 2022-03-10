@@ -90,4 +90,8 @@
     EntityAttrName="TaxType"
     EntityUsage="Tax"
     AliasName="TAX_TYPE"/>
+  <SortCriteria>
+    <Sort
+      Attribute="Description"/>
+  </SortCriteria>
 </ViewObject>

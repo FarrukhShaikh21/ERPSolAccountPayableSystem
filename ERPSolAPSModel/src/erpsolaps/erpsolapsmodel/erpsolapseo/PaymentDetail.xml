@@ -306,8 +306,9 @@
     ColumnType="NUMBER"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[(FcurrStaxAmt==null?0:FcurrStaxAmt) + (FcurrPmtAmount==null?0:FcurrPmtAmount)]]></TransientExpression>
+    <TransientExpression><![CDATA[(FcurrPmtAmount==null?0:FcurrPmtAmount) - (FcurrTaxamt==null?0:FcurrTaxamt)]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -316,6 +317,12 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="FcurrPmtAmount"/>
+      <Item
+        Value="FcurrTaxamt"/>
+    </Dependencies>
   </Attribute>
   <AccessorAttribute
     Name="PaymentMaster"
@@ -364,6 +371,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentDetail.TaxCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_PaymentDetail">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKPAYMENT_MASTER"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_PAYMENT_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentDetail.Paymentseq"/>
     </AttrArray>
   </Key>
   <validation:CompareValidationBean

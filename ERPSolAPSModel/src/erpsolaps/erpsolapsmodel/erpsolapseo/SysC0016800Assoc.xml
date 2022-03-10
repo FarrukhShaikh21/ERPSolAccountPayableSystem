@@ -13,7 +13,9 @@
     Name="PaymentMaster"
     Cardinality="1"
     Source="true"
-    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster">
+    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster"
+    LockLevel="NONE"
+    DeleteContainee="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="PaymentMaster"/>
@@ -26,7 +28,8 @@
   <AssociationEnd
     Name="PaymentDetail"
     Cardinality="-1"
-    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentDetail">
+    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentDetail"
+    HasOwner="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="PaymentDetail"/>

@@ -415,17 +415,17 @@
                                             pattern="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.format}"/>
                         </af:inputText>
                       </af:column>
-                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.label}" id="c4">
-                        <af:inputText value="#{row.bindings.FcurrStaxAmt.inputValue}"
-                                      label="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.label}"
-                                      required="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.mandatory}"
-                                      columns="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.displayWidth}"
-                                      maximumLength="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.precision}"
-                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.tooltip}" id="it6"
+                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.label}" id="c4">
+                        <af:inputText value="#{row.bindings.FcurrTaxamt.inputValue}"
+                                      label="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.label}"
+                                      required="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.mandatory}"
+                                      columns="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.displayWidth}"
+                                      maximumLength="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.precision}"
+                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.tooltip}" id="it6"
                                       autoSubmit="true">
-                          <f:validator binding="#{row.bindings.FcurrStaxAmt.validator}"/>
+                          <f:validator binding="#{row.bindings.FcurrTaxamt.validator}"/>
                           <af:convertNumber groupingUsed="false"
-                                            pattern="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.format}"/>
+                                            pattern="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.format}"/>
                         </af:inputText>
                       </af:column>
                       <af:column headerText="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.label}" id="c5">

@@ -107,6 +107,7 @@
           <Item Value="FcurrStaxAmt"/>
           <Item Value="FcurrBalance"/>
           <Item Value="txtNetPayment"/>
+          <Item Value="FcurrTaxamt"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

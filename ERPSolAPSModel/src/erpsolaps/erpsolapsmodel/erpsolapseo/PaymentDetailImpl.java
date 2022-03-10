@@ -243,8 +243,7 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ;
-        static AttributesEnum[] vals = null;
-        ;
+        private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
         public abstract Object get(PaymentDetailImpl object);
@@ -740,5 +739,11 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
        }
         super.doDML(operation, e);
     }
+    @Override
+    public void beforeCommit(TransactionEvent transactionEvent) {
+        // TODO Implement this method
+        System.out.println("committing-DETAIL");
+        super.beforeCommit(transactionEvent);
+    }  
 }
 

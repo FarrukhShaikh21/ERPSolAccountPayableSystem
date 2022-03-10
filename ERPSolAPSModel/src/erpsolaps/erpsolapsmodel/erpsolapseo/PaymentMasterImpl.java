@@ -5,7 +5,12 @@ import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import java.math.BigDecimal;
 
+import java.sql.CallableStatement;
+import java.sql.SQLException;
+import java.sql.Types;
+
 import oracle.jbo.AttributeList;
+import oracle.jbo.JboException;
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
@@ -1891,6 +1896,33 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
             populateAttributeAsChanged(DOCTYPEID, getPaymentMode().toString().equals("CHQ")?"PYMT":"CPMT");
        }
         super.doDML(operation, e);
+    }
+    
+    @Override
+    public void afterCommit(TransactionEvent transactionEvent) {
+        // TODO Implement this method
+        System.out.println("committing");
+        
+            CallableStatement cs=this.getDBTransaction().createCallableStatement("begin PKG_GENERATE_ACCOUNTING.PROC_GENERATE_PAYMENT_ACCOUNT('"+getPaymentCode()+"'); commit; END;", 1);
+            try {
+                cs.executeUpdate();
+            } catch (SQLException e) {
+        //            this.getCurrentRow().setAttribute("Submit", "N");
+            JboException ex=new JboException(e.getMessage());
+            ex.setSeverity(JboException.SEVERITY_WARNING);
+            throw ex;
+                
+//                System.out.println(e.getMessage()+ "this is message");
+//                throw new JboException("Unable to supervise ");
+            }
+            finally{
+                try {
+                    cs.close();
+                } catch (SQLException e) {
+                }
+            }
+        
+        super.beforeCommit(transactionEvent);
     }
 }
 

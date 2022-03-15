@@ -507,7 +507,7 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0020-SEARCH</property>
       <property
-         name="sdm:polyPoints">B50,753.5,616.44824,827.0303,696.44824,L50</property>
+         name="sdm:polyPoints">B44,750.0,619.17615,823.9906,699.94824,L54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -518,5 +518,30 @@
          name="fromOutcome">ERP-ACT-PY-0020-SEARCH-BACK</property>
       <property
          name="sdm:polyPoints">L46,827.0303,692.94824,757.0,616.44824,B56</property>
+   </ControlFlowCase>
+   <View
+      id="View46">
+      <property
+         name="activityId">PY_0019</property>
+      <property
+         name="page">/PY_0019.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PY_0019&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">630.09766</property>
+      <property
+         name="x">38.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase47"
+      from="MethodCall4"
+      to="View46">
+      <property
+         name="fromOutcome">ERP-ACT-PY-0019</property>
+      <property
+         name="sdm:polyPoints">L54,266.0,451.94238,79.5,629.7471,R50</property>
    </ControlFlowCase>
 </SDM>

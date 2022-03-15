@@ -127,6 +127,9 @@
     <view id="PY_0020_SEARCH">
       <page>/PY_0020_SEARCH.jsf</page>
     </view>
+    <view id="PY_0019">
+      <page>/PY_0019.jsf</page>
+    </view>
     <control-flow-rule id="__3">
       <from-activity-id>doERPSolAPSSessionGlobals</from-activity-id>
       <control-flow-case id="__4">
@@ -196,6 +199,10 @@
       <control-flow-case id="__42">
         <from-outcome>ERP-ACT-PY-0020</from-outcome>
         <to-activity-id>PY_0020</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__47">
+        <from-outcome>ERP-ACT-PY-0019</from-outcome>
+        <to-activity-id>PY_0019</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__25">

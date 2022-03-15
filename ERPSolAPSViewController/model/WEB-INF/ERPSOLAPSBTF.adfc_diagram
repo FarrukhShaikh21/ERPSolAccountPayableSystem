@@ -208,7 +208,7 @@
       <property
          name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
       <property
-         name="sdm:polyPoints">R50,125.5,447.99414,266.0,448.44238,L50</property>
+         name="sdm:polyPoints">R50,125.5,447.99414,265.3458,444.94238,L46</property>
    </ControlFlowCase>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule19">
@@ -530,18 +530,41 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">630.09766</property>
+         name="y">695.0459</property>
       <property
-         name="x">38.5</property>
+         name="x">-39.5</property>
    </View>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase47"
       from="MethodCall4"
+      to="MethodCall48">
+      <property
+         name="fromOutcome">ERP-ACT-PY-0019</property>
+      <property
+         name="sdm:polyPoints">L54,266.0,451.94238,1.3818359,548.09766,R50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall48">
+      <property
+         name="activityId">doSetPayableReportDefaults</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doSetPayableReportDefaults&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">548.44824</property>
+      <property
+         name="x">-39.618164</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase49"
+      from="MethodCall48"
       to="View46">
       <property
          name="fromOutcome">ERP-ACT-PY-0019</property>
       <property
-         name="sdm:polyPoints">L54,266.0,451.94238,79.5,629.7471,R50</property>
+         name="sdm:polyPoints">B50,-39.618164,602.09766,-39.5,641.0459,T50</property>
    </ControlFlowCase>
 </SDM>

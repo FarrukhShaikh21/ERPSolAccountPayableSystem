@@ -40,19 +40,19 @@
                                                                           required="#{bindings.txtLocationName.hints.mandatory}"
                                                                           columns="#{bindings.txtLocationName.hints.displayWidth}"
                                                                           shortDesc="#{bindings.txtLocationName.hints.tooltip}"
-                                                                          simple="true">
+                                                                          simple="true" autoSubmit="true">
                                                 <f:validator binding="#{bindings.txtLocationName.validator}"/>
+                                                <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedLocationValues}"/>
                                             </af:inputComboboxListOfValues>
                                             <af:spacer width="10" height="10" id="s1"/>
-                                            <af:inputText value="#{bindings.txtLocationId.inputValue}"
-                                                          label="#{bindings.txtLocationId.hints.label}"
-                                                          required="#{bindings.txtLocationId.hints.mandatory}"
-                                                          columns="#{bindings.txtLocationId.hints.displayWidth}"
-                                                          maximumLength="#{bindings.txtLocationId.hints.precision}"
-                                                          shortDesc="#{bindings.txtLocationId.hints.tooltip}"
-                                                          partialTriggers="txtLocationNameId" id="it2" simple="true"
-                                                          readOnly="true">
-                                                <f:validator binding="#{bindings.txtLocationId.validator}"/>
+                                            <af:inputText value="#{bindings.Locationid.inputValue}"
+                                                          label="#{bindings.Locationid.hints.label}"
+                                                          required="#{bindings.Locationid.hints.mandatory}"
+                                                          columns="#{bindings.Locationid.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Locationid.hints.precision}"
+                                                          shortDesc="#{bindings.Locationid.hints.tooltip}" id="it2"
+                                                          simple="true" partialTriggers="txtLocationNameId">
+                                                <f:validator binding="#{bindings.Locationid.validator}"/>
                                             </af:inputText>
                                         </af:panelGroupLayout>
                                     </af:panelLabelAndMessage>
@@ -66,8 +66,11 @@
                                                                           required="#{bindings.txtSupplierName.hints.mandatory}"
                                                                           columns="#{bindings.txtSupplierName.hints.displayWidth}"
                                                                           shortDesc="#{bindings.txtSupplierName.hints.tooltip}"
-                                                                          simple="true">
+                                                                          simple="true"
+                                                                          partialTriggers="txtLocationNameId"
+                                                                          autoSubmit="true">
                                                 <f:validator binding="#{bindings.txtSupplierName.validator}"/>
+                                                <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedSupplierValues}"/>
                                             </af:inputComboboxListOfValues>
                                             <af:spacer width="10" height="10" id="s2"/>
                                             <af:inputText value="#{bindings.txtSupplierId.inputValue}"
@@ -76,7 +79,7 @@
                                                           columns="#{bindings.txtSupplierId.hints.displayWidth}"
                                                           maximumLength="#{bindings.txtSupplierId.hints.precision}"
                                                           shortDesc="#{bindings.txtSupplierId.hints.tooltip}"
-                                                          partialTriggers="txtSupplierNameId" id="it3" simple="true"
+                                                          partialTriggers="txtSupplierNameId txtLocationNameId" id="it3" simple="true"
                                                           readOnly="true">
                                                 <f:validator binding="#{bindings.txtSupplierId.validator}"/>
                                             </af:inputText>

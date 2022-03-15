@@ -24,11 +24,6 @@
     </attributeValues>
     <list IterBinding="VWPayPayableReportROIterator" StaticList="false" Uses="LovtxtCompanyId" id="txtCompanyId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="VWPayPayableReportROIterator" id="txtLocationId">
-      <AttrNames>
-        <Item Value="txtLocationId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="VWPayPayableReportROIterator" id="txtSupplierId">
       <AttrNames>
         <Item Value="txtSupplierId"/>
@@ -53,5 +48,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="VWPayPayableReportROIterator" id="Locationid">
+      <AttrNames>
+        <Item Value="Locationid"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

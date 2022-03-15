@@ -130,6 +130,12 @@
     <view id="PY_0019">
       <page>/PY_0019.jsf</page>
     </view>
+    <method-call id="doSetPayableReportDefaults">
+      <method>#{bindings.doSetPayableReportDefaults.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-PY-0019</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__3">
       <from-activity-id>doERPSolAPSSessionGlobals</from-activity-id>
       <control-flow-case id="__4">
@@ -202,7 +208,7 @@
       </control-flow-case>
       <control-flow-case id="__47">
         <from-outcome>ERP-ACT-PY-0019</from-outcome>
-        <to-activity-id>PY_0019</to-activity-id>
+        <to-activity-id>doSetPayableReportDefaults</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__25">
@@ -273,6 +279,13 @@
       <control-flow-case id="__46">
         <from-outcome>ERP-ACT-PY-0020-SEARCH-BACK</from-outcome>
         <to-activity-id>PY_0020</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__48">
+      <from-activity-id>doSetPayableReportDefaults</from-activity-id>
+      <control-flow-case id="__49">
+        <from-outcome>ERP-ACT-PY-0019</from-outcome>
+        <to-activity-id>PY_0019</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

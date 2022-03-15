@@ -8,9 +8,13 @@
   InheritPersonalization="merge"
   BindingStyle="OracleName"
   CustomQuery="true"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  ComponentClass="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWPayPayableReportQVOImpl"
+  ComponentInterface="erpsolaps.erpsolapsmodel.erpsolapsqvo.common.VWPayPayableReportQVO"
+  ClientProxyName="erpsolaps.erpsolapsmodel.erpsolapsqvo.client.VWPayPayableReportQVOClient">
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
   </DesignTime>
   <Properties>
     <SchemaBasedProperties>
@@ -35,8 +39,7 @@
       FullName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView.PuSuppliersViewByLocationVC"/>
     <ParameterMap>
       <PIMap Variable="P_ADF_LOCATIONID">
-        <TransientExpression
-          trustMode="untrusted"><![CDATA[txtLocationId==null?"0":txtLocationId]]></TransientExpression>
+        <TransientExpression><![CDATA[txtLocationId==null?"0":txtLocationId]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -71,7 +74,7 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
-      <Item Value="txtLocationId"/>
+      <Item Value="Locationid"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="LocationDescription"/>
@@ -270,9 +273,42 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtDefaultDate"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="VIEW_ATTR"
+    SQLType="DATE">
+    <TransientExpression><![CDATA[adf.currentDate]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Locationid"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Pk"/>
   </AttrArray>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="doSetPayableReportDefaults"
+      MethodName="doSetPayableReportDefaults">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+  </ClientInterface>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolaps.erpsolapsmodel.ERPSolAPSModelBundle"/>

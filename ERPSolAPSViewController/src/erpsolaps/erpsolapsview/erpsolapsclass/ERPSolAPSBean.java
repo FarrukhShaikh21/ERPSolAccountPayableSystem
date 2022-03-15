@@ -301,16 +301,16 @@ public class ERPSolAPSBean {
         BindingContainer bc = ERPSolGlobalViewBean.doGetERPBindings();
         DCIteratorBinding ib=(DCIteratorBinding)bc.get("SysProgramDetROIterator");
         ApplicationModule am=ib.getViewObject().getApplicationModule();
-        ViewObject vo=am.findViewObject("QVOIMSReport");
+        ViewObject vo=am.findViewObject("QVOAPSReport");
         if (vo!=null) {
             vo.remove();
        }
         
-        vo=am.createViewObjectFromQueryStmt("QVOIMSReport", "select PARAMETER_VALUE FROM so_sales_parameter a where a.Parameter_Id='REPORT_SERVER_URL'");
+        vo=am.createViewObjectFromQueryStmt("QVOAPSReport", "select PARAMETER_VALUE FROM so_sales_parameter a where a.Parameter_Id='REPORT_SERVER_URL'");
         vo.executeQuery();
         String pReportUrl=vo.first().getAttribute(0).toString();
         vo.remove();
-        vo=am.createViewObjectFromQueryStmt("QVOIMSReport", "select PATH PATH FROM SYSTEM a where a.PROJECTID='IN' ");
+        vo=am.createViewObjectFromQueryStmt("QVOAPSReport", "select PATH PATH FROM SYSTEM a where a.PROJECTID='PY' ");
         vo.executeQuery();
         String pReportPath=vo.first().getAttribute(0).toString()+"REPORTS\\\\";
         System.out.println(pReportPath);
@@ -319,25 +319,17 @@ public class ERPSolAPSBean {
     
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("b");
-        AttributeBinding ERPCompanyid       =(AttributeBinding)ERPSolbc.getControlBinding("Companyid");
-        AttributeBinding ERPRegionid        =(AttributeBinding)ERPSolbc.getControlBinding("Regionid");
-        AttributeBinding ERPLocationid      =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
-        AttributeBinding ERPProductid       =(AttributeBinding)ERPSolbc.getControlBinding("Productid");
-        AttributeBinding ERPProductgroup    =(AttributeBinding)ERPSolbc.getControlBinding("Productgroup");
-    //        AttributeBinding ERPStoreid         =(AttributeBinding)ERPSolbc.getControlBinding("Storeid");
-    //        AttributeBinding ERPProductgroup    =(AttributeBinding)ERPSolbc.getControlBinding("Productgroup");
-    //        AttributeBinding ERPProductid       =(AttributeBinding)ERPSolbc.getControlBinding("Productid");
+        AttributeBinding ERPCompanyid       =(AttributeBinding)ERPSolbc.getControlBinding("txtCompanyId");
+        AttributeBinding ERPLocationid      =(AttributeBinding)ERPSolbc.getControlBinding("txtLocationId");
+        AttributeBinding ERPSupplierId       =(AttributeBinding)ERPSolbc.getControlBinding("txtSupplierId");
         AttributeBinding ERPFromDate        =(AttributeBinding)ERPSolbc.getControlBinding("txtFromDate");
         AttributeBinding ERPToDate          =(AttributeBinding)ERPSolbc.getControlBinding("txtToDate");
         String reportParameter="";
-        reportParameter="COMPANY="+ (ERPCompanyid.getInputValue()==null?"":ERPCompanyid.getInputValue());
-        reportParameter+="&P_REGID="+(ERPRegionid.getInputValue()==null?"":ERPRegionid.getInputValue());
+        reportParameter="P_COMPANY_ID="+ (ERPCompanyid.getInputValue()==null?"":ERPCompanyid.getInputValue());
         reportParameter+="&P_LOCID="+(ERPLocationid.getInputValue()==null?"":ERPLocationid.getInputValue());
-    //        reportParameter+="&P_STOREID_ID="+(ERPStoreid.getInputValue()==null?"":ERPStoreid.getInputValue());
-        reportParameter+="&SIGROUPID="+(ERPProductgroup.getInputValue()==null?"":ERPProductgroup.getInputValue());
-        reportParameter+="&P_PRODUCT_ID="+(ERPProductid.getInputValue()==null?"":ERPProductid.getInputValue());
-        reportParameter+="&FROM_DATE="+(ERPFromDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPFromDate.getInputValue() ) );
-        reportParameter+="&TO_DATE="+(ERPToDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPToDate.getInputValue())  );
+        reportParameter+="&P_SUPPLIER_ID="+(ERPSupplierId.getInputValue()==null?"":ERPSupplierId.getInputValue());
+        reportParameter+="&P_FROM_DATE="+(ERPFromDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPFromDate.getInputValue() ) );
+        reportParameter+="&P_TO_DATE="+(ERPToDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPToDate.getInputValue())  );
         reportParameter+="&USER="+ERPSolGlobClassModel.doGetUserCode();
         
         pReportUrl=pReportUrl.replace("<P_REPORT_PATH>", pReportPath);

@@ -26,7 +26,7 @@ public class VWPayPayableReportQVOImpl extends ViewObjectImpl implements VWPayPa
              }
               vo=getApplicationModule().createViewObjectFromQueryStmt("QvoLImsoc", "select locationid, location_description from all_locations where locationid='"+ERPSolGlobClassModel.doGetUserLocationCode()+"'");
               vo.executeQuery();
-              this.first().setAttribute("LocationId", vo.first().getAttribute(0));
+              this.first().setAttribute("Locationid", vo.first().getAttribute(0));
               this.first().setAttribute("txtLocationName", vo.first().getAttribute(1));
               this.first().setAttribute("txtCompanyId", ERPSolGlobClassModel.doGetUserCompanyCode());
               this.first().setAttribute("txtFromDate", this.first().getAttribute("txtDefaultDate"));

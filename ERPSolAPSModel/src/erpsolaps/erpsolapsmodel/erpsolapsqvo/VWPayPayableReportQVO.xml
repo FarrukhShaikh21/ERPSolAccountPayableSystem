@@ -39,7 +39,8 @@
       FullName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView.PuSuppliersViewByLocationVC"/>
     <ParameterMap>
       <PIMap Variable="P_ADF_LOCATIONID">
-        <TransientExpression><![CDATA[txtLocationId==null?"0":txtLocationId]]></TransientExpression>
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Locationid==null?"0":Locationid]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>

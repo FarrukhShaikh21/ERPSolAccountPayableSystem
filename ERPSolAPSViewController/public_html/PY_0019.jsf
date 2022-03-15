@@ -51,7 +51,8 @@
                                                           columns="#{bindings.Locationid.hints.displayWidth}"
                                                           maximumLength="#{bindings.Locationid.hints.precision}"
                                                           shortDesc="#{bindings.Locationid.hints.tooltip}" id="it2"
-                                                          simple="true" partialTriggers="txtLocationNameId">
+                                                          simple="true" partialTriggers="txtLocationNameId"
+                                                          readOnly="true">
                                                 <f:validator binding="#{bindings.Locationid.validator}"/>
                                             </af:inputText>
                                         </af:panelGroupLayout>

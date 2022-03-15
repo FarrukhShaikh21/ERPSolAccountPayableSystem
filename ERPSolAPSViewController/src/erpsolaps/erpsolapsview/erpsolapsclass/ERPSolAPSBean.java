@@ -320,7 +320,7 @@ public class ERPSolAPSBean {
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("b");
         AttributeBinding ERPCompanyid       =(AttributeBinding)ERPSolbc.getControlBinding("txtCompanyId");
-        AttributeBinding ERPLocationid      =(AttributeBinding)ERPSolbc.getControlBinding("txtLocationId");
+        AttributeBinding ERPLocationid      =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
         AttributeBinding ERPSupplierId       =(AttributeBinding)ERPSolbc.getControlBinding("txtSupplierId");
         AttributeBinding ERPFromDate        =(AttributeBinding)ERPSolbc.getControlBinding("txtFromDate");
         AttributeBinding ERPToDate          =(AttributeBinding)ERPSolbc.getControlBinding("txtToDate");

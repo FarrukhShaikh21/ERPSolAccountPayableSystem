@@ -19,10 +19,10 @@
                         <af:button text="Exit" id="b13" action="ERP-ACT-EXIT-FORM-APS" iconPosition="top"
                                    icon="#{resource['images:imgExitForm.png']}"/>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
-                                   disabled="#{bindings.Stnno.inputValue==null || !bindings.Previous.enabled}" partialSubmit="true" id="b4"
+                                   disabled="#{bindings.Supplierid.inputValue==null || !bindings.Previous.enabled}" partialSubmit="true" id="b4"
                                    icon="#{resource['images:imgPrevious.png']}" iconPosition="top" accessKey="r"/>
                         <af:button actionListener="#{bindings.Next.execute}" text="Next"
-                                   disabled="#{bindings.Stnno.inputValue==null || !bindings.Next.enabled}" partialSubmit="true" id="b3"
+                                   disabled="#{bindings.Supplierid.inputValue==null || !bindings.Next.enabled}" partialSubmit="true" id="b3"
                                    icon="#{resource['images:imgNext.png']}" iconPosition="top" accessKey="n"/>
                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete Order"
                                    disabled="#{bindings.Posted.inputValue=='Y'}" id="b2"
@@ -42,7 +42,7 @@
                         <f:facet name="legend"/>
                         <f:facet name="info"/>
                         <af:spacer width="10" height="30" id="s1"/>
-                        <af:panelSplitter id="ps1" splitterPosition="500" disabled="true">
+                        <af:panelSplitter id="ps1" splitterPosition="500" disabled="true" partialTriggers="b6 b5">
                             <f:facet name="first">
                                 <af:panelFormLayout id="pfl1">
                                     <af:inputText value="#{bindings.Supplierid.inputValue}"
@@ -50,7 +50,8 @@
                                                   required="#{bindings.Supplierid.hints.mandatory}"
                                                   columns="#{bindings.Supplierid.hints.displayWidth}"
                                                   maximumLength="#{bindings.Supplierid.hints.precision}"
-                                                  shortDesc="#{bindings.Supplierid.hints.tooltip}" id="it1">
+                                                  shortDesc="#{bindings.Supplierid.hints.tooltip}" id="it1"
+                                                  readOnly="true">
                                         <f:validator binding="#{bindings.Supplierid.validator}"/>
                                     </af:inputText>
                                     <af:inputText value="#{bindings.SuppName.inputValue}"
@@ -58,7 +59,8 @@
                                                   required="#{bindings.SuppName.hints.mandatory}"
                                                   columns="#{bindings.SuppName.hints.displayWidth}"
                                                   maximumLength="#{bindings.SuppName.hints.precision}"
-                                                  shortDesc="#{bindings.SuppName.hints.tooltip}" id="it2">
+                                                  shortDesc="#{bindings.SuppName.hints.tooltip}" id="it2"
+                                                  autoSubmit="true">
                                         <f:validator binding="#{bindings.SuppName.validator}"/>
                                     </af:inputText>
                                     <af:inputText value="#{bindings.SuppShortName.inputValue}"
@@ -69,6 +71,14 @@
                                                   shortDesc="#{bindings.SuppShortName.hints.tooltip}" id="it3">
                                         <f:validator binding="#{bindings.SuppShortName.validator}"/>
                                     </af:inputText>
+                                    <af:selectOneChoice value="#{bindings.Locationid.inputValue}"
+                                                        label="#{bindings.Locationid.label}"
+                                                        required="#{bindings.Locationid.hints.mandatory}"
+                                                        shortDesc="#{bindings.Locationid.hints.tooltip}" id="soc12"
+                                                        contentStyle="width:100%">
+                                        <f:selectItems value="#{bindings.Locationid.items}" id="si12"/>
+                                        <f:validator binding="#{bindings.Locationid.validator}"/>
+                                    </af:selectOneChoice>
                                     <af:selectOneChoice value="#{bindings.Paymenttermid.inputValue}"
                                                         label="#{bindings.Paymenttermid.label}"
                                                         required="#{bindings.Paymenttermid.hints.mandatory}"
@@ -165,6 +175,12 @@
                                                   shortDesc="#{bindings.Country.hints.tooltip}" id="it10">
                                         <f:validator binding="#{bindings.Country.validator}"/>
                                     </af:inputText>
+                                    <f:facet name="footer"/>
+                                </af:panelFormLayout>
+                            </f:facet>
+                            <f:facet name="second">
+                                <af:panelFormLayout id="pfl2">
+                                    <f:facet name="footer"/>
                                     <af:inputText value="#{bindings.City.inputValue}"
                                                   label="#{bindings.City.hints.label}"
                                                   required="#{bindings.City.hints.mandatory}"
@@ -173,12 +189,6 @@
                                                   shortDesc="#{bindings.City.hints.tooltip}" id="it11">
                                         <f:validator binding="#{bindings.City.validator}"/>
                                     </af:inputText>
-                                    <f:facet name="footer"/>
-                                </af:panelFormLayout>
-                            </f:facet>
-                            <f:facet name="second">
-                                <af:panelFormLayout id="pfl2">
-                                    <f:facet name="footer"/>
                                     <af:selectOneChoice value="#{bindings.TaxCode.inputValue}"
                                                         label="#{bindings.TaxCode.label}"
                                                         required="#{bindings.TaxCode.hints.mandatory}"
@@ -251,14 +261,6 @@
                                                         contentStyle="width:100%">
                                         <f:selectItems value="#{bindings.Advcostcenter.items}" id="si11"/>
                                         <f:validator binding="#{bindings.Advcostcenter.validator}"/>
-                                    </af:selectOneChoice>
-                                    <af:selectOneChoice value="#{bindings.Locationid.inputValue}"
-                                                        label="#{bindings.Locationid.label}"
-                                                        required="#{bindings.Locationid.hints.mandatory}"
-                                                        shortDesc="#{bindings.Locationid.hints.tooltip}" id="soc12"
-                                                        contentStyle="width:100%">
-                                        <f:selectItems value="#{bindings.Locationid.items}" id="si12"/>
-                                        <f:validator binding="#{bindings.Locationid.validator}"/>
                                     </af:selectOneChoice>
                                     <af:selectOneChoice value="#{bindings.SuppType.inputValue}"
                                                         label="#{bindings.SuppType.label}"

@@ -1392,6 +1392,12 @@ public class PuSuppliersImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation==DML_INSERT) {
+            String pkValue=" func_generate_supplier_id('"+getLocationid()+"')";
+         String result =
+             ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
+         populateAttributeAsChanged(SUPPLIERID, result);
+        }
         super.doDML(operation, e);
     }
 }

@@ -42,7 +42,7 @@
                         <f:facet name="legend"/>
                         <f:facet name="info"/>
                         <af:spacer width="10" height="30" id="s1"/>
-                        <af:panelSplitter id="ps1" splitterPosition="500">
+                        <af:panelSplitter id="ps1" splitterPosition="500" disabled="true">
                             <f:facet name="first">
                                 <af:panelFormLayout id="pfl1">
                                     <af:inputText value="#{bindings.Supplierid.inputValue}"
@@ -52,6 +52,22 @@
                                                   maximumLength="#{bindings.Supplierid.hints.precision}"
                                                   shortDesc="#{bindings.Supplierid.hints.tooltip}" id="it1">
                                         <f:validator binding="#{bindings.Supplierid.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.SuppName.inputValue}"
+                                                  label="#{bindings.SuppName.hints.label}"
+                                                  required="#{bindings.SuppName.hints.mandatory}"
+                                                  columns="#{bindings.SuppName.hints.displayWidth}"
+                                                  maximumLength="#{bindings.SuppName.hints.precision}"
+                                                  shortDesc="#{bindings.SuppName.hints.tooltip}" id="it2">
+                                        <f:validator binding="#{bindings.SuppName.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.SuppShortName.inputValue}"
+                                                  label="#{bindings.SuppShortName.hints.label}"
+                                                  required="#{bindings.SuppShortName.hints.mandatory}"
+                                                  columns="#{bindings.SuppShortName.hints.displayWidth}"
+                                                  maximumLength="#{bindings.SuppShortName.hints.precision}"
+                                                  shortDesc="#{bindings.SuppShortName.hints.tooltip}" id="it3">
+                                        <f:validator binding="#{bindings.SuppShortName.validator}"/>
                                     </af:inputText>
                                     <af:selectOneChoice value="#{bindings.Paymenttermid.inputValue}"
                                                         label="#{bindings.Paymenttermid.label}"
@@ -85,22 +101,6 @@
                                         <f:selectItems value="#{bindings.Suppcategoryid.items}" id="si4"/>
                                         <f:validator binding="#{bindings.Suppcategoryid.validator}"/>
                                     </af:selectOneChoice>
-                                    <af:inputText value="#{bindings.SuppName.inputValue}"
-                                                  label="#{bindings.SuppName.hints.label}"
-                                                  required="#{bindings.SuppName.hints.mandatory}"
-                                                  columns="#{bindings.SuppName.hints.displayWidth}"
-                                                  maximumLength="#{bindings.SuppName.hints.precision}"
-                                                  shortDesc="#{bindings.SuppName.hints.tooltip}" id="it2">
-                                        <f:validator binding="#{bindings.SuppName.validator}"/>
-                                    </af:inputText>
-                                    <af:inputText value="#{bindings.SuppShortName.inputValue}"
-                                                  label="#{bindings.SuppShortName.hints.label}"
-                                                  required="#{bindings.SuppShortName.hints.mandatory}"
-                                                  columns="#{bindings.SuppShortName.hints.displayWidth}"
-                                                  maximumLength="#{bindings.SuppShortName.hints.precision}"
-                                                  shortDesc="#{bindings.SuppShortName.hints.tooltip}" id="it3">
-                                        <f:validator binding="#{bindings.SuppShortName.validator}"/>
-                                    </af:inputText>
                                     <af:inputText value="#{bindings.ContactName.inputValue}"
                                                   label="#{bindings.ContactName.hints.label}"
                                                   required="#{bindings.ContactName.hints.mandatory}"

@@ -184,11 +184,11 @@
       <validation:ResExpressions
         Name="PaymentDateRuleBR_ResExprList">
         <validation:Expression
-          trustMode="untrusted"
+          trustMode="trusted"
           Name="0"><![CDATA[txtErrorMessage]]></validation:Expression>
       </validation:ResExpressions>
       <validation:TransientExpression
-        trustMode="untrusted"><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
+        trustMode="trusted"><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
 AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_MODULEID", "PY-0005");
 AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_DATE", newValue);
 println("0")
@@ -846,7 +846,7 @@ return true;]]></validation:TransientExpression>
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[AllLocations?.LocationDescription]]></TransientExpression>
+      trustMode="trusted"><![CDATA[AllLocations?.LocationDescription]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -866,7 +866,7 @@ return true;]]></validation:TransientExpression>
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[PuSuppliers?.SuppName]]></TransientExpression>
+      trustMode="trusted"><![CDATA[PuSuppliers?.SuppName]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -886,7 +886,7 @@ return true;]]></validation:TransientExpression>
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[AllBankBranches?.BranchName]]></TransientExpression>
+      trustMode="trusted"><![CDATA[AllBankBranches?.BranchName]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL

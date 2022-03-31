@@ -1892,9 +1892,12 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
             populateAttributeAsChanged(PAYMENTCODE, result);            
 
         }
-        if (operation!=DML_DELETE) {
-            populateAttributeAsChanged(DOCTYPEID, getPaymentMode().toString().equals("CHQ")?"PYMT":"CPMT");
-       }
+        if (operation != DML_DELETE) {
+            populateAttributeAsChanged(DOCTYPEID, getPaymentMode().toString().equals("CHQ") ? "PYMT" : "CPMT");
+            populateAttributeAsChanged(PAYMENTAMOUNT, getFcurrPayAmount());
+            populateAttributeAsChanged(TAXAMOUNT, getFcurrTaxAmount());
+            populateAttributeAsChanged(STAXAMOUNT, getFcurrStaxAmount());
+        }
         super.doDML(operation, e);
     }
     

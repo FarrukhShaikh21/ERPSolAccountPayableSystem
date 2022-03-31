@@ -72,7 +72,6 @@
       <Item Value="Locationid"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="AllowSms"/>
       <Item Value="LocationDescription"/>
       <Item Value="Locationid"/>
     </AttrArray>
@@ -755,49 +754,42 @@
         ViewAttribute="Supplierid"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="SuppName"
         ViewAttribute="SuppName"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="SuppShortName"
         ViewAttribute="SuppShortName"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="Email"
         ViewAttribute="Email"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="Ntnno"
         ViewAttribute="Ntnno"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="Locationid"
         ViewAttribute="Locationid"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="SuppType"
         ViewAttribute="SuppType"
         Operator="="
         Conjunction="AND"
-        Value=""
         UpperColumns="0"
         Required="Optional"/>
     </ViewCriteriaRow>

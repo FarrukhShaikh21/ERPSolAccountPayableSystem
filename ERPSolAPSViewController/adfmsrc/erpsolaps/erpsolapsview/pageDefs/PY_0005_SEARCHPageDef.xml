@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="PY_0005_SEARCHPageDef"
+                Package="erpsolaps.erpsolapsview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PaymentMasterCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
+              id="PaymentMasterCRUDIterator"/>
+    <searchRegion Criteria="PaymentMasterViewFindVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="PaymentMasterCRUDIterator" id="PaymentMasterViewFindVCQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PaymentMasterCRUDIterator" id="PaymentMasterCRUD">
+      <nodeDefinition DefName="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentMasterView" Name="PaymentMasterCRUD0">
+        <AttrNames>
+          <Item Value="PaymentCode"/>
+          <Item Value="PermanetId"/>
+          <Item Value="Locationid"/>
+          <Item Value="txtLocationName"/>
+          <Item Value="txtSupplierName"/>
+          <Item Value="txtBranchName"/>
+          <Item Value="PaymentDate"/>
+          <Item Value="Supplierid"/>
+          <Item Value="PaymentAmount"/>
+          <Item Value="RefVoucherNo"/>
+          <Item Value="ChequeNo"/>
+          <Item Value="ChequeDate"/>
+          <Item Value="Submit"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

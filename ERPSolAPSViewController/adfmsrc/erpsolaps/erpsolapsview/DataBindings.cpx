@@ -24,6 +24,8 @@
     <page path="/PY_0020_SEARCH.jsf" usageId="erpsolaps_erpsolapsview_PY_0020_SEARCHPageDef"/>
     <page path="/WEB-INF/ERPSOLAPSBTF.xml#ERPSOLAPSBTF@doSetPayableReportDefaults"
           usageId="erpsolaps_erpsolapsview_ERPSOLAPSBTF_ERPSOLAPSBTF_doSetPayableReportDefaultsPageDef"/>
+    <page path="/PY_0005_SEARCH.jsf" usageId="erpsolaps_erpsolapsview_PY_0005_SEARCHPageDef"/>
+    <page path="/PY_0017_SEARCH.jsf" usageId="erpsolaps_erpsolapsview_PY_0017_SEARCHPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolaps_erpsolapsview_PY_0017PageDef" path="erpsolaps.erpsolapsview.pageDefs.PY_0017PageDef"/>
@@ -50,6 +52,10 @@
           path="erpsolaps.erpsolapsview.pageDefs.PY_0020_SEARCHPageDef"/>
     <page id="erpsolaps_erpsolapsview_ERPSOLAPSBTF_ERPSOLAPSBTF_doSetPayableReportDefaultsPageDef"
           path="erpsolaps.erpsolapsview.pageDefs.ERPSOLAPSBTF_ERPSOLAPSBTF_doSetPayableReportDefaultsPageDef"/>
+    <page id="erpsolaps_erpsolapsview_PY_0005_SEARCHPageDef"
+          path="erpsolaps.erpsolapsview.pageDefs.PY_0005_SEARCHPageDef"/>
+    <page id="erpsolaps_erpsolapsview_PY_0017_SEARCHPageDef"
+          path="erpsolaps.erpsolapsview.pageDefs.PY_0017_SEARCHPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"

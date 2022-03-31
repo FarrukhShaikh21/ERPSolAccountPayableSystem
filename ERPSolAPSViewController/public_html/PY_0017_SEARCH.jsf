@@ -2,6 +2,66 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="PY_0017_SEARCH.jsf" id="d1">
-        <af:form id="f1"></af:form>
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelHeader text="OtherBills" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.OtherBillsViewFindVCQuery.queryDescriptor}"
+                              model="#{bindings.OtherBillsViewFindVCQuery.queryModel}"
+                              queryListener="#{bindings.OtherBillsViewFindVCQuery.processQuery}"
+                              queryOperationListener="#{bindings.OtherBillsViewFindVCQuery.processQueryOperation}"
+                              resultComponentId="::resId1"/>
+                </af:panelHeader>
+                <af:table value="#{bindings.OtherBillsCRUD.collectionModel}" var="row"
+                          rows="#{bindings.OtherBillsCRUD.rangeSize}"
+                          emptyText="#{bindings.OtherBillsCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.OtherBillsCRUD.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.OtherBillsCRUD.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.OtherBillsCRUD.rangeSize}" id="resId1">
+                    <af:column headerText="#{bindings.OtherBillsCRUD.hints.Billid.label}" id="resId1c1">
+                        <af:outputText value="#{row.Billid}" shortDesc="#{bindings.OtherBillsCRUD.hints.Billid.tooltip}"
+                                       id="ot1"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.OtherBillsCRUD.hints.BillDate.label}" id="resId1c2">
+                        <af:outputText value="#{row.BillDate}"
+                                       shortDesc="#{bindings.OtherBillsCRUD.hints.BillDate.tooltip}" id="ot2">
+                            <af:convertDateTime pattern="#{bindings.OtherBillsCRUD.hints.BillDate.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.OtherBillsCRUD.hints.Locationid.label}" id="resId1c3">
+                        <af:outputText value="#{row.Locationid}"
+                                       shortDesc="#{bindings.OtherBillsCRUD.hints.Locationid.tooltip}" id="ot3"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.OtherBillsCRUD.hints.txtLocationName.label}" id="resId1c4">
+                        <af:outputText value="#{row.txtLocationName}"
+                                       shortDesc="#{bindings.OtherBillsCRUD.hints.txtLocationName.tooltip}" id="ot4"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.OtherBillsCRUD.hints.Supplierid.label}" id="resId1c5">
+                        <af:outputText value="#{row.Supplierid}"
+                                       shortDesc="#{bindings.OtherBillsCRUD.hints.Supplierid.tooltip}" id="ot5"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.OtherBillsCRUD.hints.txtSupplierName.label}" id="resId1c6">
+                        <af:outputText value="#{row.txtSupplierName}"
+                                       shortDesc="#{bindings.OtherBillsCRUD.hints.txtSupplierName.tooltip}" id="ot6"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.OtherBillsCRUD.hints.Supref.label}" id="resId1c7">
+                        <af:outputText value="#{row.Supref}" shortDesc="#{bindings.OtherBillsCRUD.hints.Supref.tooltip}"
+                                       id="ot7"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.OtherBillsCRUD.hints.SuprefDate.label}" id="resId1c8">
+                        <af:outputText value="#{row.SuprefDate}"
+                                       shortDesc="#{bindings.OtherBillsCRUD.hints.SuprefDate.tooltip}" id="ot8">
+                            <af:convertDateTime pattern="#{bindings.OtherBillsCRUD.hints.SuprefDate.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.OtherBillsCRUD.hints.Remarks.label}" id="resId1c9">
+                        <af:outputText value="#{row.Remarks}"
+                                       shortDesc="#{bindings.OtherBillsCRUD.hints.Remarks.tooltip}" id="ot9"/>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
     </af:document>
 </f:view>

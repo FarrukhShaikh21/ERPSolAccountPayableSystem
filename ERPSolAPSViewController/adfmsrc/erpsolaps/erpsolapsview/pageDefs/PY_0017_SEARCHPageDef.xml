@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="PY_0017_SEARCHPageDef"
+                Package="erpsolaps.erpsolapsview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="OtherBillsCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
+              id="OtherBillsCRUDIterator"/>
+    <searchRegion Criteria="OtherBillsViewFindVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OtherBillsCRUDIterator" id="OtherBillsViewFindVCQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="OtherBillsCRUDIterator" id="OtherBillsCRUD">
+      <nodeDefinition DefName="erpsolaps.erpsolapsmodel.erpsolapsvo.OtherBillsView" Name="OtherBillsCRUD0">
+        <AttrNames>
+          <Item Value="Billid"/>
+          <Item Value="BillDate"/>
+          <Item Value="Locationid"/>
+          <Item Value="txtLocationName"/>
+          <Item Value="Supplierid"/>
+          <Item Value="txtSupplierName"/>
+          <Item Value="Supref"/>
+          <Item Value="SuprefDate"/>
+          <Item Value="Remarks"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

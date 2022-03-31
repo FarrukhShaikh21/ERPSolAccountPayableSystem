@@ -5,9 +5,12 @@ import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import java.math.BigDecimal;
 
+import java.sql.CallableStatement;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
+import oracle.jbo.JboException;
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Date;
@@ -1629,6 +1632,34 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
 
         }
         super.doDML(operation, e);
+    }
+    
+    @Override
+    public void afterCommit(TransactionEvent transactionEvent) {
+        // TODO Implement this method
+        System.out.println("committing-1");
+        
+            CallableStatement cs=this.getDBTransaction().createCallableStatement("begin PKG_GENERATE_ACCOUNTING.PROC_GENERATE_OTHER_BILLS_ACCT('"+getBillid()+"'); commit; END;", 1);
+            System.out.println("begin PKG_GENERATE_ACCOUNTING.PROC_GENERATE_OTHER_BILLS_ACCT('"+getBillid()+"'); commit; END;");
+            try {
+                cs.executeUpdate();
+            } catch (SQLException e) {
+        //            this.getCurrentRow().setAttribute("Submit", "N");
+            JboException ex=new JboException(e.getMessage());
+            ex.setSeverity(JboException.SEVERITY_WARNING);
+            throw ex;
+                
+    //                System.out.println(e.getMessage()+ "this is message");
+    //                throw new JboException("Unable to supervise ");
+            }
+            finally{
+                try {
+                    cs.close();
+                } catch (SQLException e) {
+                }
+            }
+        
+        super.beforeCommit(transactionEvent);
     }
 }
 

@@ -11,7 +11,13 @@
                               model="#{bindings.OtherBillsViewFindVCQuery.queryModel}"
                               queryListener="#{bindings.OtherBillsViewFindVCQuery.processQuery}"
                               queryOperationListener="#{bindings.OtherBillsViewFindVCQuery.processQueryOperation}"
-                              resultComponentId="::resId1"/>
+                              resultComponentId="::resId1" saveQueryMode="hidden" modeChangeVisible="false"/>
+                    <f:facet name="toolbar">
+                        <af:toolbar id="t1">
+                            <af:button text="Back To Other Bills" id="b1" action="ERP-ACT-PY_0017-SEARCH-BACK"
+                                       icon="#{resource['images:imgExitForm.png']}"/>
+                        </af:toolbar>
+                    </f:facet>
                 </af:panelHeader>
                 <af:table value="#{bindings.OtherBillsCRUD.collectionModel}" var="row"
                           rows="#{bindings.OtherBillsCRUD.rangeSize}"
@@ -19,10 +25,12 @@
                           rowBandingInterval="0"
                           selectedRowKeys="#{bindings.OtherBillsCRUD.collectionModel.selectedRow}"
                           selectionListener="#{bindings.OtherBillsCRUD.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.OtherBillsCRUD.rangeSize}" id="resId1">
+                          rowSelection="single" fetchSize="#{bindings.OtherBillsCRUD.rangeSize}" id="resId1"
+                          autoHeightRows="15" styleClass="AFStretchWidth" columnStretching="last" scrollPolicy="page">
                     <af:column headerText="#{bindings.OtherBillsCRUD.hints.Billid.label}" id="resId1c1">
+                        <af:link text="#{row.Billid}" id="l1" action="ERP-ACT-PY_0017-SEARCH-BACK" partialSubmit="true"/>
                         <af:outputText value="#{row.Billid}" shortDesc="#{bindings.OtherBillsCRUD.hints.Billid.tooltip}"
-                                       id="ot1"/>
+                                       id="ot1" rendered="false"/>
                     </af:column>
                     <af:column headerText="#{bindings.OtherBillsCRUD.hints.BillDate.label}" id="resId1c2">
                         <af:outputText value="#{row.BillDate}"

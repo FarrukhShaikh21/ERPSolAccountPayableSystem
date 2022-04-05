@@ -17,6 +17,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
 public class PaymentDetailViewRowImpl extends ViewRowImpl {
 
+
     public static final int ENTITY_PAYMENTDETAIL = 0;
 
     /**
@@ -233,6 +234,16 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
             }
         }
         ,
+        txtSumNetPay {
+            public Object get(PaymentDetailViewRowImpl obj) {
+                return obj.gettxtSumNetPay();
+            }
+
+            public void put(PaymentDetailViewRowImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
+        ,
         PaymentMasterView {
             public Object get(PaymentDetailViewRowImpl obj) {
                 return obj.getPaymentMasterView();
@@ -291,6 +302,7 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
         }
     }
 
+
     public static final int SEQNO = AttributesEnum.SeqNo.index();
     public static final int PAYMENTCODE = AttributesEnum.PaymentCode.index();
     public static final int PMTAMOUNT = AttributesEnum.PmtAmount.index();
@@ -312,6 +324,7 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
     public static final int SALESTAXCODE = AttributesEnum.SalesTaxCode.index();
     public static final int PAYMENTSEQ = AttributesEnum.Paymentseq.index();
     public static final int TXTNETPAYMENT = AttributesEnum.txtNetPayment.index();
+    public static final int TXTSUMNETPAY = AttributesEnum.txtSumNetPay.index();
     public static final int PAYMENTMASTERVIEW = AttributesEnum.PaymentMasterView.index();
     public static final int ACCVWBILLLBALANCEAMOUNTFORPAYQVO = AttributesEnum.AccVWBilllBalanceAmountForPayQVO.index();
     public static final int ACCTAXVIEW = AttributesEnum.AccTaxView.index();
@@ -664,6 +677,15 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
      */
     public void settxtNetPayment(BigDecimal value) {
         setAttributeInternal(TXTNETPAYMENT, value);
+    }
+
+
+    /**
+     * Gets the attribute value for the calculated attribute txtSumNetPay.
+     * @return the txtSumNetPay
+     */
+    public BigDecimal gettxtSumNetPay() {
+        return (BigDecimal) getAttributeInternal(TXTSUMNETPAY);
     }
 
     /**

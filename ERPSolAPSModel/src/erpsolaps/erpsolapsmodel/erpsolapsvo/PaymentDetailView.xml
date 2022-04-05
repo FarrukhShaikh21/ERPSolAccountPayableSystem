@@ -235,10 +235,41 @@
     EntityAttrName="txtNetPayment"
     EntityUsage="PaymentDetail"
     AliasName="TXT_NET_PAYMENT"/>
+  <ViewAttribute
+    Name="txtSumNetPay"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC">
+    <TransientExpression
+      trustMode="trusted"><![CDATA[getRowSet().sum("txtNetPayment")]]></TransientExpression>
+    <RecalcCondition
+      trustMode="trusted"><![CDATA[true]]></RecalcCondition>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentDetailView.txtSumNetPay_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <FMT_FORMAT
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentDetailView.txtSumNetPay_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentDetailView.txtSumNetPay_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="PaymentMasterView"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapsvo.SysC0016800Link"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolaps.erpsolapsmodel.ERPSolAPSModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

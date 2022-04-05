@@ -354,6 +354,14 @@
               </af:gridRow>
               <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27" halign="stretch">
+                  <af:inputText value="#{bindings.txtSumNetPay.inputValue}" label="#{bindings.txtSumNetPay.hints.label}"
+                                required="#{bindings.txtSumNetPay.hints.mandatory}"
+                                columns="#{bindings.txtSumNetPay.hints.displayWidth}"
+                                maximumLength="#{bindings.txtSumNetPay.hints.precision}"
+                                shortDesc="#{bindings.txtSumNetPay.hints.tooltip}" id="it16" rendered="false">
+                    <f:validator binding="#{bindings.txtSumNetPay.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.txtSumNetPay.format}"/>
+                  </af:inputText>
                   <af:panelCollection id="pc1" styleClass="AFStretchWidth" featuresOff="viewMenu detach">
                     <f:facet name="menus"/>
                     <f:facet name="toolbar">
@@ -368,7 +376,13 @@
                     </f:facet>
                     <f:facet name="statusbar"/>
                     <f:facet name="secondaryToolbar">
-                      <af:toolbar id="t5"/>
+                      <af:toolbar id="t5">
+                        <af:panelGroupLayout id="pgl6" layout="horizontal">
+                          <af:outputLabel value="Total Net Payment :" id="ol3"/>
+                          <af:outputText value="#{bindings.txtSumNetPay.inputValue}" id="ot2"
+                                         inlineStyle="font-weight:bold"/>
+                        </af:panelGroupLayout>
+                      </af:toolbar>
                     </f:facet>
                     <af:table value="#{bindings.PaymentDetailCRUD.collectionModel}" var="row"
                               rows="#{bindings.PaymentDetailCRUD.rangeSize}"

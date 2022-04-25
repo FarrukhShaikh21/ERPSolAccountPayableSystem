@@ -17,6 +17,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class PaymentMasterViewRowImpl extends ViewRowImpl {
+
     public static final int ENTITY_PAYMENTMASTER = 0;
 
     /**
@@ -613,6 +614,16 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
             }
         }
         ,
+        BankRefNo {
+            public Object get(PaymentMasterViewRowImpl obj) {
+                return obj.getBankRefNo();
+            }
+
+            public void put(PaymentMasterViewRowImpl obj, Object value) {
+                obj.setBankRefNo((String) value);
+            }
+        }
+        ,
         PaymentDetailView {
             public Object get(PaymentMasterViewRowImpl obj) {
                 return obj.getPaymentDetailView();
@@ -683,7 +694,8 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
             }
         }
         ;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public abstract Object get(PaymentMasterViewRowImpl object);
@@ -709,6 +721,7 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
     public static final int PAYMENTCODE = AttributesEnum.PaymentCode.index();
     public static final int DOCTYPEID = AttributesEnum.DocTypeId.index();
     public static final int INVOICECODE = AttributesEnum.InvoiceCode.index();
@@ -768,6 +781,7 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
     public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
     public static final int TXTSUPPLIERNAME = AttributesEnum.txtSupplierName.index();
     public static final int TXTBRANCHNAME = AttributesEnum.txtBranchName.index();
+    public static final int BANKREFNO = AttributesEnum.BankRefNo.index();
     public static final int PAYMENTDETAILVIEW = AttributesEnum.PaymentDetailView.index();
     public static final int ALLLOCATIONSVIEW = AttributesEnum.AllLocationsView.index();
     public static final int PUSUPPLIERSVIEW = AttributesEnum.PuSuppliersView.index();
@@ -1732,6 +1746,22 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
      */
     public void settxtBranchName(String value) {
         setAttributeInternal(TXTBRANCHNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for BANK_REF_NO using the alias name BankRefNo.
+     * @return the BANK_REF_NO
+     */
+    public String getBankRefNo() {
+        return (String) getAttributeInternal(BANKREFNO);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for BANK_REF_NO using the alias name BankRefNo.
+     * @param value value to set the BANK_REF_NO
+     */
+    public void setBankRefNo(String value) {
+        setAttributeInternal(BANKREFNO, value);
     }
 
     /**

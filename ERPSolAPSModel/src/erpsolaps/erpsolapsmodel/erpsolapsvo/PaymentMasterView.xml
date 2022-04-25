@@ -42,7 +42,17 @@
   <ViewAccessor
     Name="AccAllBankBranchesView"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllBankBranchesView"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="AllBankBranchesCashBankVC"
+      FullName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllBankBranchesView.AllBankBranchesCashBankVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_CASHBANK">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[PaymentMode=='CSH'?"C":"B"]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtSupplierName"
     ListVOName="AccPuSuppliersView"
@@ -525,6 +535,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="BankRefNo"
+    PrecisionRule="true"
+    EntityAttrName="BankRefNo"
+    EntityUsage="PaymentMaster"
+    AliasName="BANK_REF_NO"/>
   <ViewCriteria
     Name="PaymentMasterViewFindVC"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentMasterView"
@@ -556,31 +572,24 @@
         ViewAttribute="PaymentCode"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="PaymentDate"
         ViewAttribute="PaymentDate"
         Operator="BETWEEN"
         Conjunction="AND"
-        Required="Optional">
-        <ViewCriteriaItemValue
-          Name="PaymentMasterViewCriteria_PaymentMasterViewCriteria_row_0_AdsalesTaxCode_vcval0"
-          Value=""/>
-      </ViewCriteriaItem>
+        Required="Optional"/>
       <ViewCriteriaItem
         Name="PermanetId"
         ViewAttribute="PermanetId"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="SubmitDate"
         ViewAttribute="SubmitDate"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="PuSuppliersView"
@@ -601,14 +610,12 @@
               ViewAttribute="Supplierid"
               Operator="CONTAINS"
               Conjunction="AND"
-              Value=""
               Required="Optional"/>
             <ViewCriteriaItem
               Name="SuppName"
               ViewAttribute="SuppName"
               Operator="CONTAINS"
               Conjunction="AND"
-              Value=""
               Required="Optional"/>
           </ViewCriteriaRow>
         </ViewCriteria>
@@ -632,7 +639,6 @@
               ViewAttribute="Locationid"
               Operator="CONTAINS"
               Conjunction="AND"
-              Value=""
               UpperColumns="1"
               Required="Optional"/>
             <ViewCriteriaItem
@@ -640,7 +646,6 @@
               ViewAttribute="LocationDescription"
               Operator="CONTAINS"
               Conjunction="AND"
-              Value=""
               UpperColumns="1"
               Required="Optional"/>
           </ViewCriteriaRow>
@@ -665,14 +670,12 @@
               ViewAttribute="Branchid"
               Operator="CONTAINS"
               Conjunction="AND"
-              Value=""
               Required="Optional"/>
             <ViewCriteriaItem
               Name="BranchName"
               ViewAttribute="BranchName"
               Operator="CONTAINS"
               Conjunction="AND"
-              Value=""
               Required="Optional"/>
           </ViewCriteriaRow>
         </ViewCriteria>

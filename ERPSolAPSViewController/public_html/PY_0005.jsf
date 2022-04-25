@@ -203,7 +203,6 @@
                                                         partialTriggers="txtLocationNameId pc1:b7 pc1:b8"
                                                         readOnly="#{bindings.PaymentDetailCRUDIterator.estimatedRowCount>0}">
                             <f:validator binding="#{bindings.txtSupplierName.validator}"/>
-                            <af:autoSuggestBehavior/>
                             <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedSupplierValues}"/>
                           </af:inputComboboxListOfValues>
                         </af:gridCell>
@@ -236,7 +235,9 @@
                         </af:gridCell>
                         <af:gridCell id="gc19" width="35%" valign="middle">
                           <af:selectOneRadio label="Label 1" value="#{bindings.PaymentMode.inputValue}" id="sor1"
-                                             layout="horizontal" simple="true">
+                                             layout="horizontal" simple="true" autoSubmit="true"
+                                             disabled="#{bindings.txtBranchName.inputValue!=null}"
+                                             partialTriggers="txtBranchNameId">
                             <af:selectItem label="Cheque" value="CHQ" id="si13"/>
                             <af:selectItem label="Cash" value="CSH" id="si14"/>
                           </af:selectOneRadio>
@@ -255,7 +256,7 @@
                                                         required="#{bindings.txtBranchName.hints.mandatory}"
                                                         columns="#{bindings.txtBranchName.hints.displayWidth}"
                                                         shortDesc="#{bindings.txtBranchName.hints.tooltip}"
-                                                        simple="true">
+                                                        simple="true" autoSubmit="true">
                             <f:validator binding="#{bindings.txtBranchName.validator}"/>
                             <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedBranchValues}"/>
                           </af:inputComboboxListOfValues>
@@ -305,9 +306,22 @@
                       </af:gridRow>
                       <af:gridRow id="gr8" height="30px">
                         <af:gridCell id="gc20" valign="middle" width="15%">
-                          <af:outputLabel value="#{bindings.FcurrPayAmount.hints.label}" id="ol9"/>
+                          <af:outputLabel value="#{bindings.BankRefNo.hints.label}" id="ol16"/>
                         </af:gridCell>
                         <af:gridCell id="gc21" valign="middle" width="35%">
+                          <af:inputText value="#{bindings.BankRefNo.inputValue}"
+                                        label="#{bindings.BankRefNo.hints.label}"
+                                        required="#{bindings.BankRefNo.hints.mandatory}"
+                                        columns="#{bindings.BankRefNo.hints.displayWidth}"
+                                        maximumLength="#{bindings.BankRefNo.hints.precision}"
+                                        shortDesc="#{bindings.BankRefNo.hints.tooltip}" id="it17" simple="true">
+                            <f:validator binding="#{bindings.BankRefNo.validator}"/>
+                          </af:inputText>
+                        </af:gridCell>
+                        <af:gridCell id="gc22" valign="middle" width="15%">
+                          <af:outputLabel value="#{bindings.FcurrPayAmount.hints.label}" id="ol9"/>
+                        </af:gridCell>
+                        <af:gridCell id="gc23" valign="middle" width="35%">
                           <af:inputText value="#{bindings.FcurrPayAmount.inputValue}"
                                         label="#{bindings.FcurrPayAmount.hints.label}"
                                         required="#{bindings.FcurrPayAmount.hints.mandatory}"
@@ -319,16 +333,19 @@
                             <af:convertNumber groupingUsed="false" pattern="#{bindings.FcurrPayAmount.format}"/>
                           </af:inputText>
                         </af:gridCell>
-                        <af:gridCell id="gc22" valign="middle" width="15%">
+                      </af:gridRow>
+                      <af:gridRow id="gr14" height="30px">
+                        <af:gridCell id="gc35" width="15%" valign="middle">
                           <af:outputLabel value="#{bindings.Narration.hints.label}" id="ol2"/>
                         </af:gridCell>
-                        <af:gridCell id="gc23" valign="middle" width="35%">
+                        <af:gridCell id="gc36" columnSpan="3" width="75%" halign="stretch">
                           <af:inputText value="#{bindings.Narration.inputValue}"
                                         label="#{bindings.Narration.hints.label}"
                                         required="#{bindings.Narration.hints.mandatory}"
                                         columns="#{bindings.Narration.hints.displayWidth}"
                                         maximumLength="#{bindings.Narration.hints.precision}"
-                                        shortDesc="#{bindings.Narration.hints.tooltip}" id="it8" simple="true">
+                                        shortDesc="#{bindings.Narration.hints.tooltip}" id="it8" simple="true"
+                                        contentStyle="width:100%">
                             <f:validator binding="#{bindings.Narration.validator}"/>
                           </af:inputText>
                         </af:gridCell>

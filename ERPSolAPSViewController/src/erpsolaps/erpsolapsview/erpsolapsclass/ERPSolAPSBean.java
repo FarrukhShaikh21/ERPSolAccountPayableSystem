@@ -129,9 +129,11 @@ public class ERPSolAPSBean {
   
     public List<SelectItem> doERPSolGetAutoSuggestedBranchValues(String pStringValues) {
         List<SelectItem> ResultList=new ArrayList<SelectItem>();
+        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        AttributeBinding ERPPaymentMode =(AttributeBinding)ERPSolbc.getControlBinding("PaymentMode");
         
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllBankBranchesAutoSuggestRO",
-                                                            " UPPER(CONCAT(Branch_Name,Branchid))", "BranchName", "Branchid", 10,"ERPSolAPSAppModuleDataControl");
+                                                                        "CASH_BANK='"+(ERPPaymentMode.getInputValue().equals("CSH")?"C":"B")+"' AND UPPER(CONCAT(Branch_Name,Branchid))", "BranchName", "Branchid", 10,"ERPSolAPSAppModuleDataControl");
         return ResultList;
         
     }

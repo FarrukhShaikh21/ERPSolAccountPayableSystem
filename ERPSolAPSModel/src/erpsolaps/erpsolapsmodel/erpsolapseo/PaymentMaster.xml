@@ -184,11 +184,9 @@
       <validation:ResExpressions
         Name="PaymentDateRuleBR_ResExprList">
         <validation:Expression
-          trustMode="trusted"
           Name="0"><![CDATA[txtErrorMessage]]></validation:Expression>
       </validation:ResExpressions>
-      <validation:TransientExpression
-        trustMode="trusted"><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
+      <validation:TransientExpression><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
 AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_MODULEID", "PY-0005");
 AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_DATE", newValue);
 println("0")
@@ -845,8 +843,7 @@ return true;]]></validation:TransientExpression>
     ColumnType="VARCHAR2"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[AllLocations?.LocationDescription]]></TransientExpression>
+    <TransientExpression><![CDATA[AllLocations?.LocationDescription]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -865,8 +862,7 @@ return true;]]></validation:TransientExpression>
     ColumnType="VARCHAR2"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[PuSuppliers?.SuppName]]></TransientExpression>
+    <TransientExpression><![CDATA[PuSuppliers?.SuppName]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -885,8 +881,7 @@ return true;]]></validation:TransientExpression>
     ColumnType="VARCHAR2"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[AllBankBranches?.BranchName]]></TransientExpression>
+    <TransientExpression><![CDATA[AllBankBranches?.BranchName]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -907,6 +902,26 @@ return true;]]></validation:TransientExpression>
     IsQueriable="false">
     <Properties>
       <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="BankRefNo"
+    Precision="50"
+    ColumnName="BANK_REF_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PAYMENT_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.BankRefNo_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
       </SchemaBasedProperties>

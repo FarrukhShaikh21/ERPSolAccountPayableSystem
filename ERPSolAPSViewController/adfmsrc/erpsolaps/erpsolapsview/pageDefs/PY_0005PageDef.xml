@@ -127,5 +127,10 @@
         <Item Value="txtSumNetPay"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="BankRefNo">
+      <AttrNames>
+        <Item Value="BankRefNo"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

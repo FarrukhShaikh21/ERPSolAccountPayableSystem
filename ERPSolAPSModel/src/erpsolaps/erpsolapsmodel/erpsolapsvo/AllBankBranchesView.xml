@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_CASHBANK"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="AllBankBranches"
     Entity="erpsolaps.erpsolapsmodel.erpsolapseo.AllBankBranches"/>
@@ -156,6 +160,43 @@
     EntityAttrName="Salesterritoryid"
     EntityUsage="AllBankBranches"
     AliasName="SALESTERRITORYID"/>
+  <ViewCriteria
+    Name="AllBankBranchesCashBankVC"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllBankBranchesView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AllBankBranchesViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="CashBank"
+        ViewAttribute="CashBank"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_CASHBANK"
+        UpperColumns="0"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="PaymentMasterView"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.AllBankBranchPaymentMAsterBranchIdLink"

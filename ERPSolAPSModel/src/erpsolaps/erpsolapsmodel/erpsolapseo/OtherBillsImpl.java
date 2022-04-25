@@ -549,6 +549,16 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ,
+        BankRefNo {
+            public Object get(OtherBillsImpl obj) {
+                return obj.getBankRefNo();
+            }
+
+            public void put(OtherBillsImpl obj, Object value) {
+                obj.setBankRefNo((String) value);
+            }
+        }
+        ,
         OtherBillDet {
             public Object get(OtherBillsImpl obj) {
                 return obj.getOtherBillDet();
@@ -575,7 +585,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(OtherBillsImpl obj, Object value) {
-                obj.setPuSuppliers((EntityImpl) value);
+                obj.setPuSuppliers((PuSuppliersImpl) value);
             }
         }
         ;
@@ -659,6 +669,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
     public static final int BILLIDSEQ = AttributesEnum.Billidseq.index();
     public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
     public static final int TXTSUPPLIERNAME = AttributesEnum.txtSupplierName.index();
+    public static final int BANKREFNO = AttributesEnum.BankRefNo.index();
     public static final int OTHERBILLDET = AttributesEnum.OtherBillDet.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
     public static final int PUSUPPLIERS = AttributesEnum.PuSuppliers.index();
@@ -1510,6 +1521,22 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for BankRefNo, using the alias name BankRefNo.
+     * @return the value of BankRefNo
+     */
+    public String getBankRefNo() {
+        return (String) getAttributeInternal(BANKREFNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BankRefNo.
+     * @param value value to set the BankRefNo
+     */
+    public void setBankRefNo(String value) {
+        setAttributeInternal(BANKREFNO, value);
+    }
+
+    /**
      * getAttrInvokeAccessor: generated method. Do not modify.
      * @param index the index identifying the attribute
      * @param attrDef the attribute
@@ -1566,14 +1593,14 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getPuSuppliers() {
-        return (EntityImpl) getAttributeInternal(PUSUPPLIERS);
+    public PuSuppliersImpl getPuSuppliers() {
+        return (PuSuppliersImpl) getAttributeInternal(PUSUPPLIERS);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setPuSuppliers(EntityImpl value) {
+    public void setPuSuppliers(PuSuppliersImpl value) {
         setAttributeInternal(PUSUPPLIERS, value);
     }
 

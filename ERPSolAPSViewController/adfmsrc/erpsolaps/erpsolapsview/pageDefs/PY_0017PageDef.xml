@@ -89,5 +89,10 @@
         <Item Value="Billidseq"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="OtherBillsCRUDIterator" id="BankRefNo">
+      <AttrNames>
+        <Item Value="BankRefNo"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

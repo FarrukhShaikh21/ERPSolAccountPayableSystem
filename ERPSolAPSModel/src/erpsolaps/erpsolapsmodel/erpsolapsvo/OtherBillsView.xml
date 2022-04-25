@@ -432,6 +432,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="BankRefNo"
+    PrecisionRule="true"
+    EntityAttrName="BankRefNo"
+    EntityUsage="OtherBills"
+    AliasName="BANK_REF_NO"/>
   <ViewCriteria
     Name="OtherBillsViewFindVC"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OtherBillsView"

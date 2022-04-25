@@ -18,6 +18,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
 public class OtherBillsViewRowImpl extends ViewRowImpl {
 
+
     public static final int ENTITY_OTHERBILLS = 0;
 
     /**
@@ -544,6 +545,16 @@ public class OtherBillsViewRowImpl extends ViewRowImpl {
             }
         }
         ,
+        BankRefNo {
+            public Object get(OtherBillsViewRowImpl obj) {
+                return obj.getBankRefNo();
+            }
+
+            public void put(OtherBillsViewRowImpl obj, Object value) {
+                obj.setBankRefNo((String) value);
+            }
+        }
+        ,
         OtherBillDetView {
             public Object get(OtherBillsViewRowImpl obj) {
                 return obj.getOtherBillDetView();
@@ -622,6 +633,7 @@ public class OtherBillsViewRowImpl extends ViewRowImpl {
         }
     }
 
+
     public static final int BILLID = AttributesEnum.Billid.index();
     public static final int BILLDATE = AttributesEnum.BillDate.index();
     public static final int COMPANYID = AttributesEnum.Companyid.index();
@@ -674,6 +686,7 @@ public class OtherBillsViewRowImpl extends ViewRowImpl {
     public static final int BILLIDSEQ = AttributesEnum.Billidseq.index();
     public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
     public static final int TXTSUPPLIERNAME = AttributesEnum.txtSupplierName.index();
+    public static final int BANKREFNO = AttributesEnum.BankRefNo.index();
     public static final int OTHERBILLDETVIEW = AttributesEnum.OtherBillDetView.index();
     public static final int ALLLOCATIONSVIEW = AttributesEnum.AllLocationsView.index();
     public static final int PUSUPPLIERSVIEW = AttributesEnum.PuSuppliersView.index();
@@ -1524,6 +1537,22 @@ public class OtherBillsViewRowImpl extends ViewRowImpl {
      */
     public void settxtSupplierName(String value) {
         setAttributeInternal(TXTSUPPLIERNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for BANK_REF_NO using the alias name BankRefNo.
+     * @return the BANK_REF_NO
+     */
+    public String getBankRefNo() {
+        return (String) getAttributeInternal(BANKREFNO);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for BANK_REF_NO using the alias name BankRefNo.
+     * @param value value to set the BANK_REF_NO
+     */
+    public void setBankRefNo(String value) {
+        setAttributeInternal(BANKREFNO, value);
     }
 
     /**

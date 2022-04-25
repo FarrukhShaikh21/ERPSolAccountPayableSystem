@@ -78,6 +78,10 @@
                                            shortDesc="#{bindings.PaymentMasterCRUD.hints.RefVoucherNo.tooltip}"
                                            id="ot10"/>
                         </af:column>
+                        <af:column headerText="#{bindings.PaymentMasterCRUD.hints.BankRefNo.label}" id="c1">
+                            <af:outputText value="#{row.BankRefNo}"
+                                           shortDesc="#{bindings.PaymentMasterCRUD.hints.BankRefNo.tooltip}" id="ot14"/>
+                        </af:column>
                         <af:column headerText="#{bindings.PaymentMasterCRUD.hints.ChequeNo.label}" id="resId1c11">
                             <af:outputText value="#{row.ChequeNo}"
                                            shortDesc="#{bindings.PaymentMasterCRUD.hints.ChequeNo.tooltip}" id="ot11"/>

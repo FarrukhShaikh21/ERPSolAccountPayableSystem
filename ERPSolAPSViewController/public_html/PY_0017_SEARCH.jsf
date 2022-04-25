@@ -54,6 +54,10 @@
                         <af:outputText value="#{row.txtSupplierName}"
                                        shortDesc="#{bindings.OtherBillsCRUD.hints.txtSupplierName.tooltip}" id="ot6"/>
                     </af:column>
+                    <af:column headerText="#{bindings.OtherBillsCRUD.hints.BankRefNo.label}" id="c1">
+                        <af:outputText value="#{row.BankRefNo}"
+                                       shortDesc="#{bindings.OtherBillsCRUD.hints.BankRefNo.tooltip}" id="ot10"/>
+                    </af:column>
                     <af:column headerText="#{bindings.OtherBillsCRUD.hints.Supref.label}" id="resId1c7">
                         <af:outputText value="#{row.Supref}" shortDesc="#{bindings.OtherBillsCRUD.hints.Supref.tooltip}"
                                        id="ot7"/>

@@ -22,6 +22,7 @@
           <Item Value="Supref"/>
           <Item Value="SuprefDate"/>
           <Item Value="Remarks"/>
+          <Item Value="BankRefNo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

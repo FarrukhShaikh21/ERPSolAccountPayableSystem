@@ -592,6 +592,12 @@
         Conjunction="AND"
         Required="Optional"/>
       <ViewCriteriaItem
+        Name="BankRefNo"
+        ViewAttribute="BankRefNo"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
         Name="PuSuppliersView"
         ViewAttribute="PuSuppliersView"
         Operator="EXISTS"

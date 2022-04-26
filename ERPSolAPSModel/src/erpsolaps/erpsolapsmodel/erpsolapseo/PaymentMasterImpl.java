@@ -1772,7 +1772,7 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
      * @param value value to set the BankRefNo
      */
     public void setBankRefNo(String value) {
-        setAttributeInternal(BANKREFNO, value);
+        setAttributeInternal(BANKREFNO, value==null?null:value.toUpperCase());
     }
 
     /**

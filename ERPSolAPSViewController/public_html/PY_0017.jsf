@@ -199,7 +199,7 @@
                           </af:inputDate>
                         </af:gridCell>
                       </af:gridRow>
-                      <af:gridRow height="30px" marginBottom="5px" id="gr9">
+                      <af:gridRow height="30px" id="gr9">
                         <af:gridCell id="gc17" width="15%" marginStart="5px" valign="middle">
                           <af:outputLabel value="#{bindings.BankRefNo.hints.label}" id="ol6"/>
                         </af:gridCell>
@@ -209,15 +209,20 @@
                                         required="#{bindings.BankRefNo.hints.mandatory}"
                                         columns="#{bindings.BankRefNo.hints.displayWidth}"
                                         maximumLength="#{bindings.BankRefNo.hints.precision}"
-                                        shortDesc="#{bindings.BankRefNo.hints.tooltip}" id="it11" simple="true">
+                                        shortDesc="#{bindings.BankRefNo.hints.tooltip}" id="it11" simple="true"
+                                        contentStyle="text-transform:uppercase">
                             <f:validator binding="#{bindings.BankRefNo.validator}"/>
                           </af:inputText>
                         </af:gridCell>
-                        <af:gridCell marginStart="5px" width="15%" id="gc24" valign="middle">
+                        <af:gridCell marginStart="5px" width="15%" id="gc24" valign="middle"/>
+                        <af:gridCell marginStart="5px" width="35%" id="gc25" columnSpan="1" rowSpan="1"
+                                     halign="stretch" valign="middle"/>
+                      </af:gridRow>
+                      <af:gridRow id="gr7" height="30px">
+                        <af:gridCell id="gc18" valign="middle" width="15%" marginStart="5px">
                           <af:outputLabel value="#{bindings.Remarks.hints.label}" id="ol2"/>
                         </af:gridCell>
-                        <af:gridCell marginStart="5px" width="35%" id="gc25" columnSpan="1" rowSpan="1"
-                                     halign="stretch" valign="middle">
+                        <af:gridCell id="gc19" width="85%" halign="stretch" columnSpan="3">
                           <af:inputText value="#{bindings.Remarks.inputValue}" label="#{bindings.Remarks.hints.label}"
                                         required="#{bindings.Remarks.hints.mandatory}"
                                         columns="#{bindings.Remarks.hints.displayWidth}"

@@ -580,6 +580,18 @@
         Conjunction="AND"
         Required="Optional"/>
       <ViewCriteriaItem
+        Name="ChequeNo"
+        ViewAttribute="ChequeNo"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ChequeDate"
+        ViewAttribute="ChequeDate"
+        Operator="BETWEEN"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
         Name="PermanetId"
         ViewAttribute="PermanetId"
         Operator="CONTAINS"

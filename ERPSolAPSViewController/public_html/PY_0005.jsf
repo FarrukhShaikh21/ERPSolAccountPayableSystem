@@ -314,7 +314,8 @@
                                         required="#{bindings.BankRefNo.hints.mandatory}"
                                         columns="#{bindings.BankRefNo.hints.displayWidth}"
                                         maximumLength="#{bindings.BankRefNo.hints.precision}"
-                                        shortDesc="#{bindings.BankRefNo.hints.tooltip}" id="it17" simple="true">
+                                        shortDesc="#{bindings.BankRefNo.hints.tooltip}" id="it17" simple="true"
+                                        contentStyle="text-transform:uppercase">
                             <f:validator binding="#{bindings.BankRefNo.validator}"/>
                           </af:inputText>
                         </af:gridCell>

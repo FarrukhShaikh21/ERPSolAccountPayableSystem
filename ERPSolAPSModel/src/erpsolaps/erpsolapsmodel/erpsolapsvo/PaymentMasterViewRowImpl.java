@@ -18,6 +18,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
 public class PaymentMasterViewRowImpl extends ViewRowImpl {
 
+
     public static final int ENTITY_PAYMENTMASTER = 0;
 
     /**
@@ -693,6 +694,16 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
                 obj.setAttributeInternal(index(), value);
             }
         }
+        ,
+        AccVWYesNoQVO {
+            public Object get(PaymentMasterViewRowImpl obj) {
+                return obj.getAccVWYesNoQVO();
+            }
+
+            public void put(PaymentMasterViewRowImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
         ;
         static AttributesEnum[] vals = null;
         ;
@@ -721,6 +732,7 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
 
     public static final int PAYMENTCODE = AttributesEnum.PaymentCode.index();
     public static final int DOCTYPEID = AttributesEnum.DocTypeId.index();
@@ -789,6 +801,7 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
     public static final int ACCPUSUPPLIERSVIEW = AttributesEnum.AccPuSuppliersView.index();
     public static final int ACCALLLOCATIONSVIEW = AttributesEnum.AccAllLocationsView.index();
     public static final int ACCALLBANKBRANCHESVIEW = AttributesEnum.AccAllBankBranchesView.index();
+    public static final int ACCVWYESNOQVO = AttributesEnum.AccVWYesNoQVO.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1832,6 +1845,13 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccAllBankBranchesView() {
         return (RowSet) getAttributeInternal(ACCALLBANKBRANCHESVIEW);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccVWYesNoQVO.
+     */
+    public RowSet getAccVWYesNoQVO() {
+        return (RowSet) getAttributeInternal(ACCVWYESNOQVO);
     }
 
     /**

@@ -604,6 +604,16 @@ public class OtherBillsViewRowImpl extends ViewRowImpl {
                 obj.setAttributeInternal(index(), value);
             }
         }
+        ,
+        AccVWYesNoQVO {
+            public Object get(OtherBillsViewRowImpl obj) {
+                return obj.getAccVWYesNoQVO();
+            }
+
+            public void put(OtherBillsViewRowImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
         ;
         static AttributesEnum[] vals = null;
         ;
@@ -692,6 +702,7 @@ public class OtherBillsViewRowImpl extends ViewRowImpl {
     public static final int PUSUPPLIERSVIEW = AttributesEnum.PuSuppliersView.index();
     public static final int ACCPUSUPPLIERSVIEW = AttributesEnum.AccPuSuppliersView.index();
     public static final int ACCALLLOCATIONSVIEW = AttributesEnum.AccAllLocationsView.index();
+    public static final int ACCVWYESNOQVO = AttributesEnum.AccVWYesNoQVO.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1602,6 +1613,13 @@ public class OtherBillsViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccAllLocationsView() {
         return (RowSet) getAttributeInternal(ACCALLLOCATIONSVIEW);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccVWYesNoQVO.
+     */
+    public RowSet getAccVWYesNoQVO() {
+        return (RowSet) getAttributeInternal(ACCVWYESNOQVO);
     }
 
     /**

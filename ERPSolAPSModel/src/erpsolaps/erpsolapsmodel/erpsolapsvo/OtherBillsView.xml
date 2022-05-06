@@ -39,6 +39,10 @@
     Name="AccAllLocationsView"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllLocationsView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWYesNoQVO"
+    ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtSupplierName"
     ListVOName="AccPuSuppliersView"
@@ -84,6 +88,25 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="LocationDescription"/>
       <Item Value="Locationid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovPosted"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Posted"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -171,7 +194,15 @@
     PrecisionRule="true"
     EntityAttrName="Posted"
     EntityUsage="OtherBills"
-    AliasName="POSTED"/>
+    AliasName="POSTED"
+    LOVName="LovPosted">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Postedby"
     PrecisionRule="true"
@@ -493,6 +524,13 @@
         ViewAttribute="SuprefDate"
         Operator="BETWEEN"
         Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Posted"
+        ViewAttribute="Posted"
+        Operator="="
+        Conjunction="AND"
+        UpperColumns="0"
         Required="Optional"/>
       <ViewCriteriaItem
         Name="BankRefNo"

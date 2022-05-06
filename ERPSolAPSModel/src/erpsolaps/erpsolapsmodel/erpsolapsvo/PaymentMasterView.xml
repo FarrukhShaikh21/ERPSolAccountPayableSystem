@@ -53,6 +53,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccVWYesNoQVO"
+    ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtSupplierName"
     ListVOName="AccPuSuppliersView"
@@ -127,6 +131,25 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LovSubmit"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Submit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="PaymentMaster"
     Entity="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster"/>
@@ -198,7 +221,15 @@
     PrecisionRule="true"
     EntityAttrName="Submit"
     EntityUsage="PaymentMaster"
-    AliasName="SUBMIT"/>
+    AliasName="SUBMIT"
+    LOVName="LovSubmit">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Createdby"
     PrecisionRule="true"
@@ -578,6 +609,13 @@
         ViewAttribute="PaymentDate"
         Operator="BETWEEN"
         Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Submit"
+        ViewAttribute="Submit"
+        Operator="="
+        Conjunction="AND"
+        UpperColumns="0"
         Required="Optional"/>
       <ViewCriteriaItem
         Name="ChequeNo"

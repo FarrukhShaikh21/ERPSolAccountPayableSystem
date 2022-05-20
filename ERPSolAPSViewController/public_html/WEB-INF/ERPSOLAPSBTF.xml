@@ -136,6 +136,15 @@
         <fixed-outcome>ERP-ACT-PY-0019</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="PY_0021">
+      <page>/PY_0021.jsf</page>
+    </view>
+    <method-call id="doSetPayableReportDefForReverse">
+      <method>#{bindings.doSetPayableReportDefaults.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-PY_0021</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__3">
       <from-activity-id>doERPSolAPSSessionGlobals</from-activity-id>
       <control-flow-case id="__4">
@@ -209,6 +218,10 @@
       <control-flow-case id="__47">
         <from-outcome>ERP-ACT-PY-0019</from-outcome>
         <to-activity-id>doSetPayableReportDefaults</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__52">
+        <from-outcome>ERP-ACT-PY_0021</from-outcome>
+        <to-activity-id>doSetPayableReportDefForReverse</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__25">
@@ -286,6 +299,13 @@
       <control-flow-case id="__49">
         <from-outcome>ERP-ACT-PY-0019</from-outcome>
         <to-activity-id>PY_0019</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__53">
+      <from-activity-id>doSetPayableReportDefForReverse</from-activity-id>
+      <control-flow-case id="__54">
+        <from-outcome>ERP-ACT-PY_0021</from-outcome>
+        <to-activity-id>PY_0021</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

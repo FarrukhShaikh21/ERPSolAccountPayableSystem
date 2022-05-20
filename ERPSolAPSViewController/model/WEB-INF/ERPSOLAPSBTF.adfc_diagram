@@ -346,7 +346,7 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0005</property>
       <property
-         name="sdm:polyPoints">B50,307.0,502.44238,308.5,584.0459,T50</property>
+         name="sdm:polyPoints">B44,303.5,505.48386,308.5,584.0459,T50</property>
    </ControlFlowCase>
    <View
       id="View31">
@@ -565,6 +565,58 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0019</property>
       <property
-         name="sdm:polyPoints">B50,-39.618164,602.09766,-39.5,641.0459,T50</property>
+         name="sdm:polyPoints">B50,-39.618164,602.09766,-39.5,640.6953,T50</property>
+   </ControlFlowCase>
+   <View
+      id="View50">
+      <property
+         name="activityId">PY_0021</property>
+      <property
+         name="page">/PY_0021.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PY_0021&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">648.7988</property>
+      <property
+         name="x">1175.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase52"
+      from="MethodCall4"
+      to="MethodCall53">
+      <property
+         name="fromOutcome">ERP-ACT-PY_0021</property>
+      <property
+         name="tosrcid">__52</property>
+      <property
+         name="fromsrcid">__19</property>
+      <property
+         name="sdm:polyPoints">R58,348.0,455.44238,1105.7188,786.09766,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall53">
+      <property
+         name="activityId">doSetPayableReportDefForReverse</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doSetPayableReportDefForReverse&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">786.44824</property>
+      <property
+         name="x">1146.7188</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase54"
+      from="MethodCall53"
+      to="View50">
+      <property
+         name="fromOutcome">ERP-ACT-PY_0021</property>
+      <property
+         name="sdm:polyPoints">T50,1146.7188,732.09766,1175.5,702.44824,B50</property>
    </ControlFlowCase>
 </SDM>

@@ -27,6 +27,8 @@
     <page path="/PY_0005_SEARCH.jsf" usageId="erpsolaps_erpsolapsview_PY_0005_SEARCHPageDef"/>
     <page path="/PY_0017_SEARCH.jsf" usageId="erpsolaps_erpsolapsview_PY_0017_SEARCHPageDef"/>
     <page path="/PY_0021.jsf" usageId="erpsolaps_erpsolapsview_PY_0021PageDef"/>
+    <page path="/WEB-INF/ERPSOLAPSBTF.xml#ERPSOLAPSBTF@doSetPayableReportDefForReverse"
+          usageId="erpsolaps_erpsolapsview_ERPSOLAPSBTF_ERPSOLAPSBTF_doSetPayableReportDefaults1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolaps_erpsolapsview_PY_0017PageDef" path="erpsolaps.erpsolapsview.pageDefs.PY_0017PageDef"/>
@@ -58,6 +60,8 @@
     <page id="erpsolaps_erpsolapsview_PY_0017_SEARCHPageDef"
           path="erpsolaps.erpsolapsview.pageDefs.PY_0017_SEARCHPageDef"/>
     <page id="erpsolaps_erpsolapsview_PY_0021PageDef" path="erpsolaps.erpsolapsview.pageDefs.PY_0021PageDef"/>
+    <page id="erpsolaps_erpsolapsview_ERPSOLAPSBTF_ERPSOLAPSBTF_doSetPayableReportDefaults1PageDef"
+          path="erpsolaps.erpsolapsview.pageDefs.ERPSOLAPSBTF_ERPSOLAPSBTF_doSetPayableReportDefaults1PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"

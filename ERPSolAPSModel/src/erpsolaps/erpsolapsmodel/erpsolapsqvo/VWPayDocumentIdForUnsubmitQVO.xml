@@ -62,6 +62,14 @@ ORDER BY 2 DESC,1 DESC]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWPayDocumentIdForUnsubmitQVO.DocumentId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="BillDate"
@@ -72,10 +80,18 @@ ORDER BY 2 DESC,1 DESC]]></SQLQuery>
     ColumnType="DATE"
     AliasName="BILL_DATE"
     Expression="BILL_DATE"
-    SQLType="TIMESTAMP">
+    SQLType="DATE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWPayDocumentIdForUnsubmitQVO.BillDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="CustomerName"
@@ -91,6 +107,14 @@ ORDER BY 2 DESC,1 DESC]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWPayDocumentIdForUnsubmitQVO.CustomerName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="DocTypeId"
@@ -102,7 +126,7 @@ ORDER BY 2 DESC,1 DESC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="DOC_TYPE_ID"
     Expression="DOC_TYPE_ID"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4"/>
     </DesignTime>
@@ -136,6 +160,12 @@ ORDER BY 2 DESC,1 DESC]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="DocumentId"/>

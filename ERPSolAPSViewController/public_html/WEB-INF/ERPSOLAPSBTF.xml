@@ -220,7 +220,7 @@
         <to-activity-id>doSetPayableReportDefaults</to-activity-id>
       </control-flow-case>
       <control-flow-case id="__52">
-        <from-outcome>ERP-ACT-PY_0021</from-outcome>
+        <from-outcome>ERP-ACT-PY-0021</from-outcome>
         <to-activity-id>doSetPayableReportDefForReverse</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

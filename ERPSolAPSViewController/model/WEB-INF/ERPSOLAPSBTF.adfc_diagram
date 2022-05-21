@@ -252,7 +252,7 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0017</property>
       <property
-         name="sdm:polyPoints">R46,348.55783,444.94238,487.5,448.0459,L50</property>
+         name="sdm:polyPoints">R42,349.8824,441.44238,487.5,448.0459,L50</property>
    </ControlFlowCase>
    <TaskFlowReturn
       id="TaskFlowReturn23">
@@ -346,7 +346,7 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0005</property>
       <property
-         name="sdm:polyPoints">B44,303.5,505.48386,308.5,584.0459,T50</property>
+         name="sdm:polyPoints">B50,307.0,502.44238,308.5,584.0459,T50</property>
    </ControlFlowCase>
    <View
       id="View31">
@@ -482,7 +482,7 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0020</property>
       <property
-         name="sdm:polyPoints">R54,348.0,451.94238,712.5,562.44824,L50</property>
+         name="sdm:polyPoints">R50,349.26498,448.44238,712.5,562.44824,L50</property>
    </ControlFlowCase>
    <View
       id="View43">
@@ -507,7 +507,7 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0020-SEARCH</property>
       <property
-         name="sdm:polyPoints">B44,750.0,619.17615,823.9906,699.94824,L54</property>
+         name="sdm:polyPoints">R46,797.5741,558.94824,871.5303,639.76105,T56</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -517,7 +517,7 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0020-SEARCH-BACK</property>
       <property
-         name="sdm:polyPoints">L46,827.0303,692.94824,757.0,616.44824,B56</property>
+         name="sdm:polyPoints">T44,864.5303,642.44824,794.5,565.94824,R54</property>
    </ControlFlowCase>
    <View
       id="View46">
@@ -588,7 +588,7 @@
       from="MethodCall4"
       to="MethodCall53">
       <property
-         name="fromOutcome">ERP-ACT-PY_0021</property>
+         name="fromOutcome">ERP-ACT-PY-0021</property>
       <property
          name="tosrcid">__52</property>
       <property

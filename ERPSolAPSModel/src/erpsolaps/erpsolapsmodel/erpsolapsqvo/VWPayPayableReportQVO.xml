@@ -47,7 +47,18 @@
   <ViewAccessor
     Name="AccVWPayDocTypeForUnsubmitQVO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWPayDocTypeForUnsubmitQVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="P_ADF_PROJECTID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA["PY"]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_USERID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode()]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="AccVWPayDocumentIdForUnsubmitQVO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWPayDocumentIdForUnsubmitQVO"
@@ -168,8 +179,8 @@
       <Item Value="Description"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DocumentId"/>
       <Item Value="Description"/>
-      <Item Value="CustomerName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -383,6 +394,14 @@
           Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="Locationid"/>
+      <Item
+        Value="txtDocTypeId"/>
+      <Item
+        Value="txtLocationName"/>
+    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="txtDocumentDescription"
@@ -402,6 +421,12 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="txtDocTypeId"/>
+      <Item
+        Value="txtDocumentId"/>
+    </Dependencies>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Pk"/>

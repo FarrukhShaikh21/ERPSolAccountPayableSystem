@@ -43,6 +43,9 @@
   <ViewUsage
     Name="PuSuppliersCRUD"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView"/>
+  <ViewUsage
+    Name="VWPayDocumentIdForUnsubmitAutoSuggestRO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWPayDocumentIdForUnsubmitQVO"/>
   <ViewLinkUsage
     Name="OthbilldetBilidFkLink1"
     ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"

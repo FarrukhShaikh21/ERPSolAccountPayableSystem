@@ -7,5 +7,7 @@ import oracle.jbo.ViewObject;
 // ---------------------------------------------------------------------
 public interface VWPayPayableReportQVO extends ViewObject {
     void doSetPayableReportDefaults();
+
+    void doSetERPSolAPDocumentUnsubmit();
 }
 

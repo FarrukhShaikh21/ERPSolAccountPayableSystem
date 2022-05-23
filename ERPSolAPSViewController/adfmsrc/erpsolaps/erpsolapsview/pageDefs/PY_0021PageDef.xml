@@ -25,5 +25,12 @@
         <Item Value="txtDocumentDescription"/>
       </AttrNames>
     </attributeValues>
+    <methodAction id="doSetERPSolAPDocumentUnsubmit" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSetERPSolAPDocumentUnsubmit" IsViewObjectMethod="true"
+                  DataControl="ERPSolAPSAppModuleDataControl"
+                  InstanceName="data.ERPSolAPSAppModuleDataControl.VWPayPayableReportRO"
+                  ReturnName="data.ERPSolAPSAppModuleDataControl.methodResults.doSetERPSolAPDocumentUnsubmit_ERPSolAPSAppModuleDataControl_VWPayPayableReportRO_doSetERPSolAPDocumentUnsubmit_result"/>
+    <list IterBinding="VWPayPayableReportROIterator" StaticList="false" Uses="LovtxtCompanyId" id="txtCompanyId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

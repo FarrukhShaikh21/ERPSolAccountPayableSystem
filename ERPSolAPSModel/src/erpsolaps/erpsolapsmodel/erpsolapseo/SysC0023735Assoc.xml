@@ -17,12 +17,11 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="NoteMaster"/>
-      <Attr Name="_foreignKey" Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteMaster.XpknoteMaster"/>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_minCardinality" Value="1"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteMaster.NoteCode"/>
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteMaster.Notecodeseq"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
@@ -32,11 +31,10 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="NoteDetail"/>
-      <Attr Name="_foreignKey" Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetail.SysC0023735"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetail.NoteCode"/>
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetail.Notecodeseq"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

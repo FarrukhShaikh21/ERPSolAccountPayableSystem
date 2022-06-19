@@ -12,14 +12,12 @@
   BindingStyle="OracleName">
   <Attribute
     Name="NoteCode"
-    IsNotNull="true"
     Precision="15"
     ColumnName="NOTE_CODE"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="NOTE_MASTER"
-    PrimaryKey="true">
+    TableName="NOTE_MASTER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -360,12 +358,12 @@
   </Attribute>
   <Attribute
     Name="Notecodeseq"
-    IsNotNull="true"
     ColumnName="NOTECODESEQ"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="NOTE_MASTER"/>
+    TableName="NOTE_MASTER"
+    PrimaryKey="true"/>
   <AccessorAttribute
     Name="NoteDetail"
     Association="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0023735Assoc"
@@ -380,7 +378,7 @@
       <Attr Name="_DBObjectName" Value="XPKNOTE_MASTER"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteMaster.NoteCode"/>
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteMaster.Notecodeseq"/>
     </AttrArray>
   </Key>
   <Key

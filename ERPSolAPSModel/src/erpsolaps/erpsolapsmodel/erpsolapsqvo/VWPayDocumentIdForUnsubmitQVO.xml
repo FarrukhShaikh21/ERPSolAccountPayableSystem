@@ -29,7 +29,7 @@
   <SQLQuery><![CDATA[SELECT  SO.BILLID as DOCUMENT_ID,           
         SO.BILL_DATE,           
         suppname(SO.SUPPLIERID) CUSTOMER_NAME,           
-        'SORD' DOC_TYPE_ID,           
+        'POB' DOC_TYPE_ID,           
         SO.LOCATIONID   ,      
         suppname(SO.SUPPLIERID)||' '|| to_char(SO.BILL_DATE,'dd/mm/rrrr') DESCRIPTION      
 FROM    OTHER_BILLS SO           
@@ -40,7 +40,7 @@ UNION ALL
 SELECT  SR.PERMANET_ID as DOCUMENT_ID,           
         SR.PAYMENT_DATE,           
         suppname(SR.SUPPLIERID) CUSTOMER_NAME,           
-        'SRET' DOC_TYPE_ID,           
+        'PAY' DOC_TYPE_ID,           
         SR.LOCATIONID   ,      
         suppname(SR.SUPPLIERID)||' '|| to_char(SR.PAYMENT_DATE,'dd/mm/rrrr') DESCRIPTION      
 FROM    PAYMENT_MASTER SR           

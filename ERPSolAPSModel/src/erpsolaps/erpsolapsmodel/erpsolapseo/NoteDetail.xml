@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NoteDetail"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="NOTE_DETAIL"
+  AliasName="NoteDetail"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="SeqNo"
+    IsNotNull="true"
+    Precision="15"
+    ColumnName="SEQ_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_DETAIL"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NoteCode"
+    IsNotNull="true"
+    Precision="15"
+    ColumnName="NOTE_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RefDocument"
+    Precision="15"
+    ColumnName="REF_DOCUMENT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Amount"
+    Precision="12"
+    Scale="2"
+    ColumnName="AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="NOTE_DETAIL"/>
+  <Attribute
+    Name="Balance"
+    Precision="12"
+    Scale="2"
+    ColumnName="BALANCE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="NOTE_DETAIL"/>
+  <Attribute
+    Name="Createdby"
+    Precision="15"
+    ColumnName="CREATEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Modifiedby"
+    Precision="15"
+    ColumnName="MODIFIEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="NOTE_DETAIL"/>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="NOTE_DETAIL"/>
+  <Attribute
+    Name="DocTypeId"
+    Precision="5"
+    ColumnName="DOC_TYPE_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GlCode"
+    Precision="15"
+    ColumnName="GL_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Costcenter"
+    Precision="15"
+    ColumnName="COSTCENTER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RefDocumentType"
+    Precision="6"
+    ColumnName="REF_DOCUMENT_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="6"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FcurrAmount"
+    ColumnName="FCURR_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="NOTE_DETAIL"/>
+  <Attribute
+    Name="Gmoveid"
+    Precision="15"
+    ColumnName="GMOVEID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GmBalance"
+    Precision="16"
+    Scale="6"
+    ColumnName="GM_BALANCE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="NOTE_DETAIL"/>
+  <Attribute
+    Name="GmDocTypeId"
+    Precision="5"
+    ColumnName="GM_DOC_TYPE_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Notecodeseq"
+    IsNotNull="true"
+    ColumnName="NOTECODESEQ"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="NOTE_DETAIL"/>
+  <AccessorAttribute
+    Name="NoteMaster"
+    Association="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0023735Assoc"
+    AssociationEnd="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0023735Assoc.NoteMaster"
+    AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0023735Assoc.NoteDetail"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="XpknoteDetail"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="XPKNOTE_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetail.SeqNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0023735">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKNOTE_MASTER"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C0023735"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetail.NoteCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0023736">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKDOCUMENT_TYPES"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C0023736"/>
+      <Attr Name="_isDisabledConstraint" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetail.DocTypeId"/>
+    </AttrArray>
+  </Key>
+</Entity>

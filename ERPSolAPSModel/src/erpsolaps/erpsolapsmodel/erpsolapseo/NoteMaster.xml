@@ -675,13 +675,6 @@
     AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSupplierNoteMasterSupplierIdAssoc.NoteMaster"
     Type="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliersImpl"
     IsUpdateable="true"/>
-  <AccessorAttribute
-    Name="AllLocations"
-    Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPuSupplierLocationIdAssoc"
-    AssociationEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPuSupplierLocationIdAssoc.AllLocations"
-    AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPuSupplierLocationIdAssoc.NoteMaster"
-    Type="oracle.jbo.server.EntityImpl"
-    IsUpdateable="true"/>
   <Key
     Name="XpknoteMaster"
     PrimaryKey="true">

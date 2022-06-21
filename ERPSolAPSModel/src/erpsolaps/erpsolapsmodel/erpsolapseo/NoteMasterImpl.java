@@ -383,18 +383,9 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
                 obj.setPuSuppliers((PuSuppliersImpl) value);
             }
         }
-        ,
-        AllLocations {
-            public Object get(NoteMasterImpl obj) {
-                return obj.getAllLocations();
-            }
-
-            public void put(NoteMasterImpl obj, Object value) {
-                obj.setAllLocations((EntityImpl) value);
-            }
-        }
         ;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public abstract Object get(NoteMasterImpl object);
@@ -457,7 +448,6 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
     public static final int TXTSUPPLIERNAME = AttributesEnum.txtSupplierName.index();
     public static final int NOTEDETAIL = AttributesEnum.NoteDetail.index();
     public static final int PUSUPPLIERS = AttributesEnum.PuSuppliers.index();
-    public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1069,20 +1059,6 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
         setAttributeInternal(PUSUPPLIERS, value);
     }
 
-
-    /**
-     * @return the associated entity oracle.jbo.server.EntityImpl.
-     */
-    public EntityImpl getAllLocations() {
-        return (EntityImpl) getAttributeInternal(ALLLOCATIONS);
-    }
-
-    /**
-     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
-     */
-    public void setAllLocations(EntityImpl value) {
-        setAttributeInternal(ALLLOCATIONS, value);
-    }
 
     /**
      * @param notecodeseq key constituent

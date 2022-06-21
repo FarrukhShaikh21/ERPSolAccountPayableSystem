@@ -895,13 +895,6 @@
     AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPaymentMasterLocationidAssoc.AllLocations"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
-  <AccessorAttribute
-    Name="NoteMaster"
-    Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPuSupplierLocationIdAssoc"
-    AssociationEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPuSupplierLocationIdAssoc.NoteMaster"
-    AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllLocationsPuSupplierLocationIdAssoc.AllLocations"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
   <Key
     Name="XpkallLocations"
     PrimaryKey="true">

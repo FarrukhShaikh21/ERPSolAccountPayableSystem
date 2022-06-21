@@ -5,6 +5,29 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="NoteMasterCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
+              id="NoteMasterCRUDIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <attributeValues IterBinding="NoteMasterCRUDIterator" id="NoteCode">
+      <AttrNames>
+        <Item Value="NoteCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NoteMasterCRUDIterator" id="Submit">
+      <AttrNames>
+        <Item Value="Submit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NoteMasterCRUDIterator" id="Notecodeseq">
+      <AttrNames>
+        <Item Value="Notecodeseq"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NoteMasterCRUDIterator" id="EntryDate">
+      <AttrNames>
+        <Item Value="EntryDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
 </pageDefinition>

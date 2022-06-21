@@ -1,5 +1,6 @@
 package erpsolaps.erpsolapsmodel.erpsolapseo;
 
+import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel;
 import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import java.math.BigDecimal;
@@ -382,6 +383,16 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
                 obj.setPuSuppliers((PuSuppliersImpl) value);
             }
         }
+        ,
+        AllLocations {
+            public Object get(NoteMasterImpl obj) {
+                return obj.getAllLocations();
+            }
+
+            public void put(NoteMasterImpl obj, Object value) {
+                obj.setAllLocations((EntityImpl) value);
+            }
+        }
         ;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -409,6 +420,7 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
             return vals;
         }
     }
+
 
     public static final int NOTECODE = AttributesEnum.NoteCode.index();
     public static final int TAXCODE = AttributesEnum.TaxCode.index();
@@ -445,6 +457,7 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
     public static final int TXTSUPPLIERNAME = AttributesEnum.txtSupplierName.index();
     public static final int NOTEDETAIL = AttributesEnum.NoteDetail.index();
     public static final int PUSUPPLIERS = AttributesEnum.PuSuppliers.index();
+    public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -458,6 +471,7 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("erpsolaps.erpsolapsmodel.erpsolapseo.NoteMaster");
     }
+
 
     /**
      * Gets the attribute value for NoteCode, using the alias name NoteCode.
@@ -1057,6 +1071,20 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
 
 
     /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getAllLocations() {
+        return (EntityImpl) getAttributeInternal(ALLLOCATIONS);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setAllLocations(EntityImpl value) {
+        setAttributeInternal(ALLLOCATIONS, value);
+    }
+
+    /**
      * @param notecodeseq key constituent
 
      * @return a Key object based on given key constituents.
@@ -1096,8 +1124,14 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
      */
     protected void doDML(int operation, TransactionEvent e) {
         if (operation==DML_INSERT) {
-            ;
-       }
+           String pkValue =
+                " fun_note_id('" + ERPSolGlobClassModel.doGetUserCompanyCode() + "','" +
+                ERPSolGlobClassModel.doGetUserLocationCode() + "','B',TO_DATE('" + getEntryDate() + "','YYYY-MM-DD'))";
+            String result =
+                ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
+            populateAttributeAsChanged(NOTECODE, result);            
+
+        }
         super.doDML(operation, e);
     }
 }

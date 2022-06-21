@@ -46,6 +46,12 @@
   <ViewUsage
     Name="VWPayDocumentIdForUnsubmitAutoSuggestRO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWPayDocumentIdForUnsubmitQVO"/>
+  <ViewUsage
+    Name="NoteMasterCRUD"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.NoteMasterView"/>
+  <ViewUsage
+    Name="NoteDetailDetCRUD"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.NoteDetailView"/>
   <ViewLinkUsage
     Name="OthbilldetBilidFkLink1"
     ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"
@@ -57,5 +63,11 @@
     ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.SysC0016800Link"
     SrcViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.PaymentMasterCRUD"
     DstViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.PaymentDetailCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="SysC0023735Link1"
+    ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.SysC0023735Link"
+    SrcViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.NoteMasterCRUD"
+    DstViewUsageName="erpsolaps.erpsolapsmodel.erpsolapsam.ERPSolAPSAppModule.NoteDetailDetCRUD"
     Reversed="false"/>
 </AppModule>

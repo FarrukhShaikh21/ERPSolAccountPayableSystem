@@ -17,6 +17,10 @@
     Name="AccPuSuppliersView"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllLocationsView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllLocationsView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtSupplierName"
     ListVOName="AccPuSuppliersView"
@@ -41,6 +45,30 @@
     </AttrArray>
     <DisplayCriteria
       Name="PuSuppliersFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtLocationName"
+    ListVOName="AccAllLocationsView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtLocationName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LocationDescription"/>
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LocationDescription"/>
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
     Name="NoteMaster"
@@ -254,6 +282,22 @@
     EntityUsage="NoteMaster"
     AliasName="TXT_SUPPLIER_NAME"
     LOVName="LovtxtSupplierName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtLocationName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtLocationName"
+    EntityUsage="NoteMaster"
+    AliasName="TXT_LOCATION_NAME"
+    LOVName="LovtxtLocationName">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

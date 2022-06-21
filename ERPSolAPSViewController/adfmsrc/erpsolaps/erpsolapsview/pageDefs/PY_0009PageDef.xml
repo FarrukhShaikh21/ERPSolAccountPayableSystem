@@ -29,5 +29,19 @@
         <Item Value="EntryDate"/>
       </AttrNames>
     </attributeValues>
+    <listOfValues IterBinding="NoteMasterCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
+                  id="txtLocationName"/>
+    <attributeValues IterBinding="NoteMasterCRUDIterator" id="Locationid">
+      <AttrNames>
+        <Item Value="Locationid"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="NoteMasterCRUDIterator" StaticList="false" Uses="LovtxtSupplierName"
+                  id="txtSupplierName"/>
+    <attributeValues IterBinding="NoteMasterCRUDIterator" id="Supplierid">
+      <AttrNames>
+        <Item Value="Supplierid"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

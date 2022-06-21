@@ -661,6 +661,30 @@
         Value="Supplierid"/>
     </Dependencies>
   </Attribute>
+  <Attribute
+    Name="txtLocationName"
+    Precision="80"
+    ColumnName="TXT_LOCATION_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AllLocations?.LocationDescription]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.NoteMaster.txtLocationName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="Locationid"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="NoteDetail"
     Association="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0023735Assoc"

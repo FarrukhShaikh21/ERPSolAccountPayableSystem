@@ -364,6 +364,16 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ,
+        txtLocationName {
+            public Object get(NoteMasterImpl obj) {
+                return obj.gettxtLocationName();
+            }
+
+            public void put(NoteMasterImpl obj, Object value) {
+                obj.settxtLocationName((String) value);
+            }
+        }
+        ,
         NoteDetail {
             public Object get(NoteMasterImpl obj) {
                 return obj.getNoteDetail();
@@ -455,6 +465,7 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
     public static final int REFDOCTYPEID = AttributesEnum.RefDoctypeid.index();
     public static final int NOTECODESEQ = AttributesEnum.Notecodeseq.index();
     public static final int TXTSUPPLIERNAME = AttributesEnum.txtSupplierName.index();
+    public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
     public static final int NOTEDETAIL = AttributesEnum.NoteDetail.index();
     public static final int PUSUPPLIERS = AttributesEnum.PuSuppliers.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
@@ -1015,6 +1026,22 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
      */
     public void settxtSupplierName(String value) {
         setAttributeInternal(TXTSUPPLIERNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for txtLocationName, using the alias name txtLocationName.
+     * @return the value of txtLocationName
+     */
+    public String gettxtLocationName() {
+        return (String) getAttributeInternal(TXTLOCATIONNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtLocationName.
+     * @param value value to set the txtLocationName
+     */
+    public void settxtLocationName(String value) {
+        setAttributeInternal(TXTLOCATIONNAME, value);
     }
 
     /**

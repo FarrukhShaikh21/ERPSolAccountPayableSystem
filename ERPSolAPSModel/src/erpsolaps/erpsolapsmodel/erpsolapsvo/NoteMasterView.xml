@@ -272,4 +272,10 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllLocationsView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.AllLocationsNoteMasterLocationIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

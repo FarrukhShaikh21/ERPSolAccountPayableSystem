@@ -466,4 +466,9 @@
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.AllLocationsPaymentMasterLocationidLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="NoteMasterView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.AllLocationsNoteMasterLocationIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

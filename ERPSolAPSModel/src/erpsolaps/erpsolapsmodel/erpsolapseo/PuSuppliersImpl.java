@@ -494,6 +494,16 @@ public class PuSuppliersImpl extends ERPSolGlobalsEntityImpl {
                 obj.setAttributeInternal(index(), value);
             }
         }
+        ,
+        NoteMaster {
+            public Object get(PuSuppliersImpl obj) {
+                return obj.getNoteMaster();
+            }
+
+            public void put(PuSuppliersImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
         ;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -570,6 +580,7 @@ public class PuSuppliersImpl extends ERPSolGlobalsEntityImpl {
     public static final int SUPPLIERSEQ = AttributesEnum.Supplierseq.index();
     public static final int OTHERBILLS = AttributesEnum.OtherBills.index();
     public static final int PAYMENTMASTER = AttributesEnum.PaymentMaster.index();
+    public static final int NOTEMASTER = AttributesEnum.NoteMaster.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1348,6 +1359,14 @@ public class PuSuppliersImpl extends ERPSolGlobalsEntityImpl {
      */
     public RowIterator getPaymentMaster() {
         return (RowIterator) getAttributeInternal(PAYMENTMASTER);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getNoteMaster() {
+        return (RowIterator) getAttributeInternal(NOTEMASTER);
     }
 
 

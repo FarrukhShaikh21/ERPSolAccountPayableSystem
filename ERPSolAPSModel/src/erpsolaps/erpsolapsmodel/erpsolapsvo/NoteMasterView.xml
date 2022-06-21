@@ -13,6 +13,35 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccPuSuppliersView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtSupplierName"
+    ListVOName="AccPuSuppliersView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtSupplierName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Supplierid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SuppName"/>
+      <Item Value="Supplierid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SuppName"/>
+      <Item Value="Supplierid"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="PuSuppliersFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="NoteMaster"
     Entity="erpsolaps.erpsolapsmodel.erpsolapseo.NoteMaster"/>
@@ -216,9 +245,31 @@
     EntityAttrName="Notecodeseq"
     EntityUsage="NoteMaster"
     AliasName="NOTECODESEQ"/>
+  <ViewAttribute
+    Name="txtSupplierName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtSupplierName"
+    EntityUsage="NoteMaster"
+    AliasName="TXT_SUPPLIER_NAME"
+    LOVName="LovtxtSupplierName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="NoteDetailView"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapsvo.SysC0023735Link"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PuSuppliersView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.PuSupplierNoteMasterSupplierIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
     IsUpdateable="false"/>
 </ViewObject>

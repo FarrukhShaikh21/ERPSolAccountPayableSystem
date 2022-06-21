@@ -804,4 +804,9 @@
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.PuSuppliersPaymentMasterSupplieridLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="NoteMasterView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.PuSupplierNoteMasterSupplierIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

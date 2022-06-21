@@ -629,6 +629,30 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtSupplierName"
+    Precision="80"
+    ColumnName="TXT_SUPPLIER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[PuSuppliers?.SuppName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.NoteMaster.txtSupplierName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="Supplierid"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="NoteDetail"
     Association="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0023735Assoc"
@@ -636,6 +660,13 @@
     AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0023735Assoc.NoteMaster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PuSuppliers"
+    Association="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSupplierNoteMasterSupplierIdAssoc"
+    AssociationEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSupplierNoteMasterSupplierIdAssoc.PuSuppliers"
+    AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.PuSupplierNoteMasterSupplierIdAssoc.NoteMaster"
+    Type="erpsolaps.erpsolapsmodel.erpsolapseo.PuSuppliersImpl"
+    IsUpdateable="true"/>
   <Key
     Name="XpknoteMaster"
     PrimaryKey="true">

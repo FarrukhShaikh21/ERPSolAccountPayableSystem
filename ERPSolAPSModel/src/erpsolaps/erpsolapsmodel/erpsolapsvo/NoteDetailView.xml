@@ -13,6 +13,66 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccVWCostCenterQVO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWCostCenterQVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="VWCostCenterLastLevelOnlyVC"
+      FullName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWCostCenterQVO.VWCostCenterLastLevelOnlyVC"/>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="AccVWChartOfAccountQVO"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWChartOfAccountQVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Costcenter"
+    ListVOName="AccVWCostCenterQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Costcenter"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="txtCostCenterName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Costcenterid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="VWCostCenterLastLevelOnlyVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovGlCode"
+    ListVOName="AccVWChartOfAccountQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GlCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="txtGLDescription"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Glcode"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="NoteDetail"
     Entity="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetail"/>
@@ -83,13 +143,29 @@
     PrecisionRule="true"
     EntityAttrName="GlCode"
     EntityUsage="NoteDetail"
-    AliasName="GL_CODE"/>
+    AliasName="GL_CODE"
+    LOVName="LovGlCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Costcenter"
     PrecisionRule="true"
     EntityAttrName="Costcenter"
     EntityUsage="NoteDetail"
-    AliasName="COSTCENTER"/>
+    AliasName="COSTCENTER"
+    LOVName="LOV_Costcenter">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RefDocumentType"
     PrecisionRule="true"
@@ -138,9 +214,9 @@
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR">
     <TransientExpression
-      trustMode="trusted"><![CDATA[VWCostCenterQVO?.Description]]></TransientExpression>
+      trustMode="untrusted"><![CDATA[VWCostCenterQVO?.Description]]></TransientExpression>
     <RecalcCondition
-      trustMode="trusted"><![CDATA[true]]></RecalcCondition>
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL

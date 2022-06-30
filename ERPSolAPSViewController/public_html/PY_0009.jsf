@@ -242,11 +242,9 @@
                     <f:facet name="toolbar">
                       <af:toolbar id="t3">
                         <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add Payment Line"
-                                   disabled="#{bindings.Submit.inputValue=='Y' || bindings.PaymentType.inputValue=='AD'}" id="b7" accessKey="a"
-                                   partialTriggers="::soc1"/>
+                                   disabled="#{bindings.Submit.inputValue=='Y' || bindings.PaymentType.inputValue=='AD'}" id="b7" accessKey="a"/>
                         <af:button actionListener="#{bindings.Delete1.execute}" text="Delete Payment Line"
-                                   disabled="#{bindings.Submit.inputValue=='Y' || bindings.PaymentType.inputValue=='AD'}" id="b8" immediate="true"
-                                   partialTriggers="::soc1"/>
+                                   disabled="#{bindings.Submit.inputValue=='Y'}" id="b8" immediate="true"/>
                       </af:toolbar>
                     </f:facet>
                     <f:facet name="statusbar"/>
@@ -259,99 +257,69 @@
                         </af:panelGroupLayout>
                       </af:toolbar>
                     </f:facet>
-                    <af:table value="#{bindings.PaymentDetailCRUD.collectionModel}" var="row"
-                              rows="#{bindings.PaymentDetailCRUD.rangeSize}"
-                              emptyText="#{bindings.PaymentDetailCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    <af:table value="#{bindings.NoteDetailDetCRUD.collectionModel}" var="row"
+                              rows="#{bindings.NoteDetailDetCRUD.rangeSize}"
+                              emptyText="#{bindings.NoteDetailDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
                               rowBandingInterval="0"
-                              selectedRowKeys="#{bindings.PaymentDetailCRUD.collectionModel.selectedRow}"
-                              selectionListener="#{bindings.PaymentDetailCRUD.collectionModel.makeCurrent}"
-                              rowSelection="single" fetchSize="#{bindings.PaymentDetailCRUD.rangeSize}" id="t2"
-                              partialTriggers="::b7 ::b8" scrollPolicy="page" autoHeightRows="5">
-                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.InvoiceCode.label}" id="c1" width="200">
-                        <af:inputComboboxListOfValues id="invoiceCodeId"
-                                                      popupTitle="Search and Select: #{bindings.PaymentDetailCRUD.hints.InvoiceCode.label}"
-                                                      value="#{row.bindings.InvoiceCode.inputValue}"
-                                                      model="#{row.bindings.InvoiceCode.listOfValuesModel}"
-                                                      required="#{bindings.PaymentDetailCRUD.hints.InvoiceCode.mandatory}"
-                                                      columns="#{bindings.PaymentDetailCRUD.hints.InvoiceCode.displayWidth}"
-                                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.InvoiceCode.tooltip}"
-                                                      autoSubmit="true">
-                          <f:validator binding="#{row.bindings.InvoiceCode.validator}"/>
-                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedPaymentDocument}"/>
+                              selectedRowKeys="#{bindings.NoteDetailDetCRUD.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.NoteDetailDetCRUD.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.NoteDetailDetCRUD.rangeSize}" id="t2"
+                              partialTriggers="::b7 ::b8">
+                      <af:column headerText="#{bindings.NoteDetailDetCRUD.hints.GlCode.label}" id="c1" width="200">
+                        <af:inputComboboxListOfValues id="glCodeId"
+                                                      popupTitle="Search and Select: #{bindings.NoteDetailDetCRUD.hints.GlCode.label}"
+                                                      value="#{row.bindings.GlCode.inputValue}"
+                                                      model="#{row.bindings.GlCode.listOfValuesModel}"
+                                                      required="#{bindings.NoteDetailDetCRUD.hints.GlCode.mandatory}"
+                                                      columns="#{bindings.NoteDetailDetCRUD.hints.GlCode.displayWidth}"
+                                                      shortDesc="#{bindings.NoteDetailDetCRUD.hints.GlCode.tooltip}">
+                          <f:validator binding="#{row.bindings.GlCode.validator}"/>
                         </af:inputComboboxListOfValues>
                       </af:column>
-                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.InvoiceType.label}" id="c2" width="200">
-                        <af:inputText value="#{row.bindings.InvoiceType.inputValue}"
-                                      label="#{bindings.PaymentDetailCRUD.hints.InvoiceType.label}"
-                                      required="#{bindings.PaymentDetailCRUD.hints.InvoiceType.mandatory}"
-                                      columns="#{bindings.PaymentDetailCRUD.hints.InvoiceType.displayWidth}"
-                                      maximumLength="#{bindings.PaymentDetailCRUD.hints.InvoiceType.precision}"
-                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.InvoiceType.tooltip}" id="it3"
-                                      readOnly="true">
-                          <f:validator binding="#{row.bindings.InvoiceType.validator}"/>
+                      <af:column headerText="#{bindings.NoteDetailDetCRUD.hints.txtGLDescription.label}" id="c4"
+                                 width="150">
+                        <af:inputText value="#{row.bindings.txtGLDescription.inputValue}"
+                                      label="#{bindings.NoteDetailDetCRUD.hints.txtGLDescription.label}"
+                                      required="#{bindings.NoteDetailDetCRUD.hints.txtGLDescription.mandatory}"
+                                      columns="#{bindings.NoteDetailDetCRUD.hints.txtGLDescription.displayWidth}"
+                                      maximumLength="#{bindings.NoteDetailDetCRUD.hints.txtGLDescription.precision}"
+                                      shortDesc="#{bindings.NoteDetailDetCRUD.hints.txtGLDescription.tooltip}" id="it5">
+                          <f:validator binding="#{row.bindings.txtGLDescription.validator}"/>
                         </af:inputText>
                       </af:column>
-                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.label}" id="c3">
-                        <af:inputText value="#{row.bindings.FcurrPmtAmount.inputValue}"
-                                      label="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.label}"
-                                      required="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.mandatory}"
-                                      columns="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.displayWidth}"
-                                      maximumLength="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.precision}"
-                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.tooltip}" id="it5"
-                                      autoSubmit="true" partialTriggers="invoiceCodeId">
-                          <f:validator binding="#{row.bindings.FcurrPmtAmount.validator}"/>
-                          <af:convertNumber groupingUsed="false"
-                                            pattern="#{bindings.PaymentDetailCRUD.hints.FcurrPmtAmount.format}"/>
+                      <af:column headerText="#{bindings.NoteDetailDetCRUD.hints.Costcenter.label}" id="c2" width="200">
+                        <af:inputComboboxListOfValues id="costcenterId"
+                                                      popupTitle="Search and Select: #{bindings.NoteDetailDetCRUD.hints.Costcenter.label}"
+                                                      value="#{row.bindings.Costcenter.inputValue}"
+                                                      model="#{row.bindings.Costcenter.listOfValuesModel}"
+                                                      required="#{bindings.NoteDetailDetCRUD.hints.Costcenter.mandatory}"
+                                                      columns="#{bindings.NoteDetailDetCRUD.hints.Costcenter.displayWidth}"
+                                                      shortDesc="#{bindings.NoteDetailDetCRUD.hints.Costcenter.tooltip}">
+                          <f:validator binding="#{row.bindings.Costcenter.validator}"/>
+                        </af:inputComboboxListOfValues>
+                      </af:column>
+                      <af:column headerText="#{bindings.NoteDetailDetCRUD.hints.txtCostCenterName.label}" id="c3"
+                                 width="200">
+                        <af:inputText value="#{row.bindings.txtCostCenterName.inputValue}"
+                                      label="#{bindings.NoteDetailDetCRUD.hints.txtCostCenterName.label}"
+                                      required="#{bindings.NoteDetailDetCRUD.hints.txtCostCenterName.mandatory}"
+                                      columns="#{bindings.NoteDetailDetCRUD.hints.txtCostCenterName.displayWidth}"
+                                      maximumLength="#{bindings.NoteDetailDetCRUD.hints.txtCostCenterName.precision}"
+                                      shortDesc="#{bindings.NoteDetailDetCRUD.hints.txtCostCenterName.tooltip}"
+                                      id="it3" readOnly="true">
+                          <f:validator binding="#{row.bindings.txtCostCenterName.validator}"/>
                         </af:inputText>
                       </af:column>
-                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.TaxCode.label}" id="c7" width="200"
-                                 displayIndex="-1">
-                        <af:selectOneChoice value="#{row.bindings.TaxCode.inputValue}"
-                                            label="#{row.bindings.TaxCode.label}"
-                                            required="#{bindings.PaymentDetailCRUD.hints.TaxCode.mandatory}"
-                                            shortDesc="#{bindings.PaymentDetailCRUD.hints.TaxCode.tooltip}" id="soc2"
-                                            autoSubmit="true">
-                          <f:selectItems value="#{row.bindings.TaxCode.items}" id="si15"/>
-                          <f:validator binding="#{row.bindings.TaxCode.validator}"/>
-                        </af:selectOneChoice>
-                      </af:column>
-                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.label}" id="c4">
-                        <af:inputText value="#{row.bindings.FcurrTaxamt.inputValue}"
-                                      label="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.label}"
-                                      required="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.mandatory}"
-                                      columns="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.displayWidth}"
-                                      maximumLength="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.precision}"
-                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.tooltip}" id="it6"
-                                      autoSubmit="true">
-                          <f:validator binding="#{row.bindings.FcurrTaxamt.validator}"/>
+                      <af:column headerText="#{bindings.NoteDetailDetCRUD.hints.FcurrAmount.label}" id="c5">
+                        <af:inputText value="#{row.bindings.FcurrAmount.inputValue}"
+                                      label="#{bindings.NoteDetailDetCRUD.hints.FcurrAmount.label}"
+                                      required="#{bindings.NoteDetailDetCRUD.hints.FcurrAmount.mandatory}"
+                                      columns="#{bindings.NoteDetailDetCRUD.hints.FcurrAmount.displayWidth}"
+                                      maximumLength="#{bindings.NoteDetailDetCRUD.hints.FcurrAmount.precision}"
+                                      shortDesc="#{bindings.NoteDetailDetCRUD.hints.FcurrAmount.tooltip}" id="it6">
+                          <f:validator binding="#{row.bindings.FcurrAmount.validator}"/>
                           <af:convertNumber groupingUsed="false"
-                                            pattern="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.format}"/>
-                        </af:inputText>
-                      </af:column>
-                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.label}" id="c5">
-                        <af:inputText value="#{row.bindings.txtNetPayment.inputValue}"
-                                      label="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.label}"
-                                      required="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.mandatory}"
-                                      columns="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.displayWidth}"
-                                      maximumLength="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.precision}"
-                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.tooltip}" id="it7"
-                                      autoSubmit="true" partialTriggers="invoiceCodeId it6 it5" readOnly="true">
-                          <f:validator binding="#{row.bindings.txtNetPayment.validator}"/>
-                          <af:convertNumber groupingUsed="false"
-                                            pattern="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.format}"/>
-                        </af:inputText>
-                      </af:column>
-                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.FcurrBalance.label}" id="c6">
-                        <af:inputText value="#{row.bindings.FcurrBalance.inputValue}"
-                                      label="#{bindings.PaymentDetailCRUD.hints.FcurrBalance.label}"
-                                      required="#{bindings.PaymentDetailCRUD.hints.FcurrBalance.mandatory}"
-                                      columns="#{bindings.PaymentDetailCRUD.hints.FcurrBalance.displayWidth}"
-                                      maximumLength="#{bindings.PaymentDetailCRUD.hints.FcurrBalance.precision}"
-                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.FcurrBalance.tooltip}" id="it14"
-                                      readOnly="true" partialTriggers="invoiceCodeId">
-                          <f:validator binding="#{row.bindings.FcurrBalance.validator}"/>
-                          <af:convertNumber groupingUsed="false"
-                                            pattern="#{bindings.PaymentDetailCRUD.hints.FcurrBalance.format}"/>
+                                            pattern="#{bindings.NoteDetailDetCRUD.hints.FcurrAmount.format}"/>
                         </af:inputText>
                       </af:column>
                     </af:table>

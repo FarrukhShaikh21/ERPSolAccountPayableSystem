@@ -7,6 +7,8 @@
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
     <iterator Binds="NoteMasterCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
               id="NoteMasterCRUDIterator"/>
+    <iterator Binds="NoteDetailDetCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
+              id="NoteDetailDetCRUDIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="NoteMasterCRUDIterator" id="NoteCode">
@@ -65,5 +67,19 @@
                   IsViewObjectMethod="true" DataControl="ERPSolAPSAppModuleDataControl"
                   InstanceName="data.ERPSolAPSAppModuleDataControl.NoteMasterCRUD"
                   ReturnName="data.ERPSolAPSAppModuleDataControl.methodResults.doSuperviseNote_ERPSolAPSAppModuleDataControl_NoteMasterCRUD_doSuperviseNote_result"/>
+    <tree IterBinding="NoteDetailDetCRUDIterator" id="NoteDetailDetCRUD">
+      <nodeDefinition DefName="erpsolaps.erpsolapsmodel.erpsolapsvo.NoteDetailView" Name="NoteDetailDetCRUD0">
+        <AttrNames>
+          <Item Value="GlCode"/>
+          <Item Value="Costcenter"/>
+          <Item Value="txtCostCenterName"/>
+          <Item Value="txtGLDescription"/>
+          <Item Value="FcurrAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="NoteDetailDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="NoteDetailDetCRUDIterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

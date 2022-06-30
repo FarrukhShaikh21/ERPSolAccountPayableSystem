@@ -13,7 +13,9 @@
     Name="NoteMaster"
     Cardinality="1"
     Source="true"
-    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.NoteMaster">
+    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.NoteMaster"
+    LockLevel="NONE"
+    DeleteContainee="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="NoteMaster"/>
@@ -27,7 +29,8 @@
   <AssociationEnd
     Name="NoteDetail"
     Cardinality="-1"
-    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetail">
+    Owner="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetail"
+    HasOwner="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="NoteDetail"/>

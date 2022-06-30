@@ -646,6 +646,13 @@ public class NoteDetailImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation==DML_INSERT) {
+            populateAttributeAsChanged(NOTECODE, getNoteMaster().getAttribute("NoteCode"));
+       }
+        else
+        if (operation==DML_UPDATE) {
+            populateAttributeAsChanged(AMOUNT, getFcurrAmount());
+        }
         super.doDML(operation, e);
     }
 }

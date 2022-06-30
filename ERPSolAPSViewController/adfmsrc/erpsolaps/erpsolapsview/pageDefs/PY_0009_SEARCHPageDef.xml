@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="PY_0009_SEARCHPageDef"
+                Package="erpsolaps.erpsolapsview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="NoteMasterCRUD" RangeSize="25" DataControl="ERPSolAPSAppModuleDataControl"
+              id="NoteMasterCRUDIterator"/>
+    <searchRegion Criteria="NoteMasterViewFindVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="NoteMasterCRUDIterator" id="NoteMasterViewFindVCQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="NoteMasterCRUDIterator" id="NoteMasterCRUD">
+      <nodeDefinition DefName="erpsolaps.erpsolapsmodel.erpsolapsvo.NoteMasterView" Name="NoteMasterCRUD0">
+        <AttrNames>
+          <Item Value="NoteCode"/>
+          <Item Value="EntryDate"/>
+          <Item Value="Locationid"/>
+          <Item Value="txtLocationName"/>
+          <Item Value="Supplierid"/>
+          <Item Value="txtSupplierName"/>
+          <Item Value="RefVoucher"/>
+          <Item Value="Remarks"/>
+          <Item Value="Submit"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

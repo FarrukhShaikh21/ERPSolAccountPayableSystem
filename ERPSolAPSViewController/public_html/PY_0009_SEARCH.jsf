@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="PY_0009_SEARCH.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl2">
+                <af:panelHeader text="NoteMaster" id="ph2">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.NoteMasterViewFindVCQuery.queryDescriptor}"
+                              model="#{bindings.NoteMasterViewFindVCQuery.queryModel}"
+                              queryListener="#{bindings.NoteMasterViewFindVCQuery.processQuery}"
+                              queryOperationListener="#{bindings.NoteMasterViewFindVCQuery.processQueryOperation}"
+                              resultComponentId="::resId1"/>
+                    <f:facet name="toolbar">
+                        <af:toolbar id="t1">
+                            <af:button text="Back To Note Form" id="b1" icon="#{resource['images:imgExitForm.png']}"
+                                       action="ERP-ACT-PY-0009-SEARCH-BACK"/>
+                        </af:toolbar>
+                    </f:facet>
+                </af:panelHeader>
+                <af:table value="#{bindings.NoteMasterCRUD.collectionModel}" var="row"
+                          rows="#{bindings.NoteMasterCRUD.rangeSize}"
+                          emptyText="#{bindings.NoteMasterCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.NoteMasterCRUD.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.NoteMasterCRUD.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.NoteMasterCRUD.rangeSize}" id="resId1">
+                    <af:column headerText="#{bindings.NoteMasterCRUD.hints.NoteCode.label}" id="resId1c1">
+                        <af:link text="#{row.NoteCode}" id="l1" partialSubmit="true"
+                                 action="ERP-ACT-PY-0009-SEARCH-BACK"/>
+                        <af:outputText value="#{row.NoteCode}"
+                                       shortDesc="#{bindings.NoteMasterCRUD.hints.NoteCode.tooltip}" id="ot1"
+                                       rendered="false"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.NoteMasterCRUD.hints.EntryDate.label}" id="resId1c2">
+                        <af:outputText value="#{row.EntryDate}"
+                                       shortDesc="#{bindings.NoteMasterCRUD.hints.EntryDate.tooltip}" id="ot2">
+                            <af:convertDateTime pattern="#{bindings.NoteMasterCRUD.hints.EntryDate.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.NoteMasterCRUD.hints.Locationid.label}" id="resId1c3">
+                        <af:outputText value="#{row.Locationid}"
+                                       shortDesc="#{bindings.NoteMasterCRUD.hints.Locationid.tooltip}" id="ot3"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.NoteMasterCRUD.hints.txtLocationName.label}" id="resId1c4">
+                        <af:outputText value="#{row.txtLocationName}"
+                                       shortDesc="#{bindings.NoteMasterCRUD.hints.txtLocationName.tooltip}" id="ot4"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.NoteMasterCRUD.hints.Supplierid.label}" id="resId1c5">
+                        <af:outputText value="#{row.Supplierid}"
+                                       shortDesc="#{bindings.NoteMasterCRUD.hints.Supplierid.tooltip}" id="ot5"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.NoteMasterCRUD.hints.txtSupplierName.label}" id="resId1c6">
+                        <af:outputText value="#{row.txtSupplierName}"
+                                       shortDesc="#{bindings.NoteMasterCRUD.hints.txtSupplierName.tooltip}" id="ot6"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.NoteMasterCRUD.hints.RefVoucher.label}" id="resId1c7">
+                        <af:outputText value="#{row.RefVoucher}"
+                                       shortDesc="#{bindings.NoteMasterCRUD.hints.RefVoucher.tooltip}" id="ot7"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.NoteMasterCRUD.hints.Remarks.label}" id="resId1c8">
+                        <af:outputText value="#{row.Remarks}"
+                                       shortDesc="#{bindings.NoteMasterCRUD.hints.Remarks.tooltip}" id="ot8"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.NoteMasterCRUD.hints.Submit.label}" id="resId1c9">
+                        <af:outputText value="#{row.Submit}" shortDesc="#{bindings.NoteMasterCRUD.hints.Submit.tooltip}"
+                                       id="ot9"/>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

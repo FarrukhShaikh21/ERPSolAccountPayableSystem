@@ -81,5 +81,15 @@
     <action IterBinding="NoteDetailDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="NoteDetailDetCRUDIterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="NoteDetailDetCRUDIterator" id="txtSumAmount">
+      <AttrNames>
+        <Item Value="txtSumAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NoteMasterCRUDIterator" id="DocTypeId">
+      <AttrNames>
+        <Item Value="DocTypeId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

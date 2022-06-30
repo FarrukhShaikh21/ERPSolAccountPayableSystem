@@ -32,7 +32,6 @@
   </Attribute>
   <Attribute
     Name="NoteCode"
-    IsNotNull="true"
     Precision="15"
     ColumnName="NOTE_CODE"
     SQLType="VARCHAR"
@@ -165,7 +164,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="NOTE_DETAIL"/>
+    TableName="NOTE_DETAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetail.FcurrAmount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Gmoveid"
     Precision="15"
@@ -247,4 +253,8 @@
       <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetail.DocTypeId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolaps.erpsolapsmodel.ERPSolAPSModelBundle"/>
+  </ResourceBundle>
 </Entity>

@@ -624,7 +624,7 @@
     Name="Notecodeseq"
     ColumnName="NOTECODESEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="NOTE_MASTER"
     PrimaryKey="true">

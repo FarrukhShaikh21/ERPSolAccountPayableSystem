@@ -39,7 +39,7 @@
                       <af:toolbar id="t1">
                         <af:button actionListener="#{bindings.doSuperviseNote.execute}" text="doSuperviseNote"
                                    disabled="#{!bindings.doSuperviseNote.enabled}" id="b10" rendered="false"/>
-                        <af:button text="Search" id="b12" action="ERP-ACT-PY-0005-SEARCH"
+                        <af:button text="Search" id="b12" action="ERP-ACT-PY-0009-SEARCH"
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
                         <af:button text="Exit" id="b13" action="ERP-ACT-EXIT-FORM-APS" iconPosition="top"
                                    icon="#{resource['images:imgExitForm.png']}"/>
@@ -55,7 +55,7 @@
                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete Note"
                                    disabled="#{bindings.Submit.inputValue=='Y'}" id="b2"
                                    icon="#{resource['images:imgDelete.png']}" iconPosition="top" accessKey="l"/>
-                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="New Payment"
+                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="New Note"
                                    disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowAdd=='N'}" id="b1"
                                    icon="#{resource['images:imgAdd.png']}" iconPosition="top" accessKey="w"/>
                         <af:button actionListener="#{bindings.Rollback.execute}" text="Undo Changes" immediate="true"
@@ -68,7 +68,7 @@
                         <af:spacer width="50" height="10" id="s6"/>
                         <af:button text="Supervise Transaction" id="b9"
                                    visible="#{pageFlowScope.ERPSolTempBean.LERPSolAllowSubmit=='Y'}"
-                                   disabled="#{bindings.Submit.inputValue=='Y' || bindings.PaymentCode.inputValue==null}"
+                                   disabled="#{bindings.Submit.inputValue=='Y' || bindings.NoteCode.inputValue==null}"
                                    icon="#{resource['images:imgSupervise.png']}" iconPosition="top" accessKey="t">
                           <af:showPopupBehavior popupId="::p1" triggerType="action"/>
                         </af:button>
@@ -80,6 +80,15 @@
                           <af:outputLabel value="#{bindings.NoteCode.hints.label}" id="ol5"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc3" valign="middle">
+                          <af:inputText value="#{bindings.txtSumAmount.inputValue}"
+                                        label="#{bindings.txtSumAmount.hints.label}"
+                                        required="#{bindings.txtSumAmount.hints.mandatory}"
+                                        columns="#{bindings.txtSumAmount.hints.displayWidth}"
+                                        maximumLength="#{bindings.txtSumAmount.hints.precision}"
+                                        shortDesc="#{bindings.txtSumAmount.hints.tooltip}" id="it7" rendered="false">
+                            <f:validator binding="#{bindings.txtSumAmount.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.txtSumAmount.format}"/>
+                          </af:inputText>
                           <af:inputText value="#{bindings.Notecodeseq.inputValue}"
                                         label="#{bindings.Notecodeseq.hints.label}"
                                         required="#{bindings.Notecodeseq.hints.mandatory}"
@@ -177,6 +186,16 @@
                         </af:gridCell>
                       </af:gridRow>
                       <af:gridRow id="gr8" height="30px">
+                        <af:gridCell id="gc22" valign="middle" width="15%">
+                          <af:outputLabel value="#{bindings.DocTypeId.hints.label}" id="ol1"/>
+                        </af:gridCell>
+                        <af:gridCell id="gc23" valign="middle" width="35%">
+                          <af:selectOneChoice label="Label 1" id="soc1" value="#{bindings.DocTypeId.inputValue}"
+                                              simple="true">
+                            <af:selectItem label="Debit" value="DBN" id="si1"/>
+                            <af:selectItem label="Credit" value="CRN" id="si2"/>
+                          </af:selectOneChoice>
+                        </af:gridCell>
                         <af:gridCell id="gc20" valign="middle" width="15%">
                           <af:outputLabel value="#{bindings.RefVoucher.hints.label}" id="ol16"/>
                         </af:gridCell>
@@ -190,8 +209,6 @@
                             <f:validator binding="#{bindings.RefVoucher.validator}"/>
                           </af:inputText>
                         </af:gridCell>
-                        <af:gridCell id="gc22" valign="middle" width="15%"/>
-                        <af:gridCell id="gc23" valign="middle" width="35%"/>
                       </af:gridRow>
                       <af:gridRow id="gr14" height="30px">
                         <af:gridCell id="gc35" width="15%" valign="middle">
@@ -228,7 +245,7 @@
                 </af:gridCell>
               </af:gridRow>
               <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
-                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27" halign="stretch">
+                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27" halign="stretch" valign="stretch">
                   <af:inputText value="#{bindings.txtSumNetPay.inputValue}" label="#{bindings.txtSumNetPay.hints.label}"
                                 required="#{bindings.txtSumNetPay.hints.mandatory}"
                                 columns="#{bindings.txtSumNetPay.hints.displayWidth}"
@@ -251,8 +268,8 @@
                     <f:facet name="secondaryToolbar">
                       <af:toolbar id="t5">
                         <af:panelGroupLayout id="pgl6" layout="horizontal">
-                          <af:outputLabel value="Total Net Payment :" id="ol3"/>
-                          <af:outputText value="#{bindings.txtSumNetPay.inputValue}" id="ot2"
+                          <af:outputLabel value="Total Amount :" id="ol3"/>
+                          <af:outputText value="#{bindings.txtSumAmount.inputValue}" id="ot2"
                                          inlineStyle="font-weight:bold"/>
                         </af:panelGroupLayout>
                       </af:toolbar>
@@ -264,7 +281,7 @@
                               selectedRowKeys="#{bindings.NoteDetailDetCRUD.collectionModel.selectedRow}"
                               selectionListener="#{bindings.NoteDetailDetCRUD.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.NoteDetailDetCRUD.rangeSize}" id="t2"
-                              partialTriggers="::b7 ::b8">
+                              partialTriggers="::b7 ::b8" autoHeightRows="5" scrollPolicy="page" displayRow="selected">
                       <af:column headerText="#{bindings.NoteDetailDetCRUD.hints.GlCode.label}" id="c1" width="200">
                         <af:inputComboboxListOfValues id="glCodeId"
                                                       popupTitle="Search and Select: #{bindings.NoteDetailDetCRUD.hints.GlCode.label}"
@@ -274,10 +291,11 @@
                                                       columns="#{bindings.NoteDetailDetCRUD.hints.GlCode.displayWidth}"
                                                       shortDesc="#{bindings.NoteDetailDetCRUD.hints.GlCode.tooltip}">
                           <f:validator binding="#{row.bindings.GlCode.validator}"/>
+                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedCOAValues}"/>
                         </af:inputComboboxListOfValues>
                       </af:column>
                       <af:column headerText="#{bindings.NoteDetailDetCRUD.hints.txtGLDescription.label}" id="c4"
-                                 width="150">
+                                 width="200">
                         <af:inputText value="#{row.bindings.txtGLDescription.inputValue}"
                                       label="#{bindings.NoteDetailDetCRUD.hints.txtGLDescription.label}"
                                       required="#{bindings.NoteDetailDetCRUD.hints.txtGLDescription.mandatory}"
@@ -296,10 +314,11 @@
                                                       columns="#{bindings.NoteDetailDetCRUD.hints.Costcenter.displayWidth}"
                                                       shortDesc="#{bindings.NoteDetailDetCRUD.hints.Costcenter.tooltip}">
                           <f:validator binding="#{row.bindings.Costcenter.validator}"/>
+                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedCostCenterValues}"/>
                         </af:inputComboboxListOfValues>
                       </af:column>
                       <af:column headerText="#{bindings.NoteDetailDetCRUD.hints.txtCostCenterName.label}" id="c3"
-                                 width="200">
+                                 width="150">
                         <af:inputText value="#{row.bindings.txtCostCenterName.inputValue}"
                                       label="#{bindings.NoteDetailDetCRUD.hints.txtCostCenterName.label}"
                                       required="#{bindings.NoteDetailDetCRUD.hints.txtCostCenterName.mandatory}"

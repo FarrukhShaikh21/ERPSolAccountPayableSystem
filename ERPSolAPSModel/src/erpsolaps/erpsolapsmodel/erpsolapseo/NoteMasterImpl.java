@@ -5,7 +5,11 @@ import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import java.math.BigDecimal;
 
+import java.sql.CallableStatement;
+import java.sql.SQLException;
+
 import oracle.jbo.AttributeList;
+import oracle.jbo.JboException;
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Date;
@@ -350,7 +354,7 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(NoteMasterImpl obj, Object value) {
-                obj.setNotecodeseq((BigDecimal) value);
+                obj.setNotecodeseq((Integer) value);
             }
         }
         ,
@@ -1000,15 +1004,15 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for Notecodeseq, using the alias name Notecodeseq.
      * @return the value of Notecodeseq
      */
-    public BigDecimal getNotecodeseq() {
-        return (BigDecimal) getAttributeInternal(NOTECODESEQ);
+    public Integer getNotecodeseq() {
+        return (Integer) getAttributeInternal(NOTECODESEQ);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Notecodeseq.
      * @param value value to set the Notecodeseq
      */
-    public void setNotecodeseq(BigDecimal value) {
+    public void setNotecodeseq(Integer value) {
         setAttributeInternal(NOTECODESEQ, value);
     }
 
@@ -1117,7 +1121,7 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal notecodeseq) {
+    public static Key createPrimaryKey(Integer notecodeseq) {
         return new Key(new Object[] { notecodeseq });
     }
 
@@ -1162,5 +1166,34 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
         }
         super.doDML(operation, e);
     }
+
+    @Override
+    public void afterCommit(TransactionEvent transactionEvent) {
+        // TODO Implement this method
+        System.out.println("committing-1-note");
+        
+            CallableStatement cs=this.getDBTransaction().createCallableStatement("begin PKG_GENERATE_ACCOUNTING.PROC_GENERATE_AP_ACCOUNT('"+getNoteCode()+"'); commit; END;", 1);
+            System.out.println("begin PKG_GENERATE_ACCOUNTING.PROC_GENERATE_AP_ACCOUNT('"+getNoteCode()+"'); commit; END;");
+            try {
+                cs.executeUpdate();
+            } catch (SQLException e) {
+        //            this.getCurrentRow().setAttribute("Submit", "N");
+            JboException ex=new JboException(e.getMessage());
+            ex.setSeverity(JboException.SEVERITY_WARNING);
+            throw ex;
+                
+    //                System.out.println(e.getMessage()+ "this is message");
+    //                throw new JboException("Unable to supervise ");
+            }
+            finally{
+                try {
+                    cs.close();
+                } catch (SQLException e) {
+                }
+            }
+        
+        super.beforeCommit(transactionEvent);
+    }    
 }
+
 

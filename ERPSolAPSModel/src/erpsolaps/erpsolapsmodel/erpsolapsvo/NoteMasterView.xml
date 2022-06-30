@@ -15,11 +15,13 @@
   PageIterMode="Full"
   ComponentClass="erpsolaps.erpsolapsmodel.erpsolapsvo.NoteMasterViewImpl"
   ComponentInterface="erpsolaps.erpsolapsmodel.erpsolapsvo.common.NoteMasterView"
-  ClientProxyName="erpsolaps.erpsolapsmodel.erpsolapsvo.client.NoteMasterViewClient">
+  ClientProxyName="erpsolaps.erpsolapsmodel.erpsolapsvo.client.NoteMasterViewClient"
+  RowClass="erpsolaps.erpsolapsmodel.erpsolapsvo.NoteMasterViewRowImpl">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
     <Attr Name="_objectSuperClassName"
       Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsViewObjectImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewAccessor
     Name="AccPuSuppliersView"
@@ -28,6 +30,10 @@
   <ViewAccessor
     Name="AccAllLocationsView"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllLocationsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWYesNoQVO"
+    ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtSupplierName"
@@ -75,6 +81,25 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="LocationDescription"/>
       <Item Value="Locationid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSubmit"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Submit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -141,7 +166,15 @@
     PrecisionRule="true"
     EntityAttrName="Submit"
     EntityUsage="NoteMaster"
-    AliasName="SUBMIT"/>
+    AliasName="SUBMIT"
+    LOVName="LovSubmit">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PostToIntFace"
     PrecisionRule="true"
@@ -183,7 +216,8 @@
     PrecisionRule="true"
     EntityAttrName="NoteType"
     EntityUsage="NoteMaster"
-    AliasName="NOTE_TYPE"/>
+    AliasName="NOTE_TYPE"
+    DefaultValue="DBN"/>
   <ViewAttribute
     Name="Deptid"
     PrecisionRule="true"
@@ -313,6 +347,110 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewCriteria
+    Name="NoteMasterViewFindVC"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.NoteMasterView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="NoteMasterViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="NoteCode"
+        ViewAttribute="NoteCode"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Supplierid"
+        ViewAttribute="Supplierid"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="EntryDate"
+        ViewAttribute="EntryDate"
+        Operator="BETWEEN"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Submit"
+        ViewAttribute="Submit"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="PuSuppliersView"
+        ViewAttribute="PuSuppliersView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="PuSuppliersViewNestedCriteria"
+          ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSuppliersView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="PuSuppliersViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="SuppName"
+              ViewAttribute="SuppName"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+      <ViewCriteriaItem
+        Name="NoteMasterViewCriteria_NoteMasterViewCriteria_row_0_AllLocationsView"
+        ViewAttribute="AllLocationsView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AllLocationsViewNestedCriteria"
+          ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllLocationsView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AllLocationsViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="Locationid"
+              ViewAttribute="Locationid"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+            <ViewCriteriaItem
+              Name="LocationDescription"
+              ViewAttribute="LocationDescription"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="NoteDetailView"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapsvo.SysC0023735Link"

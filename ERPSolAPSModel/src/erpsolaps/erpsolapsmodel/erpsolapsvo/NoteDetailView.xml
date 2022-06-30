@@ -12,7 +12,15 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  RowClass="erpsolaps.erpsolapsmodel.erpsolapsvo.NoteDetailViewRowImpl"
+  ComponentClass="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsViewObjectImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_objectSuperClassName"
+      Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsViewObjectImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <ViewAccessor
     Name="AccVWCostCenterQVO"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWCostCenterQVO"
@@ -213,10 +221,8 @@
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[VWCostCenterQVO?.Description]]></TransientExpression>
-    <RecalcCondition
-      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[VWCostCenterQVO?.Description]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -241,10 +247,8 @@
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[VWChartOfAccountQVO?.Description]]></TransientExpression>
-    <RecalcCondition
-      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[VWChartOfAccountQVO?.Description]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -258,6 +262,19 @@
         Value="GlCode"/>
     </Dependencies>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtSumAmount"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC">
+    <TransientExpression><![CDATA[getRowSet().sum("FcurrAmount")]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="VWCostCenterQVO"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.VwCostCenterNoteDetailCostCenterIdLink"
@@ -267,6 +284,12 @@
   <ViewLinkAccessor
     Name="VWChartOfAccountQVO"
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.VwChartOfAccountNoteDetailGLCodeLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="NoteMasterView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapsvo.SysC0023735Link"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

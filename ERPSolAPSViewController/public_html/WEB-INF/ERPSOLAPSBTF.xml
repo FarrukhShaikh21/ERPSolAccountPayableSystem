@@ -145,6 +145,9 @@
         <fixed-outcome>ERP-ACT-PY_0021</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="PY_0009">
+      <page>/PY_0009.jsf</page>
+    </view>
     <control-flow-rule id="__3">
       <from-activity-id>doERPSolAPSSessionGlobals</from-activity-id>
       <control-flow-case id="__4">
@@ -222,6 +225,10 @@
       <control-flow-case id="__52">
         <from-outcome>ERP-ACT-PY-0021</from-outcome>
         <to-activity-id>doSetPayableReportDefForReverse</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__50">
+        <from-outcome>ERP-ACT-PY-0009</from-outcome>
+        <to-activity-id>PY_0009</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__25">

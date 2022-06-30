@@ -270,6 +270,13 @@ public class ERPSolAPSBean {
         }
     }
 
+    public void doERPSolNoteDialogConfirm(DialogEvent erpsolde) {
+        if (erpsolde.getOutcome()==DialogEvent.Outcome.yes) {
+            OperationBinding binding = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("doSuperviseNote");
+            binding.execute();
+        }
+    }
+    
 
     public void doERPSolOtherBillsDialogConfirm(DialogEvent erpsolde) {
         if (erpsolde.getOutcome()==DialogEvent.Outcome.yes) {

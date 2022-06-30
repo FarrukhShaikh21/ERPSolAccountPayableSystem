@@ -5,8 +5,8 @@
     <af:messages id="m1"/>
     <af:form id="f1">
       <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached">
-        <af:dialog id="d2" title="Do you want to Supervise this transaction? (#{bindings.PaymentCode.inputValue})"
-                   dialogListener="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolPaymentsDialogConfirm}" type="yesNo">
+        <af:dialog id="d2" title="Do you want to Supervise this transaction? (#{bindings.NoteCode.inputValue})"
+                   dialogListener="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolNoteDialogConfirm}" type="yesNo">
           <f:facet name="buttonBar"/>
         </af:dialog>
       </af:popup>
@@ -37,8 +37,8 @@
                                inlineStyle="border-color:#b8d6f3; outline-width:thin; border-width:thin thin thin thin;">
                     <f:facet name="toolbar">
                       <af:toolbar id="t1">
-                        <af:button actionListener="#{bindings.doSupervisePayments.execute}" text="doSupervisePayments"
-                                   disabled="#{!bindings.doSupervisePayments.enabled}" id="b10" rendered="false"/>
+                        <af:button actionListener="#{bindings.doSuperviseNote.execute}" text="doSuperviseNote"
+                                   disabled="#{!bindings.doSuperviseNote.enabled}" id="b10" rendered="false"/>
                         <af:button text="Search" id="b12" action="ERP-ACT-PY-0005-SEARCH"
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
                         <af:button text="Exit" id="b13" action="ERP-ACT-EXIT-FORM-APS" iconPosition="top"
@@ -52,7 +52,7 @@
                         <af:button actionListener="#{bindings.Next.execute}" text="Next"
                                    disabled="#{bindings.PaymentCode.inputValue==null || !bindings.Next.enabled}" partialSubmit="true" id="b3"
                                    icon="#{resource['images:imgNext.png']}" iconPosition="top" accessKey="n"/>
-                        <af:button actionListener="#{bindings.Delete.execute}" text="Delete Order"
+                        <af:button actionListener="#{bindings.Delete.execute}" text="Delete Note"
                                    disabled="#{bindings.Submit.inputValue=='Y'}" id="b2"
                                    icon="#{resource['images:imgDelete.png']}" iconPosition="top" accessKey="l"/>
                         <af:button actionListener="#{bindings.CreateInsert.execute}" text="New Payment"
@@ -176,147 +176,35 @@
                           </af:inputComboboxListOfValues>
                         </af:gridCell>
                       </af:gridRow>
-                      <af:gridRow id="gr7" height="30px">
-                        <af:gridCell id="gc16" width="15%" marginStart="5px" valign="middle">
-                          <af:outputLabel value="#{bindings.PaymentType.hints.label}" id="ol6"/>
-                        </af:gridCell>
-                        <af:gridCell id="gc17" width="35%" valign="middle">
-                          <af:selectOneChoice label="Label 1" value="#{bindings.PaymentType.inputValue}" id="soc1"
-                                              simple="true" autoSubmit="true" partialTriggers="pc1:b7 pc1:b8">
-                            <af:selectItem label="Advance" value="AD" id="si1"
-                                           disabled="#{bindings.PaymentDetailCRUDIterator.estimatedRowCount>0}"/>
-                            <af:selectItem label="Against Liability" value="NM" id="si2"/>
-                            <af:selectItem label="Other Liability" value="OLIB" id="si3" rendered="false"/>
-                            <af:selectItem label="L/C Bank Charges" value="PYLC" id="si4" rendered="false"/>
-                            <af:selectItem label="L/C Margin" value="LCMR" id="si5" rendered="false"/>
-                            <af:selectItem label="Bank Advice (Uance L/C)" value="UADV" id="si6" rendered="false"/>
-                            <af:selectItem label="Bank Advice (Sight L/C)" value="ASP" id="si7" rendered="false"/>
-                            <af:selectItem label="After For Bond" value="B4B" id="si8" rendered="false"/>
-                            <af:selectItem label="After From Bond" value="BFB" id="si9" rendered="false"/>
-                            <af:selectItem label="After Consumption" value="BCON" id="si10" rendered="false"/>
-                            <af:selectItem label="Against Estimation" value="EST" id="si11" rendered="false"/>
-                            <af:selectItem label="Payment Against (BOE Adjustment)" value="BADJ" id="si12"
-                                           rendered="false"/>
-                          </af:selectOneChoice>
-                        </af:gridCell>
-                        <af:gridCell id="gc18" width="15%" valign="middle">
-                          <af:outputLabel value="#{bindings.PaymentMode.hints.label}" id="ol7"/>
-                        </af:gridCell>
-                        <af:gridCell id="gc19" width="35%" valign="middle">
-                          <af:selectOneRadio label="Label 1" value="#{bindings.PaymentMode.inputValue}" id="sor1"
-                                             layout="horizontal" simple="true" autoSubmit="true"
-                                             disabled="#{bindings.txtBranchName.inputValue!=null}"
-                                             partialTriggers="txtBranchNameId">
-                            <af:selectItem label="Cheque" value="CHQ" id="si13"/>
-                            <af:selectItem label="Cash" value="CSH" id="si14"/>
-                          </af:selectOneRadio>
-                        </af:gridCell>
-                      </af:gridRow>
-                      <af:gridRow height="30px" id="gr6">
-                        <af:gridCell marginStart="5px" width="15%" id="gc12" valign="middle">
-                          <af:outputLabel value="#{bindings.txtBranchName.hints.label}" id="ol15"/>
-                        </af:gridCell>
-                        <af:gridCell marginStart="5px" width="35%" id="gc13" halign="stretch" valign="middle">
-                          <af:inputComboboxListOfValues id="txtBranchNameId"
-                                                        popupTitle="Search and Select: #{bindings.txtBranchName.hints.label}"
-                                                        value="#{bindings.txtBranchName.inputValue}"
-                                                        label="#{bindings.txtBranchName.hints.label}"
-                                                        model="#{bindings.txtBranchName.listOfValuesModel}"
-                                                        required="#{bindings.txtBranchName.hints.mandatory}"
-                                                        columns="#{bindings.txtBranchName.hints.displayWidth}"
-                                                        shortDesc="#{bindings.txtBranchName.hints.tooltip}"
-                                                        simple="true" autoSubmit="true">
-                            <f:validator binding="#{bindings.txtBranchName.validator}"/>
-                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolGetAutoSuggestedBranchValues}"/>
-                          </af:inputComboboxListOfValues>
-                        </af:gridCell>
-                        <af:gridCell marginStart="5px" width="15%" id="gc14" valign="middle">
-                          <af:outputLabel value="#{bindings.RefVoucherNo.hints.label}" id="ol1"/>
-                        </af:gridCell>
-                        <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc15" valign="middle"
-                                     halign="stretch">
-                          <af:inputText value="#{bindings.RefVoucherNo.inputValue}"
-                                        label="#{bindings.RefVoucherNo.hints.label}"
-                                        required="#{bindings.RefVoucherNo.hints.mandatory}"
-                                        columns="#{bindings.RefVoucherNo.hints.displayWidth}"
-                                        maximumLength="#{bindings.RefVoucherNo.hints.precision}"
-                                        shortDesc="#{bindings.RefVoucherNo.hints.tooltip}" id="it9" simple="true">
-                            <f:validator binding="#{bindings.RefVoucherNo.validator}"/>
-                          </af:inputText>
-                        </af:gridCell>
-                      </af:gridRow>
-                      <af:gridRow height="30px" id="gr9">
-                        <af:gridCell marginStart="5px" width="15%" id="gc24" valign="middle">
-                          <af:outputLabel value="#{bindings.ChequeNo.hints.label}" id="ol11"/>
-                        </af:gridCell>
-                        <af:gridCell marginStart="5px" width="35%" id="gc25" columnSpan="1" rowSpan="1" halign="stretch"
-                                     valign="middle">
-                          <af:inputText value="#{bindings.ChequeNo.inputValue}" label="#{bindings.ChequeNo.hints.label}"
-                                        required="#{bindings.ChequeNo.hints.mandatory}"
-                                        columns="#{bindings.ChequeNo.hints.displayWidth}"
-                                        maximumLength="#{bindings.ChequeNo.hints.precision}"
-                                        shortDesc="#{bindings.ChequeNo.hints.tooltip}" id="it12" simple="true">
-                            <f:validator binding="#{bindings.ChequeNo.validator}"/>
-                          </af:inputText>
-                        </af:gridCell>
-                        <af:gridCell id="gc29" width="15%" valign="middle">
-                          <af:outputLabel value="#{bindings.ChequeDate.hints.label}" id="ol12"/>
-                        </af:gridCell>
-                        <af:gridCell id="gc30" width="35%" valign="middle">
-                          <af:inputDate value="#{bindings.ChequeDate.inputValue}"
-                                        label="#{bindings.ChequeDate.hints.label}"
-                                        required="#{bindings.ChequeDate.hints.mandatory}"
-                                        columns="#{bindings.ChequeDate.hints.displayWidth}"
-                                        shortDesc="#{bindings.ChequeDate.hints.tooltip}" id="id3" simple="true">
-                            <f:validator binding="#{bindings.ChequeDate.validator}"/>
-                            <af:convertDateTime pattern="#{bindings.ChequeDate.format}"/>
-                          </af:inputDate>
-                        </af:gridCell>
-                      </af:gridRow>
                       <af:gridRow id="gr8" height="30px">
                         <af:gridCell id="gc20" valign="middle" width="15%">
-                          <af:outputLabel value="#{bindings.BankRefNo.hints.label}" id="ol16"/>
+                          <af:outputLabel value="#{bindings.RefVoucher.hints.label}" id="ol16"/>
                         </af:gridCell>
                         <af:gridCell id="gc21" valign="middle" width="35%">
-                          <af:inputText value="#{bindings.BankRefNo.inputValue}"
-                                        label="#{bindings.BankRefNo.hints.label}"
-                                        required="#{bindings.BankRefNo.hints.mandatory}"
-                                        columns="#{bindings.BankRefNo.hints.displayWidth}"
-                                        maximumLength="#{bindings.BankRefNo.hints.precision}"
-                                        shortDesc="#{bindings.BankRefNo.hints.tooltip}" id="it17" simple="true"
-                                        contentStyle="text-transform:uppercase">
-                            <f:validator binding="#{bindings.BankRefNo.validator}"/>
+                          <af:inputText value="#{bindings.RefVoucher.inputValue}"
+                                        label="#{bindings.RefVoucher.hints.label}"
+                                        required="#{bindings.RefVoucher.hints.mandatory}"
+                                        columns="#{bindings.RefVoucher.hints.displayWidth}"
+                                        maximumLength="#{bindings.RefVoucher.hints.precision}"
+                                        shortDesc="#{bindings.RefVoucher.hints.tooltip}" id="it8" simple="true">
+                            <f:validator binding="#{bindings.RefVoucher.validator}"/>
                           </af:inputText>
                         </af:gridCell>
-                        <af:gridCell id="gc22" valign="middle" width="15%">
-                          <af:outputLabel value="#{bindings.FcurrPayAmount.hints.label}" id="ol9"/>
-                        </af:gridCell>
-                        <af:gridCell id="gc23" valign="middle" width="35%">
-                          <af:inputText value="#{bindings.FcurrPayAmount.inputValue}"
-                                        label="#{bindings.FcurrPayAmount.hints.label}"
-                                        required="#{bindings.FcurrPayAmount.hints.mandatory}"
-                                        columns="#{bindings.FcurrPayAmount.hints.displayWidth}"
-                                        maximumLength="#{bindings.FcurrPayAmount.hints.precision}"
-                                        shortDesc="#{bindings.FcurrPayAmount.hints.tooltip}" id="it11" simple="true"
-                                        readOnly="#{bindings.PaymentType.inputValue!='AD'}" partialTriggers="soc1">
-                            <f:validator binding="#{bindings.FcurrPayAmount.validator}"/>
-                            <af:convertNumber groupingUsed="false" pattern="#{bindings.FcurrPayAmount.format}"/>
-                          </af:inputText>
-                        </af:gridCell>
+                        <af:gridCell id="gc22" valign="middle" width="15%"/>
+                        <af:gridCell id="gc23" valign="middle" width="35%"/>
                       </af:gridRow>
                       <af:gridRow id="gr14" height="30px">
                         <af:gridCell id="gc35" width="15%" valign="middle">
-                          <af:outputLabel value="#{bindings.Narration.hints.label}" id="ol2"/>
+                          <af:outputLabel value="#{bindings.Remarks.hints.label}" id="ol2"/>
                         </af:gridCell>
                         <af:gridCell id="gc36" columnSpan="3" width="75%" halign="stretch">
-                          <af:inputText value="#{bindings.Narration.inputValue}"
-                                        label="#{bindings.Narration.hints.label}"
-                                        required="#{bindings.Narration.hints.mandatory}"
-                                        columns="#{bindings.Narration.hints.displayWidth}"
-                                        maximumLength="#{bindings.Narration.hints.precision}"
-                                        shortDesc="#{bindings.Narration.hints.tooltip}" id="it8" simple="true"
+                          <af:inputText value="#{bindings.Remarks.inputValue}" label="#{bindings.Remarks.hints.label}"
+                                        required="#{bindings.Remarks.hints.mandatory}"
+                                        columns="#{bindings.Remarks.hints.displayWidth}"
+                                        maximumLength="#{bindings.Remarks.hints.precision}"
+                                        shortDesc="#{bindings.Remarks.hints.tooltip}" id="it13" simple="true"
                                         contentStyle="width:100%">
-                            <f:validator binding="#{bindings.Narration.validator}"/>
+                            <f:validator binding="#{bindings.Remarks.validator}"/>
                           </af:inputText>
                         </af:gridCell>
                       </af:gridRow>

@@ -43,5 +43,27 @@
         <Item Value="Supplierid"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="NoteMasterCRUDIterator" id="Remarks">
+      <AttrNames>
+        <Item Value="Remarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="NoteMasterCRUDIterator" id="RefVoucher">
+      <AttrNames>
+        <Item Value="RefVoucher"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="NoteMasterCRUDIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="NoteMasterCRUDIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="NoteMasterCRUDIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="NoteMasterCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolAPSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolAPSAppModuleDataControl"/>
+    <methodAction id="doSuperviseNote" RequiresUpdateModel="true" Action="invokeMethod" MethodName="doSuperviseNote"
+                  IsViewObjectMethod="true" DataControl="ERPSolAPSAppModuleDataControl"
+                  InstanceName="data.ERPSolAPSAppModuleDataControl.NoteMasterCRUD"
+                  ReturnName="data.ERPSolAPSAppModuleDataControl.methodResults.doSuperviseNote_ERPSolAPSAppModuleDataControl_NoteMasterCRUD_doSuperviseNote_result"/>
   </bindings>
 </pageDefinition>

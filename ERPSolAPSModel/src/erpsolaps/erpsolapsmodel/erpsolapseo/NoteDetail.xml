@@ -9,14 +9,20 @@
   DBObjectType="table"
   DBObjectName="NOTE_DETAIL"
   AliasName="NoteDetail"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="erpsolaps.erpsolapsmodel.erpsolapseo.NoteDetailImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="SeqNo"
     IsNotNull="true"
     Precision="15"
     ColumnName="SEQ_NO"
     SQLType="VARCHAR"
-    Type="java.lang.String"
+    Type="java.lang.Integer"
     ColumnType="VARCHAR2"
     TableName="NOTE_DETAIL"
     PrimaryKey="true">
@@ -95,14 +101,14 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="NOTE_DETAIL"/>
   <Attribute
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="NOTE_DETAIL"/>
   <Attribute
@@ -198,7 +204,7 @@
     IsNotNull="true"
     ColumnName="NOTECODESEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="NOTE_DETAIL"/>
   <AccessorAttribute

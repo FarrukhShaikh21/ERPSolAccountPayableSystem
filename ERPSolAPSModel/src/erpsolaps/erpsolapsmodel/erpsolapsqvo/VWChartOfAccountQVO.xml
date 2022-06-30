@@ -155,6 +155,11 @@ A.glnature_of_a_c , A.glbroad_category , A.glcontrol_a_c ,
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.VwChartOfAccountOtherBillsGLCodeLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="NoteDetailView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.VwChartOfAccountNoteDetailGLCodeLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolaps.erpsolapsmodel.ERPSolAPSModelBundle"/>

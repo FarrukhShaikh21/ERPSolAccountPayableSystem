@@ -152,6 +152,11 @@
     ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.VwGLCostCenterOtherBillDetCostCenterIdVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="NoteDetailView"
+    ViewLink="erpsolaps.erpsolapsmodel.erpsolapslink.VwCostCenterNoteDetailCostCenterIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolaps.erpsolapsmodel.ERPSolAPSModelBundle"/>

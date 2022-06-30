@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VwCostCenterNoteDetailCostCenterIdLink"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpsolaps.erpsolapsmodel.erpsolapslink.VwCostCenterNoteDetailCostCenterIdLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="VWCostCenterQVO"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWCostCenterQVO">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="VWCostCenterQVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapsqvo.VWCostCenterQVO.Costcenterid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="NoteDetailView"
+    Cardinality="-1"
+    Owner="erpsolaps.erpsolapsmodel.erpsolapsvo.NoteDetailView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="NoteDetailView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapsvo.NoteDetailView.Costcenter"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolaps.erpsolapsmodel.ERPSolAPSModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

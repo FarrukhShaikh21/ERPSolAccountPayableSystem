@@ -45,7 +45,7 @@
                                    icon="#{resource['images:imgExitForm.png']}"/>
                         <af:button text="Print Preview" id="b11" icon="#{resource['images:imgPrintPreview.png']}"
                                    iconPosition="top"
-                                   action="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolPaymentReport}"/>
+                                   action="#{pageFlowScope.ERPSolAPSPageFlowBean.doERPSolNoteReport}"/>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
                                    disabled="#{bindings.PaymentCode.inputValue==null || !bindings.Previous.enabled}" partialSubmit="true" id="b4"
                                    icon="#{resource['images:imgPrevious.png']}" iconPosition="top" accessKey="r"/>

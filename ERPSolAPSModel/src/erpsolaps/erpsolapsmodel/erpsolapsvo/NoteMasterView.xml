@@ -216,8 +216,7 @@
     PrecisionRule="true"
     EntityAttrName="NoteType"
     EntityUsage="NoteMaster"
-    AliasName="NOTE_TYPE"
-    DefaultValue="DBN"/>
+    AliasName="NOTE_TYPE"/>
   <ViewAttribute
     Name="Deptid"
     PrecisionRule="true"

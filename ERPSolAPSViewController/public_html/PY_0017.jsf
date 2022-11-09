@@ -114,7 +114,7 @@
                                         required="#{bindings.BillDate.hints.mandatory}"
                                         columns="#{bindings.BillDate.hints.displayWidth}"
                                         shortDesc="#{bindings.BillDate.hints.tooltip}" id="id1" simple="true"
-                                        readOnly="#{bindings.Billid.inputValue!=null}">
+                                        readOnly="#{bindings.Billid.inputValue!=null}" autoSubmit="true">
                             <f:validator binding="#{bindings.BillDate.validator}"/>
                             <af:convertDateTime pattern="#{bindings.BillDate.format}"/>
                           </af:inputDate>

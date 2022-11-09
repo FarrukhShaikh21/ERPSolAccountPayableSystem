@@ -13,6 +13,7 @@ import oracle.jbo.AttributeList;
 import oracle.jbo.JboException;
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
+import oracle.jbo.RowSet;
 import oracle.jbo.domain.Date;
 import oracle.jbo.server.AttributeDefImpl;
 import oracle.jbo.server.EntityDefImpl;
@@ -559,6 +560,16 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ,
+        txtErrorMessage {
+            public Object get(OtherBillsImpl obj) {
+                return obj.gettxtErrorMessage();
+            }
+
+            public void put(OtherBillsImpl obj, Object value) {
+                obj.settxtErrorMessage((String) value);
+            }
+        }
+        ,
         OtherBillDet {
             public Object get(OtherBillsImpl obj) {
                 return obj.getOtherBillDet();
@@ -586,6 +597,16 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
 
             public void put(OtherBillsImpl obj, Object value) {
                 obj.setPuSuppliers((PuSuppliersImpl) value);
+            }
+        }
+        ,
+        AccVwFuncUserBackDateAllowed {
+            public Object get(OtherBillsImpl obj) {
+                return obj.getAccVwFuncUserBackDateAllowed();
+            }
+
+            public void put(OtherBillsImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
             }
         }
         ;
@@ -670,9 +691,11 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
     public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
     public static final int TXTSUPPLIERNAME = AttributesEnum.txtSupplierName.index();
     public static final int BANKREFNO = AttributesEnum.BankRefNo.index();
+    public static final int TXTERRORMESSAGE = AttributesEnum.txtErrorMessage.index();
     public static final int OTHERBILLDET = AttributesEnum.OtherBillDet.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
     public static final int PUSUPPLIERS = AttributesEnum.PuSuppliers.index();
+    public static final int ACCVWFUNCUSERBACKDATEALLOWED = AttributesEnum.AccVwFuncUserBackDateAllowed.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1537,6 +1560,22 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtErrorMessage, using the alias name txtErrorMessage.
+     * @return the value of txtErrorMessage
+     */
+    public String gettxtErrorMessage() {
+        return (String) getAttributeInternal(TXTERRORMESSAGE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtErrorMessage.
+     * @param value value to set the txtErrorMessage
+     */
+    public void settxtErrorMessage(String value) {
+        setAttributeInternal(TXTERRORMESSAGE, value);
+    }
+
+    /**
      * getAttrInvokeAccessor: generated method. Do not modify.
      * @param index the index identifying the attribute
      * @param attrDef the attribute
@@ -1602,6 +1641,14 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setPuSuppliers(PuSuppliersImpl value) {
         setAttributeInternal(PUSUPPLIERS, value);
+    }
+
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccVwFuncUserBackDateAllowed.
+     */
+    public RowSet getAccVwFuncUserBackDateAllowed() {
+        return (RowSet) getAttributeInternal(ACCVWFUNCUSERBACKDATEALLOWED);
     }
 
 

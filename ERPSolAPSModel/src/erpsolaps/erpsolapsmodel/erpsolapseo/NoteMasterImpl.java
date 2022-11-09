@@ -12,6 +12,7 @@ import oracle.jbo.AttributeList;
 import oracle.jbo.JboException;
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
+import oracle.jbo.RowSet;
 import oracle.jbo.domain.Date;
 import oracle.jbo.server.AttributeDefImpl;
 import oracle.jbo.server.EntityDefImpl;
@@ -378,6 +379,16 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ,
+        txtErrorMessage {
+            public Object get(NoteMasterImpl obj) {
+                return obj.gettxtErrorMessage();
+            }
+
+            public void put(NoteMasterImpl obj, Object value) {
+                obj.settxtErrorMessage((String) value);
+            }
+        }
+        ,
         NoteDetail {
             public Object get(NoteMasterImpl obj) {
                 return obj.getNoteDetail();
@@ -405,6 +416,16 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
 
             public void put(NoteMasterImpl obj, Object value) {
                 obj.setAllLocations((EntityImpl) value);
+            }
+        }
+        ,
+        AccVwFuncUserBackDateAllowed {
+            public Object get(NoteMasterImpl obj) {
+                return obj.getAccVwFuncUserBackDateAllowed();
+            }
+
+            public void put(NoteMasterImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
             }
         }
         ;
@@ -470,9 +491,11 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
     public static final int NOTECODESEQ = AttributesEnum.Notecodeseq.index();
     public static final int TXTSUPPLIERNAME = AttributesEnum.txtSupplierName.index();
     public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
+    public static final int TXTERRORMESSAGE = AttributesEnum.txtErrorMessage.index();
     public static final int NOTEDETAIL = AttributesEnum.NoteDetail.index();
     public static final int PUSUPPLIERS = AttributesEnum.PuSuppliers.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
+    public static final int ACCVWFUNCUSERBACKDATEALLOWED = AttributesEnum.AccVwFuncUserBackDateAllowed.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1049,6 +1072,22 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtErrorMessage, using the alias name txtErrorMessage.
+     * @return the value of txtErrorMessage
+     */
+    public String gettxtErrorMessage() {
+        return (String) getAttributeInternal(TXTERRORMESSAGE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtErrorMessage.
+     * @param value value to set the txtErrorMessage
+     */
+    public void settxtErrorMessage(String value) {
+        setAttributeInternal(TXTERRORMESSAGE, value);
+    }
+
+    /**
      * getAttrInvokeAccessor: generated method. Do not modify.
      * @param index the index identifying the attribute
      * @param attrDef the attribute
@@ -1117,6 +1156,13 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
 
 
     /**
+     * Gets the view accessor <code>RowSet</code> AccVwFuncUserBackDateAllowed.
+     */
+    public RowSet getAccVwFuncUserBackDateAllowed() {
+        return (RowSet) getAttributeInternal(ACCVWFUNCUSERBACKDATEALLOWED);
+    }
+
+    /**
      * @param notecodeseq key constituent
 
      * @return a Key object based on given key constituents.
@@ -1132,6 +1178,8 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
     protected void create(AttributeList attributeList) {
    setERPSolPKSeqName("NOTE_MASTER_SEQ");
    setERPSolPKColumnName("Notecodeseq");
+        setCompanyid(ERPSolGlobClassModel.doGetUserCompanyCode());
+        setLocationid(ERPSolGlobClassModel.doGetUserLocationCode());   
         super.create(attributeList);
     }
 

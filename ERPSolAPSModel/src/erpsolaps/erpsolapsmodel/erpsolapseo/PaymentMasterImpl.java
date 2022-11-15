@@ -1934,7 +1934,7 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
         // TODO Implement this method
         System.out.println("committing");
         
-            CallableStatement cs=this.getDBTransaction().createCallableStatement("begin PKG_GENERATE_ACCOUNTING.PROC_GENERATE_PAYMENT_ACCOUNT('"+getPaymentCode()+"'); commit; END;", 1);
+            CallableStatement cs=this.getDBTransaction().createCallableStatement("begin  PKG_GENERATE_ACCOUNTING.GV_POST_TO_INTERFACE:='N'; PKG_GENERATE_ACCOUNTING.PROC_GENERATE_PAYMENT_ACCOUNT('"+getPaymentCode()+"'); commit; PKG_GENERATE_ACCOUNTING.GV_POST_TO_INTERFACE:='Y'; END;", 1);
             try {
                 cs.executeUpdate();
             } catch (SQLException e) {
@@ -1953,7 +1953,7 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
                 }
             }
         
-        super.beforeCommit(transactionEvent);
+        super.afterCommit(transactionEvent);
     }
 }
 

@@ -1713,7 +1713,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
         // TODO Implement this method
         System.out.println("committing-1");
         
-            CallableStatement cs=this.getDBTransaction().createCallableStatement("begin PKG_GENERATE_ACCOUNTING.PROC_GENERATE_OTHER_BILLS_ACCT('"+getBillid()+"'); commit; END;", 1);
+            CallableStatement cs=this.getDBTransaction().createCallableStatement("begin  PKG_GENERATE_ACCOUNTING.GV_POST_TO_INTERFACE:='N'; PKG_GENERATE_ACCOUNTING.PROC_GENERATE_OTHER_BILLS_ACCT('"+getBillid()+"'); commit;  PKG_GENERATE_ACCOUNTING.GV_POST_TO_INTERFACE:='Y'; END;", 1);
             System.out.println("begin PKG_GENERATE_ACCOUNTING.PROC_GENERATE_OTHER_BILLS_ACCT('"+getBillid()+"'); commit; END;");
             try {
                 cs.executeUpdate();
@@ -1733,7 +1733,7 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
                 }
             }
         
-        super.beforeCommit(transactionEvent);
+        super.afterCommit(transactionEvent);
     }
 }
 

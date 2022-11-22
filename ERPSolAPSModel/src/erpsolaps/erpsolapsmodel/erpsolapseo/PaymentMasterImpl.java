@@ -1933,7 +1933,10 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
     public void afterCommit(TransactionEvent transactionEvent) {
         // TODO Implement this method
         System.out.println("committing");
-        
+        if (getSubmit().equals("Y")) {
+           super.afterCommit(transactionEvent);
+           return;
+        }        
             CallableStatement cs=this.getDBTransaction().createCallableStatement("begin  PKG_GENERATE_ACCOUNTING.GV_POST_TO_INTERFACE:='N'; PKG_GENERATE_ACCOUNTING.PROC_GENERATE_PAYMENT_ACCOUNT('"+getPaymentCode()+"'); commit; PKG_GENERATE_ACCOUNTING.GV_POST_TO_INTERFACE:='Y'; END;", 1);
             try {
                 cs.executeUpdate();

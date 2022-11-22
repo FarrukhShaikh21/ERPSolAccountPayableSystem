@@ -23,7 +23,7 @@
     RowLevelBinds="true"/>
   <Attribute
     Name="NoteCode"
-    Precision="15"
+    Precision="18"
     ColumnName="NOTE_CODE"
     SQLType="VARCHAR"
     Type="java.lang.String"

@@ -26,7 +26,7 @@ public class OtherBillsViewImpl extends ViewObjectImpl implements OtherBillsView
     
     public void doSuperviseOtherBills() {
         
-        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_payable.func_submit_other_bills('"+this.getCurrentRow().getAttribute("Billid")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
+        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_payable.func_submit_other_bills('"+this.getCurrentRow().getAttribute("Billid")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); commit; END;", 1);
         System.out.println("begin ?:=pkg_payable.func_submit_other_bills('"+this.getCurrentRow().getAttribute("Billid")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;");
         try {
             cs.registerOutParameter(1, Types.VARCHAR);

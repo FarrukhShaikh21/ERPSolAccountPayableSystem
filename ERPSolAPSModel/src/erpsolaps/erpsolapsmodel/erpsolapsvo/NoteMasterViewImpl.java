@@ -26,7 +26,7 @@ public class NoteMasterViewImpl extends ERPSolGlobalsViewObjectImpl implements N
     
     public void doSuperviseNote() {
         
-        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_payable.func_submit_note('"+this.getCurrentRow().getAttribute("NoteCode")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
+        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_payable.func_submit_note('"+this.getCurrentRow().getAttribute("NoteCode")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); commit; END;", 1);
         System.out.println("begin ?:=pkg_payable.func_submit_note('"+this.getCurrentRow().getAttribute("NoteCode")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;");
         try {
             cs.registerOutParameter(1, Types.VARCHAR);

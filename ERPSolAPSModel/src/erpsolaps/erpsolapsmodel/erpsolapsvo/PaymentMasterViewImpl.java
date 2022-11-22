@@ -26,7 +26,7 @@ public class PaymentMasterViewImpl extends ViewObjectImpl implements PaymentMast
     
     public void doSupervisePayments() {
         
-        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_payable.func_submit_payments('"+this.getCurrentRow().getAttribute("PaymentCode")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
+        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_payable.func_submit_payments('"+this.getCurrentRow().getAttribute("PaymentCode")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); commit; END;", 1);
         System.out.println("begin ?:=pkg_payable.func_submit_payments('"+this.getCurrentRow().getAttribute("PaymentCode")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;");
         try {
             cs.registerOutParameter(1, Types.VARCHAR);

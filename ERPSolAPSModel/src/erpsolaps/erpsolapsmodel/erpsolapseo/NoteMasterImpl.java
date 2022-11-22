@@ -1218,6 +1218,10 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
     @Override
     public void afterCommit(TransactionEvent transactionEvent) {
         // TODO Implement this method
+        if (getSubmit().equals("Y")) {
+           super.afterCommit(transactionEvent);
+           return;
+       }
         System.out.println("committing-1-note");
         
             CallableStatement cs=this.getDBTransaction().createCallableStatement("begin PKG_GENERATE_ACCOUNTING.GV_POST_TO_INTERFACE:='N'; PKG_GENERATE_ACCOUNTING.PROC_GENERATE_AP_ACCOUNT('"+getNoteCode()+"'); commit; PKG_GENERATE_ACCOUNTING.GV_POST_TO_INTERFACE:='Y'; END;", 1);
@@ -1225,7 +1229,6 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
             try {
                 cs.executeUpdate();
             } catch (SQLException e) {
-        //            this.getCurrentRow().setAttribute("Submit", "N");
             JboException ex=new JboException(e.getMessage());
             ex.setSeverity(JboException.SEVERITY_WARNING);
             throw ex;

@@ -1712,7 +1712,10 @@ public class OtherBillsImpl extends ERPSolGlobalsEntityImpl {
     public void afterCommit(TransactionEvent transactionEvent) {
         // TODO Implement this method
         System.out.println("committing-1");
-        
+        if (getPosted().equals("Y")) {
+           super.afterCommit(transactionEvent);
+           return;
+        }
             CallableStatement cs=this.getDBTransaction().createCallableStatement("begin  PKG_GENERATE_ACCOUNTING.GV_POST_TO_INTERFACE:='N'; PKG_GENERATE_ACCOUNTING.PROC_GENERATE_OTHER_BILLS_ACCT('"+getBillid()+"'); commit;  PKG_GENERATE_ACCOUNTING.GV_POST_TO_INTERFACE:='Y'; END;", 1);
             System.out.println("begin PKG_GENERATE_ACCOUNTING.PROC_GENERATE_OTHER_BILLS_ACCT('"+getBillid()+"'); commit; END;");
             try {

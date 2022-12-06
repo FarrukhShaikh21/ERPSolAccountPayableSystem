@@ -1213,7 +1213,7 @@ public class NoteMasterImpl extends ERPSolGlobalsEntityImpl {
 
         }
         if (operation!=DML_DELETE) {
-            populateAttributeAsChanged(NOTETYPE, getNoteType().equals("CRN")?"C":"D");
+            populateAttributeAsChanged(NOTETYPE, getDocTypeId().equals("CRN")?"C":"D");
        }
         super.doDML(operation, e);
     }

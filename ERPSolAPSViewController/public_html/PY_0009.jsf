@@ -192,7 +192,7 @@
                         </af:gridCell>
                         <af:gridCell id="gc23" valign="middle" width="35%">
                           <af:selectOneChoice label="Label 1" id="soc1" value="#{bindings.DocTypeId.inputValue}"
-                                              simple="true">
+                                              simple="true" autoSubmit="true">
                             <af:selectItem label="Debit" value="DBN" id="si1"/>
                             <af:selectItem label="Credit" value="CRN" id="si2"/>
                           </af:selectOneChoice>

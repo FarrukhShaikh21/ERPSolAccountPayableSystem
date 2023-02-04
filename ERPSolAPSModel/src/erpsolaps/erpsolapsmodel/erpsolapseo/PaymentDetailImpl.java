@@ -736,6 +736,7 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
         if (operation!=DML_DELETE) {
            populateAttributeAsChanged(PMTAMOUNT, getFcurrPmtAmount());
            populateAttributeAsChanged(STAXAMT, getFcurrStaxAmt());
+           populateAttributeAsChanged(TAXAMT, getFcurrTaxamt());
        }
         super.doDML(operation, e);
     }

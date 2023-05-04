@@ -21,11 +21,25 @@
   <Variable
     Name="P_ADF_LOCATIONID"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <Variable
     Name="P_ADF_DOCTYPEID"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <SQLQuery><![CDATA[SELECT  SO.BILLID as DOCUMENT_ID,           
         SO.BILL_DATE,           
         suppname(SO.SUPPLIERID) CUSTOMER_NAME,           

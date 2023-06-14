@@ -927,6 +927,49 @@ return true;]]></validation:TransientExpression>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="StaxCode"
+    ColumnName="STAX_CODE"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="PAYMENT_MASTER"/>
+  <Attribute
+    Name="TaxCode"
+    ColumnName="TAX_CODE"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="PAYMENT_MASTER"/>
+  <Attribute
+    Name="txtNetAmount"
+    ColumnName="TXT_NET_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[(FcurrPayAmount==null?0:FcurrPayAmount)- ((FcurrStaxAmount==null?0:FcurrStaxAmount)+(FcurrTaxAmount==null?0:FcurrTaxAmount))]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.txtNetAmount_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="FcurrPayAmount"/>
+      <Item
+        Value="FcurrStaxAmount"/>
+      <Item
+        Value="FcurrTaxAmount"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="PaymentDetail"
     Association="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0016800Assoc"

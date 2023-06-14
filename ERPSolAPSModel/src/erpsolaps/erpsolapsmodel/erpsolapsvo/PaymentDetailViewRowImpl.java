@@ -210,7 +210,7 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
             }
 
             public void put(PaymentDetailViewRowImpl obj, Object value) {
-                obj.setSalesTaxCode((BigDecimal) value);
+                obj.setSalesTaxCode((Integer) value);
             }
         }
         ,
@@ -635,15 +635,15 @@ public class PaymentDetailViewRowImpl extends ViewRowImpl {
      * Gets the attribute value for SALES_TAX_CODE using the alias name SalesTaxCode.
      * @return the SALES_TAX_CODE
      */
-    public BigDecimal getSalesTaxCode() {
-        return (BigDecimal) getAttributeInternal(SALESTAXCODE);
+    public Integer getSalesTaxCode() {
+        return (Integer) getAttributeInternal(SALESTAXCODE);
     }
 
     /**
      * Sets <code>value</code> as attribute value for SALES_TAX_CODE using the alias name SalesTaxCode.
      * @param value value to set the SALES_TAX_CODE
      */
-    public void setSalesTaxCode(BigDecimal value) {
+    public void setSalesTaxCode(Integer value) {
         setAttributeInternal(SALESTAXCODE, value);
     }
 

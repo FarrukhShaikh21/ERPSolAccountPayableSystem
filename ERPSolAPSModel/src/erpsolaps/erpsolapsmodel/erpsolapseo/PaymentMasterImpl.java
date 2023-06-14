@@ -640,6 +640,36 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ,
+        StaxCode {
+            public Object get(PaymentMasterImpl obj) {
+                return obj.getStaxCode();
+            }
+
+            public void put(PaymentMasterImpl obj, Object value) {
+                obj.setStaxCode((Integer) value);
+            }
+        }
+        ,
+        TaxCode {
+            public Object get(PaymentMasterImpl obj) {
+                return obj.getTaxCode();
+            }
+
+            public void put(PaymentMasterImpl obj, Object value) {
+                obj.setTaxCode((Integer) value);
+            }
+        }
+        ,
+        txtNetAmount {
+            public Object get(PaymentMasterImpl obj) {
+                return obj.gettxtNetAmount();
+            }
+
+            public void put(PaymentMasterImpl obj, Object value) {
+                obj.settxtNetAmount((BigDecimal) value);
+            }
+        }
+        ,
         PaymentDetail {
             public Object get(PaymentMasterImpl obj) {
                 return obj.getPaymentDetail();
@@ -779,6 +809,9 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
     public static final int TXTBRANCHNAME = AttributesEnum.txtBranchName.index();
     public static final int TXTERRORMESSAGE = AttributesEnum.txtErrorMessage.index();
     public static final int BANKREFNO = AttributesEnum.BankRefNo.index();
+    public static final int STAXCODE = AttributesEnum.StaxCode.index();
+    public static final int TAXCODE = AttributesEnum.TaxCode.index();
+    public static final int TXTNETAMOUNT = AttributesEnum.txtNetAmount.index();
     public static final int PAYMENTDETAIL = AttributesEnum.PaymentDetail.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
     public static final int PUSUPPLIERS = AttributesEnum.PuSuppliers.index();
@@ -1773,6 +1806,54 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setBankRefNo(String value) {
         setAttributeInternal(BANKREFNO, value==null?null:value.toUpperCase());
+    }
+
+    /**
+     * Gets the attribute value for StaxCode, using the alias name StaxCode.
+     * @return the value of StaxCode
+     */
+    public Integer getStaxCode() {
+        return (Integer) getAttributeInternal(STAXCODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for StaxCode.
+     * @param value value to set the StaxCode
+     */
+    public void setStaxCode(Integer value) {
+        setAttributeInternal(STAXCODE, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxCode, using the alias name TaxCode.
+     * @return the value of TaxCode
+     */
+    public Integer getTaxCode() {
+        return (Integer) getAttributeInternal(TAXCODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxCode.
+     * @param value value to set the TaxCode
+     */
+    public void setTaxCode(Integer value) {
+        setAttributeInternal(TAXCODE, value);
+    }
+
+    /**
+     * Gets the attribute value for txtNetAmount, using the alias name txtNetAmount.
+     * @return the value of txtNetAmount
+     */
+    public BigDecimal gettxtNetAmount() {
+        return (BigDecimal) getAttributeInternal(TXTNETAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtNetAmount.
+     * @param value value to set the txtNetAmount
+     */
+    public void settxtNetAmount(BigDecimal value) {
+        setAttributeInternal(TXTNETAMOUNT, value);
     }
 
     /**

@@ -625,6 +625,36 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
             }
         }
         ,
+        TaxCode {
+            public Object get(PaymentMasterViewRowImpl obj) {
+                return obj.getTaxCode();
+            }
+
+            public void put(PaymentMasterViewRowImpl obj, Object value) {
+                obj.setTaxCode((Integer) value);
+            }
+        }
+        ,
+        StaxCode {
+            public Object get(PaymentMasterViewRowImpl obj) {
+                return obj.getStaxCode();
+            }
+
+            public void put(PaymentMasterViewRowImpl obj, Object value) {
+                obj.setStaxCode((Integer) value);
+            }
+        }
+        ,
+        txtNetAmount {
+            public Object get(PaymentMasterViewRowImpl obj) {
+                return obj.gettxtNetAmount();
+            }
+
+            public void put(PaymentMasterViewRowImpl obj, Object value) {
+                obj.settxtNetAmount((BigDecimal) value);
+            }
+        }
+        ,
         PaymentDetailView {
             public Object get(PaymentMasterViewRowImpl obj) {
                 return obj.getPaymentDetailView();
@@ -698,6 +728,16 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
         AccVWYesNoQVO {
             public Object get(PaymentMasterViewRowImpl obj) {
                 return obj.getAccVWYesNoQVO();
+            }
+
+            public void put(PaymentMasterViewRowImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
+        ,
+        AccTaxView {
+            public Object get(PaymentMasterViewRowImpl obj) {
+                return obj.getAccTaxView();
             }
 
             public void put(PaymentMasterViewRowImpl obj, Object value) {
@@ -794,6 +834,9 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
     public static final int TXTSUPPLIERNAME = AttributesEnum.txtSupplierName.index();
     public static final int TXTBRANCHNAME = AttributesEnum.txtBranchName.index();
     public static final int BANKREFNO = AttributesEnum.BankRefNo.index();
+    public static final int TAXCODE = AttributesEnum.TaxCode.index();
+    public static final int STAXCODE = AttributesEnum.StaxCode.index();
+    public static final int TXTNETAMOUNT = AttributesEnum.txtNetAmount.index();
     public static final int PAYMENTDETAILVIEW = AttributesEnum.PaymentDetailView.index();
     public static final int ALLLOCATIONSVIEW = AttributesEnum.AllLocationsView.index();
     public static final int PUSUPPLIERSVIEW = AttributesEnum.PuSuppliersView.index();
@@ -802,6 +845,7 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
     public static final int ACCALLLOCATIONSVIEW = AttributesEnum.AccAllLocationsView.index();
     public static final int ACCALLBANKBRANCHESVIEW = AttributesEnum.AccAllBankBranchesView.index();
     public static final int ACCVWYESNOQVO = AttributesEnum.AccVWYesNoQVO.index();
+    public static final int ACCTAXVIEW = AttributesEnum.AccTaxView.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1778,6 +1822,54 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
     }
 
     /**
+     * Gets the attribute value for TAX_CODE using the alias name TaxCode.
+     * @return the TAX_CODE
+     */
+    public Integer getTaxCode() {
+        return (Integer) getAttributeInternal(TAXCODE);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for TAX_CODE using the alias name TaxCode.
+     * @param value value to set the TAX_CODE
+     */
+    public void setTaxCode(Integer value) {
+        setAttributeInternal(TAXCODE, value);
+    }
+
+    /**
+     * Gets the attribute value for STAX_CODE using the alias name StaxCode.
+     * @return the STAX_CODE
+     */
+    public Integer getStaxCode() {
+        return (Integer) getAttributeInternal(STAXCODE);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for STAX_CODE using the alias name StaxCode.
+     * @param value value to set the STAX_CODE
+     */
+    public void setStaxCode(Integer value) {
+        setAttributeInternal(STAXCODE, value);
+    }
+
+    /**
+     * Gets the attribute value for TXT_NET_AMOUNT using the alias name txtNetAmount.
+     * @return the TXT_NET_AMOUNT
+     */
+    public BigDecimal gettxtNetAmount() {
+        return (BigDecimal) getAttributeInternal(TXTNETAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for TXT_NET_AMOUNT using the alias name txtNetAmount.
+     * @param value value to set the TXT_NET_AMOUNT
+     */
+    public void settxtNetAmount(BigDecimal value) {
+        setAttributeInternal(TXTNETAMOUNT, value);
+    }
+
+    /**
      * Gets the associated <code>RowIterator</code> using master-detail link PaymentDetailView.
      */
     public RowIterator getPaymentDetailView() {
@@ -1852,6 +1944,13 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccVWYesNoQVO() {
         return (RowSet) getAttributeInternal(ACCVWYESNOQVO);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccTaxView.
+     */
+    public RowSet getAccTaxView() {
+        return (RowSet) getAttributeInternal(ACCTAXVIEW);
     }
 
     /**

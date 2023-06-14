@@ -90,6 +90,42 @@
     EntityAttrName="TaxType"
     EntityUsage="Tax"
     AliasName="TAX_TYPE"/>
+  <ViewCriteria
+    Name="TaxViewByTaxTypeVC"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.TaxView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="TaxViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="TaxType"
+        ViewAttribute="TaxType"
+        Operator="="
+        Conjunction="AND"
+        Value="PAY"
+        UpperColumns="0"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <SortCriteria>
     <Sort
       Attribute="Description"/>

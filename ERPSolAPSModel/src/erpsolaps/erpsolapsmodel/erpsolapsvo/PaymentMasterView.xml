@@ -57,6 +57,15 @@
     Name="AccVWYesNoQVO"
     ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccTaxView"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.TaxView"
+    RowLevelBinds="true"
+    OrderBy="Tax.DESCRIPTION">
+    <ViewCriteriaUsage
+      Name="TaxViewByTaxTypeVC"
+      FullName="erpsolaps.erpsolapsmodel.erpsolapsvo.TaxView.TaxViewByTaxTypeVC"/>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtSupplierName"
     ListVOName="AccPuSuppliersView"
@@ -144,6 +153,44 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovTaxCode"
+    ListVOName="AccTaxView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TaxCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovStaxCode"
+    ListVOName="AccTaxView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaxCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TaxCode"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
@@ -572,6 +619,42 @@
     EntityAttrName="BankRefNo"
     EntityUsage="PaymentMaster"
     AliasName="BANK_REF_NO"/>
+  <ViewAttribute
+    Name="TaxCode"
+    PrecisionRule="true"
+    EntityAttrName="TaxCode"
+    EntityUsage="PaymentMaster"
+    AliasName="TAX_CODE"
+    LOVName="LovTaxCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StaxCode"
+    PrecisionRule="true"
+    EntityAttrName="StaxCode"
+    EntityUsage="PaymentMaster"
+    AliasName="STAX_CODE"
+    LOVName="LovStaxCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtNetAmount"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtNetAmount"
+    EntityUsage="PaymentMaster"
+    AliasName="TXT_NET_AMOUNT"/>
   <ViewCriteria
     Name="PaymentMasterViewFindVC"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentMasterView"

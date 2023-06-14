@@ -109,6 +109,7 @@
           <Item Value="txtNetPayment"/>
           <Item Value="FcurrTaxamt"/>
           <Item Value="TaxCode"/>
+          <Item Value="SalesTaxCode"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -130,6 +131,25 @@
     <attributeValues IterBinding="PaymentMasterCRUDIterator" id="BankRefNo">
       <AttrNames>
         <Item Value="BankRefNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PaymentMasterCRUDIterator" StaticList="false" Uses="LovTaxCode" id="TaxCode"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="FcurrTaxAmount">
+      <AttrNames>
+        <Item Value="FcurrTaxAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="FcurrStaxAmount">
+      <AttrNames>
+        <Item Value="FcurrStaxAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PaymentMasterCRUDIterator" StaticList="false" Uses="LovStaxCode" id="StaxCode"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PaymentMasterCRUDIterator" id="txtNetAmount">
+      <AttrNames>
+        <Item Value="txtNetAmount"/>
       </AttrNames>
     </attributeValues>
   </bindings>

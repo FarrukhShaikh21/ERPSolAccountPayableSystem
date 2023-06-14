@@ -209,7 +209,7 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(PaymentDetailImpl obj, Object value) {
-                obj.setSalesTaxCode((BigDecimal) value);
+                obj.setSalesTaxCode((Integer) value);
             }
         }
         ,
@@ -600,15 +600,15 @@ public class PaymentDetailImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for SalesTaxCode, using the alias name SalesTaxCode.
      * @return the value of SalesTaxCode
      */
-    public BigDecimal getSalesTaxCode() {
-        return (BigDecimal) getAttributeInternal(SALESTAXCODE);
+    public Integer getSalesTaxCode() {
+        return (Integer) getAttributeInternal(SALESTAXCODE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for SalesTaxCode.
      * @param value value to set the SalesTaxCode
      */
-    public void setSalesTaxCode(BigDecimal value) {
+    public void setSalesTaxCode(Integer value) {
         setAttributeInternal(SALESTAXCODE, value);
     }
 

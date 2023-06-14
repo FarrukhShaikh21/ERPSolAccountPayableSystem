@@ -87,6 +87,25 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LovSalesTaxCode"
+    ListVOName="AccTaxView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SalesTaxCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TaxCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="PaymentDetail"
     Entity="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentDetail"/>
@@ -220,7 +239,15 @@
     PrecisionRule="true"
     EntityAttrName="SalesTaxCode"
     EntityUsage="PaymentDetail"
-    AliasName="SALES_TAX_CODE"/>
+    AliasName="SALES_TAX_CODE"
+    LOVName="LovSalesTaxCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Paymentseq"
     PrecisionRule="true"
@@ -245,10 +272,8 @@
     ColumnType="NUMBER"
     AliasName="VIEW_ATTR"
     SQLType="NUMERIC">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[getRowSet().sum("txtNetPayment")]]></TransientExpression>
-    <RecalcCondition
-      trustMode="trusted"><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[getRowSet().sum("txtNetPayment")]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL

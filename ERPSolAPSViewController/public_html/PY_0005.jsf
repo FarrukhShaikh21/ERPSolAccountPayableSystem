@@ -329,13 +329,14 @@
                                         columns="#{bindings.FcurrPayAmount.hints.displayWidth}"
                                         maximumLength="#{bindings.FcurrPayAmount.hints.precision}"
                                         shortDesc="#{bindings.FcurrPayAmount.hints.tooltip}" id="it11" simple="true"
-                                        readOnly="#{bindings.PaymentType.inputValue!='AD'}" partialTriggers="soc1">
+                                        readOnly="#{bindings.PaymentType.inputValue!='AD'}" partialTriggers="soc1"
+                                        autoSubmit="true">
                             <f:validator binding="#{bindings.FcurrPayAmount.validator}"/>
                             <af:convertNumber groupingUsed="false" pattern="#{bindings.FcurrPayAmount.format}"/>
                           </af:inputText>
                         </af:gridCell>
                       </af:gridRow>
-                      <af:gridRow id="gr15">
+                      <af:gridRow id="gr15" height="30px">
                         <af:gridCell id="gc37" width="15%" valign="middle">
                           <af:outputLabel value="#{bindings.TaxCode.label}" id="ol17"
                                           visible="#{bindings.PaymentType.inputValue=='AD'}" partialTriggers="soc1"/>
@@ -344,7 +345,8 @@
                           <af:selectOneChoice value="#{bindings.TaxCode.inputValue}" label="#{bindings.TaxCode.label}"
                                               required="#{bindings.TaxCode.hints.mandatory}"
                                               shortDesc="#{bindings.TaxCode.hints.tooltip}" id="soc3" simple="true"
-                                              partialTriggers="soc1" visible="#{bindings.PaymentType.inputValue=='AD'}">
+                                              partialTriggers="soc1"
+                                              readOnly="#{bindings.PaymentType.inputValue!='AD'}">
                             <f:selectItems value="#{bindings.TaxCode.items}" id="si16"/>
                             <f:validator binding="#{bindings.TaxCode.validator}"/>
                           </af:selectOneChoice>
@@ -359,14 +361,14 @@
                                         required="#{bindings.FcurrTaxAmount.hints.mandatory}"
                                         columns="#{bindings.FcurrTaxAmount.hints.displayWidth}"
                                         maximumLength="#{bindings.FcurrTaxAmount.hints.precision}"
-                                        shortDesc="#{bindings.FcurrTaxAmount.hints.tooltip}" id="it19" simple="true" partialTriggers="soc1"
-                                        visible="#{bindings.PaymentType.inputValue=='AD'}">
+                                        shortDesc="#{bindings.FcurrTaxAmount.hints.tooltip}" id="it19" simple="true" partialTriggers="soc1" autoSubmit="true"
+                                        readOnly="#{bindings.PaymentType.inputValue!='AD'}">
                             <f:validator binding="#{bindings.FcurrTaxAmount.validator}"/>
                             <af:convertNumber groupingUsed="false" pattern="#{bindings.FcurrTaxAmount.format}"/>
                           </af:inputText>
                         </af:gridCell>
                       </af:gridRow>
-                      <af:gridRow id="gr16">
+                      <af:gridRow id="gr16" height="30px">
                         <af:gridCell id="gc41" width="15%" valign="middle">
                           <af:outputLabel value="#{bindings.StaxCode.label}" id="ol19" partialTriggers="soc1"
                                           visible="#{bindings.PaymentType.inputValue=='AD'}"/>
@@ -375,7 +377,8 @@
                           <af:selectOneChoice value="#{bindings.StaxCode.inputValue}" label="#{bindings.StaxCode.label}"
                                               required="#{bindings.StaxCode.hints.mandatory}"
                                               shortDesc="#{bindings.StaxCode.hints.tooltip}" id="soc4" simple="true"
-                                              partialTriggers="soc1" visible="#{bindings.PaymentType.inputValue=='AD'}">
+                                              partialTriggers="soc1"
+                                              readOnly="#{bindings.PaymentType.inputValue!='AD'}">
                             <f:selectItems value="#{bindings.StaxCode.items}" id="si17"/>
                             <f:validator binding="#{bindings.StaxCode.validator}"/>
                           </af:selectOneChoice>
@@ -390,8 +393,8 @@
                                         required="#{bindings.FcurrStaxAmount.hints.mandatory}"
                                         columns="#{bindings.FcurrStaxAmount.hints.displayWidth}"
                                         maximumLength="#{bindings.FcurrStaxAmount.hints.precision}"
-                                        shortDesc="#{bindings.FcurrStaxAmount.hints.tooltip}" id="it18" simple="true"
-                                        visible="#{bindings.PaymentType.inputValue=='AD'}" partialTriggers="soc1">
+                                        shortDesc="#{bindings.FcurrStaxAmount.hints.tooltip}" id="it18" simple="true" partialTriggers="soc1"
+                                        autoSubmit="true" readOnly="#{bindings.PaymentType.inputValue!='AD'}">
                             <f:validator binding="#{bindings.FcurrStaxAmount.validator}"/>
                             <af:convertNumber groupingUsed="false" pattern="#{bindings.FcurrStaxAmount.format}"/>
                           </af:inputText>
@@ -399,7 +402,8 @@
                       </af:gridRow>
                       <af:gridRow id="gr17">
                         <af:gridCell id="gc45" width="15%" valign="middle">
-                          <af:outputLabel value="#{bindings.txtNetAmount.hints.label}" id="ol21"/>
+                          <af:outputLabel value="#{bindings.txtNetAmount.hints.label}" id="ol21"
+                                          visible="#{bindings.PaymentType.inputValue=='AD'}"/>
                         </af:gridCell>
                         <af:gridCell id="gc46" width="35%">
                           <af:inputText value="#{bindings.txtNetAmount.inputValue}"
@@ -408,7 +412,8 @@
                                         columns="#{bindings.txtNetAmount.hints.displayWidth}"
                                         maximumLength="#{bindings.txtNetAmount.hints.precision}"
                                         shortDesc="#{bindings.txtNetAmount.hints.tooltip}" id="it20" simple="true"
-                                        readOnly="true" partialTriggers="soc1">
+                                        readOnly="true" partialTriggers="soc1 it18 it19 it11"
+                                        visible="#{bindings.PaymentType.inputValue=='AD'}">
                             <f:validator binding="#{bindings.txtNetAmount.validator}"/>
                             <af:convertNumber groupingUsed="false" pattern="#{bindings.txtNetAmount.format}"/>
                           </af:inputText>
@@ -552,7 +557,8 @@
                                             pattern="#{bindings.PaymentDetailCRUD.hints.FcurrTaxamt.format}"/>
                         </af:inputText>
                       </af:column>
-                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.SalesTaxCode.label}" id="c8">
+                      <af:column headerText="#{bindings.PaymentDetailCRUD.hints.SalesTaxCode.label}" id="c8"
+                                 width="150">
                         <af:selectOneChoice value="#{row.bindings.SalesTaxCode.inputValue}"
                                             label="#{row.bindings.SalesTaxCode.label}"
                                             required="#{bindings.PaymentDetailCRUD.hints.SalesTaxCode.mandatory}"
@@ -568,7 +574,8 @@
                                       required="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.mandatory}"
                                       columns="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.displayWidth}"
                                       maximumLength="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.precision}"
-                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.tooltip}" id="it21">
+                                      shortDesc="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.tooltip}" id="it21"
+                                      autoSubmit="true">
                           <f:validator binding="#{row.bindings.FcurrStaxAmt.validator}"/>
                           <af:convertNumber groupingUsed="false"
                                             pattern="#{bindings.PaymentDetailCRUD.hints.FcurrStaxAmt.format}"/>
@@ -581,7 +588,7 @@
                                       columns="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.displayWidth}"
                                       maximumLength="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.precision}"
                                       shortDesc="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.tooltip}" id="it7"
-                                      autoSubmit="true" partialTriggers="invoiceCodeId it6 it5" readOnly="true">
+                                      autoSubmit="true" partialTriggers="invoiceCodeId it5 it6 it21" readOnly="true">
                           <f:validator binding="#{row.bindings.txtNetPayment.validator}"/>
                           <af:convertNumber groupingUsed="false"
                                             pattern="#{bindings.PaymentDetailCRUD.hints.txtNetPayment.format}"/>

@@ -802,7 +802,16 @@ return true;]]></validation:TransientExpression>
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="PAYMENT_MASTER"/>
+    TableName="PAYMENT_MASTER">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.FcurrStaxAmount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="StaxAmount"
     ColumnName="STAX_AMOUNT"
@@ -812,10 +821,10 @@ return true;]]></validation:TransientExpression>
     TableName="PAYMENT_MASTER">
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.StaxAmount_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.StaxAmount_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -933,14 +942,32 @@ return true;]]></validation:TransientExpression>
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="PAYMENT_MASTER"/>
+    TableName="PAYMENT_MASTER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.StaxCode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="TaxCode"
     ColumnName="TAX_CODE"
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="PAYMENT_MASTER"/>
+    TableName="PAYMENT_MASTER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.TaxCode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="txtNetAmount"
     ColumnName="TXT_NET_AMOUNT"

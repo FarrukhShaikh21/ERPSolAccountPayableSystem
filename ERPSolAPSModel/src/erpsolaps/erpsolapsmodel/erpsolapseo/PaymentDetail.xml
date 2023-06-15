@@ -306,7 +306,7 @@
     ColumnType="NUMBER"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression><![CDATA[(FcurrPmtAmount==null?0:FcurrPmtAmount) - (FcurrTaxamt==null?0:FcurrTaxamt)]]></TransientExpression>
+    <TransientExpression><![CDATA[(FcurrPmtAmount==null?0:FcurrPmtAmount) - ((FcurrTaxamt==null?0:FcurrTaxamt) + (FcurrStaxAmt==null?0:FcurrStaxAmt))]]></TransientExpression>
     <RecalcCondition
       trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
@@ -320,6 +320,8 @@
     <Dependencies>
       <Item
         Value="FcurrPmtAmount"/>
+      <Item
+        Value="FcurrStaxAmt"/>
       <Item
         Value="FcurrTaxamt"/>
     </Dependencies>

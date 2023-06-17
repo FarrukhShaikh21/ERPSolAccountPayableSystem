@@ -31,6 +31,7 @@
           usageId="erpsolaps_erpsolapsview_ERPSOLAPSBTF_ERPSOLAPSBTF_doSetPayableReportDefaults1PageDef"/>
     <page path="/PY_0009.jsf" usageId="erpsolaps_erpsolapsview_PY_0009PageDef"/>
     <page path="/PY_0009_SEARCH.jsf" usageId="erpsolaps_erpsolapsview_PY_0009_SEARCHPageDef"/>
+    <page path="/PU_0010.jsf" usageId="erpsolaps_erpsolapsview_PU_0010PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolaps_erpsolapsview_PY_0017PageDef" path="erpsolaps.erpsolapsview.pageDefs.PY_0017PageDef"/>
@@ -67,6 +68,7 @@
     <page id="erpsolaps_erpsolapsview_PY_0009PageDef" path="erpsolaps.erpsolapsview.pageDefs.PY_0009PageDef"/>
     <page id="erpsolaps_erpsolapsview_PY_0009_SEARCHPageDef"
           path="erpsolaps.erpsolapsview.pageDefs.PY_0009_SEARCHPageDef"/>
+    <page id="erpsolaps_erpsolapsview_PU_0010PageDef" path="erpsolaps.erpsolapsview.pageDefs.PU_0010PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"

@@ -208,7 +208,7 @@
       <property
          name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
       <property
-         name="sdm:polyPoints">R50,125.5,447.99414,261.74942,441.44238,L42</property>
+         name="sdm:polyPoints">R50,125.5,447.99414,261.85086,444.94238,L46</property>
    </ControlFlowCase>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule19">
@@ -542,7 +542,7 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0019</property>
       <property
-         name="sdm:polyPoints">L50,262.46817,448.44238,1.3818359,548.09766,R50</property>
+         name="sdm:polyPoints">L54,262.50504,451.94238,1.3818359,548.09766,R50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall48">
@@ -642,7 +642,7 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0009</property>
       <property
-         name="sdm:polyPoints">L58,266.0,455.44238,195.5,824.44824,L50</property>
+         name="sdm:polyPoints">L62,266.0,458.94238,195.5,817.44824,L42</property>
    </ControlFlowCase>
    <View
       id="View56">
@@ -667,7 +667,7 @@
       <property
          name="fromOutcome">ERP-ACT-PY-0009-SEARCH</property>
       <property
-         name="sdm:polyPoints">L54,195.5,827.94824,47.030273,860.44824,R50</property>
+         name="sdm:polyPoints">L50,194.74281,824.44824,47.030273,856.94824,R46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -678,5 +678,34 @@
          name="fromOutcome">ERP-ACT-PY-0009-SEARCH-BACK</property>
       <property
          name="sdm:polyPoints">R54,47.789352,863.94824,195.5,831.44824,L58</property>
+   </ControlFlowCase>
+   <View
+      id="View59">
+      <property
+         name="activityId">PU_0010</property>
+      <property
+         name="page">/PU_0010.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PU_0010&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">330.79883</property>
+      <property
+         name="x">-199.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase61"
+      from="MethodCall4"
+      to="View59">
+      <property
+         name="fromOutcome">ERP-ACT-PU-0010</property>
+      <property
+         name="tosrcid">__60</property>
+      <property
+         name="fromsrcid">__19</property>
+      <property
+         name="sdm:polyPoints">L38,266.0,437.94238,-158.5,330.44824,R50</property>
    </ControlFlowCase>
 </SDM>

@@ -52,6 +52,9 @@
   <ViewUsage
     Name="NoteDetailDetCRUD"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.NoteDetailView"/>
+  <ViewUsage
+    Name="PuSupplierCategoriesDetCRUD"
+    ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PuSupplierCategoriesView"/>
   <ViewLinkUsage
     Name="OthbilldetBilidFkLink1"
     ViewLinkObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.OthbilldetBilidFkLink"

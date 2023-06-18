@@ -53,4 +53,8 @@
     EntityAttrName="ModifiedDate"
     EntityUsage="PuSupplierCategories"
     AliasName="MODIFIED_DATE"/>
+  <SortCriteria>
+    <Sort
+      Attribute="Suppcategoryid"/>
+  </SortCriteria>
 </ViewObject>

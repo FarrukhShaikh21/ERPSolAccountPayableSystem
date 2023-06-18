@@ -57,7 +57,7 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="PU_SUPPLIER_CATEGORIES"/>
   <Attribute
@@ -76,7 +76,7 @@
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="PU_SUPPLIER_CATEGORIES"/>
   <Key

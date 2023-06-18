@@ -60,7 +60,7 @@
                                               columns="#{bindings.PuSupplierCategoriesDetCRUD.hints.Description.displayWidth}"
                                               maximumLength="#{bindings.PuSupplierCategoriesDetCRUD.hints.Description.precision}"
                                               shortDesc="#{bindings.PuSupplierCategoriesDetCRUD.hints.Description.tooltip}"
-                                              id="it2">
+                                              id="it2" contentStyle="text-transform:uppercase">
                                     <f:validator binding="#{row.bindings.Description.validator}"/>
                                 </af:inputText>
                             </af:column>

@@ -1,11 +1,13 @@
 package erpsolaps.erpsolapsmodel.erpsolapseo;
 
+import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel;
 import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.domain.Date;
 import oracle.jbo.server.AttributeDefImpl;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -56,7 +58,7 @@ public class PuSupplierCategoriesImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(PuSupplierCategoriesImpl obj, Object value) {
-                obj.setCreatedDate((Timestamp) value);
+                obj.setCreatedDate((Date) value);
             }
         }
         ,
@@ -76,7 +78,7 @@ public class PuSupplierCategoriesImpl extends ERPSolGlobalsEntityImpl {
             }
 
             public void put(PuSupplierCategoriesImpl obj, Object value) {
-                obj.setModifiedDate((Timestamp) value);
+                obj.setModifiedDate((Date) value);
             }
         }
         ;
@@ -106,6 +108,8 @@ public class PuSupplierCategoriesImpl extends ERPSolGlobalsEntityImpl {
             return vals;
         }
     }
+
+
     public static final int SUPPCATEGORYID = AttributesEnum.Suppcategoryid.index();
     public static final int DESCRIPTION = AttributesEnum.Description.index();
     public static final int CREATEDBY = AttributesEnum.Createdby.index();
@@ -118,6 +122,14 @@ public class PuSupplierCategoriesImpl extends ERPSolGlobalsEntityImpl {
      */
     public PuSupplierCategoriesImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpsolaps.erpsolapsmodel.erpsolapseo.PuSupplierCategories");
+    }
+
 
     /**
      * Gets the attribute value for Suppcategoryid, using the alias name Suppcategoryid.
@@ -171,15 +183,15 @@ public class PuSupplierCategoriesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for CreatedDate, using the alias name CreatedDate.
      * @return the value of CreatedDate
      */
-    public Timestamp getCreatedDate() {
-        return (Timestamp) getAttributeInternal(CREATEDDATE);
+    public Date getCreatedDate() {
+        return (Date) getAttributeInternal(CREATEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedDate.
      * @param value value to set the CreatedDate
      */
-    public void setCreatedDate(Timestamp value) {
+    public void setCreatedDate(Date value) {
         setAttributeInternal(CREATEDDATE, value);
     }
 
@@ -203,15 +215,15 @@ public class PuSupplierCategoriesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for ModifiedDate, using the alias name ModifiedDate.
      * @return the value of ModifiedDate
      */
-    public Timestamp getModifiedDate() {
-        return (Timestamp) getAttributeInternal(MODIFIEDDATE);
+    public Date getModifiedDate() {
+        return (Date) getAttributeInternal(MODIFIEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ModifiedDate.
      * @param value value to set the ModifiedDate
      */
-    public void setModifiedDate(Timestamp value) {
+    public void setModifiedDate(Date value) {
         setAttributeInternal(MODIFIEDDATE, value);
     }
 
@@ -246,6 +258,7 @@ public class PuSupplierCategoriesImpl extends ERPSolGlobalsEntityImpl {
         super.setAttrInvokeAccessor(index, value, attrDef);
     }
 
+
     /**
      * @param suppcategoryid key constituent
 
@@ -256,17 +269,11 @@ public class PuSupplierCategoriesImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpsolaps.erpsolapsmodel.erpsolapseo.PuSupplierCategories");
-    }
-
-    /**
      * Add attribute defaulting logic in this method.
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
+        setERPISGenertePK("NO");
         super.create(attributeList);
     }
 
@@ -290,6 +297,15 @@ public class PuSupplierCategoriesImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation==DML_INSERT) {
+            String pkValue=" lpad(func_get_max_id('Pu_Supplier_Categories','suppcategoryid*1'),4,0) ";
+         String result =
+             ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
+         populateAttributeAsChanged(SUPPCATEGORYID, result);
+        }
+        if (operation!=DML_DELETE) {
+           populateAttributeAsChanged(DESCRIPTION, getDescription().toUpperCase());
+       }
         super.doDML(operation, e);
     }
 }

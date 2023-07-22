@@ -46,10 +46,17 @@
     <ViewCriteriaUsage
       Name="AllBankBranchesCashBankVC"
       FullName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllBankBranchesView.AllBankBranchesCashBankVC"/>
+    <ViewCriteriaUsage
+      Name="AllBankBranchesViewLocationWiseVC"
+      FullName="erpsolaps.erpsolapsmodel.erpsolapsvo.AllBankBranchesView.AllBankBranchesViewLocationWiseVC"/>
     <ParameterMap>
       <PIMap Variable="P_CASHBANK">
         <TransientExpression
           trustMode="untrusted"><![CDATA[PaymentMode=='CSH'?"C":"B"]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_LOCATIONID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Locationid==null?"0":Locationid]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>

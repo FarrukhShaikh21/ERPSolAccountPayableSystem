@@ -131,9 +131,10 @@ public class ERPSolAPSBean {
         List<SelectItem> ResultList=new ArrayList<SelectItem>();
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         AttributeBinding ERPPaymentMode =(AttributeBinding)ERPSolbc.getControlBinding("PaymentMode");
+        AttributeBinding ERPLocationid =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
         
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllBankBranchesAutoSuggestRO",
-                                                                        "CASH_BANK='"+(ERPPaymentMode.getInputValue().equals("CSH")?"C":"B")+"' AND UPPER(CONCAT(Branch_Name,Branchid))", "BranchName", "Branchid", 10,"ERPSolAPSAppModuleDataControl");
+                                                                        "CASH_BANK='"+(ERPPaymentMode.getInputValue().equals("CSH")?"C":"B")+"' AND LOCATIONID='"+ERPLocationid.getInputValue()+"'AND UPPER(CONCAT(Branch_Name,Branchid))", "BranchName", "Branchid", 10,"ERPSolAPSAppModuleDataControl");
         return ResultList;
         
     }

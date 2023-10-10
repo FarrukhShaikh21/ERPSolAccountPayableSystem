@@ -418,8 +418,18 @@
                             <af:convertNumber groupingUsed="false" pattern="#{bindings.txtNetAmount.format}"/>
                           </af:inputText>
                         </af:gridCell>
-                        <af:gridCell id="gc47" width="15%"/>
-                        <af:gridCell id="gc48" width="35%"/>
+                        <af:gridCell id="gc47" width="15%" valign="middle">
+                          <af:outputLabel value="#{bindings.Payee.hints.label}" id="ol22"/>
+                        </af:gridCell>
+                        <af:gridCell id="gc48" width="35%" halign="stretch">
+                          <af:inputText value="#{bindings.Payee.inputValue}" label="#{bindings.Payee.hints.label}"
+                                        required="#{bindings.Payee.hints.mandatory}"
+                                        columns="#{bindings.Payee.hints.displayWidth}"
+                                        maximumLength="#{bindings.Payee.hints.precision}"
+                                        shortDesc="#{bindings.Payee.hints.tooltip}" id="it22" simple="true">
+                            <f:validator binding="#{bindings.Payee.validator}"/>
+                          </af:inputText>
+                        </af:gridCell>
                       </af:gridRow>
                       <af:gridRow id="gr14" height="30px">
                         <af:gridCell id="gc35" width="15%" valign="middle">

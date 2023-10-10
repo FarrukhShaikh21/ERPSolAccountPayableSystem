@@ -662,6 +662,12 @@
     EntityAttrName="txtNetAmount"
     EntityUsage="PaymentMaster"
     AliasName="TXT_NET_AMOUNT"/>
+  <ViewAttribute
+    Name="Payee"
+    PrecisionRule="true"
+    EntityAttrName="Payee"
+    EntityUsage="PaymentMaster"
+    AliasName="PAYEE"/>
   <ViewCriteria
     Name="PaymentMasterViewFindVC"
     ViewObjectName="erpsolaps.erpsolapsmodel.erpsolapsvo.PaymentMasterView"

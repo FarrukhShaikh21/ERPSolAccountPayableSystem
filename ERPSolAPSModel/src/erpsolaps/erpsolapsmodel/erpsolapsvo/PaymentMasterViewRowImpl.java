@@ -655,6 +655,16 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
             }
         }
         ,
+        Payee {
+            public Object get(PaymentMasterViewRowImpl obj) {
+                return obj.getPayee();
+            }
+
+            public void put(PaymentMasterViewRowImpl obj, Object value) {
+                obj.setPayee((String) value);
+            }
+        }
+        ,
         PaymentDetailView {
             public Object get(PaymentMasterViewRowImpl obj) {
                 return obj.getPaymentDetailView();
@@ -837,6 +847,7 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
     public static final int TAXCODE = AttributesEnum.TaxCode.index();
     public static final int STAXCODE = AttributesEnum.StaxCode.index();
     public static final int TXTNETAMOUNT = AttributesEnum.txtNetAmount.index();
+    public static final int PAYEE = AttributesEnum.Payee.index();
     public static final int PAYMENTDETAILVIEW = AttributesEnum.PaymentDetailView.index();
     public static final int ALLLOCATIONSVIEW = AttributesEnum.AllLocationsView.index();
     public static final int PUSUPPLIERSVIEW = AttributesEnum.PuSuppliersView.index();
@@ -1867,6 +1878,22 @@ public class PaymentMasterViewRowImpl extends ViewRowImpl {
      */
     public void settxtNetAmount(BigDecimal value) {
         setAttributeInternal(TXTNETAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for PAYEE using the alias name Payee.
+     * @return the PAYEE
+     */
+    public String getPayee() {
+        return (String) getAttributeInternal(PAYEE);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for PAYEE using the alias name Payee.
+     * @param value value to set the PAYEE
+     */
+    public void setPayee(String value) {
+        setAttributeInternal(PAYEE, value);
     }
 
     /**

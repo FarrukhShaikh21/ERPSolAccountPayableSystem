@@ -997,6 +997,25 @@ return true;]]></validation:TransientExpression>
         Value="FcurrTaxAmount"/>
     </Dependencies>
   </Attribute>
+  <Attribute
+    Name="Payee"
+    Precision="100"
+    ColumnName="PAYEE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PAYMENT_MASTER"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="PaymentDetail"
     Association="erpsolaps.erpsolapsmodel.erpsolapseo.SysC0016800Assoc"
@@ -1025,6 +1044,18 @@ return true;]]></validation:TransientExpression>
     AssociationOtherEnd="erpsolaps.erpsolapsmodel.erpsolapsassoc.AllBankBranchPaymentMAsterBranchIdAssoc.PaymentMaster"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <Key
+    Name="PaymentMasterPayeeCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PAYMENT_MASTER_PAYEE_CHECK"/>
+      <Attr Name="_checkCondition" Value='"PAYEE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolaps.erpsolapsmodel.erpsolapseo.PaymentMaster.Payee"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="UnqPaymentMaster">
     <DesignTime>

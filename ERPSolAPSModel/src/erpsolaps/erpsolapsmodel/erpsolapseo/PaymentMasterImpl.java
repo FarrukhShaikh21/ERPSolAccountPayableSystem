@@ -670,6 +670,16 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
             }
         }
         ,
+        Payee {
+            public Object get(PaymentMasterImpl obj) {
+                return obj.getPayee();
+            }
+
+            public void put(PaymentMasterImpl obj, Object value) {
+                obj.setPayee((String) value);
+            }
+        }
+        ,
         PaymentDetail {
             public Object get(PaymentMasterImpl obj) {
                 return obj.getPaymentDetail();
@@ -812,6 +822,7 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
     public static final int STAXCODE = AttributesEnum.StaxCode.index();
     public static final int TAXCODE = AttributesEnum.TaxCode.index();
     public static final int TXTNETAMOUNT = AttributesEnum.txtNetAmount.index();
+    public static final int PAYEE = AttributesEnum.Payee.index();
     public static final int PAYMENTDETAIL = AttributesEnum.PaymentDetail.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
     public static final int PUSUPPLIERS = AttributesEnum.PuSuppliers.index();
@@ -1854,6 +1865,22 @@ public class PaymentMasterImpl extends ERPSolGlobalsEntityImpl {
      */
     public void settxtNetAmount(BigDecimal value) {
         setAttributeInternal(TXTNETAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for Payee, using the alias name Payee.
+     * @return the value of Payee
+     */
+    public String getPayee() {
+        return (String) getAttributeInternal(PAYEE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Payee.
+     * @param value value to set the Payee
+     */
+    public void setPayee(String value) {
+        setAttributeInternal(PAYEE, value);
     }
 
     /**
